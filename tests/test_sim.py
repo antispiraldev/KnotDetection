@@ -238,3 +238,23 @@ def test_calibration_factor_is_not_pinned_at_the_clip(one_per_type):
         from inflection.sim.generate import CV_CLIP
         factor = w.params["cv_calibration"]
         assert CV_CLIP[0] < factor < CV_CLIP[1], (tt, factor)
+
+
+def test_onset_of_an_instantaneous_step_is_never_early():
+    """A step at t=106 must be placed at ~106, not at the left edge of a bin.
+
+    The first detector used non-overlapping 20-step windows and reported the edge of
+    the first window to depart, so this step came back as visible at t=100, six
+    steps before it happened, and every onset in the benchmark was a multiple of 20.
+    """
+    from inflection.sim.integrate import Run
+    rng = np.random.default_rng(1)
+    t = np.arange(300.0)
+    for step_at in (106, 113, 127):
+        y = 1.0 + 0.02 * rng.standard_normal(300)
+        y[step_at:] += 0.5
+        run = Run(t=t, x=y[:, None], state_names=("y",), transition_type="x",
+                  transition_time=float(step_at), primary=0)
+        onset = observable_onset(run)
+        assert onset is not None
+        assert step_at <= onset <= step_at + 3, (step_at, onset)

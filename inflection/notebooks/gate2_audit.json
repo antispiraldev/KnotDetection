@@ -1,0 +1,153 @@
+{
+  "generation": {
+    "failures": {
+      "exogenous_shock": 0,
+      "fold": 0,
+      "hopf": 0,
+      "mechanism_change": 0,
+      "noise_induced": 6,
+      "null": 0,
+      "transcritical": 0
+    },
+    "mean_attempts": {
+      "exogenous_shock": 3.05,
+      "fold": 1.575,
+      "hopf": 1.4,
+      "mechanism_change": 1.025,
+      "noise_induced": 13.058823529411764,
+      "null": 1.05,
+      "transcritical": 2.925
+    },
+    "n_generated": 274,
+    "n_requested": 280,
+    "seed": 11
+  },
+  "layers": {
+    "clean": {
+      "base_rate": 0.145985401459854,
+      "combined": 0.4124087591240876,
+      "leak": false,
+      "per_type_recall": {
+        "exogenous_shock": 0.275,
+        "fold": 0.425,
+        "hopf": 0.75,
+        "mechanism_change": 0.35,
+        "noise_induced": 0.38235294117647056,
+        "null": 0.45,
+        "transcritical": 0.25
+      },
+      "physical": 0.4051094890510949,
+      "scale_dependent": 0.10583941605839416,
+      "scale_dependent_null": 0.13686131386861314,
+      "scale_dependent_p": 0.9354838709677419
+    },
+    "harsh": {
+      "base_rate": 0.145985401459854,
+      "combined": 0.17883211678832117,
+      "leak": false,
+      "per_type_recall": {
+        "exogenous_shock": 0.175,
+        "fold": 0.225,
+        "hopf": 0.125,
+        "mechanism_change": 0.2,
+        "noise_induced": 0.08823529411764706,
+        "null": 0.25,
+        "transcritical": 0.175
+      },
+      "physical": 0.19708029197080293,
+      "scale_dependent": 0.15693430656934307,
+      "scale_dependent_null": 0.13734793187347932,
+      "scale_dependent_p": 0.25806451612903225
+    },
+    "irregular": {
+      "base_rate": 0.145985401459854,
+      "combined": 0.3175182481751825,
+      "leak": false,
+      "per_type_recall": {
+        "exogenous_shock": 0.4,
+        "fold": 0.375,
+        "hopf": 0.375,
+        "mechanism_change": 0.25,
+        "noise_induced": 0.4117647058823529,
+        "null": 0.25,
+        "transcritical": 0.175
+      },
+      "physical": 0.28102189781021897,
+      "scale_dependent": 0.12773722627737227,
+      "scale_dependent_null": 0.13357664233576644,
+      "scale_dependent_p": 0.6451612903225806
+    },
+    "observation_noise": {
+      "base_rate": 0.145985401459854,
+      "combined": 0.31386861313868614,
+      "leak": false,
+      "per_type_recall": {
+        "exogenous_shock": 0.275,
+        "fold": 0.3,
+        "hopf": 0.5,
+        "mechanism_change": 0.325,
+        "noise_induced": 0.23529411764705882,
+        "null": 0.3,
+        "transcritical": 0.25
+      },
+      "physical": 0.3248175182481752,
+      "scale_dependent": 0.12043795620437957,
+      "scale_dependent_null": 0.13625304136253039,
+      "scale_dependent_p": 0.7096774193548387
+    },
+    "proxy": {
+      "base_rate": 0.145985401459854,
+      "combined": 0.3905109489051095,
+      "leak": false,
+      "per_type_recall": {
+        "exogenous_shock": 0.275,
+        "fold": 0.325,
+        "hopf": 0.775,
+        "mechanism_change": 0.3,
+        "noise_induced": 0.38235294117647056,
+        "null": 0.4,
+        "transcritical": 0.275
+      },
+      "physical": 0.3905109489051095,
+      "scale_dependent": 0.13503649635036497,
+      "scale_dependent_null": 0.13381995133819952,
+      "scale_dependent_p": 0.5806451612903226
+    },
+    "short": {
+      "base_rate": 0.145985401459854,
+      "combined": 0.36496350364963503,
+      "leak": false,
+      "per_type_recall": {
+        "exogenous_shock": 0.3,
+        "fold": 0.45,
+        "hopf": 0.725,
+        "mechanism_change": 0.2,
+        "noise_induced": 0.23529411764705882,
+        "null": 0.275,
+        "transcritical": 0.35
+      },
+      "physical": 0.3613138686131387,
+      "scale_dependent": 0.18248175182481752,
+      "scale_dependent_null": 0.13442822384428224,
+      "scale_dependent_p": 0.06451612903225806
+    },
+    "sparse": {
+      "base_rate": 0.145985401459854,
+      "combined": 0.291970802919708,
+      "leak": false,
+      "per_type_recall": {
+        "exogenous_shock": 0.35,
+        "fold": 0.25,
+        "hopf": 0.35,
+        "mechanism_change": 0.225,
+        "noise_induced": 0.2647058823529412,
+        "null": 0.25,
+        "transcritical": 0.35
+      },
+      "physical": 0.28102189781021897,
+      "scale_dependent": 0.10218978102189781,
+      "scale_dependent_null": 0.14221411192214115,
+      "scale_dependent_p": 1.0
+    }
+  }
+}

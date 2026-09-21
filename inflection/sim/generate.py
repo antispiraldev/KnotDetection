@@ -167,6 +167,7 @@ def generate_world(
     transition_type: str,
     rng: np.random.Generator,
     max_attempts: int = 60,
+    failed_designs: list | None = None,
 ) -> World | None:
     """Draw worlds of this type until one is usable, or give up.
 
@@ -185,7 +186,10 @@ def generate_world(
 
     Returns None if no usable world is found at these design values. That is itself
     a bias if it happens often for some types and not others, so failures are
-    counted and reported by `generate_pool`.
+    counted and reported by `generate_pool`. If `failed_designs` is given, the design
+    values of each failure are appended to it, so the bias can be checked directly --
+    are the failures concentrated at high target CV? -- rather than inferred from the
+    survivors.
     """
     origin = ORIGIN_FRAC * T
     lo, hi = tstar_range()
@@ -227,6 +231,10 @@ def generate_world(
             attempts=attempt,
             **lab,
         )
+    if failed_designs is not None:
+        failed_designs.append(dict(
+            transition_type=transition_type, target_cv=target_cv, t_star=t_star_req,
+        ))
     return None
 
 
@@ -237,10 +245,10 @@ def generate_pool(
 ) -> tuple[list[World], dict]:
     """A balanced pool with one entry per type per index."""
     rng = np.random.default_rng(seed)
-    worlds, failures = [], {t: 0 for t in types}
+    worlds, failures, failed_designs = [], {t: 0 for t in types}, []
     for tt in types:
         for _ in range(n_per_type):
-            w = generate_world(tt, rng)
+            w = generate_world(tt, rng, failed_designs=failed_designs)
             if w is None:
                 failures[tt] += 1
             else:
@@ -251,6 +259,7 @@ def generate_pool(
         n_requested=n_per_type * len(types),
         n_generated=len(worlds),
         failures=failures,
+        failed_designs=failed_designs,
         mean_attempts={
             tt: float(np.mean([w.attempts for w in worlds if w.transition_type == tt] or [np.nan]))
             for tt in types
