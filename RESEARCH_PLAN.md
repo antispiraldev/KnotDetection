@@ -1,6 +1,6 @@
 # Forecasting Inflection Points: Research Plan
 
-*Gate 1 draft, 2026-09-19. Status: awaiting Luca's approval.*
+*Gate 1 draft, 2026-09-19. Gate 1 approved 2026-09-21. Gate 2 approved 2026-09-21, with the amendments marked **[Amended 2026-09-21]** below (see LOG.md).*
 
 ## 1. Question
 
@@ -52,7 +52,7 @@ A generator of synthetic "societies," built on a structural-demographic core: po
 | Fold (collapse) | Slow parameter drift pushes the system past a threshold | Yes |
 | Hopf (cycle onset) | A stable equilibrium turns into secular cycles | Yes |
 | Transcritical | Stability passes from one equilibrium to another | Yes |
-| Noise-induced | A large shock knocks a stable system into another basin | Little or none |
+| Noise-induced | Fluctuations carry a near-critical system out of a shallow basin | Elevated but trendless **[Amended 2026-09-21]** |
 | Exogenous shock | Outside forcing, e.g. a climate or pandemic analog | None |
 | **Mechanism change** | The equations themselves change, e.g. a technology shock raises carrying capacity | Unknown; this is the interesting case |
 | Null | No transition | Should stay quiet |
@@ -86,6 +86,12 @@ This is designed to keep my own knowledge from leaking into the results.
 
 - **Whether:** Brier score, AUC, and calibration, plus the false-positive rate on null runs
 - **When:** error in predicted transition time, and CRPS on the predicted time distribution
+  - **[Amended 2026-09-21]** The primary target is `observable_onset`, the first sustained
+    departure of the series, defined the same way for every type. Error against the
+    mechanism-change time is reported alongside it. The two differ by type and in both
+    directions: transcritical is visible before its bifurcation, while Hopf becomes
+    visible long after. Before any method is scored, the onset detector is calibrated
+    against an oracle likelihood-ratio detector and the gap between them is reported.
 - **What:** accuracy by transition type, reported separately for mechanism-change runs
 - Every result is broken down by realism layer, so the question "how much noise or sparsity kills each method?" gets a direct answer
 

@@ -5,6 +5,41 @@ parked as out of scope. Newest entries at the top.
 
 ---
 
+## 2026-09-21 — Gate 2 closed; plan for Gate 3
+
+Luca delegated the three Gate 2 decisions ("Do what you think is best"). Decided:
+
+1. **"When" target:** `observable_onset` is primary and mechanism-time error is
+   reported alongside it. RESEARCH_PLAN §4.4 is amended. Condition: calibrate the onset
+   detector against an oracle before scoring anything.
+2. **§4.1:** the `noise_induced` expectation is amended to "elevated but trendless".
+3. **Proceed to Gate 3.**
+
+### Gate 3 work plan, in order
+
+1. **Oracle calibration of `observable_onset`.** Build a likelihood-ratio (CUSUM-style)
+   detector that knows each world's true pre- and post-change behaviour, and measure
+   how far behind it the fixed detector runs, by type. If the gap is large for Hopf,
+   make the amplitude signal more sensitive (e.g. use the rolling IQR of the local
+   deviation instead of its median), re-audit, and log the change.
+2. **Blinding infrastructure, per §4.2.** Commit the test seed by hash before any
+   method exists. Keep the development pool and the sealed test pool apart
+   (`save_pool(seal=True)` already writes truth to a git-ignored `sealed/` directory).
+   Hash forecasts before unsealing. Add a scorer that refuses to run if the forecast
+   hash was committed after the truth file was opened.
+3. **Common method interface** in `methods/`: take a record `(t, y)` and return
+   `P(transition within H)`, a distribution over onset time, and a distribution over
+   type.
+4. **First methods:** base-rate and own-history baselines, and generic EWS (detrended
+   lag-1 AC and variance with a Kendall-tau trend test). Then, if they are cheap, one
+   changepoint method and the PITF-style hazard model.
+5. **Scoring:** Brier, AUC and calibration for whether (with the null false-positive
+   rate); onset error and CRPS for when; accuracy by type for what, with mechanism
+   change reported separately. Every score broken down by realism layer.
+6. **Stop at Gate 3** with the first blind results.
+
+---
+
 ## 2026-09-21 (later) — What the Gate 2 figures and a second audit draw turned up
 
 The first Gate 2 run passed the leakage gate. Looking at the example trajectories, and
