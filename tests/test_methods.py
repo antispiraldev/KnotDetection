@@ -9,6 +9,7 @@ from inflection.methods.base import QUANTILE_LEVELS, Record
 from inflection.methods.baselines import BaseRate, OwnHistory
 from inflection.methods.ews import GenericEWS
 from inflection.methods.features import FeatureClassifier
+from inflection.methods.hybrid import Hybrid
 from inflection.sim import realism as R
 from inflection.sim.generate import T, generate_pool
 from inflection.sim.models import TRANSITION_TYPES
@@ -26,7 +27,7 @@ def tiny():
     return recs, truth
 
 
-@pytest.mark.parametrize("cls", [BaseRate, OwnHistory, GenericEWS, FeatureClassifier])
+@pytest.mark.parametrize("cls", [BaseRate, OwnHistory, GenericEWS, FeatureClassifier, Hybrid])
 @pytest.mark.parametrize("layer", ["clean", "harsh"])
 def test_method_honours_the_forecast_contract(tiny, cls, layer):
     recs, truth = tiny

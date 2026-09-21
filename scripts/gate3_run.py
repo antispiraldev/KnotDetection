@@ -32,15 +32,16 @@ from inflection.sim.generate import T, generate_pool
 ROOT = Path(__file__).resolve().parents[1]
 DATA = ROOT / "inflection" / "data"
 NOTEBOOKS = ROOT / "inflection" / "notebooks"
-DEV_SEED = 101
+DEV_SEED = 102
 
 
 def methods():
     from inflection.methods.baselines import BaseRate, OwnHistory
     from inflection.methods.ews import GenericEWS
     from inflection.methods.features import FeatureClassifier
+    from inflection.methods.hybrid import Hybrid
     return {"base_rate": BaseRate, "own_history": OwnHistory, "generic_ews": GenericEWS,
-            "feature_classifier": FeatureClassifier}
+            "feature_classifier": FeatureClassifier, "hybrid": Hybrid}
 
 
 def dev_pool(n_per_type: int):
@@ -97,7 +98,7 @@ def main():
     ap.add_argument("step", choices=["commit-seed", "build", "forecast", "score"])
     ap.add_argument("--test-set", required=True)
     ap.add_argument("--n", type=int, default=40, help="test worlds per type")
-    ap.add_argument("--dev-n", type=int, default=40, help="development worlds per type")
+    ap.add_argument("--dev-n", type=int, default=100, help="development worlds per type")
     args = ap.parse_args()
 
     if args.step == "commit-seed":

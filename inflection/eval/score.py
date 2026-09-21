@@ -42,6 +42,25 @@ def _ece(p: np.ndarray, y: np.ndarray, bins: int = 5) -> float:
                      for b in range(bins) if np.any(idx == b)))
 
 
+def _breakdown(p, q, onset, types, robust) -> dict:
+    """Per-type means that the headline metrics average over. No bootstrap."""
+    out = {}
+    med = q[:, len(LEVELS) // 2]
+    for k in TRANSITION_TYPES:
+        sel = types == k
+        if sel.any():
+            out[f"mean_p_{k}"] = float(np.mean(p[sel]))
+            ok = sel & np.isfinite(onset)
+            if ok.any():
+                out[f"mae_onset_{k}"] = float(np.mean(np.abs(med[ok] - onset[ok])))
+    shock = types == "exogenous_shock"
+    for label, flag in (("robust", True), ("fragile", False)):
+        sel = shock & (robust == flag)
+        if sel.any():
+            out[f"mean_p_shock_{label}"] = float(np.mean(p[sel]))
+    return out
+
+
 def _metrics(p, y, q, onset, tstar, trans, probs, types) -> dict:
     out = {}
     out["brier"] = float(np.mean((p - y) ** 2))
@@ -112,6 +131,8 @@ def score(forecasts: dict[str, dict], truth: list[dict], n_boot: int = 500,
     )
     out = _metrics(**arrays)
     out["n"] = len(truth)
+    robust = np.array([tr.get("robust_shock") for tr in truth], dtype=object)
+    out.update(_breakdown(arrays["p"], arrays["q"], arrays["onset"], arrays["types"], robust))
 
     rng = np.random.default_rng(seed)
     boots = {k: [] for k in HEADLINE}

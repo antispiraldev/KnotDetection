@@ -5,6 +5,31 @@ parked as out of scope. Newest entries at the top.
 
 ---
 
+## 2026-09-21 — Gate 3 approved; decisions and the plan toward Gate 4
+
+Luca approved continuing and left the Gate 3 decisions to me ("I defer to your
+initiative"). A plain-language report for him is on claude.ai as a Claude Doc,
+"Forecasting Inflection Points: Gate 3 Report". I took the three recommendations
+made there:
+
+1. **Make shocks fair.** In `test_v2`, half the shock worlds are *robust*: far from
+   any threshold, like the null worlds at rest. The flag is drawn once per world,
+   before the rejection loop, so selection cannot tilt the mix. After this,
+   "whether" can only credit a shock where the world genuinely looks fragile.
+2. **Build the hybrid next.** It targets "when", the sub-question nothing answers.
+   The idea to test is that a system's recovery rate falls toward zero as it nears
+   a threshold (critical slowing down), so a trend in that rate can be extrapolated
+   to a crossing time. The deep-learning classifier is parked until after Gate 4.
+3. **Lead time, done cheaply.** New generation isn't needed. Two extra layers,
+   `lead_15` and `lead_30`, cut the last 15 or 30 steps off the clean record. That is
+   the same as forecasting from further back, and all the worlds stay valid.
+
+Next: simulator and layer changes → re-audit on three seeds → hybrid method → dev
+evaluation with written expectations → `test_v2` (new seed) → score → Gate 4
+write-up.
+
+---
+
 ## 2026-09-21 (Gate 3, part 2) — First blind results; stopping for review
 
 ### What was run, in order (all in `inflection/data/ledger.jsonl` and git)
