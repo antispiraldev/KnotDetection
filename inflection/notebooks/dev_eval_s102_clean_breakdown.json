@@ -1,0 +1,142 @@
+{
+  "clean/feature_classifier": {
+    "brier": 0.11133043019782003,
+    "brier_skill": 0.09080148671780319,
+    "auc": 0.7628333333333334,
+    "ece": 0.011260913011113016,
+    "null_fpr": 0.52,
+    "null_mean_p": 0.7777146430033057,
+    "crps_onset": 11.70386503017581,
+    "mae_onset": 15.880288841008472,
+    "mae_mechanism": 14.128679361003169,
+    "cover90_onset": 0.7916666666666666,
+    "type_accuracy": 0.4216666666666667,
+    "type_accuracy_mechanism_change": 0.3,
+    "type_logloss": 1.4725035052476418,
+    "recall_fold": 0.47,
+    "recall_hopf": 0.77,
+    "recall_transcritical": 0.27,
+    "recall_noise_induced": 0.6,
+    "recall_exogenous_shock": 0.03,
+    "recall_mechanism_change": 0.3,
+    "recall_null": 0.39,
+    "n": 700,
+    "mean_p_fold": 0.8308453633643316,
+    "mae_onset_fold": 13.753305826927935,
+    "mean_p_hopf": 0.950982586986486,
+    "mae_onset_hopf": 23.972278869858894,
+    "mean_p_transcritical": 0.8760553941339962,
+    "mae_onset_transcritical": 16.84406005893974,
+    "mean_p_noise_induced": 0.9344209713106427,
+    "mae_onset_noise_induced": 14.916395159824692,
+    "mean_p_exogenous_shock": 0.8650661936907958,
+    "mae_onset_exogenous_shock": 12.497910053884173,
+    "mean_p_mechanism_change": 0.7663037709027454,
+    "mae_onset_mechanism_change": 13.297783076615396,
+    "mean_p_null": 0.7777146430033057,
+    "mean_p_shock_robust": 0.8000971804236703,
+    "mean_p_shock_fragile": 0.938329123545214,
+    "brier_ci": [
+      0.09679936270284566,
+      0.12610957576477397
+    ],
+    "brier_skill_ci": [
+      0.048584643077083225,
+      0.1383439303818578
+    ],
+    "auc_ci": [
+      0.721752539641649,
+      0.8045268164427013
+    ],
+    "null_fpr_ci": [
+      0.3435614224137931,
+      0.6827421171171172
+    ],
+    "crps_onset_ci": [
+      10.896954270532635,
+      12.38540050971833
+    ],
+    "mae_onset_ci": [
+      14.856373983425884,
+      16.74902367650773
+    ],
+    "type_accuracy_ci": [
+      0.38720400046594444,
+      0.4624594544629502
+    ],
+    "type_accuracy_mechanism_change_ci": [
+      0.20963350367294795,
+      0.3863743567753002
+    ]
+  },
+  "clean/hybrid": {
+    "brier": 0.10934223412054876,
+    "brier_skill": 0.10703842134885189,
+    "auc": 0.7700333333333333,
+    "ece": 0.0035797591410444,
+    "null_fpr": 0.51,
+    "null_mean_p": 0.7764599632739791,
+    "crps_onset": 11.664926655895474,
+    "mae_onset": 15.762768311867037,
+    "mae_mechanism": 14.881703612673705,
+    "cover90_onset": 0.8016666666666666,
+    "type_accuracy": 0.4866666666666667,
+    "type_accuracy_mechanism_change": 0.41,
+    "type_logloss": 1.3627641900528755,
+    "recall_fold": 0.45,
+    "recall_hopf": 0.97,
+    "recall_transcritical": 0.44,
+    "recall_noise_induced": 0.66,
+    "recall_exogenous_shock": 0.05,
+    "recall_mechanism_change": 0.41,
+    "recall_null": 0.35,
+    "n": 700,
+    "mean_p_fold": 0.8357294997640935,
+    "mae_onset_fold": 13.428298568653224,
+    "mean_p_hopf": 0.9415891573042662,
+    "mae_onset_hopf": 23.279633033061682,
+    "mean_p_transcritical": 0.8759022996007882,
+    "mae_onset_transcritical": 16.93883505666344,
+    "mean_p_noise_induced": 0.9250259764404754,
+    "mae_onset_noise_induced": 15.033774302718047,
+    "mean_p_exogenous_shock": 0.8637115300257368,
+    "mae_onset_exogenous_shock": 12.639250155144829,
+    "mean_p_mechanism_change": 0.7869018692905324,
+    "mae_onset_mechanism_change": 13.256818754960994,
+    "mean_p_null": 0.7764599632739791,
+    "mean_p_shock_robust": 0.804648113107391,
+    "mean_p_shock_fragile": 0.9303149576145094,
+    "brier_ci": [
+      0.09583992961223602,
+      0.12380937751370016
+    ],
+    "brier_skill_ci": [
+      0.06813817099307051,
+      0.1434532065034619
+    ],
+    "auc_ci": [
+      0.727418797787485,
+      0.8104763888098456
+    ],
+    "null_fpr_ci": [
+      0.3979691814376058,
+      0.6199136734339754
+    ],
+    "crps_onset_ci": [
+      10.91973157090548,
+      12.238448031198567
+    ],
+    "mae_onset_ci": [
+      14.754890619881829,
+      16.61295247687523
+    ],
+    "type_accuracy_ci": [
+      0.44739455776548054,
+      0.527460354477612
+    ],
+    "type_accuracy_mechanism_change_ci": [
+      0.31276456111566864,
+      0.5049555986526488
+    ]
+  }
+}

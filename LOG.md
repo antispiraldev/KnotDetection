@@ -28,6 +28,62 @@ Next: simulator and layer changes → re-audit on three seeds → hybrid method 
 evaluation with written expectations → `test_v2` (new seed) → score → Gate 4
 write-up.
 
+### Done since (commits `ba7736d`, `2df73e5`)
+
+- **Robust shocks and lead layers in, and re-audited.** Scale-feature excess is
+  +0.021, −0.011 and −0.047 on seeds 11–13. All nine layers pass. The closest is
+  clean on seed 11: +0.041, p=0.03, significant but under the materiality line.
+  That seed's fold worlds are the same draw as before and happen to have low noise
+  targets. No design failed on any seed except a single shock on seed 13.
+- **Where timing information lives (research pool, 450 pressure-driven worlds, seed
+  202).** A flexible model on record summaries predicts the *visible onset* 15%
+  better than the window prior (16.2 vs 19.0 steps). It predicts the *mechanism
+  time* not at all (13.0 vs 12.6). The gain comes entirely from worlds whose
+  forcing began inside the record (17.1 vs 20.9); where forcing starts after the
+  record ends, there is none (13.5 vs 13.5). Extrapolating the recovery rate to
+  zero was noise. **Conclusion: a record says how far a visible drift has gone, not
+  when the threshold will be crossed.** Knowing the type perfectly would only cut
+  timing error from 15.7 to 14.3, because shocks, mechanism changes and
+  noise-induced escapes are timed by chance, by construction.
+- **Hybrid method** (`methods/hybrid.py`) built on that finding.
+- **Development pool enlarged** to 700 worlds (public seed 102, zero failures), so
+  the learned methods have 350 training worlds per fold. Full nine-layer results
+  are in `inflection/notebooks/dev_eval_s102_all_layers.txt`.
+- `test_v2` seed committed at `2df73e5`.
+
+### Expectations for `test_v2`, written before it is built
+
+Development pool, two-fold CV:
+
+| layer | method | Brier skill | AUC | onset MAE (base 16.6) | type acc. |
+|---|---|---|---|---|---|
+| clean | feature clf. | +0.09 | 0.76 | 15.9 | 0.42 |
+| clean | hybrid | +0.11 | 0.77 | 15.8 | 0.49 |
+| harsh | feature clf. | +0.02 | 0.63 | 17.3 | 0.22 |
+| harsh | hybrid | +0.01 | 0.60 | 17.2 | 0.22 |
+| lead_30 | feature clf. | +0.04 | 0.70 | 15.7 | 0.36 |
+| lead_30 | hybrid | +0.06 | 0.73 | 15.7 | 0.44 |
+| any | generic EWS | ≈0 | 0.50–0.58 | = base | ≈ chance |
+
+Mean p(transition) on clean: null 0.78, mechanism change 0.77–0.79, **robust shock
+0.80, fragile shock 0.93–0.94**, Hopf 0.94–0.95.
+
+Predictions:
+
+1. **The shock fix works.** Robust shocks get about the same p as null worlds;
+   fragile shocks stay high. Overall whether-AUC is a little lower than on
+   `test_v1` (0.81), around 0.75–0.78, because half the shocks are now
+   unforeseeable.
+2. **The hybrid is best on type** (about 0.45–0.50 against 0.40 for the feature
+   classifier on clean) and roughly tied on whether.
+3. **Timing gains are real but small.** Both learned methods beat the base rate by
+   about 0.5–1 step on clean, with overlapping intervals, and lose to it under
+   `harsh`. Hopf timing stays worst (about 23–24 steps).
+4. **Skill decays with lead time, but slowly.** From clean to `lead_30`, AUC drops
+   about 0.03–0.07. Most of what is known 30 steps out is fragility at rest, which
+   doesn't depend on the final stretch of the record.
+5. **Generic EWS stays at chance** on every layer, including the lead layers.
+
 ---
 
 ## 2026-09-21 (Gate 3, part 2) — First blind results; stopping for review
