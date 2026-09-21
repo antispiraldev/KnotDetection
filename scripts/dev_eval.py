@@ -83,8 +83,13 @@ def main():
                   f"mae {s['mae_onset']:5.1f} cov90 {s['cover90_onset']:.2f} | "
                   f"type {s['type_accuracy']:.3f} mech {s['type_accuracy_mechanism_change']:.2f} "
                   f"({time.time() - t0:.0f}s)", flush=True)
-    (OUT / "dev_eval.json").write_text(json.dumps(results, indent=2))
-    print(f"wrote {OUT / 'dev_eval.json'}")
+    # Merge into results from earlier runs on the same pool, so a partial rerun (one
+    # layer, one method) does not wipe the rest -- which happened once.
+    dest = OUT / f"dev_eval_{Path(args.pool).stem.lstrip('_')}.json"
+    merged = json.loads(dest.read_text()) if dest.exists() else {}
+    merged.update(results)
+    dest.write_text(json.dumps(merged, indent=2))
+    print(f"wrote {dest}")
 
 
 if __name__ == "__main__":
