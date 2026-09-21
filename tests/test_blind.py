@@ -108,3 +108,12 @@ def test_unsealing_is_recorded_before_the_truth_is_read(built):
         assert blind.is_unsealed("t", p["ledger"])
     finally:
         truth.write_text(original)
+
+
+def test_release_is_refused_until_the_test_set_is_spent(built, tmp_path):
+    root, p, _ = built
+    with pytest.raises(BlindingViolation):
+        blind.release("t", released=tmp_path / "rel", **p)
+    blind.unseal("t", **p)
+    out = blind.release("t", released=tmp_path / "rel", **p)
+    assert (out / "seed.json").exists() and (out / "truth.json").exists()
