@@ -1,153 +1,160 @@
 {
   "generation": {
+    "failed_designs": [
+      {
+        "t_star": 128.00350425519326,
+        "target_cv": 0.09947869795440495,
+        "transition_type": "exogenous_shock"
+      }
+    ],
     "failures": {
-      "exogenous_shock": 0,
+      "exogenous_shock": 1,
       "fold": 0,
       "hopf": 0,
       "mechanism_change": 0,
-      "noise_induced": 6,
+      "noise_induced": 0,
       "null": 0,
       "transcritical": 0
     },
     "mean_attempts": {
-      "exogenous_shock": 3.05,
+      "exogenous_shock": 7.076923076923077,
       "fold": 1.575,
-      "hopf": 1.4,
-      "mechanism_change": 1.025,
-      "noise_induced": 13.058823529411764,
-      "null": 1.05,
-      "transcritical": 2.925
+      "hopf": 1.175,
+      "mechanism_change": 1.075,
+      "noise_induced": 19.825,
+      "null": 1.0,
+      "transcritical": 3.75
     },
-    "n_generated": 274,
+    "n_generated": 279,
     "n_requested": 280,
     "seed": 11
   },
   "layers": {
     "clean": {
-      "base_rate": 0.145985401459854,
-      "combined": 0.4124087591240876,
+      "base_rate": 0.14336917562724014,
+      "combined": 0.3835125448028674,
       "leak": false,
       "per_type_recall": {
-        "exogenous_shock": 0.275,
+        "exogenous_shock": 0.4358974358974359,
         "fold": 0.425,
-        "hopf": 0.75,
-        "mechanism_change": 0.35,
-        "noise_induced": 0.38235294117647056,
-        "null": 0.45,
-        "transcritical": 0.25
+        "hopf": 0.725,
+        "mechanism_change": 0.175,
+        "noise_induced": 0.225,
+        "null": 0.275,
+        "transcritical": 0.425
       },
-      "physical": 0.4051094890510949,
-      "scale_dependent": 0.10583941605839416,
-      "scale_dependent_null": 0.13686131386861314,
-      "scale_dependent_p": 0.9354838709677419
+      "physical": 0.3763440860215054,
+      "scale_dependent": 0.17562724014336917,
+      "scale_dependent_null": 0.14205495818399044,
+      "scale_dependent_p": 0.12903225806451613
     },
     "harsh": {
-      "base_rate": 0.145985401459854,
-      "combined": 0.17883211678832117,
+      "base_rate": 0.14336917562724014,
+      "combined": 0.2007168458781362,
       "leak": false,
       "per_type_recall": {
-        "exogenous_shock": 0.175,
-        "fold": 0.225,
-        "hopf": 0.125,
+        "exogenous_shock": 0.23076923076923078,
+        "fold": 0.175,
+        "hopf": 0.15,
         "mechanism_change": 0.2,
-        "noise_induced": 0.08823529411764706,
-        "null": 0.25,
-        "transcritical": 0.175
-      },
-      "physical": 0.19708029197080293,
-      "scale_dependent": 0.15693430656934307,
-      "scale_dependent_null": 0.13734793187347932,
-      "scale_dependent_p": 0.25806451612903225
-    },
-    "irregular": {
-      "base_rate": 0.145985401459854,
-      "combined": 0.3175182481751825,
-      "leak": false,
-      "per_type_recall": {
-        "exogenous_shock": 0.4,
-        "fold": 0.375,
-        "hopf": 0.375,
-        "mechanism_change": 0.25,
-        "noise_induced": 0.4117647058823529,
-        "null": 0.25,
-        "transcritical": 0.175
-      },
-      "physical": 0.28102189781021897,
-      "scale_dependent": 0.12773722627737227,
-      "scale_dependent_null": 0.13357664233576644,
-      "scale_dependent_p": 0.6451612903225806
-    },
-    "observation_noise": {
-      "base_rate": 0.145985401459854,
-      "combined": 0.31386861313868614,
-      "leak": false,
-      "per_type_recall": {
-        "exogenous_shock": 0.275,
-        "fold": 0.3,
-        "hopf": 0.5,
-        "mechanism_change": 0.325,
-        "noise_induced": 0.23529411764705882,
-        "null": 0.3,
-        "transcritical": 0.25
-      },
-      "physical": 0.3248175182481752,
-      "scale_dependent": 0.12043795620437957,
-      "scale_dependent_null": 0.13625304136253039,
-      "scale_dependent_p": 0.7096774193548387
-    },
-    "proxy": {
-      "base_rate": 0.145985401459854,
-      "combined": 0.3905109489051095,
-      "leak": false,
-      "per_type_recall": {
-        "exogenous_shock": 0.275,
-        "fold": 0.325,
-        "hopf": 0.775,
-        "mechanism_change": 0.3,
-        "noise_induced": 0.38235294117647056,
-        "null": 0.4,
+        "noise_induced": 0.175,
+        "null": 0.2,
         "transcritical": 0.275
       },
-      "physical": 0.3905109489051095,
-      "scale_dependent": 0.13503649635036497,
-      "scale_dependent_null": 0.13381995133819952,
-      "scale_dependent_p": 0.5806451612903226
+      "physical": 0.1935483870967742,
+      "scale_dependent": 0.1039426523297491,
+      "scale_dependent_null": 0.14026284348864992,
+      "scale_dependent_p": 0.967741935483871
+    },
+    "irregular": {
+      "base_rate": 0.14336917562724014,
+      "combined": 0.32616487455197135,
+      "leak": false,
+      "per_type_recall": {
+        "exogenous_shock": 0.38461538461538464,
+        "fold": 0.325,
+        "hopf": 0.3,
+        "mechanism_change": 0.325,
+        "noise_induced": 0.3,
+        "null": 0.325,
+        "transcritical": 0.325
+      },
+      "physical": 0.3118279569892473,
+      "scale_dependent": 0.11469534050179211,
+      "scale_dependent_null": 0.14623655913978492,
+      "scale_dependent_p": 0.9032258064516129
+    },
+    "observation_noise": {
+      "base_rate": 0.14336917562724014,
+      "combined": 0.33691756272401435,
+      "leak": false,
+      "per_type_recall": {
+        "exogenous_shock": 0.4358974358974359,
+        "fold": 0.375,
+        "hopf": 0.475,
+        "mechanism_change": 0.225,
+        "noise_induced": 0.2,
+        "null": 0.275,
+        "transcritical": 0.375
+      },
+      "physical": 0.30824372759856633,
+      "scale_dependent": 0.10752688172043011,
+      "scale_dependent_null": 0.14133811230585422,
+      "scale_dependent_p": 0.9032258064516129
+    },
+    "proxy": {
+      "base_rate": 0.14336917562724014,
+      "combined": 0.33691756272401435,
+      "leak": false,
+      "per_type_recall": {
+        "exogenous_shock": 0.3333333333333333,
+        "fold": 0.3,
+        "hopf": 0.65,
+        "mechanism_change": 0.25,
+        "noise_induced": 0.25,
+        "null": 0.3,
+        "transcritical": 0.275
+      },
+      "physical": 0.34408602150537637,
+      "scale_dependent": 0.16845878136200718,
+      "scale_dependent_null": 0.1389486260454003,
+      "scale_dependent_p": 0.22580645161290322
     },
     "short": {
-      "base_rate": 0.145985401459854,
-      "combined": 0.36496350364963503,
+      "base_rate": 0.14336917562724014,
+      "combined": 0.34408602150537637,
       "leak": false,
       "per_type_recall": {
-        "exogenous_shock": 0.3,
-        "fold": 0.45,
-        "hopf": 0.725,
-        "mechanism_change": 0.2,
-        "noise_induced": 0.23529411764705882,
-        "null": 0.275,
-        "transcritical": 0.35
+        "exogenous_shock": 0.3333333333333333,
+        "fold": 0.4,
+        "hopf": 0.75,
+        "mechanism_change": 0.175,
+        "noise_induced": 0.25,
+        "null": 0.225,
+        "transcritical": 0.275
       },
-      "physical": 0.3613138686131387,
-      "scale_dependent": 0.18248175182481752,
-      "scale_dependent_null": 0.13442822384428224,
-      "scale_dependent_p": 0.06451612903225806
+      "physical": 0.32616487455197135,
+      "scale_dependent": 0.15770609318996415,
+      "scale_dependent_null": 0.14109916367980885,
+      "scale_dependent_p": 0.22580645161290322
     },
     "sparse": {
-      "base_rate": 0.145985401459854,
-      "combined": 0.291970802919708,
+      "base_rate": 0.14336917562724014,
+      "combined": 0.3763440860215054,
       "leak": false,
       "per_type_recall": {
-        "exogenous_shock": 0.35,
-        "fold": 0.25,
-        "hopf": 0.35,
-        "mechanism_change": 0.225,
-        "noise_induced": 0.2647058823529412,
-        "null": 0.25,
-        "transcritical": 0.35
+        "exogenous_shock": 0.46153846153846156,
+        "fold": 0.3,
+        "hopf": 0.375,
+        "mechanism_change": 0.175,
+        "noise_induced": 0.45,
+        "null": 0.45,
+        "transcritical": 0.425
       },
-      "physical": 0.28102189781021897,
-      "scale_dependent": 0.10218978102189781,
-      "scale_dependent_null": 0.14221411192214115,
-      "scale_dependent_p": 1.0
+      "physical": 0.34050179211469533,
+      "scale_dependent": 0.17562724014336917,
+      "scale_dependent_null": 0.14874551971326164,
+      "scale_dependent_p": 0.1935483870967742
     }
   }
 }

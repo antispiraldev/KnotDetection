@@ -232,6 +232,21 @@ def test_cv_calibration_lands_near_its_target(one_per_type):
         assert 0.4 * target < achieved < 2.5 * target, (tt, target, achieved)
 
 
+def test_delivered_cv_is_pinned_to_its_target(one_per_type):
+    """The second calibration pass holds every accepted world within CV_TOL of target.
+
+    Before it existed, acceptance conditioned the path and near-critical worlds came
+    out 10-20% quieter than targeted, which let spread identify them. Tolerance is a
+    little wider than CV_TOL because the rerun's nonlinear response is not exactly
+    proportional to the noise.
+    """
+    from inflection.sim.generate import CV_TOL
+    for tt, w in one_per_type.items():
+        pre = w.raw[w.t < w.origin]
+        ratio = float(np.std(pre) / np.median(pre)) / w.params["target_cv"]
+        assert abs(ratio - 1) < 2.5 * CV_TOL, (tt, ratio)
+
+
 def test_calibration_factor_is_not_pinned_at_the_clip(one_per_type):
     """If a type always saturates the clip, its CV is not really being calibrated."""
     for tt, w in one_per_type.items():
@@ -258,3 +273,61 @@ def test_onset_of_an_instantaneous_step_is_never_early():
         onset = observable_onset(run)
         assert onset is not None
         assert step_at <= onset <= step_at + 3, (step_at, onset)
+
+
+def test_onset_of_a_multiplicative_step_is_never_early():
+    """Level x4 with noise x4, as in `mechanism_change`: the amplitude signal must not lead.
+
+    An absolute-spread amplitude signal read the quadrupled noise as an amplitude
+    change and, through its centred window, placed it up to seven steps before the
+    step. Spread is now measured relative to the local level.
+    """
+    from inflection.sim.integrate import Run
+    rng = np.random.default_rng(2)
+    t = np.arange(300.0)
+    for step_at in (106, 119, 140):
+        y = 1.0 + 0.03 * rng.standard_normal(300)
+        y[step_at:] = 4.0 * (1.0 + 0.03 * rng.standard_normal(300 - step_at))
+        run = Run(t=t, x=y[:, None], state_names=("y",), transition_type="x",
+                  transition_time=float(step_at), primary=0)
+        onset = observable_onset(run)
+        assert onset is not None
+        assert step_at <= onset <= step_at + 3, (step_at, onset)
+
+
+def test_growing_spiky_cycles_are_seen_promptly():
+    """Cycles with long flat troughs, growing from t=120.
+
+    Peaks fill ~28% of each cycle, about what the elite-commoner model produces. The
+    old median-of-deviation amplitude signal never fires on this series at all,
+    because most of each cycle is trough; on Hopf worlds it ran tens of steps late.
+    Much narrower spikes (under ~15% of the cycle) still escape the IQR, which sees a
+    quarter of its window -- a known limit, logged, not met by the models in use.
+    """
+    from inflection.sim.integrate import Run
+    rng = np.random.default_rng(3)
+    t = np.arange(300.0)
+    grow = np.clip((t - 120.0) / 60.0, 0.0, 1.0)
+    spikes = np.maximum(0.0, np.sin(2 * np.pi * t / 22.0)) ** 2
+    y = (1.0 + 0.02 * rng.standard_normal(300)) * (1.0 + 3.0 * grow * spikes)
+    run = Run(t=t, x=y[:, None], state_names=("y",), transition_type="hopf",
+              transition_time=120.0, primary=0)
+    onset = observable_onset(run)
+    assert onset is not None and 120.0 <= onset <= 150.0, onset
+
+
+def test_shock_worlds_are_still_in_the_high_state_when_the_shock_arrives(one_per_type):
+    """Otherwise the 'shock' is a noise-induced escape dated too late."""
+    from inflection.sim.integrate import Run
+    from inflection.sim.label import in_high_state_before
+    w = one_per_type["exogenous_shock"]
+    run = Run(t=w.t, x=w.x, state_names=w.state_names, transition_type=w.transition_type,
+              transition_time=w.transition_time, primary=w.primary, params=w.params)
+    assert in_high_state_before(run, w.transition_time)
+
+    t = np.arange(300.0)
+    y = np.full(300, 6.0)
+    y[110:] = 1.0              # escaped at 110; the shock is scheduled for 140
+    early = Run(t=t, x=y[:, None], state_names=("y",), transition_type="exogenous_shock",
+                transition_time=140.0, primary=0, params=dict(equilibria=[1.0, 3.0, 6.0]))
+    assert not in_high_state_before(early, 140.0)

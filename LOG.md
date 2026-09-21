@@ -5,6 +5,149 @@ parked as out of scope. Newest entries at the top.
 
 ---
 
+## 2026-09-21 (Gate 3, part 1) — Onset check, four simulator defects, blinding, first methods
+
+Gate 3 step 1 was meant to be a quick calibration of the onset detector. Doing it
+carefully (looking at individual worlds, then re-auditing each fix across three
+seeds) turned up four more defects in the simulator. All are fixed. The pattern
+behind three of them is now familiar: **calibration undone by selection**.
+
+### Step 1: the onset detector against an oracle
+
+`scripts/oracle_onset.py`. The oracle is a two-sided Gaussian likelihood-ratio CUSUM
+per world. It is told the world's pre-change behaviour (baseline window) and
+post-change behaviour (last 40 observations). Its threshold is set per world against
+AR(1) surrogates fitted to that world's baseline. Those surrogates re-estimate their
+own baseline, which cut false alarms on null worlds from 60% to 3–15%.
+
+- For the level-driven types, the fixed detector is **at or ahead of** the oracle.
+  The gap (fixed − oracle) has a median of 0 for mechanism change and between −5 and
+  −26 for the rest. A two-point likelihood ratio is not optimal for gradual drifts,
+  so "ahead" there says the oracle is weak, not that the detector is clairvoyant.
+  For abrupt changes the two agree to within a step.
+- **Hopf onsets ran late.** In the worst tenth of worlds the detector was 45+ steps
+  behind the oracle, with large cycles plainly visible in plots. The amplitude
+  signal was the rolling median of |deviation|. On relaxation-type cycles with long
+  flat troughs that median barely moves.
+- **Fix:** the amplitude signal is now the rolling IQR (window 30, threshold 3×
+  baseline) of the deviation from the local level, *as a fraction of that level*.
+  - Using the IQR alone brought back the early-firing defect on steps. Level ×4 with
+    multiplicative noise ×4 read as an amplitude change, up to 7 steps before
+    `mechanism_change`.
+  - Measuring the deviation relative to the level fixes that. A pure level change
+    leaves relative spread unchanged, while a Hopf, whose mean doesn't move, shows
+    its full amplitude growth.
+  - Every non-Hopf onset in the Gate 2 pool is unchanged to the step. The Hopf p90 gap
+    fell from +45 to +12, and to +24 on a fresh draw.
+  - The remaining tail is mostly the oracle firing on small bumps. Its Gaussian
+    surrogates lack heavy tails.
+  - Also tried and rejected: other quantiles of |deviation|, rolling range/std/IQR of
+    the raw series, IQR of first differences, and a level-attribution rule. Details
+    are in this session's transcript, not repeated here.
+- **Known limit:** spikes narrower than about 15% of the cycle still escape the IQR,
+  which sees a quarter of its window. The models in use don't produce them, and a
+  test records the boundary.
+
+### Defect 1: `exogenous_shock` worlds that had already collapsed
+
+Six of 40 shock worlds had escaped on their own, 6 to 57 steps *before* the shock,
+because they sit in the same near-critical window as `noise_induced`. The label
+dated the transition to the shock, so these were noise-induced escapes carrying the
+wrong type and a time that was too late. The shock, which has a fixed target,
+actually pushed the collapsed state *up*. Generation now rejects shock worlds that
+are below the separatrix at the last observation before the shock
+(`label.in_high_state_before`). Oracle alarms before the shock went from 10% to 0.
+
+### Defect 2: accepted runs were quieter than their calibration
+
+With the Gate 2 fixes in, three seeds all showed scale-feature excess of about +0.04
+over chance (p ≈ 0.07–0.08 each): below the 0.05 materiality line, but consistent.
+Pooling the three draws (829 worlds) located it. Target CVs were balanced across
+types, but *delivered* CV was 0.81× target for shock, 0.86× for fold, 0.90× for
+noise_induced and ~1.0 for the far-from-critical types. The pilot measures an
+unconditioned path, but acceptance conditions the path (no visible departure before
+the origin), which excludes exactly the big excursions that near-critical worlds
+make. **Fix:** a second calibration pass on the accepted run. If delivered CV is more
+than 10% off target, the same noise increments are re-run at the corrected scale,
+and the rerun must pass acceptance again. Delivered/target is now 0.96–1.00 for every
+type. `gate2_report.py` prints this table from now on.
+
+### Defect 3: `noise_induced` designs failing at both ends of the CV range
+
+Pinning the CV exposed an older problem. `noise_induced` failed 9–11 of 40 designs
+per pool: low-CV designs never escaped, and high-CV designs escaped before the
+window. Both types drew a/a_c from a fixed window (0.985–0.996) regardless of noise,
+but escape is governed by the barrier *in units of the fluctuation size*. At CV
+0.025, not one attempt in 120 escaped. The failures were selection on target CV by
+the failure route, the same class as the Gate 2 `exogenous_shock` defect.
+Widening the a/a_c window did not help; a sweep showed why. **Fix:** both near-
+critical types now draw the barrier height (high state to separatrix, relative to
+the level) as ρ × target CV, with ρ ~ U(1.5, 3.0) (`models._a_for_barrier`). Quiet
+worlds sit nearer the fold, as a noise-driven escape requires. Even the best ρ lands
+only 5–15% of escapes in the 50-step window, because escape times are roughly
+exponential, so the attempt cap went from 60 to 250. In spot checks, `noise_induced`
+failed 0 of 40 designs across CV 0.022–0.145. Shock failed 1 of 40, at CV 0.145 and
+a late t*: there a collapse is often too small to clear 6 MADs.
+
+A consequence to keep in view: in `noise_induced` worlds, CV and closeness to the fold
+are now linked (quiet worlds show stronger slowing down). That is physics, and it is
+what the audit's physical tier is for, but a classifier could learn the joint pattern.
+
+### Defect 4 (averted): changing the drift window to help EWS
+
+Generic EWS came out near chance in development (below), and the drift start is
+often after the origin. So I considered moving the drift window earlier. I checked
+first: EWS AUC is 0.59–0.64 whether the forcing ran 30–60 steps before the origin or
+starts after it. The weakness is the Kendall-τ statistic on 90-point records (null
+worlds give τ = ±0.5 by chance, as in Jäger & Füllsack 2019), not missing forcing.
+The simulator was left alone. Changing it would have been a researcher degree of
+freedom with no justification.
+
+### Step 2: blinding infrastructure — `inflection/eval/blind.py`
+
+An append-only ledger (`inflection/data/ledger.jsonl`, tracked in git) with
+salted-hash seed commitment, pool build (with the generator's git revision), forecast
+registration, unseal-before-read, and a check that refuses any forecast file not
+registered, byte for byte, before the first unseal. Test manifests are stripped of
+the seed and per-type failure counts; the generic manifest would have published both.
+Test world ids are renumbered, since generator ids hash a string that includes the
+type. `.gitignore` now excludes every `sealed/` directory. There are 8 tests.
+
+### Steps 3–5: interface, first methods, scoring
+
+- `methods/base.py`: `Record` → `Forecast`, with p(transition), 19 onset quantiles
+  and 7 type probabilities.
+- `methods/baselines.py`: `BaseRate`; `OwnHistory`, which extrapolates trend plus
+  AR(1) noise and applies the level-departure rule, with its probability calibrated
+  by logistic regression on the development pool.
+- `methods/ews.py`: the standard recipe (Gaussian detrending, rolling-window lag-1
+  AC and variance, Kendall τ), mapped to probabilities by logistic regression.
+- `eval/score.py`:
+  - **Whether:** Brier, Brier skill, AUC and ECE.
+  - **Null false-positive rate:** read off the ROC at 80% sensitivity. A p>0.5 cut
+    is 1.0 for every calibrated method, since 6 of 7 worlds transition.
+  - **When:** CRPS from quantiles, MAE of the median against the onset and the
+    mechanism time, and 90% coverage.
+  - **What:** accuracy excluding mechanism change, with mechanism change separate;
+    recall by type; log loss.
+  - Bootstrap CIs for all of the above.
+- `scripts/dev_eval.py`: two-fold CV on a development pool.
+- `scripts/gate3_run.py`: seed → build → forecast → score.
+
+**Development results (old Gate 2 pool, clean layer, 2-fold CV):**
+
+| method | Brier skill | AUC | null FPR@80% | onset MAE | type acc. |
+|---|---|---|---|---|---|
+| base rate | 0.00 | 0.50 | 0.80 | 17.7 | 0.17 |
+| own history | +0.13 | 0.77 | 0.58 | 36.8 | 0.17 |
+| generic EWS | −0.00 | 0.55 | 0.78 | 17.7 | 0.21 |
+
+Under `harsh`, everything is at chance. The base rate's "when" is good by design,
+because onsets cluster in the shared window, so any method's "when" has to beat about
+17 steps to count.
+
+---
+
 ## 2026-09-21 — Gate 2 closed; plan for Gate 3
 
 Luca delegated the three Gate 2 decisions ("Do what you think is best"). Decided:

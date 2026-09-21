@@ -67,6 +67,11 @@ DRIFT_START_WINDOW = (0.10, 0.60)
 # from one shared range, makes the rates overlap.
 TIME_SCALE = (0.6, 1.7)
 
+# Barrier between the high state and the separatrix, in units of the delivered
+# fluctuation size, for the two near-critical bistable types. See `_a_for_barrier`.
+BARRIER_RHO = (1.5, 3.0)
+DEFAULT_TARGET_CV = 0.085   # used only when a spec is built outside generation
+
 
 def draw_noise(rng: np.random.Generator, n: int = 1) -> np.ndarray:
     return rng.uniform(*NOISE_ENVELOPE, size=n)
@@ -173,14 +178,43 @@ def _may_rhs(a_of_t: Callable[[float], float], r: float, K: float, h: float):
     return rhs
 
 
-def _bistable_a(rng: np.random.Generator, p: dict, lo: float, hi: float) -> float:
-    """An extraction level with three equilibria, i.e. inside the bistable window."""
+def _relative_barrier(a: float, p: dict) -> float:
+    eq = may_equilibria(a, **p)
+    if len(eq) != 3:
+        return float("nan")
+    _, mid, high = sorted(eq)
+    return (high - mid) / high
+
+
+def _a_for_barrier(p: dict, rel_barrier: float) -> float:
+    """The extraction level whose high state sits `rel_barrier` (a fraction of its own
+    level) above the separatrix.
+
+    Whether a noise-driven escape happens, and when, is governed by the barrier
+    measured in units of the fluctuation size -- not by the distance to the fold in
+    parameter space. The two near-critical types used to draw a/a_c from a fixed
+    window, 0.985-0.996, whatever their noise. Since the delivered fluctuation size is
+    a design variable drawn from one shared range, that fixed window meant a quiet
+    world had an effectively enormous barrier and a loud one almost none: at CV 0.025
+    not one `noise_induced` attempt in 120 escaped at all, and at 0.14 three in four
+    escaped before the window. Generation then failed on a quarter of noise-induced
+    designs, concentrated at both ends of the CV range -- selection on a nuisance
+    variable by the failure route (LOG.md, Gate 3 step 1).
+    """
     a_c, _ = may_fold_point(**p)
-    for _ in range(200):
-        a = a_c * rng.uniform(lo, hi)
-        if len(may_equilibria(a, **p)) == 3:
-            return a
-    raise RuntimeError("could not find a bistable parameter value")
+    grid = a_c * (1.0 - np.geomspace(1e-7, 0.6, 500))
+    vals = np.array([_relative_barrier(a, p) for a in grid])
+    above = np.where(np.isfinite(vals) & (vals >= rel_barrier))[0]
+    if len(above) == 0 or above[0] == 0:
+        raise RuntimeError("barrier not reachable inside the bistable window")
+    j = above[0]
+    return float(brentq(lambda a: _relative_barrier(a, p) - rel_barrier, grid[j], grid[j - 1]))
+
+
+def _near_critical_a(rng: np.random.Generator, p: dict, target_cv: float | None) -> float:
+    """Extraction level for a bistable world with barrier `rho` x the fluctuation size."""
+    rho = rng.uniform(*BARRIER_RHO)
+    return _a_for_barrier(p, rho * (target_cv or DEFAULT_TARGET_CV))
 
 
 def spec_fold(rng: np.random.Generator, T: float, t_star: float) -> Spec:
@@ -225,19 +259,21 @@ def spec_null(rng: np.random.Generator, T: float, t_star: float | None = None) -
     )
 
 
-def spec_noise_induced(rng: np.random.Generator, T: float, t_star: float | None = None) -> Spec:
+def spec_noise_induced(rng: np.random.Generator, T: float, t_star: float | None = None,
+                       target_cv: float | None = None) -> Spec:
     """Parked in a shallow basin; escape is diffusive, not driven.
 
-    The escape comes from basin geometry -- `a` sits at 98.5-99.6% of the fold, so
-    the barrier to the low state is small -- and not from louder noise, which would
-    make the type trivially identifiable. The system is therefore genuinely
+    The escape comes from basin geometry -- the barrier to the low state is only
+    1.5-3 fluctuation sizes high (`BARRIER_RHO`) -- and not from louder noise, which
+    would make the type trivially identifiable. So a quiet world sits nearer the
+    fold than a loud one, as a noise-driven escape requires. The system is genuinely
     near-critical and *does* show elevated variance. That is intended: `fold` and
     `exogenous_shock` are near-critical too, so the signature identifies none of
     them. What separates this type is that nothing drifts and nothing arrives; the
     escape is a fluctuation that happens to clear the barrier.
     """
     p = draw_may_params(rng)
-    a = _bistable_a(rng, p, 0.985, 0.996)
+    a = _near_critical_a(rng, p, target_cv)
     eq = may_equilibria(a, **p)
     n0 = max(eq)
     return Spec(
@@ -252,15 +288,17 @@ def spec_noise_induced(rng: np.random.Generator, T: float, t_star: float | None 
     )
 
 
-def spec_exogenous_shock(rng: np.random.Generator, T: float, t_star: float) -> Spec:
+def spec_exogenous_shock(rng: np.random.Generator, T: float, t_star: float,
+                         target_cv: float | None = None) -> Spec:
     """Quiet bistable system flipped by a single outside pulse (plague, climate failure).
 
-    Drawn from the same near-critical window as `noise_induced` so the two cannot be
-    told apart by their resting statistics -- only by whether the departure is a
-    fluctuation or an arrival.
+    Drawn with the same barrier-in-noise-units as `noise_induced` so the two cannot
+    be told apart by their resting statistics -- only by whether the departure is a
+    fluctuation or an arrival. Worlds that escape on their own before the shock are
+    rejected at generation (`label.in_high_state_before`).
     """
     p = draw_may_params(rng)
-    a = _bistable_a(rng, p, 0.985, 0.996)
+    a = _near_critical_a(rng, p, target_cv)
     eq = may_equilibria(a, **p)
     n0, separatrix = max(eq), sorted(eq)[1]
     target = separatrix * rng.uniform(0.45, 0.80)
@@ -456,6 +494,13 @@ def _apply_time_scale(spec: Spec, tau: float) -> Spec:
     return spec
 
 
-def build(transition_type: str, rng: np.random.Generator, T: float, t_star: float | None) -> Spec:
-    spec = BUILDERS[transition_type](rng, T, t_star)
+NEEDS_TARGET_CV = ("noise_induced", "exogenous_shock")
+
+
+def build(transition_type: str, rng: np.random.Generator, T: float, t_star: float | None,
+          target_cv: float | None = None) -> Spec:
+    if transition_type in NEEDS_TARGET_CV:
+        spec = BUILDERS[transition_type](rng, T, t_star, target_cv=target_cv)
+    else:
+        spec = BUILDERS[transition_type](rng, T, t_star)
     return _apply_time_scale(spec, float(rng.uniform(*TIME_SCALE)))

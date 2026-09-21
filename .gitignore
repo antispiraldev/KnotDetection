@@ -5,7 +5,7 @@ __pycache__/
 
 # Sealed test material: seeds and outcomes must never reach the working tree
 # in readable form while methods are being developed.
-inflection/data/sealed/
+**/sealed/
 
 # Regenerable from a seed; large and not worth versioning.
-inflection/notebooks/_pool_cache.pkl
+inflection/notebooks/_*.pkl

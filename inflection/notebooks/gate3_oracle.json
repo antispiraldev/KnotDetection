@@ -1,0 +1,2850 @@
+{
+  "summary": {
+    "fold": {
+      "n": 40,
+      "missed": 0,
+      "gap_p10": -40.8,
+      "gap_p50": -26.0,
+      "gap_p90": -7.799999999999997,
+      "alarm_minus_onset_p50": 26.0,
+      "cp_minus_tstar_p50": 26.004395931610965
+    },
+    "hopf": {
+      "n": 40,
+      "missed": 0,
+      "gap_p10": -13.1,
+      "gap_p50": -3.0,
+      "gap_p90": 7.800000000000011,
+      "alarm_minus_onset_p50": 20.5,
+      "cp_minus_tstar_p50": 18.757361566740443
+    },
+    "transcritical": {
+      "n": 40,
+      "missed": 0,
+      "gap_p10": -27.4,
+      "gap_p50": -4.5,
+      "gap_p90": 7.200000000000003,
+      "alarm_minus_onset_p50": 4.5,
+      "cp_minus_tstar_p50": 2.4056135400902647
+    },
+    "noise_induced": {
+      "n": 40,
+      "missed": 0,
+      "gap_p10": -17.299999999999997,
+      "gap_p50": -7.0,
+      "gap_p90": -1.0,
+      "alarm_minus_onset_p50": 7.0,
+      "cp_minus_tstar_p50": 17.0
+    },
+    "exogenous_shock": {
+      "n": 39,
+      "missed": 0,
+      "gap_p10": -8.0,
+      "gap_p50": -4.0,
+      "gap_p90": 0.0,
+      "alarm_minus_onset_p50": 4.0,
+      "cp_minus_tstar_p50": 6.767227235725798
+    },
+    "mechanism_change": {
+      "n": 40,
+      "missed": 0,
+      "gap_p10": 0.0,
+      "gap_p50": 0.0,
+      "gap_p90": 1.0,
+      "alarm_minus_onset_p50": 0.0,
+      "cp_minus_tstar_p50": 1.4433110388118422
+    }
+  },
+  "rows": [
+    {
+      "world_id": "163b89dec8950565",
+      "transition_type": "fold",
+      "transition_time": 139.2798710111802,
+      "onset": 146.0,
+      "alarm": 168.0,
+      "changepoint": 168.0,
+      "threshold": 0.0,
+      "phi": 0.5039445694276375
+    },
+    {
+      "world_id": "82d974036a6a8fd6",
+      "transition_type": "fold",
+      "transition_time": 105.73299471205117,
+      "onset": 105.0,
+      "alarm": 140.0,
+      "changepoint": 140.0,
+      "threshold": 0.0,
+      "phi": 0.40647619219457864
+    },
+    {
+      "world_id": "a4fec58e2fcf6084",
+      "transition_type": "fold",
+      "transition_time": 119.31945500964497,
+      "onset": 125.0,
+      "alarm": 164.0,
+      "changepoint": 164.0,
+      "threshold": 0.0,
+      "phi": 0.47354766624373884
+    },
+    {
+      "world_id": "68fd42ef564e4f26",
+      "transition_type": "fold",
+      "transition_time": 126.72054420563347,
+      "onset": 105.0,
+      "alarm": 142.0,
+      "changepoint": 142.0,
+      "threshold": 0.0,
+      "phi": 0.11695166995331248
+    },
+    {
+      "world_id": "7c6996e1a5a5001f",
+      "transition_type": "mechanism_change",
+      "transition_time": 119.42248717231404,
+      "onset": 122.0,
+      "alarm": 122.0,
+      "changepoint": 122.0,
+      "threshold": 0.0,
+      "phi": 0.530633912040876
+    },
+    {
+      "world_id": "14f44acf7cc2f05b",
+      "transition_type": "noise_induced",
+      "transition_time": 117.0,
+      "onset": 129.0,
+      "alarm": 138.0,
+      "changepoint": 138.0,
+      "threshold": 0.0,
+      "phi": 0.8308442045544543
+    },
+    {
+      "world_id": "4d033ca3bc2474f7",
+      "transition_type": "fold",
+      "transition_time": 105.47023564317595,
+      "onset": 107.0,
+      "alarm": 143.0,
+      "changepoint": 143.0,
+      "threshold": 0.0,
+      "phi": 0.7742335257414538
+    },
+    {
+      "world_id": "9c243d2c049dabed",
+      "transition_type": "fold",
+      "transition_time": 117.97778988981982,
+      "onset": 137.0,
+      "alarm": 158.0,
+      "changepoint": 158.0,
+      "threshold": 0.0,
+      "phi": 0.6853473199768604
+    },
+    {
+      "world_id": "aa50c44528da2e3f",
+      "transition_type": "null",
+      "transition_time": null,
+      "onset": null,
+      "alarm": null,
+      "changepoint": null,
+      "threshold": 44.51378138965874,
+      "phi": 0.5309277526372563
+    },
+    {
+      "world_id": "221ca65674dafa13",
+      "transition_type": "null",
+      "transition_time": null,
+      "onset": null,
+      "alarm": null,
+      "changepoint": null,
+      "threshold": 34.88592476729924,
+      "phi": 0.6326994625968936
+    },
+    {
+      "world_id": "f5184d79f9b58733",
+      "transition_type": "mechanism_change",
+      "transition_time": 105.47384352945664,
+      "onset": 108.0,
+      "alarm": 107.0,
+      "changepoint": 107.0,
+      "threshold": 0.0,
+      "phi": 0.19668131327084096
+    },
+    {
+      "world_id": "1546b058873a8447",
+      "transition_type": "hopf",
+      "transition_time": 136.60298729660093,
+      "onset": 139.0,
+      "alarm": 186.0,
+      "changepoint": 143.0,
+      "threshold": 256.38118615683015,
+      "phi": 0.9353322417788414
+    },
+    {
+      "world_id": "72f4206e2e81ee8b",
+      "transition_type": "hopf",
+      "transition_time": 149.6544496291769,
+      "onset": 227.0,
+      "alarm": 262.0,
+      "changepoint": 227.0,
+      "threshold": 555.0825958399649,
+      "phi": 0.9504373623111141
+    },
+    {
+      "world_id": "64ece0ba080c2d66",
+      "transition_type": "exogenous_shock",
+      "transition_time": 144.42658881372643,
+      "onset": 148.0,
+      "alarm": 149.0,
+      "changepoint": 149.0,
+      "threshold": 0.0,
+      "phi": 0.8192659627228683
+    },
+    {
+      "world_id": "e5044e122204db56",
+      "transition_type": "mechanism_change",
+      "transition_time": 121.88946802110377,
+      "onset": 127.0,
+      "alarm": 125.0,
+      "changepoint": 125.0,
+      "threshold": 0.0,
+      "phi": 0.9009722070112615
+    },
+    {
+      "world_id": "7222879e631b6411",
+      "transition_type": "transcritical",
+      "transition_time": 101.06496070192931,
+      "onset": 111.0,
+      "alarm": 106.0,
+      "changepoint": 106.0,
+      "threshold": 0.0,
+      "phi": 0.39968201805880926
+    },
+    {
+      "world_id": "32af29e7b5432488",
+      "transition_type": "transcritical",
+      "transition_time": 129.31053856579985,
+      "onset": 111.0,
+      "alarm": 138.0,
+      "changepoint": 138.0,
+      "threshold": 0.0,
+      "phi": 0.4652411441750121
+    },
+    {
+      "world_id": "c2c21bc5210ae1bf",
+      "transition_type": "exogenous_shock",
+      "transition_time": 129.64344440326477,
+      "onset": 150.0,
+      "alarm": 150.0,
+      "changepoint": 150.0,
+      "threshold": 0.0,
+      "phi": 0.8061653435232796
+    },
+    {
+      "world_id": "d7e05e94cd9a212e",
+      "transition_type": "null",
+      "transition_time": null,
+      "onset": null,
+      "alarm": null,
+      "changepoint": null,
+      "threshold": 18.746808311077526,
+      "phi": 0.17610289504504942
+    },
+    {
+      "world_id": "62a8b4188e5f79cd",
+      "transition_type": "fold",
+      "transition_time": 135.56467830620335,
+      "onset": 121.0,
+      "alarm": 156.0,
+      "changepoint": 156.0,
+      "threshold": 0.0,
+      "phi": 0.3714798927028278
+    },
+    {
+      "world_id": "427479dcaa65cb36",
+      "transition_type": "mechanism_change",
+      "transition_time": 116.67874254432915,
+      "onset": 118.0,
+      "alarm": 118.0,
+      "changepoint": 118.0,
+      "threshold": 0.0,
+      "phi": 0.3489170723025494
+    },
+    {
+      "world_id": "4b0aac1ccbc3a5af",
+      "transition_type": "hopf",
+      "transition_time": 112.6607569521592,
+      "onset": 131.0,
+      "alarm": 135.0,
+      "changepoint": 98.0,
+      "threshold": 156.44436516914527,
+      "phi": 0.9235000101060237
+    },
+    {
+      "world_id": "7ce27ee149e5e992",
+      "transition_type": "transcritical",
+      "transition_time": 121.24263939038484,
+      "onset": 114.0,
+      "alarm": 111.0,
+      "changepoint": 111.0,
+      "threshold": 0.0,
+      "phi": 0.5841201748756581
+    },
+    {
+      "world_id": "fd0a7e51da45c976",
+      "transition_type": "exogenous_shock",
+      "transition_time": 120.2327727642742,
+      "onset": 121.0,
+      "alarm": 127.0,
+      "changepoint": 127.0,
+      "threshold": 0.0,
+      "phi": 0.9093440499194642
+    },
+    {
+      "world_id": "b6a7eacb92fd6641",
+      "transition_type": "mechanism_change",
+      "transition_time": 127.56052600662511,
+      "onset": 128.0,
+      "alarm": 129.0,
+      "changepoint": 129.0,
+      "threshold": 0.0,
+      "phi": 0.10363071320355055
+    },
+    {
+      "world_id": "f2e5841e64839f72",
+      "transition_type": "null",
+      "transition_time": null,
+      "onset": null,
+      "alarm": null,
+      "changepoint": null,
+      "threshold": 25.04727485373952,
+      "phi": 0.36788357116403386
+    },
+    {
+      "world_id": "fb70249b8355be5b",
+      "transition_type": "exogenous_shock",
+      "transition_time": 121.60589777499027,
+      "onset": 124.0,
+      "alarm": 126.0,
+      "changepoint": 126.0,
+      "threshold": 0.0,
+      "phi": 0.6759940845846014
+    },
+    {
+      "world_id": "968d83e611d0d8b8",
+      "transition_type": "transcritical",
+      "transition_time": 100.57574757048238,
+      "onset": 106.0,
+      "alarm": 97.0,
+      "changepoint": 97.0,
+      "threshold": 0.0,
+      "phi": 0.533555177256168
+    },
+    {
+      "world_id": "eb4d595db5b3ba4e",
+      "transition_type": "exogenous_shock",
+      "transition_time": 141.90074237728743,
+      "onset": 142.0,
+      "alarm": 150.0,
+      "changepoint": 150.0,
+      "threshold": 0.0,
+      "phi": 0.8860307055110453
+    },
+    {
+      "world_id": "792cb4d0967dac59",
+      "transition_type": "transcritical",
+      "transition_time": 129.06765119675748,
+      "onset": 99.0,
+      "alarm": 124.0,
+      "changepoint": 124.0,
+      "threshold": 0.0,
+      "phi": 0.6623271036264594
+    },
+    {
+      "world_id": "9a8944a64a8c6366",
+      "transition_type": "exogenous_shock",
+      "transition_time": 123.42388570360228,
+      "onset": 124.0,
+      "alarm": 130.0,
+      "changepoint": 130.0,
+      "threshold": 0.0,
+      "phi": 0.9153290104261114
+    },
+    {
+      "world_id": "7f020788a3789463",
+      "transition_type": "fold",
+      "transition_time": 104.76541339835713,
+      "onset": 97.0,
+      "alarm": 124.0,
+      "changepoint": 124.0,
+      "threshold": 0.0,
+      "phi": 0.4434171439988224
+    },
+    {
+      "world_id": "7c021131b9bd07e8",
+      "transition_type": "mechanism_change",
+      "transition_time": 101.6177142547169,
+      "onset": 104.0,
+      "alarm": 104.0,
+      "changepoint": 104.0,
+      "threshold": 0.0,
+      "phi": 0.4728970375659865
+    },
+    {
+      "world_id": "196f6c1a42e682d3",
+      "transition_type": "mechanism_change",
+      "transition_time": 128.7913750437361,
+      "onset": 130.0,
+      "alarm": 130.0,
+      "changepoint": 130.0,
+      "threshold": 0.0,
+      "phi": 0.5645084277054953
+    },
+    {
+      "world_id": "119a797ffb3230ce",
+      "transition_type": "noise_induced",
+      "transition_time": 124.0,
+      "onset": 129.0,
+      "alarm": 129.0,
+      "changepoint": 129.0,
+      "threshold": 0.0,
+      "phi": 0.5784213138103604
+    },
+    {
+      "world_id": "872a0698f616d4fa",
+      "transition_type": "hopf",
+      "transition_time": 127.74679653267393,
+      "onset": 185.0,
+      "alarm": 226.0,
+      "changepoint": 183.0,
+      "threshold": 614.7019040866014,
+      "phi": 0.9647371023560003
+    },
+    {
+      "world_id": "f20bd23138a628bb",
+      "transition_type": "null",
+      "transition_time": null,
+      "onset": null,
+      "alarm": null,
+      "changepoint": null,
+      "threshold": 18.21596130631209,
+      "phi": 0.3114057760534674
+    },
+    {
+      "world_id": "d9cf1de4b454f74f",
+      "transition_type": "fold",
+      "transition_time": 129.26735647278505,
+      "onset": 128.0,
+      "alarm": 141.0,
+      "changepoint": 141.0,
+      "threshold": 0.0,
+      "phi": 0.536894569226721
+    },
+    {
+      "world_id": "ee0012ab3ff594f8",
+      "transition_type": "exogenous_shock",
+      "transition_time": 111.5826529499615,
+      "onset": 115.0,
+      "alarm": 118.0,
+      "changepoint": 118.0,
+      "threshold": 0.0,
+      "phi": 0.8506089392347239
+    },
+    {
+      "world_id": "a6fa6003a3c3117e",
+      "transition_type": "transcritical",
+      "transition_time": 148.92713573409526,
+      "onset": 174.0,
+      "alarm": 144.0,
+      "changepoint": 144.0,
+      "threshold": 0.0,
+      "phi": 0.5231800824181424
+    },
+    {
+      "world_id": "7980ddd43c8c06e3",
+      "transition_type": "hopf",
+      "transition_time": 147.00700151038592,
+      "onset": 152.0,
+      "alarm": 198.0,
+      "changepoint": 152.0,
+      "threshold": 183.59756158618086,
+      "phi": 0.9020137325011214
+    },
+    {
+      "world_id": "ea1d716419bd374b",
+      "transition_type": "null",
+      "transition_time": null,
+      "onset": null,
+      "alarm": null,
+      "changepoint": null,
+      "threshold": 26.96920065910163,
+      "phi": 0.3382753217349995
+    },
+    {
+      "world_id": "8f7bf0a8bd980499",
+      "transition_type": "transcritical",
+      "transition_time": 133.91556044385467,
+      "onset": 127.0,
+      "alarm": 122.0,
+      "changepoint": 122.0,
+      "threshold": 0.0,
+      "phi": 0.4857639180967474
+    },
+    {
+      "world_id": "260673ae750461ac",
+      "transition_type": "exogenous_shock",
+      "transition_time": 99.40206470665363,
+      "onset": 100.0,
+      "alarm": 104.0,
+      "changepoint": 104.0,
+      "threshold": 0.0,
+      "phi": 0.8050329748558177
+    },
+    {
+      "world_id": "8642a5ff098d6055",
+      "transition_type": "mechanism_change",
+      "transition_time": 139.5528519157512,
+      "onset": 141.0,
+      "alarm": 141.0,
+      "changepoint": 141.0,
+      "threshold": 0.0,
+      "phi": 0.45183137865016015
+    },
+    {
+      "world_id": "256193cb9e51c332",
+      "transition_type": "transcritical",
+      "transition_time": 117.8946581479744,
+      "onset": 111.0,
+      "alarm": 112.0,
+      "changepoint": 112.0,
+      "threshold": 0.0,
+      "phi": 0.503299022518507
+    },
+    {
+      "world_id": "4fa9eda139b5df95",
+      "transition_type": "fold",
+      "transition_time": 146.5134511422591,
+      "onset": 137.0,
+      "alarm": 139.0,
+      "changepoint": 139.0,
+      "threshold": 0.0,
+      "phi": 0.5273930132438901
+    },
+    {
+      "world_id": "eeac1eaffadf2c38",
+      "transition_type": "fold",
+      "transition_time": 140.81580924670888,
+      "onset": 149.0,
+      "alarm": 157.0,
+      "changepoint": 157.0,
+      "threshold": 0.0,
+      "phi": 0.4436799574559887
+    },
+    {
+      "world_id": "4bbe5323bafd0de8",
+      "transition_type": "hopf",
+      "transition_time": 112.39675053188904,
+      "onset": 136.0,
+      "alarm": 157.0,
+      "changepoint": 130.0,
+      "threshold": 129.4262521651036,
+      "phi": 0.9270045685200906
+    },
+    {
+      "world_id": "8f78945502921f66",
+      "transition_type": "mechanism_change",
+      "transition_time": 111.60270914276019,
+      "onset": 114.0,
+      "alarm": 113.0,
+      "changepoint": 113.0,
+      "threshold": 0.0,
+      "phi": 0.7694520063707088
+    },
+    {
+      "world_id": "155cd5c7154a40de",
+      "transition_type": "noise_induced",
+      "transition_time": 114.0,
+      "onset": 137.0,
+      "alarm": 144.0,
+      "changepoint": 144.0,
+      "threshold": 0.0,
+      "phi": 0.8312140190605364
+    },
+    {
+      "world_id": "70c6a3915996414c",
+      "transition_type": "exogenous_shock",
+      "transition_time": 140.98432361347298,
+      "onset": 142.0,
+      "alarm": 147.0,
+      "changepoint": 147.0,
+      "threshold": 0.0,
+      "phi": 0.7828596283033684
+    },
+    {
+      "world_id": "eefa7884982e6a63",
+      "transition_type": "mechanism_change",
+      "transition_time": 118.5135162935054,
+      "onset": 121.0,
+      "alarm": 121.0,
+      "changepoint": 121.0,
+      "threshold": 0.0,
+      "phi": 0.5595983426284143
+    },
+    {
+      "world_id": "b32d1584f94176eb",
+      "transition_type": "transcritical",
+      "transition_time": 117.4174497950468,
+      "onset": 117.0,
+      "alarm": 122.0,
+      "changepoint": 122.0,
+      "threshold": 0.0,
+      "phi": 0.7393883494272161
+    },
+    {
+      "world_id": "17073ab68029d942",
+      "transition_type": "fold",
+      "transition_time": 118.42450447658094,
+      "onset": 129.0,
+      "alarm": 154.0,
+      "changepoint": 154.0,
+      "threshold": 0.0,
+      "phi": 0.3883384639942981
+    },
+    {
+      "world_id": "3757cd01ec6f85ba",
+      "transition_type": "null",
+      "transition_time": null,
+      "onset": null,
+      "alarm": 199.0,
+      "changepoint": 99.0,
+      "threshold": 33.91278022735035,
+      "phi": 0.5791029097150423
+    },
+    {
+      "world_id": "3e60da5111d273f7",
+      "transition_type": "transcritical",
+      "transition_time": 143.39720711614305,
+      "onset": 142.0,
+      "alarm": 146.0,
+      "changepoint": 146.0,
+      "threshold": 0.0,
+      "phi": 0.6717019482028803
+    },
+    {
+      "world_id": "59cfe84e497ae6ba",
+      "transition_type": "transcritical",
+      "transition_time": 127.87959446839884,
+      "onset": 135.0,
+      "alarm": 137.0,
+      "changepoint": 137.0,
+      "threshold": 0.0,
+      "phi": 0.5461548904167179
+    },
+    {
+      "world_id": "69e9d6c644dc2f62",
+      "transition_type": "mechanism_change",
+      "transition_time": 141.438173045157,
+      "onset": 148.0,
+      "alarm": 147.0,
+      "changepoint": 147.0,
+      "threshold": 0.0,
+      "phi": 0.6624676918083925
+    },
+    {
+      "world_id": "bd02f4e245d88b28",
+      "transition_type": "exogenous_shock",
+      "transition_time": 140.94792000968454,
+      "onset": 146.0,
+      "alarm": 146.0,
+      "changepoint": 146.0,
+      "threshold": 0.0,
+      "phi": 0.6145281516925929
+    },
+    {
+      "world_id": "8f4746fcb8993592",
+      "transition_type": "null",
+      "transition_time": null,
+      "onset": null,
+      "alarm": null,
+      "changepoint": null,
+      "threshold": 43.2138297907674,
+      "phi": 0.551414881750493
+    },
+    {
+      "world_id": "dd117fdd1150cd34",
+      "transition_type": "mechanism_change",
+      "transition_time": 136.53250709953272,
+      "onset": 138.0,
+      "alarm": 138.0,
+      "changepoint": 138.0,
+      "threshold": 0.0,
+      "phi": 0.5005911881181466
+    },
+    {
+      "world_id": "4aaebe7d9bf60aac",
+      "transition_type": "exogenous_shock",
+      "transition_time": 147.51855340332537,
+      "onset": 152.0,
+      "alarm": 155.0,
+      "changepoint": 155.0,
+      "threshold": 0.0,
+      "phi": 0.6689645132667891
+    },
+    {
+      "world_id": "23525474f54282b1",
+      "transition_type": "mechanism_change",
+      "transition_time": 123.02677963045628,
+      "onset": 125.0,
+      "alarm": 125.0,
+      "changepoint": 125.0,
+      "threshold": 0.0,
+      "phi": 0.5963375244623611
+    },
+    {
+      "world_id": "8a41957963512d2f",
+      "transition_type": "null",
+      "transition_time": null,
+      "onset": null,
+      "alarm": null,
+      "changepoint": null,
+      "threshold": 31.147172170660454,
+      "phi": 0.39669957168732956
+    },
+    {
+      "world_id": "0b01cca651204318",
+      "transition_type": "null",
+      "transition_time": null,
+      "onset": null,
+      "alarm": null,
+      "changepoint": null,
+      "threshold": 45.759987885457015,
+      "phi": 0.698901189545625
+    },
+    {
+      "world_id": "8364a3bc9b04ad73",
+      "transition_type": "mechanism_change",
+      "transition_time": 120.64676989759147,
+      "onset": 124.0,
+      "alarm": 122.0,
+      "changepoint": 122.0,
+      "threshold": 0.0,
+      "phi": 0.3435909471825994
+    },
+    {
+      "world_id": "fd6663166318d828",
+      "transition_type": "transcritical",
+      "transition_time": 125.12069839692522,
+      "onset": 114.0,
+      "alarm": 124.0,
+      "changepoint": 124.0,
+      "threshold": 0.0,
+      "phi": 0.6828557940908759
+    },
+    {
+      "world_id": "046982e61e8c4af4",
+      "transition_type": "hopf",
+      "transition_time": 128.87807502089106,
+      "onset": 150.0,
+      "alarm": 199.0,
+      "changepoint": 161.0,
+      "threshold": 435.51359507500973,
+      "phi": 0.9516567965116207
+    },
+    {
+      "world_id": "2f3887defcee7c84",
+      "transition_type": "transcritical",
+      "transition_time": 99.0756582784488,
+      "onset": 108.0,
+      "alarm": 102.0,
+      "changepoint": 102.0,
+      "threshold": 0.0,
+      "phi": 0.5799862383359266
+    },
+    {
+      "world_id": "749bbbb55831084a",
+      "transition_type": "transcritical",
+      "transition_time": 131.67214638306993,
+      "onset": 121.0,
+      "alarm": 139.0,
+      "changepoint": 139.0,
+      "threshold": 0.0,
+      "phi": 0.7470542714476233
+    },
+    {
+      "world_id": "6461c957002607f1",
+      "transition_type": "mechanism_change",
+      "transition_time": 148.26188392322575,
+      "onset": 151.0,
+      "alarm": 150.0,
+      "changepoint": 150.0,
+      "threshold": 0.0,
+      "phi": 0.7053686591238055
+    },
+    {
+      "world_id": "477b0b55c4c0ea58",
+      "transition_type": "hopf",
+      "transition_time": 139.49066844790747,
+      "onset": 141.0,
+      "alarm": 161.0,
+      "changepoint": 126.0,
+      "threshold": 381.4318966714751,
+      "phi": 0.9427350824776468
+    },
+    {
+      "world_id": "169be37965e8fc2f",
+      "transition_type": "noise_induced",
+      "transition_time": 106.0,
+      "onset": 111.0,
+      "alarm": 113.0,
+      "changepoint": 113.0,
+      "threshold": 0.0,
+      "phi": 0.79456748754488
+    },
+    {
+      "world_id": "590ca320664a4b30",
+      "transition_type": "noise_induced",
+      "transition_time": 107.0,
+      "onset": 116.0,
+      "alarm": 127.0,
+      "changepoint": 127.0,
+      "threshold": 0.0,
+      "phi": 0.7313151765457025
+    },
+    {
+      "world_id": "36d7adbde755f364",
+      "transition_type": "exogenous_shock",
+      "transition_time": 111.18383961807629,
+      "onset": 122.0,
+      "alarm": 124.0,
+      "changepoint": 124.0,
+      "threshold": 0.0,
+      "phi": 0.9084414062098403
+    },
+    {
+      "world_id": "40860c3bae733086",
+      "transition_type": "null",
+      "transition_time": null,
+      "onset": null,
+      "alarm": 211.0,
+      "changepoint": 60.0,
+      "threshold": 20.366547762038884,
+      "phi": 0.314090432622034
+    },
+    {
+      "world_id": "722aa0b30db02ba2",
+      "transition_type": "exogenous_shock",
+      "transition_time": 147.8468503968654,
+      "onset": 149.0,
+      "alarm": 156.0,
+      "changepoint": 156.0,
+      "threshold": 0.0,
+      "phi": 0.9090142044826717
+    },
+    {
+      "world_id": "dbeb73a34d15f4a0",
+      "transition_type": "mechanism_change",
+      "transition_time": 112.96713881188414,
+      "onset": 115.0,
+      "alarm": 114.0,
+      "changepoint": 114.0,
+      "threshold": 0.0,
+      "phi": 0.3445614044745288
+    },
+    {
+      "world_id": "ced643ac386bf065",
+      "transition_type": "fold",
+      "transition_time": 102.15991578059621,
+      "onset": 93.0,
+      "alarm": 122.0,
+      "changepoint": 122.0,
+      "threshold": 0.0,
+      "phi": 0.5688248646332956
+    },
+    {
+      "world_id": "1597ceb416f7e82c",
+      "transition_type": "exogenous_shock",
+      "transition_time": 144.50832332847932,
+      "onset": 148.0,
+      "alarm": 156.0,
+      "changepoint": 156.0,
+      "threshold": 0.0,
+      "phi": 0.7835002554066123
+    },
+    {
+      "world_id": "795c44713236c88a",
+      "transition_type": "noise_induced",
+      "transition_time": 128.0,
+      "onset": 133.0,
+      "alarm": 136.0,
+      "changepoint": 136.0,
+      "threshold": 0.0,
+      "phi": 0.6805219052498995
+    },
+    {
+      "world_id": "9e4f25054872c103",
+      "transition_type": "exogenous_shock",
+      "transition_time": 105.183195160272,
+      "onset": 111.0,
+      "alarm": 111.0,
+      "changepoint": 111.0,
+      "threshold": 0.0,
+      "phi": 0.665831226573472
+    },
+    {
+      "world_id": "33a1bd8c2f65896a",
+      "transition_type": "noise_induced",
+      "transition_time": 106.0,
+      "onset": 112.0,
+      "alarm": 120.0,
+      "changepoint": 120.0,
+      "threshold": 0.0,
+      "phi": 0.6049286334379814
+    },
+    {
+      "world_id": "c5743eee119ec5d5",
+      "transition_type": "transcritical",
+      "transition_time": 110.09665444250305,
+      "onset": 107.0,
+      "alarm": 107.0,
+      "changepoint": 107.0,
+      "threshold": 0.0,
+      "phi": 0.611545815188319
+    },
+    {
+      "world_id": "f0fa020c3a9f9b4c",
+      "transition_type": "hopf",
+      "transition_time": 149.40151509850128,
+      "onset": 191.0,
+      "alarm": 221.0,
+      "changepoint": 175.0,
+      "threshold": 313.8018996788478,
+      "phi": 0.9423853538880268
+    },
+    {
+      "world_id": "33b2dfbda33db3d7",
+      "transition_type": "null",
+      "transition_time": null,
+      "onset": null,
+      "alarm": null,
+      "changepoint": null,
+      "threshold": 20.363442787196526,
+      "phi": 0.3033330999227762
+    },
+    {
+      "world_id": "70ed71fc88f0b435",
+      "transition_type": "transcritical",
+      "transition_time": 136.1591199349946,
+      "onset": 115.0,
+      "alarm": 140.0,
+      "changepoint": 140.0,
+      "threshold": 0.0,
+      "phi": 0.6152720505002882
+    },
+    {
+      "world_id": "37106264d1e8b024",
+      "transition_type": "null",
+      "transition_time": null,
+      "onset": null,
+      "alarm": null,
+      "changepoint": null,
+      "threshold": 18.95982879933238,
+      "phi": 0.3696382884247555
+    },
+    {
+      "world_id": "92d82001815d41f9",
+      "transition_type": "fold",
+      "transition_time": 101.74302719569975,
+      "onset": 92.0,
+      "alarm": 124.0,
+      "changepoint": 124.0,
+      "threshold": 0.0,
+      "phi": 0.37777281326765827
+    },
+    {
+      "world_id": "3ab50bae8f36b5d5",
+      "transition_type": "noise_induced",
+      "transition_time": 103.0,
+      "onset": 110.0,
+      "alarm": 111.0,
+      "changepoint": 111.0,
+      "threshold": 0.0,
+      "phi": 0.5620647499334578
+    },
+    {
+      "world_id": "311c4feaff43ed4f",
+      "transition_type": "fold",
+      "transition_time": 116.74992847917022,
+      "onset": 134.0,
+      "alarm": 142.0,
+      "changepoint": 142.0,
+      "threshold": 0.0,
+      "phi": 0.5678058931131619
+    },
+    {
+      "world_id": "e1d678f157fadbcb",
+      "transition_type": "hopf",
+      "transition_time": 148.75916920659566,
+      "onset": 190.0,
+      "alarm": 195.0,
+      "changepoint": 183.0,
+      "threshold": 78.97512262643325,
+      "phi": 0.8803215103994709
+    },
+    {
+      "world_id": "e5822d1bb16f548a",
+      "transition_type": "transcritical",
+      "transition_time": 132.51634013430075,
+      "onset": 121.0,
+      "alarm": 124.0,
+      "changepoint": 124.0,
+      "threshold": 0.0,
+      "phi": 0.38418224964795167
+    },
+    {
+      "world_id": "edb7cc6ab93655cd",
+      "transition_type": "noise_induced",
+      "transition_time": 128.0,
+      "onset": 137.0,
+      "alarm": 147.0,
+      "changepoint": 147.0,
+      "threshold": 0.0,
+      "phi": 0.821604094162859
+    },
+    {
+      "world_id": "2bb13cfa3d818a2c",
+      "transition_type": "noise_induced",
+      "transition_time": 131.0,
+      "onset": 158.0,
+      "alarm": 188.0,
+      "changepoint": 188.0,
+      "threshold": 0.0,
+      "phi": 0.8597520880509875
+    },
+    {
+      "world_id": "b20ea5c2f84dcc26",
+      "transition_type": "null",
+      "transition_time": null,
+      "onset": null,
+      "alarm": null,
+      "changepoint": null,
+      "threshold": 26.01569424371194,
+      "phi": 0.3461120618665384
+    },
+    {
+      "world_id": "38ae2afea9b45c38",
+      "transition_type": "noise_induced",
+      "transition_time": 148.0,
+      "onset": 158.0,
+      "alarm": 158.0,
+      "changepoint": 158.0,
+      "threshold": 0.0,
+      "phi": 0.7209829639270452
+    },
+    {
+      "world_id": "b56384c59ef78628",
+      "transition_type": "noise_induced",
+      "transition_time": 100.0,
+      "onset": 108.0,
+      "alarm": 110.0,
+      "changepoint": 110.0,
+      "threshold": 0.0,
+      "phi": 0.8764658960699112
+    },
+    {
+      "world_id": "5e0b9e890433ce04",
+      "transition_type": "noise_induced",
+      "transition_time": 144.0,
+      "onset": 156.0,
+      "alarm": 158.0,
+      "changepoint": 158.0,
+      "threshold": 0.0,
+      "phi": 0.8671929137635013
+    },
+    {
+      "world_id": "198ac1e7a9d7216a",
+      "transition_type": "null",
+      "transition_time": null,
+      "onset": null,
+      "alarm": null,
+      "changepoint": null,
+      "threshold": 60.05532059400445,
+      "phi": 0.6465372940491537
+    },
+    {
+      "world_id": "c568dbe257a1024b",
+      "transition_type": "mechanism_change",
+      "transition_time": 103.94209012309179,
+      "onset": 106.0,
+      "alarm": 106.0,
+      "changepoint": 106.0,
+      "threshold": 0.0,
+      "phi": 0.5227440246539986
+    },
+    {
+      "world_id": "71ddddc5b5dfdf1d",
+      "transition_type": "hopf",
+      "transition_time": 148.77732463690808,
+      "onset": 152.0,
+      "alarm": 164.0,
+      "changepoint": 156.0,
+      "threshold": 29.661176787834954,
+      "phi": 0.8475656773773689
+    },
+    {
+      "world_id": "347971d011501c81",
+      "transition_type": "mechanism_change",
+      "transition_time": 100.74500338029885,
+      "onset": 102.0,
+      "alarm": 102.0,
+      "changepoint": 102.0,
+      "threshold": 0.0,
+      "phi": 0.3074341196260487
+    },
+    {
+      "world_id": "42464b2f717d7b86",
+      "transition_type": "noise_induced",
+      "transition_time": 147.0,
+      "onset": 154.0,
+      "alarm": 157.0,
+      "changepoint": 157.0,
+      "threshold": 0.0,
+      "phi": 0.8660410037377635
+    },
+    {
+      "world_id": "148a9214c1396de2",
+      "transition_type": "fold",
+      "transition_time": 102.02160795510308,
+      "onset": 100.0,
+      "alarm": 131.0,
+      "changepoint": 131.0,
+      "threshold": 0.0,
+      "phi": 0.7256334301594619
+    },
+    {
+      "world_id": "b031abd2b4f53414",
+      "transition_type": "exogenous_shock",
+      "transition_time": 133.38446597589373,
+      "onset": 135.0,
+      "alarm": 142.0,
+      "changepoint": 142.0,
+      "threshold": 0.0,
+      "phi": 0.8720298886927214
+    },
+    {
+      "world_id": "45ff61394f182f6c",
+      "transition_type": "hopf",
+      "transition_time": 107.32175489814236,
+      "onset": 105.0,
+      "alarm": 115.0,
+      "changepoint": 105.0,
+      "threshold": 56.259452075249975,
+      "phi": 0.8651383896468078
+    },
+    {
+      "world_id": "8bb16de443277a90",
+      "transition_type": "null",
+      "transition_time": null,
+      "onset": null,
+      "alarm": null,
+      "changepoint": null,
+      "threshold": 63.553895673002046,
+      "phi": 0.653089220284305
+    },
+    {
+      "world_id": "1478f37b39f6298d",
+      "transition_type": "noise_induced",
+      "transition_time": 123.0,
+      "onset": 161.0,
+      "alarm": 202.0,
+      "changepoint": 202.0,
+      "threshold": 0.0,
+      "phi": 0.9040108036129838
+    },
+    {
+      "world_id": "70ecac9293b54cf9",
+      "transition_type": "hopf",
+      "transition_time": 103.87490361011893,
+      "onset": 107.0,
+      "alarm": 172.0,
+      "changepoint": 111.0,
+      "threshold": 192.32530072684352,
+      "phi": 0.9306329574396143
+    },
+    {
+      "world_id": "10aa09aafe3f4c1d",
+      "transition_type": "fold",
+      "transition_time": 140.41382669024577,
+      "onset": 145.0,
+      "alarm": 161.0,
+      "changepoint": 161.0,
+      "threshold": 0.0,
+      "phi": 0.3177395744961235
+    },
+    {
+      "world_id": "222df5a51df0e82f",
+      "transition_type": "mechanism_change",
+      "transition_time": 117.53683309093938,
+      "onset": 119.0,
+      "alarm": 119.0,
+      "changepoint": 119.0,
+      "threshold": 0.0,
+      "phi": 0.4698680736758428
+    },
+    {
+      "world_id": "2ed2c7450e35b02e",
+      "transition_type": "noise_induced",
+      "transition_time": 110.0,
+      "onset": 117.0,
+      "alarm": 119.0,
+      "changepoint": 119.0,
+      "threshold": 0.0,
+      "phi": 0.8843119455698811
+    },
+    {
+      "world_id": "8de4b54d898d5a82",
+      "transition_type": "noise_induced",
+      "transition_time": 111.0,
+      "onset": 123.0,
+      "alarm": 127.0,
+      "changepoint": 127.0,
+      "threshold": 0.0,
+      "phi": 0.69426827539311
+    },
+    {
+      "world_id": "0f891cfe610510a6",
+      "transition_type": "mechanism_change",
+      "transition_time": 102.66217420098967,
+      "onset": 104.0,
+      "alarm": 104.0,
+      "changepoint": 104.0,
+      "threshold": 0.0,
+      "phi": 0.22398917479140007
+    },
+    {
+      "world_id": "e45aee6912b7afa7",
+      "transition_type": "fold",
+      "transition_time": 121.77528890281698,
+      "onset": 147.0,
+      "alarm": 153.0,
+      "changepoint": 153.0,
+      "threshold": 0.0,
+      "phi": 0.5474848135463031
+    },
+    {
+      "world_id": "42b8fb82a8a8574d",
+      "transition_type": "hopf",
+      "transition_time": 99.78427022973692,
+      "onset": 168.0,
+      "alarm": 254.0,
+      "changepoint": 195.0,
+      "threshold": 564.1857521502567,
+      "phi": 0.9563290946129642
+    },
+    {
+      "world_id": "10a7bf653a93601d",
+      "transition_type": "transcritical",
+      "transition_time": 148.7765990744782,
+      "onset": 129.0,
+      "alarm": 150.0,
+      "changepoint": 150.0,
+      "threshold": 0.0,
+      "phi": 0.49306082610078333
+    },
+    {
+      "world_id": "22652da33819f294",
+      "transition_type": "noise_induced",
+      "transition_time": 149.0,
+      "onset": 162.0,
+      "alarm": 173.0,
+      "changepoint": 173.0,
+      "threshold": 0.0,
+      "phi": 0.9355080126848532
+    },
+    {
+      "world_id": "1653b68c9068fa0e",
+      "transition_type": "exogenous_shock",
+      "transition_time": 125.23154966343095,
+      "onset": 153.0,
+      "alarm": 155.0,
+      "changepoint": 155.0,
+      "threshold": 0.0,
+      "phi": 0.49680278509968767
+    },
+    {
+      "world_id": "f3499f246f695b37",
+      "transition_type": "null",
+      "transition_time": null,
+      "onset": null,
+      "alarm": null,
+      "changepoint": null,
+      "threshold": 24.26983070764801,
+      "phi": 0.46754765162200057
+    },
+    {
+      "world_id": "934eb8c596f04c92",
+      "transition_type": "null",
+      "transition_time": null,
+      "onset": null,
+      "alarm": null,
+      "changepoint": null,
+      "threshold": 47.89599112208723,
+      "phi": 0.535955037054533
+    },
+    {
+      "world_id": "353ad3c17f8bd803",
+      "transition_type": "fold",
+      "transition_time": 122.28903711107743,
+      "onset": 133.0,
+      "alarm": 138.0,
+      "changepoint": 138.0,
+      "threshold": 0.0,
+      "phi": 0.24267906392240812
+    },
+    {
+      "world_id": "d3896754296ad286",
+      "transition_type": "mechanism_change",
+      "transition_time": 145.2646735333936,
+      "onset": 147.0,
+      "alarm": 146.0,
+      "changepoint": 146.0,
+      "threshold": 0.0,
+      "phi": 0.3281602465692691
+    },
+    {
+      "world_id": "5d2998b2fcc07ee5",
+      "transition_type": "hopf",
+      "transition_time": 139.95570408154197,
+      "onset": 166.0,
+      "alarm": 185.0,
+      "changepoint": 173.0,
+      "threshold": 226.98122636510988,
+      "phi": 0.9236756455564947
+    },
+    {
+      "world_id": "0ad81c767a00574a",
+      "transition_type": "fold",
+      "transition_time": 118.58476156454311,
+      "onset": 128.0,
+      "alarm": 142.0,
+      "changepoint": 142.0,
+      "threshold": 0.0,
+      "phi": 0.3868502575281098
+    },
+    {
+      "world_id": "174ec53d2363db46",
+      "transition_type": "transcritical",
+      "transition_time": 123.56520580965365,
+      "onset": 127.0,
+      "alarm": 123.0,
+      "changepoint": 123.0,
+      "threshold": 0.0,
+      "phi": 0.6470200375618609
+    },
+    {
+      "world_id": "e9d61d1695d801e2",
+      "transition_type": "noise_induced",
+      "transition_time": 114.0,
+      "onset": 129.0,
+      "alarm": 131.0,
+      "changepoint": 131.0,
+      "threshold": 0.0,
+      "phi": 0.7021980538875808
+    },
+    {
+      "world_id": "f068b6f205e56f5d",
+      "transition_type": "exogenous_shock",
+      "transition_time": 113.22957745445879,
+      "onset": 115.0,
+      "alarm": 114.0,
+      "changepoint": 114.0,
+      "threshold": 0.0,
+      "phi": 0.7345692304037592
+    },
+    {
+      "world_id": "5e6f2b753cd86aa9",
+      "transition_type": "exogenous_shock",
+      "transition_time": 102.97909466680778,
+      "onset": 106.0,
+      "alarm": 106.0,
+      "changepoint": 106.0,
+      "threshold": 0.0,
+      "phi": 0.7454673413813023
+    },
+    {
+      "world_id": "da61aacd69207a10",
+      "transition_type": "fold",
+      "transition_time": 108.95170998386027,
+      "onset": 112.0,
+      "alarm": 148.0,
+      "changepoint": 148.0,
+      "threshold": 0.0,
+      "phi": 0.25822745373915645
+    },
+    {
+      "world_id": "68c32fe2c6296540",
+      "transition_type": "null",
+      "transition_time": null,
+      "onset": null,
+      "alarm": null,
+      "changepoint": null,
+      "threshold": 32.747367363290735,
+      "phi": 0.544374825403445
+    },
+    {
+      "world_id": "af208b6eb2d8c8cf",
+      "transition_type": "mechanism_change",
+      "transition_time": 109.90301310509679,
+      "onset": 112.0,
+      "alarm": 112.0,
+      "changepoint": 112.0,
+      "threshold": 0.0,
+      "phi": 0.4504055973481525
+    },
+    {
+      "world_id": "b7af4acbfdab71ea",
+      "transition_type": "noise_induced",
+      "transition_time": 127.0,
+      "onset": 146.0,
+      "alarm": 163.0,
+      "changepoint": 163.0,
+      "threshold": 0.0,
+      "phi": 0.8275506210813565
+    },
+    {
+      "world_id": "87e185c63971c91f",
+      "transition_type": "transcritical",
+      "transition_time": 141.14076070524172,
+      "onset": 132.0,
+      "alarm": 142.0,
+      "changepoint": 142.0,
+      "threshold": 0.0,
+      "phi": 0.6445730289904876
+    },
+    {
+      "world_id": "ea280fc484e02665",
+      "transition_type": "null",
+      "transition_time": null,
+      "onset": null,
+      "alarm": null,
+      "changepoint": null,
+      "threshold": 56.55418916771653,
+      "phi": 0.6374519894718981
+    },
+    {
+      "world_id": "aaa85671e217c092",
+      "transition_type": "transcritical",
+      "transition_time": 133.03866887596723,
+      "onset": 137.0,
+      "alarm": 117.0,
+      "changepoint": 117.0,
+      "threshold": 0.0,
+      "phi": 0.6782531114186249
+    },
+    {
+      "world_id": "eff942b799be4069",
+      "transition_type": "exogenous_shock",
+      "transition_time": 120.98108474062991,
+      "onset": 123.0,
+      "alarm": 124.0,
+      "changepoint": 124.0,
+      "threshold": 0.0,
+      "phi": 0.8260410234650486
+    },
+    {
+      "world_id": "e3574925be77a70e",
+      "transition_type": "mechanism_change",
+      "transition_time": 108.44310444515929,
+      "onset": 110.0,
+      "alarm": 110.0,
+      "changepoint": 110.0,
+      "threshold": 0.0,
+      "phi": 0.2111000993362602
+    },
+    {
+      "world_id": "a49e1db612a53bbd",
+      "transition_type": "exogenous_shock",
+      "transition_time": 136.78718256516964,
+      "onset": 137.0,
+      "alarm": 153.0,
+      "changepoint": 153.0,
+      "threshold": 0.0,
+      "phi": 0.8849753241175482
+    },
+    {
+      "world_id": "4c909a3b4b67c986",
+      "transition_type": "exogenous_shock",
+      "transition_time": 126.30254267098147,
+      "onset": 128.0,
+      "alarm": 133.0,
+      "changepoint": 133.0,
+      "threshold": 0.0,
+      "phi": 0.570711453555192
+    },
+    {
+      "world_id": "849a8cb275b02a3b",
+      "transition_type": "null",
+      "transition_time": null,
+      "onset": null,
+      "alarm": null,
+      "changepoint": null,
+      "threshold": 22.39054925261606,
+      "phi": 0.4350227174570277
+    },
+    {
+      "world_id": "f06d7b79c1b7d509",
+      "transition_type": "transcritical",
+      "transition_time": 136.1701891275691,
+      "onset": 129.0,
+      "alarm": 139.0,
+      "changepoint": 139.0,
+      "threshold": 0.0,
+      "phi": 0.6105220678228387
+    },
+    {
+      "world_id": "80ed9453c05ce7a6",
+      "transition_type": "null",
+      "transition_time": null,
+      "onset": null,
+      "alarm": null,
+      "changepoint": null,
+      "threshold": 24.484347596992247,
+      "phi": 0.34937998535701587
+    },
+    {
+      "world_id": "48837662496abcb1",
+      "transition_type": "null",
+      "transition_time": null,
+      "onset": null,
+      "alarm": 273.0,
+      "changepoint": 265.0,
+      "threshold": 16.05664885250283,
+      "phi": 0.4162056642147702
+    },
+    {
+      "world_id": "7d5ec8ccdb0affd0",
+      "transition_type": "transcritical",
+      "transition_time": 147.37237254345703,
+      "onset": 125.0,
+      "alarm": 159.0,
+      "changepoint": 159.0,
+      "threshold": 0.0,
+      "phi": 0.6420069161714961
+    },
+    {
+      "world_id": "0c76715a0f2333a1",
+      "transition_type": "null",
+      "transition_time": null,
+      "onset": null,
+      "alarm": 300.0,
+      "changepoint": 168.0,
+      "threshold": 13.921079209443917,
+      "phi": 0.2856158797566602
+    },
+    {
+      "world_id": "7d69b1e124e48397",
+      "transition_type": "exogenous_shock",
+      "transition_time": 107.86772899777156,
+      "onset": 108.0,
+      "alarm": 116.0,
+      "changepoint": 116.0,
+      "threshold": 0.0,
+      "phi": 0.6233489982623952
+    },
+    {
+      "world_id": "e6ab4b85a376f456",
+      "transition_type": "noise_induced",
+      "transition_time": 117.0,
+      "onset": 127.0,
+      "alarm": 140.0,
+      "changepoint": 140.0,
+      "threshold": 0.0,
+      "phi": 0.8724064534743863
+    },
+    {
+      "world_id": "5210bbbee0e0de80",
+      "transition_type": "mechanism_change",
+      "transition_time": 134.5862393887478,
+      "onset": 136.0,
+      "alarm": 136.0,
+      "changepoint": 136.0,
+      "threshold": 0.0,
+      "phi": 0.3928773352473875
+    },
+    {
+      "world_id": "220822ff9a6f8cff",
+      "transition_type": "exogenous_shock",
+      "transition_time": 115.39403606477686,
+      "onset": 120.0,
+      "alarm": 123.0,
+      "changepoint": 123.0,
+      "threshold": 0.0,
+      "phi": 0.7767423835487091
+    },
+    {
+      "world_id": "1384d857c016fe6c",
+      "transition_type": "hopf",
+      "transition_time": 128.65906339215496,
+      "onset": 156.0,
+      "alarm": 176.0,
+      "changepoint": 161.0,
+      "threshold": 66.75741686407892,
+      "phi": 0.8984922918956563
+    },
+    {
+      "world_id": "faa0ecda2fd1899d",
+      "transition_type": "exogenous_shock",
+      "transition_time": 131.9139436716052,
+      "onset": 132.0,
+      "alarm": 142.0,
+      "changepoint": 142.0,
+      "threshold": 0.0,
+      "phi": 0.7443341348383862
+    },
+    {
+      "world_id": "0255b26846bfa238",
+      "transition_type": "hopf",
+      "transition_time": 132.84491721314689,
+      "onset": 121.0,
+      "alarm": 190.0,
+      "changepoint": 121.0,
+      "threshold": 277.50337561041306,
+      "phi": 0.9311050153848984
+    },
+    {
+      "world_id": "63d26178a8304df2",
+      "transition_type": "hopf",
+      "transition_time": 122.80855294749225,
+      "onset": 145.0,
+      "alarm": 189.0,
+      "changepoint": 153.0,
+      "threshold": 459.8932421568612,
+      "phi": 0.9557611979337713
+    },
+    {
+      "world_id": "44096b7896efebc8",
+      "transition_type": "exogenous_shock",
+      "transition_time": 136.75087729631827,
+      "onset": 138.0,
+      "alarm": 141.0,
+      "changepoint": 141.0,
+      "threshold": 0.0,
+      "phi": 0.741122605280959
+    },
+    {
+      "world_id": "d305f6935816a821",
+      "transition_type": "hopf",
+      "transition_time": 149.69885572193087,
+      "onset": 144.0,
+      "alarm": 148.0,
+      "changepoint": 142.0,
+      "threshold": 14.3992734772393,
+      "phi": 0.7236154756228723
+    },
+    {
+      "world_id": "154e29b37cffa5d4",
+      "transition_type": "noise_induced",
+      "transition_time": 136.0,
+      "onset": 149.0,
+      "alarm": 154.0,
+      "changepoint": 154.0,
+      "threshold": 0.0,
+      "phi": 0.7886994091965301
+    },
+    {
+      "world_id": "15d7ba65a89f9bc7",
+      "transition_type": "transcritical",
+      "transition_time": 140.88168545606214,
+      "onset": 112.0,
+      "alarm": 143.0,
+      "changepoint": 143.0,
+      "threshold": 0.0,
+      "phi": 0.7086533342302921
+    },
+    {
+      "world_id": "c427a652e10624b9",
+      "transition_type": "hopf",
+      "transition_time": 100.24229816276679,
+      "onset": 120.0,
+      "alarm": 152.0,
+      "changepoint": 128.0,
+      "threshold": 294.01655221952956,
+      "phi": 0.9536130129027267
+    },
+    {
+      "world_id": "f7fe208ecc056e96",
+      "transition_type": "mechanism_change",
+      "transition_time": 149.22880594863315,
+      "onset": 151.0,
+      "alarm": 150.0,
+      "changepoint": 150.0,
+      "threshold": 0.0,
+      "phi": 0.4687564728988149
+    },
+    {
+      "world_id": "77da538dde2d9e7d",
+      "transition_type": "null",
+      "transition_time": null,
+      "onset": null,
+      "alarm": null,
+      "changepoint": null,
+      "threshold": 34.9967643665383,
+      "phi": 0.47081153322514424
+    },
+    {
+      "world_id": "60af350fed72ff0b",
+      "transition_type": "hopf",
+      "transition_time": 107.09555869790229,
+      "onset": 129.0,
+      "alarm": 82.0,
+      "changepoint": 80.0,
+      "threshold": 10.800371807101065,
+      "phi": 0.7027812028757376
+    },
+    {
+      "world_id": "3d000119c45853e0",
+      "transition_type": "noise_induced",
+      "transition_time": 100.0,
+      "onset": 113.0,
+      "alarm": 114.0,
+      "changepoint": 114.0,
+      "threshold": 0.0,
+      "phi": 0.7663641791865001
+    },
+    {
+      "world_id": "852798612be866ea",
+      "transition_type": "fold",
+      "transition_time": 132.18074555932762,
+      "onset": 130.0,
+      "alarm": 154.0,
+      "changepoint": 154.0,
+      "threshold": 0.0,
+      "phi": 0.6202872906318769
+    },
+    {
+      "world_id": "cbaf1db82fe13038",
+      "transition_type": "hopf",
+      "transition_time": 130.0455028761688,
+      "onset": 163.0,
+      "alarm": 169.0,
+      "changepoint": 166.0,
+      "threshold": 53.4246701382588,
+      "phi": 0.8854780036636976
+    },
+    {
+      "world_id": "4d5d3b2a4fdf450e",
+      "transition_type": "null",
+      "transition_time": null,
+      "onset": null,
+      "alarm": null,
+      "changepoint": null,
+      "threshold": 59.87954046087813,
+      "phi": 0.7034996488423152
+    },
+    {
+      "world_id": "21e973232cd98c89",
+      "transition_type": "hopf",
+      "transition_time": 107.29449276773892,
+      "onset": 95.0,
+      "alarm": 104.0,
+      "changepoint": 100.0,
+      "threshold": 32.15819203444182,
+      "phi": 0.8223491169426361
+    },
+    {
+      "world_id": "7322635b11d563b3",
+      "transition_type": "transcritical",
+      "transition_time": 119.22440094389862,
+      "onset": 121.0,
+      "alarm": 125.0,
+      "changepoint": 125.0,
+      "threshold": 0.0,
+      "phi": 0.8142926934665485
+    },
+    {
+      "world_id": "a408088106457017",
+      "transition_type": "fold",
+      "transition_time": 147.63285930070685,
+      "onset": 159.0,
+      "alarm": 179.0,
+      "changepoint": 179.0,
+      "threshold": 0.0,
+      "phi": 0.5455821815373239
+    },
+    {
+      "world_id": "c36a78d31158abc7",
+      "transition_type": "transcritical",
+      "transition_time": 139.27865226202235,
+      "onset": 139.0,
+      "alarm": 140.0,
+      "changepoint": 140.0,
+      "threshold": 0.0,
+      "phi": 0.697632510240799
+    },
+    {
+      "world_id": "aaea66d6111ade17",
+      "transition_type": "mechanism_change",
+      "transition_time": 145.27123167319266,
+      "onset": 146.0,
+      "alarm": 146.0,
+      "changepoint": 146.0,
+      "threshold": 0.0,
+      "phi": 0.3338564648760435
+    },
+    {
+      "world_id": "e30ee783a47e568c",
+      "transition_type": "exogenous_shock",
+      "transition_time": 108.8056460377553,
+      "onset": 109.0,
+      "alarm": 117.0,
+      "changepoint": 117.0,
+      "threshold": 0.0,
+      "phi": 0.9430683878809709
+    },
+    {
+      "world_id": "cb2f09fe0a1a01be",
+      "transition_type": "noise_induced",
+      "transition_time": 144.0,
+      "onset": 158.0,
+      "alarm": 164.0,
+      "changepoint": 164.0,
+      "threshold": 0.0,
+      "phi": 0.879867100188079
+    },
+    {
+      "world_id": "0f2bb0338bc4d7b6",
+      "transition_type": "mechanism_change",
+      "transition_time": 99.87968406220182,
+      "onset": 102.0,
+      "alarm": 101.0,
+      "changepoint": 101.0,
+      "threshold": 0.0,
+      "phi": 0.43754980307141333
+    },
+    {
+      "world_id": "42cc0bb523486858",
+      "transition_type": "noise_induced",
+      "transition_time": 147.0,
+      "onset": 172.0,
+      "alarm": 198.0,
+      "changepoint": 198.0,
+      "threshold": 0.0,
+      "phi": 0.892967094312408
+    },
+    {
+      "world_id": "dd1e694ce040703d",
+      "transition_type": "mechanism_change",
+      "transition_time": 128.57184814613777,
+      "onset": 130.0,
+      "alarm": 130.0,
+      "changepoint": 130.0,
+      "threshold": 0.0,
+      "phi": 0.6696616569876601
+    },
+    {
+      "world_id": "22c0ee4da8857f12",
+      "transition_type": "hopf",
+      "transition_time": 149.9413284132581,
+      "onset": 127.0,
+      "alarm": 136.0,
+      "changepoint": 127.0,
+      "threshold": 40.88904848870167,
+      "phi": 0.8711105996962853
+    },
+    {
+      "world_id": "234e8d33be166fce",
+      "transition_type": "exogenous_shock",
+      "transition_time": 135.82533807494042,
+      "onset": 137.0,
+      "alarm": 139.0,
+      "changepoint": 139.0,
+      "threshold": 0.0,
+      "phi": 0.7811361732185964
+    },
+    {
+      "world_id": "3cfb7a79772c166a",
+      "transition_type": "exogenous_shock",
+      "transition_time": 138.79770022862306,
+      "onset": 139.0,
+      "alarm": 144.0,
+      "changepoint": 144.0,
+      "threshold": 0.0,
+      "phi": 0.7392225114289399
+    },
+    {
+      "world_id": "ce3a97af7a511778",
+      "transition_type": "transcritical",
+      "transition_time": 107.12415632522104,
+      "onset": 105.0,
+      "alarm": 114.0,
+      "changepoint": 114.0,
+      "threshold": 0.0,
+      "phi": 0.6751645232475073
+    },
+    {
+      "world_id": "53c3e2417579142e",
+      "transition_type": "mechanism_change",
+      "transition_time": 136.9653764277096,
+      "onset": 138.0,
+      "alarm": 138.0,
+      "changepoint": 138.0,
+      "threshold": 0.0,
+      "phi": 0.11045036919037957
+    },
+    {
+      "world_id": "207278f18ace1906",
+      "transition_type": "hopf",
+      "transition_time": 118.84497926553908,
+      "onset": 116.0,
+      "alarm": 121.0,
+      "changepoint": 119.0,
+      "threshold": 26.949082343366,
+      "phi": 0.837393348110477
+    },
+    {
+      "world_id": "655debd2cf015fc7",
+      "transition_type": "fold",
+      "transition_time": 127.06640959006928,
+      "onset": 96.0,
+      "alarm": 144.0,
+      "changepoint": 144.0,
+      "threshold": 0.0,
+      "phi": 0.6053921880015839
+    },
+    {
+      "world_id": "a7c4eac3c4bee139",
+      "transition_type": "mechanism_change",
+      "transition_time": 109.96562905028073,
+      "onset": 112.0,
+      "alarm": 111.0,
+      "changepoint": 111.0,
+      "threshold": 0.0,
+      "phi": 0.2994197310407553
+    },
+    {
+      "world_id": "c42c17909a9252e1",
+      "transition_type": "exogenous_shock",
+      "transition_time": 119.8009641016992,
+      "onset": 120.0,
+      "alarm": 124.0,
+      "changepoint": 124.0,
+      "threshold": 0.0,
+      "phi": 0.6416085235243767
+    },
+    {
+      "world_id": "edfe986887e23561",
+      "transition_type": "transcritical",
+      "transition_time": 104.88958680299228,
+      "onset": 109.0,
+      "alarm": 108.0,
+      "changepoint": 108.0,
+      "threshold": 0.0,
+      "phi": 0.8507842563103372
+    },
+    {
+      "world_id": "08571f9355023a69",
+      "transition_type": "transcritical",
+      "transition_time": 104.2760647795942,
+      "onset": 113.0,
+      "alarm": 112.0,
+      "changepoint": 112.0,
+      "threshold": 0.0,
+      "phi": 0.8583062590624673
+    },
+    {
+      "world_id": "e9df53a54eb26542",
+      "transition_type": "fold",
+      "transition_time": 119.01279124966202,
+      "onset": 114.0,
+      "alarm": 145.0,
+      "changepoint": 145.0,
+      "threshold": 0.0,
+      "phi": 0.5927350360207249
+    },
+    {
+      "world_id": "9a09d1f87f83f665",
+      "transition_type": "noise_induced",
+      "transition_time": 103.0,
+      "onset": 117.0,
+      "alarm": 120.0,
+      "changepoint": 120.0,
+      "threshold": 0.0,
+      "phi": 0.8355063489276686
+    },
+    {
+      "world_id": "d7c603c19b620553",
+      "transition_type": "mechanism_change",
+      "transition_time": 143.46578405282335,
+      "onset": 145.0,
+      "alarm": 145.0,
+      "changepoint": 145.0,
+      "threshold": 0.0,
+      "phi": 0.6420389135684673
+    },
+    {
+      "world_id": "ada5644b11239bba",
+      "transition_type": "transcritical",
+      "transition_time": 139.46588268900967,
+      "onset": 112.0,
+      "alarm": 155.0,
+      "changepoint": 155.0,
+      "threshold": 0.0,
+      "phi": 0.8206949469740547
+    },
+    {
+      "world_id": "d06d1118353393df",
+      "transition_type": "noise_induced",
+      "transition_time": 120.0,
+      "onset": 135.0,
+      "alarm": 145.0,
+      "changepoint": 145.0,
+      "threshold": 0.0,
+      "phi": 0.877683723307616
+    },
+    {
+      "world_id": "d235a480809cdffc",
+      "transition_type": "exogenous_shock",
+      "transition_time": 111.43658534393407,
+      "onset": 112.0,
+      "alarm": 124.0,
+      "changepoint": 124.0,
+      "threshold": 0.0,
+      "phi": 0.8833097927956607
+    },
+    {
+      "world_id": "1b3e4ee3cacd52d2",
+      "transition_type": "transcritical",
+      "transition_time": 124.00089450443156,
+      "onset": 115.0,
+      "alarm": 125.0,
+      "changepoint": 125.0,
+      "threshold": 0.0,
+      "phi": 0.5742311569691673
+    },
+    {
+      "world_id": "fa5ab8626cdf81fa",
+      "transition_type": "mechanism_change",
+      "transition_time": 105.54920628003175,
+      "onset": 107.0,
+      "alarm": 107.0,
+      "changepoint": 107.0,
+      "threshold": 0.0,
+      "phi": 0.42117709177797663
+    },
+    {
+      "world_id": "5c06caf58db8787b",
+      "transition_type": "null",
+      "transition_time": null,
+      "onset": null,
+      "alarm": null,
+      "changepoint": null,
+      "threshold": 19.146948123095267,
+      "phi": 0.1744377096036713
+    },
+    {
+      "world_id": "d9beedd344855825",
+      "transition_type": "mechanism_change",
+      "transition_time": 108.8030256291757,
+      "onset": 111.0,
+      "alarm": 110.0,
+      "changepoint": 110.0,
+      "threshold": 0.0,
+      "phi": 0.3354685626288099
+    },
+    {
+      "world_id": "0dbe17c3ff17335b",
+      "transition_type": "null",
+      "transition_time": null,
+      "onset": null,
+      "alarm": null,
+      "changepoint": null,
+      "threshold": 33.50948724252658,
+      "phi": 0.4436172343471169
+    },
+    {
+      "world_id": "b2eea4048e83b357",
+      "transition_type": "fold",
+      "transition_time": 142.62884964004803,
+      "onset": 148.0,
+      "alarm": 160.0,
+      "changepoint": 160.0,
+      "threshold": 0.0,
+      "phi": 0.3368954594842965
+    },
+    {
+      "world_id": "db1419b599e4bc4e",
+      "transition_type": "hopf",
+      "transition_time": 117.05161694577251,
+      "onset": 131.0,
+      "alarm": 163.0,
+      "changepoint": 137.0,
+      "threshold": 37.8175855849362,
+      "phi": 0.8660548619857001
+    },
+    {
+      "world_id": "99203e641a4048e1",
+      "transition_type": "noise_induced",
+      "transition_time": 116.0,
+      "onset": 119.0,
+      "alarm": 119.0,
+      "changepoint": 119.0,
+      "threshold": 0.0,
+      "phi": 0.726500808459946
+    },
+    {
+      "world_id": "eb5356b87a58867a",
+      "transition_type": "hopf",
+      "transition_time": 108.93833042210763,
+      "onset": 109.0,
+      "alarm": 128.0,
+      "changepoint": 119.0,
+      "threshold": 47.48836720458759,
+      "phi": 0.8738198140506713
+    },
+    {
+      "world_id": "fd7e54fcf658db46",
+      "transition_type": "mechanism_change",
+      "transition_time": 125.82028974030817,
+      "onset": 126.0,
+      "alarm": 127.0,
+      "changepoint": 127.0,
+      "threshold": 0.0,
+      "phi": 0.12235181325013451
+    },
+    {
+      "world_id": "352ae6748cdec0fc",
+      "transition_type": "hopf",
+      "transition_time": 103.97871836190386,
+      "onset": 113.0,
+      "alarm": 147.0,
+      "changepoint": 126.0,
+      "threshold": 202.88833726079613,
+      "phi": 0.9427270332402711
+    },
+    {
+      "world_id": "11990274dad142ba",
+      "transition_type": "hopf",
+      "transition_time": 110.58864638674531,
+      "onset": 156.0,
+      "alarm": 180.0,
+      "changepoint": 161.0,
+      "threshold": 68.43637097907686,
+      "phi": 0.8932632386153788
+    },
+    {
+      "world_id": "126b75babfd00a9f",
+      "transition_type": "null",
+      "transition_time": null,
+      "onset": null,
+      "alarm": null,
+      "changepoint": null,
+      "threshold": 14.285668773005543,
+      "phi": 0.28326291814100957
+    },
+    {
+      "world_id": "2bd0d559b015f1f9",
+      "transition_type": "noise_induced",
+      "transition_time": 104.0,
+      "onset": 113.0,
+      "alarm": 126.0,
+      "changepoint": 126.0,
+      "threshold": 0.0,
+      "phi": 0.6997646883237607
+    },
+    {
+      "world_id": "77a5662b1fdc9ca1",
+      "transition_type": "noise_induced",
+      "transition_time": 100.0,
+      "onset": 104.0,
+      "alarm": 105.0,
+      "changepoint": 105.0,
+      "threshold": 0.0,
+      "phi": 0.6307106124293024
+    },
+    {
+      "world_id": "0d8672132eddb73f",
+      "transition_type": "fold",
+      "transition_time": 137.88467618976568,
+      "onset": 111.0,
+      "alarm": 164.0,
+      "changepoint": 164.0,
+      "threshold": 0.0,
+      "phi": 0.46276713092137794
+    },
+    {
+      "world_id": "d07e0a76596f7135",
+      "transition_type": "fold",
+      "transition_time": 130.31419013020113,
+      "onset": 93.0,
+      "alarm": 163.0,
+      "changepoint": 163.0,
+      "threshold": 0.0,
+      "phi": 0.6347649354515781
+    },
+    {
+      "world_id": "ab0f750e7352bc9a",
+      "transition_type": "exogenous_shock",
+      "transition_time": 140.22216817295862,
+      "onset": 144.0,
+      "alarm": 141.0,
+      "changepoint": 141.0,
+      "threshold": 0.0,
+      "phi": 0.6326758419647762
+    },
+    {
+      "world_id": "06a5d25869369dec",
+      "transition_type": "transcritical",
+      "transition_time": 118.32317565947722,
+      "onset": 110.0,
+      "alarm": 131.0,
+      "changepoint": 131.0,
+      "threshold": 0.0,
+      "phi": 0.8206017823876843
+    },
+    {
+      "world_id": "106832705ae520d9",
+      "transition_type": "fold",
+      "transition_time": 148.6742356855517,
+      "onset": 157.0,
+      "alarm": 178.0,
+      "changepoint": 178.0,
+      "threshold": 0.0,
+      "phi": 0.5047293381003757
+    },
+    {
+      "world_id": "ca104d1a1db078f0",
+      "transition_type": "null",
+      "transition_time": null,
+      "onset": null,
+      "alarm": null,
+      "changepoint": null,
+      "threshold": 20.72825382688737,
+      "phi": 0.26086391077363846
+    },
+    {
+      "world_id": "3a10dc23d2ec956e",
+      "transition_type": "null",
+      "transition_time": null,
+      "onset": null,
+      "alarm": null,
+      "changepoint": null,
+      "threshold": 16.720079977145026,
+      "phi": 0.3060555450709199
+    },
+    {
+      "world_id": "0c005f469501e553",
+      "transition_type": "noise_induced",
+      "transition_time": 132.0,
+      "onset": 142.0,
+      "alarm": 146.0,
+      "changepoint": 146.0,
+      "threshold": 0.0,
+      "phi": 0.8761160014942632
+    },
+    {
+      "world_id": "67cfe8525e699790",
+      "transition_type": "null",
+      "transition_time": null,
+      "onset": null,
+      "alarm": null,
+      "changepoint": null,
+      "threshold": 61.05582213598875,
+      "phi": 0.6457803324407977
+    },
+    {
+      "world_id": "dcb86f531ed108c3",
+      "transition_type": "noise_induced",
+      "transition_time": 132.0,
+      "onset": 138.0,
+      "alarm": 145.0,
+      "changepoint": 145.0,
+      "threshold": 0.0,
+      "phi": 0.5507076973256636
+    },
+    {
+      "world_id": "9a1b553af28fd0e6",
+      "transition_type": "null",
+      "transition_time": null,
+      "onset": null,
+      "alarm": 268.0,
+      "changepoint": 237.0,
+      "threshold": 10.475693480264416,
+      "phi": 0.07644441474623317
+    },
+    {
+      "world_id": "031d45cd0a9df562",
+      "transition_type": "mechanism_change",
+      "transition_time": 114.42296232128919,
+      "onset": 116.0,
+      "alarm": 116.0,
+      "changepoint": 116.0,
+      "threshold": 0.0,
+      "phi": 0.6783248567889807
+    },
+    {
+      "world_id": "b3719a5923b1e91a",
+      "transition_type": "noise_induced",
+      "transition_time": 102.0,
+      "onset": 106.0,
+      "alarm": 119.0,
+      "changepoint": 119.0,
+      "threshold": 0.0,
+      "phi": 0.8960971487929
+    },
+    {
+      "world_id": "26c2a1f75b7855db",
+      "transition_type": "transcritical",
+      "transition_time": 124.56304369951451,
+      "onset": 132.0,
+      "alarm": 137.0,
+      "changepoint": 137.0,
+      "threshold": 0.0,
+      "phi": 0.8826475476988528
+    },
+    {
+      "world_id": "8f5d92c39ba47fcf",
+      "transition_type": "exogenous_shock",
+      "transition_time": 118.96707311933783,
+      "onset": 124.0,
+      "alarm": 126.0,
+      "changepoint": 126.0,
+      "threshold": 0.0,
+      "phi": 0.8485950124532776
+    },
+    {
+      "world_id": "88bbb034ecb274ef",
+      "transition_type": "hopf",
+      "transition_time": 129.949768706357,
+      "onset": 147.0,
+      "alarm": 160.0,
+      "changepoint": 148.0,
+      "threshold": 17.47383393872595,
+      "phi": 0.7816714337007694
+    },
+    {
+      "world_id": "6181d46595ff3f57",
+      "transition_type": "exogenous_shock",
+      "transition_time": 121.39748409362703,
+      "onset": 123.0,
+      "alarm": 125.0,
+      "changepoint": 125.0,
+      "threshold": 0.0,
+      "phi": 0.8373469695360312
+    },
+    {
+      "world_id": "07986b121a8cad97",
+      "transition_type": "fold",
+      "transition_time": 130.7364566616068,
+      "onset": 146.0,
+      "alarm": 179.0,
+      "changepoint": 179.0,
+      "threshold": 0.0,
+      "phi": 0.5431987214371111
+    },
+    {
+      "world_id": "8cf3ffefddcc3858",
+      "transition_type": "noise_induced",
+      "transition_time": 106.0,
+      "onset": 112.0,
+      "alarm": 123.0,
+      "changepoint": 123.0,
+      "threshold": 0.0,
+      "phi": 0.6071230016506831
+    },
+    {
+      "world_id": "a98c940cde1b3773",
+      "transition_type": "transcritical",
+      "transition_time": 115.45867385618266,
+      "onset": 110.0,
+      "alarm": 121.0,
+      "changepoint": 121.0,
+      "threshold": 0.0,
+      "phi": 0.6996394972843876
+    },
+    {
+      "world_id": "55fa283fb2e4f051",
+      "transition_type": "null",
+      "transition_time": null,
+      "onset": null,
+      "alarm": null,
+      "changepoint": null,
+      "threshold": 59.89881424010407,
+      "phi": 0.6377588106721771
+    },
+    {
+      "world_id": "5b2ae455162d8a6f",
+      "transition_type": "transcritical",
+      "transition_time": 118.93977305142369,
+      "onset": 108.0,
+      "alarm": 110.0,
+      "changepoint": 110.0,
+      "threshold": 0.0,
+      "phi": 0.6153126170365417
+    },
+    {
+      "world_id": "1f74aa2a13019580",
+      "transition_type": "noise_induced",
+      "transition_time": 136.0,
+      "onset": 148.0,
+      "alarm": 158.0,
+      "changepoint": 158.0,
+      "threshold": 0.0,
+      "phi": 0.886680814823913
+    },
+    {
+      "world_id": "16b571d38b0e8367",
+      "transition_type": "mechanism_change",
+      "transition_time": 102.50132709139737,
+      "onset": 104.0,
+      "alarm": 104.0,
+      "changepoint": 104.0,
+      "threshold": 0.0,
+      "phi": 0.32091996119038724
+    },
+    {
+      "world_id": "3cf6b3651b2cb239",
+      "transition_type": "fold",
+      "transition_time": 129.0593295566252,
+      "onset": 132.0,
+      "alarm": 163.0,
+      "changepoint": 163.0,
+      "threshold": 0.0,
+      "phi": 0.29355616002239404
+    },
+    {
+      "world_id": "4e8c882732813a7e",
+      "transition_type": "fold",
+      "transition_time": 137.31666064215455,
+      "onset": 104.0,
+      "alarm": 153.0,
+      "changepoint": 153.0,
+      "threshold": 0.0,
+      "phi": 0.30409858690100977
+    },
+    {
+      "world_id": "369b291071aa6b26",
+      "transition_type": "null",
+      "transition_time": null,
+      "onset": null,
+      "alarm": null,
+      "changepoint": null,
+      "threshold": 17.75259026629187,
+      "phi": 0.3486043055543973
+    },
+    {
+      "world_id": "dc277ee7684811f1",
+      "transition_type": "hopf",
+      "transition_time": 134.56582368169592,
+      "onset": 144.0,
+      "alarm": 171.0,
+      "changepoint": 146.0,
+      "threshold": 60.54544206629408,
+      "phi": 0.8776893096516938
+    },
+    {
+      "world_id": "91aa7f4bec5cabc1",
+      "transition_type": "hopf",
+      "transition_time": 126.06563328808005,
+      "onset": 118.0,
+      "alarm": 139.0,
+      "changepoint": 124.0,
+      "threshold": 110.25629599806246,
+      "phi": 0.9142589165148641
+    },
+    {
+      "world_id": "e58d1655a3473059",
+      "transition_type": "noise_induced",
+      "transition_time": 120.0,
+      "onset": 123.0,
+      "alarm": 124.0,
+      "changepoint": 124.0,
+      "threshold": 0.0,
+      "phi": 0.7482484399463571
+    },
+    {
+      "world_id": "30de5333cbb7e255",
+      "transition_type": "mechanism_change",
+      "transition_time": 107.8379626793256,
+      "onset": 110.0,
+      "alarm": 109.0,
+      "changepoint": 109.0,
+      "threshold": 0.0,
+      "phi": 0.5767261156818527
+    },
+    {
+      "world_id": "c737113833bed90f",
+      "transition_type": "hopf",
+      "transition_time": 135.80034272284325,
+      "onset": 150.0,
+      "alarm": 162.0,
+      "changepoint": 148.0,
+      "threshold": 60.38963117532947,
+      "phi": 0.8827504826162919
+    },
+    {
+      "world_id": "be69f2878e714ed1",
+      "transition_type": "transcritical",
+      "transition_time": 109.79156580367642,
+      "onset": 119.0,
+      "alarm": 112.0,
+      "changepoint": 112.0,
+      "threshold": 0.0,
+      "phi": 0.652984991539223
+    },
+    {
+      "world_id": "0740043067733e41",
+      "transition_type": "noise_induced",
+      "transition_time": 121.0,
+      "onset": 130.0,
+      "alarm": 145.0,
+      "changepoint": 145.0,
+      "threshold": 0.0,
+      "phi": 0.8606906847995487
+    },
+    {
+      "world_id": "31f79c5e9bb94e78",
+      "transition_type": "fold",
+      "transition_time": 113.97841688711605,
+      "onset": 120.0,
+      "alarm": 140.0,
+      "changepoint": 140.0,
+      "threshold": 0.0,
+      "phi": 0.5433606722910715
+    },
+    {
+      "world_id": "7bfc029459588a2d",
+      "transition_type": "fold",
+      "transition_time": 138.6169755948926,
+      "onset": 135.0,
+      "alarm": 160.0,
+      "changepoint": 160.0,
+      "threshold": 0.0,
+      "phi": 0.6662588787675098
+    },
+    {
+      "world_id": "2644ba471582adf1",
+      "transition_type": "null",
+      "transition_time": null,
+      "onset": null,
+      "alarm": null,
+      "changepoint": null,
+      "threshold": 14.782258918456828,
+      "phi": 0.36118586791714796
+    },
+    {
+      "world_id": "3a8b314e97ec04cf",
+      "transition_type": "transcritical",
+      "transition_time": 140.117552978836,
+      "onset": 156.0,
+      "alarm": 142.0,
+      "changepoint": 142.0,
+      "threshold": 0.0,
+      "phi": 0.6478766440803321
+    },
+    {
+      "world_id": "f69b65625b390a5c",
+      "transition_type": "exogenous_shock",
+      "transition_time": 121.48806684637538,
+      "onset": 122.0,
+      "alarm": 130.0,
+      "changepoint": 130.0,
+      "threshold": 0.0,
+      "phi": 0.9308285715447006
+    },
+    {
+      "world_id": "5bd5dd12ebe02468",
+      "transition_type": "mechanism_change",
+      "transition_time": 137.43435294864065,
+      "onset": 139.0,
+      "alarm": 139.0,
+      "changepoint": 139.0,
+      "threshold": 0.0,
+      "phi": 0.4826821264800728
+    },
+    {
+      "world_id": "99a39d7b529a8d9f",
+      "transition_type": "null",
+      "transition_time": null,
+      "onset": null,
+      "alarm": null,
+      "changepoint": null,
+      "threshold": 25.470637722438873,
+      "phi": 0.5702062028377691
+    },
+    {
+      "world_id": "6062ac3fb5e203a6",
+      "transition_type": "fold",
+      "transition_time": 127.97920936428669,
+      "onset": 190.0,
+      "alarm": 171.0,
+      "changepoint": 171.0,
+      "threshold": 0.0,
+      "phi": 0.7739004327286103
+    },
+    {
+      "world_id": "50a11dc9bc0ff6c1",
+      "transition_type": "fold",
+      "transition_time": 125.43031507784123,
+      "onset": 143.0,
+      "alarm": 156.0,
+      "changepoint": 156.0,
+      "threshold": 0.0,
+      "phi": 0.42504244986135276
+    },
+    {
+      "world_id": "ddb8131a75456784",
+      "transition_type": "noise_induced",
+      "transition_time": 99.0,
+      "onset": 130.0,
+      "alarm": 137.0,
+      "changepoint": 137.0,
+      "threshold": 0.0,
+      "phi": 0.894213220934065
+    },
+    {
+      "world_id": "09b42c6c9fdf88c0",
+      "transition_type": "fold",
+      "transition_time": 128.02795810474998,
+      "onset": 135.0,
+      "alarm": 175.0,
+      "changepoint": 175.0,
+      "threshold": 0.0,
+      "phi": 0.487587107817247
+    },
+    {
+      "world_id": "a868dfaaf6a44b87",
+      "transition_type": "transcritical",
+      "transition_time": 121.0981742576233,
+      "onset": 94.0,
+      "alarm": 117.0,
+      "changepoint": 117.0,
+      "threshold": 0.0,
+      "phi": 0.6584071890384664
+    },
+    {
+      "world_id": "190471dda2a54c19",
+      "transition_type": "exogenous_shock",
+      "transition_time": 149.7675987465175,
+      "onset": 151.0,
+      "alarm": 153.0,
+      "changepoint": 153.0,
+      "threshold": 0.0,
+      "phi": 0.8345272175111663
+    },
+    {
+      "world_id": "9663aafb3e341483",
+      "transition_type": "hopf",
+      "transition_time": 143.7191058781657,
+      "onset": 213.0,
+      "alarm": 218.0,
+      "changepoint": 207.0,
+      "threshold": 23.110427996252856,
+      "phi": 0.7887633128056937
+    },
+    {
+      "world_id": "41e77d337de320e7",
+      "transition_type": "hopf",
+      "transition_time": 148.50948666285115,
+      "onset": 205.0,
+      "alarm": 219.0,
+      "changepoint": 203.0,
+      "threshold": 38.84387654112097,
+      "phi": 0.8305579732315757
+    },
+    {
+      "world_id": "fc8396d7690f14a4",
+      "transition_type": "null",
+      "transition_time": null,
+      "onset": null,
+      "alarm": null,
+      "changepoint": null,
+      "threshold": 14.301238882981364,
+      "phi": 0.4063813467753851
+    },
+    {
+      "world_id": "2e2843b003122bc5",
+      "transition_type": "exogenous_shock",
+      "transition_time": 121.66504532503014,
+      "onset": 123.0,
+      "alarm": 130.0,
+      "changepoint": 130.0,
+      "threshold": 0.0,
+      "phi": 0.9341268182574486
+    },
+    {
+      "world_id": "99c353ca7df84878",
+      "transition_type": "hopf",
+      "transition_time": 141.70813255613592,
+      "onset": 160.0,
+      "alarm": 187.0,
+      "changepoint": 175.0,
+      "threshold": 52.43703427975826,
+      "phi": 0.8557924670849322
+    },
+    {
+      "world_id": "2a1eb198322c2f06",
+      "transition_type": "fold",
+      "transition_time": 130.1115166123515,
+      "onset": 135.0,
+      "alarm": 152.0,
+      "changepoint": 152.0,
+      "threshold": 0.0,
+      "phi": 0.44108025306636656
+    },
+    {
+      "world_id": "46792415d9881278",
+      "transition_type": "transcritical",
+      "transition_time": 104.9425572443114,
+      "onset": 98.0,
+      "alarm": 109.0,
+      "changepoint": 109.0,
+      "threshold": 0.0,
+      "phi": 0.7602981248197127
+    },
+    {
+      "world_id": "09a5ff463a2ac851",
+      "transition_type": "hopf",
+      "transition_time": 100.85525438191948,
+      "onset": 127.0,
+      "alarm": 166.0,
+      "changepoint": 142.0,
+      "threshold": 243.2603217682694,
+      "phi": 0.9324752359843709
+    },
+    {
+      "world_id": "d6531436a7f9df04",
+      "transition_type": "noise_induced",
+      "transition_time": 122.0,
+      "onset": 139.0,
+      "alarm": 147.0,
+      "changepoint": 147.0,
+      "threshold": 0.0,
+      "phi": 0.9043997805590797
+    },
+    {
+      "world_id": "b2b54d2a31bb4087",
+      "transition_type": "hopf",
+      "transition_time": 113.6375513325681,
+      "onset": 142.0,
+      "alarm": 154.0,
+      "changepoint": 138.0,
+      "threshold": 62.522920432043335,
+      "phi": 0.8836165653993272
+    },
+    {
+      "world_id": "731201f3b7cb4850",
+      "transition_type": "null",
+      "transition_time": null,
+      "onset": null,
+      "alarm": null,
+      "changepoint": null,
+      "threshold": 26.36596604241686,
+      "phi": 0.40197416172271616
+    },
+    {
+      "world_id": "717020b020192707",
+      "transition_type": "transcritical",
+      "transition_time": 131.8879931034858,
+      "onset": 97.0,
+      "alarm": 136.0,
+      "changepoint": 136.0,
+      "threshold": 0.0,
+      "phi": 0.6844651594182696
+    },
+    {
+      "world_id": "f9ba5df62da06e9f",
+      "transition_type": "hopf",
+      "transition_time": 121.30851041883709,
+      "onset": 121.0,
+      "alarm": 151.0,
+      "changepoint": 135.0,
+      "threshold": 75.02518115598477,
+      "phi": 0.8799737662608691
+    },
+    {
+      "world_id": "3f5c6c1eea645031",
+      "transition_type": "null",
+      "transition_time": null,
+      "onset": null,
+      "alarm": null,
+      "changepoint": null,
+      "threshold": 13.81091253396908,
+      "phi": 0.22901491912175861
+    },
+    {
+      "world_id": "e4d271287226a506",
+      "transition_type": "fold",
+      "transition_time": 124.46317098444587,
+      "onset": 103.0,
+      "alarm": 139.0,
+      "changepoint": 139.0,
+      "threshold": 0.0,
+      "phi": 0.46013266110139855
+    },
+    {
+      "world_id": "13a7a6fe715267e7",
+      "transition_type": "exogenous_shock",
+      "transition_time": 121.94437006409429,
+      "onset": 123.0,
+      "alarm": 129.0,
+      "changepoint": 129.0,
+      "threshold": 0.0,
+      "phi": 0.7686602129559477
+    },
+    {
+      "world_id": "fced66e334a44422",
+      "transition_type": "fold",
+      "transition_time": 121.05647014554734,
+      "onset": 129.0,
+      "alarm": 166.0,
+      "changepoint": 166.0,
+      "threshold": 0.0,
+      "phi": 0.4036477515036095
+    },
+    {
+      "world_id": "61f9e1a65863ce80",
+      "transition_type": "mechanism_change",
+      "transition_time": 123.81039765749978,
+      "onset": 126.0,
+      "alarm": 126.0,
+      "changepoint": 126.0,
+      "threshold": 0.0,
+      "phi": 0.456995906413579
+    },
+    {
+      "world_id": "b2d01cbf071ba1d5",
+      "transition_type": "mechanism_change",
+      "transition_time": 113.21330022184534,
+      "onset": 114.0,
+      "alarm": 114.0,
+      "changepoint": 114.0,
+      "threshold": 0.0,
+      "phi": 0.005897531816686826
+    },
+    {
+      "world_id": "e873831bdc18c504",
+      "transition_type": "exogenous_shock",
+      "transition_time": 118.50714031498374,
+      "onset": 120.0,
+      "alarm": 127.0,
+      "changepoint": 127.0,
+      "threshold": 0.0,
+      "phi": 0.8424691435866829
+    },
+    {
+      "world_id": "d254e11caeb5c80a",
+      "transition_type": "hopf",
+      "transition_time": 143.53550816016212,
+      "onset": 150.0,
+      "alarm": 170.0,
+      "changepoint": 163.0,
+      "threshold": 23.56798289402057,
+      "phi": 0.836566820406055
+    },
+    {
+      "world_id": "592a4288af3798b8",
+      "transition_type": "noise_induced",
+      "transition_time": 107.0,
+      "onset": 122.0,
+      "alarm": 142.0,
+      "changepoint": 142.0,
+      "threshold": 0.0,
+      "phi": 0.7833569483328278
+    }
+  ]
+}
