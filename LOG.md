@@ -146,6 +146,60 @@ Under `harsh`, everything is at chance. The base rate's "when" is good by design
 because onsets cluster in the shared window, so any method's "when" has to beat about
 17 steps to count.
 
+### Confirmation across seeds, after all four fixes
+
+| seed | scale-feature excess before fixes | after | p after | failed designs after |
+|---|---|---|---|---|
+| 11 | +0.043 | +0.025 | 0.18 | shock 1 |
+| 12 | +0.036 | −0.022 | 0.80 | shock 1 |
+| 13 | +0.040 | −0.021 | 0.85 | none |
+
+All seven realism layers pass on seed 11 (every p ≥ 0.13). The Hopf onset gap
+against the oracle is now +8 at p90. Generating a pool takes about 15 minutes,
+because `noise_induced` needs ~20 attempts per world.
+
+### A fourth method, and the committed test seed
+
+`methods/features.py`: gradient boosting on the nine *physical* features the audit
+measures, excluding the scale features by design. It covers all three questions:
+quantile regression for "when", and sigmoid calibration for "whether" and "what",
+because uncalibrated it had AUC 0.76 but Brier skill −0.15.
+
+The `test_v1` seed was committed by salted hash at 07:12 UTC (commit `4222bbc`),
+before any test forecast existed and before the method set was final. I have not
+opened the sealed seed file.
+
+### Expectations for the blind test, written before it is built
+
+Development pool: public seed 101, 280 worlds, zero failed designs. Two-fold CV per
+layer (`inflection/notebooks/dev_eval.json`).
+
+| layer | method | Brier skill | AUC | null FPR | onset MAE | type acc. | mech. |
+|---|---|---|---|---|---|---|---|
+| clean | base rate | 0.00 | 0.50 | 0.80 | 15.7 | 0.17 | 0.00 |
+| clean | own history | +0.06 | 0.68 | 0.68 | 32.5 | 0.17 | 0.00 |
+| clean | generic EWS | +0.00 | 0.55 | 0.70 | 15.7 | 0.15 | 0.15 |
+| clean | feature clf. | +0.06 | 0.73 | 0.53 | 16.8 | 0.35 | 0.42 |
+| harsh | own history | +0.00 | 0.60 | 0.73 | 32.3 | 0.17 | 0.00 |
+| harsh | generic EWS | −0.02 | 0.50 | 0.85 | 15.7 | 0.13 | 0.10 |
+| harsh | feature clf. | −0.00 | 0.57 | 0.75 | 15.8 | 0.23 | 0.07 |
+
+What I expect the test set to show, and would be surprised by otherwise:
+
+1. **Whether:** the feature classifier and own history carry real but modest signal
+   on clean records (AUC ~0.65–0.75). Generic EWS is within noise of chance on every
+   layer. Everything collapses toward chance under `harsh`.
+2. **When:** no method beats the base rate by a meaningful margin. The shared
+   transition window is most of the available timing information.
+3. **What:** only the feature classifier beats chance, at about 0.3–0.4 on clean.
+   Its **mechanism-change "accuracy" is not recognition.** Before the change, those
+   worlds are identical to null worlds by construction, so the classifier is
+   splitting its guesses between the two. The Gate 3 write-up reads that column
+   against null recall.
+4. **Realism layers:** observation noise and irregular sampling hurt most. `short`
+   hurts least, and helps own history, whose extrapolation is less anchored to the
+   distant past.
+
 ---
 
 ## 2026-09-21 — Gate 2 closed; plan for Gate 3

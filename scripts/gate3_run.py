@@ -38,7 +38,9 @@ DEV_SEED = 101
 def methods():
     from inflection.methods.baselines import BaseRate, OwnHistory
     from inflection.methods.ews import GenericEWS
-    return {"base_rate": BaseRate, "own_history": OwnHistory, "generic_ews": GenericEWS}
+    from inflection.methods.features import FeatureClassifier
+    return {"base_rate": BaseRate, "own_history": OwnHistory, "generic_ews": GenericEWS,
+            "feature_classifier": FeatureClassifier}
 
 
 def dev_pool(n_per_type: int):
