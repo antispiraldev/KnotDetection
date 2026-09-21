@@ -24,6 +24,7 @@ from inflection.methods.base import Record
 from inflection.methods.baselines import BaseRate, OwnHistory
 from inflection.methods.ews import GenericEWS
 from inflection.methods.features import FeatureClassifier
+from inflection.methods.hybrid import Hybrid
 from inflection.sim import realism as R
 from inflection.sim.generate import T
 
@@ -31,7 +32,7 @@ ROOT = Path(__file__).resolve().parents[1]
 OUT = ROOT / "inflection" / "notebooks"
 
 METHODS = {"base_rate": BaseRate, "own_history": OwnHistory, "generic_ews": GenericEWS,
-           "feature_classifier": FeatureClassifier}
+           "feature_classifier": FeatureClassifier, "hybrid": Hybrid}
 
 
 def records_for(worlds, layer, seed):

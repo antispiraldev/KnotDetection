@@ -331,3 +331,24 @@ def test_shock_worlds_are_still_in_the_high_state_when_the_shock_arrives(one_per
     early = Run(t=t, x=y[:, None], state_names=("y",), transition_type="exogenous_shock",
                 transition_time=140.0, primary=0, params=dict(equilibria=[1.0, 3.0, 6.0]))
     assert not in_high_state_before(early, 140.0)
+
+
+def test_robust_shock_worlds_are_bistable_and_clear_of_the_fold():
+    """Robust shocks rest like null worlds, yet have a low state for the pulse to reach."""
+    for seed in range(4):
+        spec = models.build("exogenous_shock", np.random.default_rng(seed), T, 120.0, robust=True)
+        p = {k: spec.params[k] for k in ("r", "K", "h")}
+        a_c, _ = models.may_fold_point(**p)
+        assert spec.params["robust_shock"] is True
+        assert len(spec.params["equilibria"]) == 3
+        assert 0.45 <= spec.params["a"] / a_c <= 0.75
+
+
+def test_shock_design_flag_is_drawn_before_rejection():
+    """Accepted shock worlds carry the flag, and both kinds get generated."""
+    kinds = set()
+    for seed in range(6):
+        w = generate_world("exogenous_shock", np.random.default_rng(900 + seed))
+        assert w is not None
+        kinds.add(w.params["robust_shock"])
+    assert kinds == {True, False}

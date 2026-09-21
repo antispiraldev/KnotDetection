@@ -22,7 +22,7 @@ from inflection.sim import realism as R
 
 ROOT = Path(__file__).resolve().parents[1]
 OUT = ROOT / "inflection" / "notebooks"
-METHODS = ("base_rate", "own_history", "generic_ews", "feature_classifier")
+METHODS = ("base_rate", "own_history", "generic_ews", "feature_classifier", "hybrid")
 
 
 def fmt(s: dict, key: str, digits: int = 3) -> str:
@@ -43,6 +43,25 @@ def table(scores: dict, title: str, keys: list[tuple[str, str, int]]) -> str:
             if s is None:
                 continue
             lines.append(f"| {layer} | {m} | " + " | ".join(fmt(s, k, d) for k, _, d in keys) + " |")
+    return "\n".join(lines)
+
+
+def breakdown(scores: dict, layer: str) -> str:
+    """Per-type means on one layer: where each method's skill comes from."""
+    from inflection.sim.models import TRANSITION_TYPES
+    cols = [f"mean_p_{k}" for k in TRANSITION_TYPES] + ["mean_p_shock_robust", "mean_p_shock_fragile"]
+    names = [k.replace("_", " ") for k in TRANSITION_TYPES] + ["shock: robust", "shock: fragile"]
+    lines = [f"\n### Mean p(transition) by type, {layer}\n", "| method | " + " | ".join(names) + " |",
+             "|---|" + "---|" * len(cols)]
+    for m in METHODS:
+        s = scores.get(f"{m}__{layer}", {})
+        lines.append(f"| {m} | " + " | ".join(f"{s[c]:.2f}" if c in s else "–" for c in cols) + " |")
+    kinds = [k for k in TRANSITION_TYPES if k != "null"]
+    lines += [f"\n### Onset MAE by type, {layer}\n", "| method | " + " | ".join(k.replace("_", " ") for k in kinds) + " |",
+              "|---|" + "---|" * len(kinds)]
+    for m in METHODS:
+        s = scores.get(f"{m}__{layer}", {})
+        lines.append(f"| {m} | " + " | ".join(f"{s[f'mae_onset_{k}']:.1f}" if f"mae_onset_{k}" in s else "–" for k in kinds) + " |")
     return "\n".join(lines)
 
 
@@ -91,6 +110,7 @@ def main():
     out.append(table(scores, "What", [
         ("type_accuracy", "accuracy (excl. mech.)", 3),
         ("type_accuracy_mechanism_change", "mech. change", 2), ("type_logloss", "log loss", 2)]))
+    out.append(breakdown(scores, "clean"))
     text = "\n".join(out)
     print(text)
     (OUT / f"gate3_tables_{args.test_set}.md").write_text(text + "\n")

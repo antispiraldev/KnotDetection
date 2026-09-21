@@ -99,6 +99,8 @@ class World:
             observable_onset=self.observable_onset,
             onset_lag=self.onset_lag,
             transitioned=self.transitioned,
+            # Which kind of shock world, for the Gate 4 breakdown; None for other types.
+            robust_shock=self.params.get("robust_shock") if self.transition_type == "exogenous_shock" else None,
         )
 
 
@@ -201,6 +203,10 @@ def generate_world(
     lo, hi = tstar_range()
 
     target_cv = float(rng.uniform(*CV_TARGET))
+    # Half the shock worlds are robust (see `models.spec_exogenous_shock`). Drawn here,
+    # before rejection, because fragile shock worlds are rejected far more often
+    # (they escape early) and a per-attempt draw would tilt the accepted mix robust.
+    robust = bool(rng.random() < 0.5) if transition_type == "exogenous_shock" else False
     if transition_type in ("null", "noise_induced"):
         t_star_req = None
     else:
@@ -215,7 +221,8 @@ def generate_world(
 
     for attempt in range(1, max_attempts + 1):
         try:
-            spec = models.build(transition_type, rng, T, t_star_req, target_cv=target_cv)
+            spec = models.build(transition_type, rng, T, t_star_req, target_cv=target_cv,
+                                robust=robust)
             _calibrate_cv(spec, target_cv, origin, rng)
             state = rng.bit_generator.state
             run = simulate(spec, T, DT, OBS_STEP, rng)

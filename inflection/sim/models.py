@@ -26,7 +26,8 @@ Two rules follow, and `inflection.eval.leakage` enforces them as a standing gate
 2. **Mechanism carries the signal, not the parameters.** Where a type needs to be
    escapable (`noise_induced`), that comes from basin geometry -- parking the system
    near its fold -- rather than from louder forcing. Near-criticality is then shared
-   by `fold`, `noise_induced` and `exogenous_shock`, so it fingerprints none of them.
+   by `fold`, `noise_induced` and the fragile half of `exogenous_shock`, so it
+   fingerprints none of them.
 """
 
 from __future__ import annotations
@@ -289,17 +290,39 @@ def spec_noise_induced(rng: np.random.Generator, T: float, t_star: float | None 
 
 
 def spec_exogenous_shock(rng: np.random.Generator, T: float, t_star: float,
-                         target_cv: float | None = None) -> Spec:
-    """Quiet bistable system flipped by a single outside pulse (plague, climate failure).
+                         target_cv: float | None = None, robust: bool = False) -> Spec:
+    """Bistable system flipped by a single outside pulse (plague, climate failure).
 
-    Drawn with the same barrier-in-noise-units as `noise_induced` so the two cannot
-    be told apart by their resting statistics -- only by whether the departure is a
-    fluctuation or an arrival. Worlds that escape on their own before the shock are
-    rejected at generation (`label.in_high_state_before`).
+    Two kinds of world, set by `robust` (a design flag drawn once per world, before
+    rejection sampling -- see `generate.generate_world`):
+
+    - fragile: drawn with the same barrier-in-noise-units as `noise_induced`, so the
+      two cannot be told apart at rest -- only by whether the departure is a
+      fluctuation or an arrival;
+    - robust: parked well clear of the fold, a/a_c in 0.45-0.75 like a null world,
+      but inside the bistable window so that the pulse has a low state to land in.
+
+    Until Gate 3 every shock world was fragile. The blind test then rated shocks
+    as highly foreseeable (mean p = 0.92), purely because the simulator had made
+    them look fragile, while a real shock can strike a robust society. Half the shock
+    worlds are now robust, so a method gets credit for foreseeing a shock only where
+    the world genuinely looks fragile (LOG.md, Gate 3 decisions).
+
+    Fragile worlds that escape on their own before the shock are rejected at
+    generation (`label.in_high_state_before`).
     """
-    p = draw_may_params(rng)
-    a = _near_critical_a(rng, p, target_cv)
-    eq = may_equilibria(a, **p)
+    for _ in range(200):
+        p = draw_may_params(rng)
+        if robust:
+            a_c, _ = may_fold_point(**p)
+            a = a_c * rng.uniform(0.45, 0.75)
+        else:
+            a = _near_critical_a(rng, p, target_cv)
+        eq = may_equilibria(a, **p)
+        if len(eq) == 3:
+            break
+    else:
+        raise RuntimeError("no bistable shock world found")
     n0, separatrix = max(eq), sorted(eq)[1]
     target = separatrix * rng.uniform(0.45, 0.80)
     return Spec(
@@ -311,7 +334,8 @@ def spec_exogenous_shock(rng: np.random.Generator, T: float, t_star: float,
         transition_time=t_star,
         primary=0,
         shock=(t_star, np.array([target])),
-        params=dict(model="may_harvesting", a=a, equilibria=eq, shock_target=target, **p),
+        params=dict(model="may_harvesting", a=a, equilibria=eq, shock_target=target,
+                    robust_shock=robust, **p),
     )
 
 
@@ -498,8 +522,10 @@ NEEDS_TARGET_CV = ("noise_induced", "exogenous_shock")
 
 
 def build(transition_type: str, rng: np.random.Generator, T: float, t_star: float | None,
-          target_cv: float | None = None) -> Spec:
-    if transition_type in NEEDS_TARGET_CV:
+          target_cv: float | None = None, robust: bool = False) -> Spec:
+    if transition_type == "exogenous_shock":
+        spec = BUILDERS[transition_type](rng, T, t_star, target_cv=target_cv, robust=robust)
+    elif transition_type in NEEDS_TARGET_CV:
         spec = BUILDERS[transition_type](rng, T, t_star, target_cv=target_cv)
     else:
         spec = BUILDERS[transition_type](rng, T, t_star)

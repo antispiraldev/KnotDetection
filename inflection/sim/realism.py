@@ -29,6 +29,7 @@ class Realism:
     proxy_exponent: float = 1.0   # y -> y**exponent, a monotone distortion
     proxy_floor: float = 0.0      # proxy saturates below this quantile of the series
     max_points: int | None = None  # truncate the record to its final N points
+    end_trim: float = 0.0         # record stops this long before the forecast origin
 
     @property
     def name(self) -> str:
@@ -45,6 +46,8 @@ class Realism:
             bits.append(f"floor{self.proxy_floor:g}")
         if self.max_points:
             bits.append(f"n{self.max_points}")
+        if self.end_trim:
+            bits.append(f"lead+{self.end_trim:g}")
         return "+".join(bits)
 
 
@@ -64,6 +67,9 @@ LAYERS = {
         obs_noise=0.05, keep_fraction=0.4, irregular=True,
         proxy_exponent=0.6, proxy_floor=0.1, max_points=60,
     ),
+    # Clean records that stop 15 or 30 steps early: forecasting from further back.
+    "lead_15": Realism(end_trim=15.0),
+    "lead_30": Realism(end_trim=30.0),
 }
 
 
@@ -76,6 +82,13 @@ def apply(
     """Degrade a true series into an observed record. Does not normalise."""
     t = np.asarray(t, dtype=float)
     y = np.asarray(y, dtype=float).copy()
+
+    # 0. Lead time: the record ends `end_trim` before the forecast origin. The world
+    #    and the scoring are unchanged, so this is the same forecast made from
+    #    further back -- a lead-time sweep with no new generation.
+    if realism.end_trim > 0:
+        keep = t < t[-1] + (t[1] - t[0] if len(t) > 1 else 0.0) - realism.end_trim
+        t, y = t[keep], y[keep]
 
     # 1. Proxy relationship: what was actually deposited is a monotone, saturating
     #    function of the state, not the state.
