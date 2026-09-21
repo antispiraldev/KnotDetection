@@ -28,3 +28,4 @@
 {"event": "forecast_registered", "file": "own_history__harsh.json", "forecast_sha256": "eb5214c4a1c05bd378f508e64fce81e05c7fdd02d6f35fb6832dbcead351af6f", "method": "own_history/harsh", "test_set": "test_v1", "time": "2026-09-21T08:16:20+00:00"}
 {"event": "forecast_registered", "file": "generic_ews__harsh.json", "forecast_sha256": "d46ca75c17657e096bc6ba578b6b56f4f416f3f01fe21cce32d1be63d4f1ff86", "method": "generic_ews/harsh", "test_set": "test_v1", "time": "2026-09-21T08:16:20+00:00"}
 {"event": "forecast_registered", "file": "feature_classifier__harsh.json", "forecast_sha256": "83cc0d6832234ea4c88e89b595e8da4d0f1a1eb663df9b0f61c8a58fad404144", "method": "feature_classifier/harsh", "test_set": "test_v1", "time": "2026-09-21T08:17:06+00:00"}
+{"event": "unsealed", "test_set": "test_v1", "time": "2026-09-21T08:17:22+00:00"}

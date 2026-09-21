@@ -5,6 +5,92 @@ parked as out of scope. Newest entries at the top.
 
 ---
 
+## 2026-09-21 (Gate 3, part 2) — First blind results; stopping for review
+
+### What was run, in order (all in `inflection/data/ledger.jsonl` and git)
+
+1. `test_v1` seed committed by salted hash at 07:12 UTC (`4222bbc`).
+2. Expectations written in this log (`83fe02c`).
+3. Test pool built at 08:10 UTC: 420 worlds, 60 per type, none failed, from generator
+   revision `83fe02c` (clean tree). Open records for 7 layers; truth sealed with
+   hash `da50025c…` (`eed8632`).
+4. Four methods fitted on the development pool (public seed 101), one fit per
+   layer. 28 forecast files registered by hash and committed *before* unsealing
+   (`d130c0e`).
+5. Unsealed and scored. Tables are in `inflection/notebooks/gate3_tables_test_v1.md`,
+   the figure in `gate3_summary.png`, and every number in `gate3_scores_test_v1.json`.
+
+`test_v1` is now spent. Any revised method needs `test_v2`.
+
+### Headline results (95% bootstrap intervals, 420 worlds)
+
+| | clean | harsh |
+|---|---|---|
+| **Whether — AUC** | | |
+| feature classifier | 0.81 [0.77, 0.85] | 0.66 [0.59, 0.74] |
+| own history | 0.73 [0.68, 0.78] | 0.56 [0.48, 0.64] |
+| generic EWS | 0.47 [0.39, 0.56] | 0.50 [0.43, 0.58] |
+| **When — onset MAE (steps)** | | |
+| base rate | 18.0 [16.7, 19.3] | 18.0 |
+| feature classifier | 17.0 [15.7, 18.3] | 18.0 [16.6, 19.5] |
+| own history | 34.1 | 36.4 |
+| **What — type accuracy, excl. mechanism change (chance 0.167)** | | |
+| feature classifier | 0.39 [0.33, 0.44] | 0.18 [0.15, 0.22] |
+| generic EWS | 0.14 | 0.08 |
+
+### Against the expectations written beforehand
+
+1. **Whether: mostly as expected, one miss.** Generic EWS is within noise of chance
+   on every layer, as predicted. Own history is in the predicted range. The feature
+   classifier *beat* the predicted range on clean (0.81 against 0.65–0.75). My
+   prediction that everything collapses under `harsh` was wrong for it: it keeps
+   AUC 0.66, with the interval clear of 0.5.
+2. **When: as expected.** Nothing beats the base rate. The feature classifier's
+   1-step edge is inside the intervals. Own history is roughly twice as bad, because
+   straight-line extrapolation dates onsets poorly.
+3. **What: as expected.** Only the feature classifier beats chance (0.39 on clean).
+   It recognizes Hopf easily (recall 0.85, from the oscillatory autocorrelation
+   signature) and the other types weakly (0.25–0.32 against 0.14). Under `harsh` it
+   is at chance.
+4. **Layers: half right.** Observation noise and irregular sampling do hurt most.
+   `short` did *not* help own history: its ranking held (AUC 0.68), but its
+   calibration broke (Brier skill −0.01).
+
+### What the numbers mean, and don't
+
+- **Mechanism change is not recognized, as designed.** The feature classifier's 0.38
+  on that column is confusion with null. Within null plus mechanism-change worlds it
+  separates the two at AUC 0.47. So the plan's "hardest case" is exactly as hard as
+  intended: a change with no antecedents is not foreseen.
+- **"Whether" skill is mostly fragility-at-rest, and part of that is the benchmark's
+  own construction.** Mean p(transition) is 0.77 for null and 0.76 for mechanism
+  change, against 0.80–0.95 for near-critical and oscillating worlds. That includes
+  **exogenous shocks at 0.92**, which look foreseeable here only because the
+  simulator places them in a near-critical state (to match `noise_induced` at
+  rest). A real shock can hit a robust society. So this is the circularity risk in
+  plan §8, made concrete. The whether-AUC is an upper bound that rests on the
+  assumption that societies about to transition look fragile beforehand.
+- **Generic EWS failing is a real result for this setting, not a bug.** Dev-pool
+  diagnostics show the within-world slowing-down signal is there: before a fold,
+  lag-1 AC rises from 0.39 to 0.72. But the Kendall-τ trend statistic on a
+  90-point record is too noisy to carry it across worlds. The *level* of
+  autocorrelation, which the feature classifier uses, carries more than its trend.
+  This matches Jäger & Füllsack (2019) and O'Brien et al. (2023).
+- **Timing is the unsolved sub-question.** No method dates the onset better than
+  knowing the window it falls in. That is the natural target for the hybrid method.
+
+### Open questions for Gate 3 review
+
+1. Should shock worlds be decoupled from near-criticality in `test_v2` (e.g. half
+   near-critical, half robust), so that "whether" stops rewarding a design choice?
+2. For "when": the hybrid method in §4.3 is the planned answer. Is it worth building
+   next, or should the deep-learning classifier come first?
+3. The single forecast origin at 0.3 T fixes one lead time (median 34 steps). A
+   lead-time sweep would need several fixed origins, each with its own blind test
+   set.
+
+---
+
 ## 2026-09-21 (Gate 3, part 1) — Onset check, four simulator defects, blinding, first methods
 
 Gate 3 step 1 was meant to be a quick calibration of the onset detector. Doing it
