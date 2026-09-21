@@ -1,6 +1,6 @@
 # Forecasting Inflection Points: Research Plan
 
-*Gate 1 draft, 2026-09-19. Gate 1 approved 2026-09-21. Gate 2 approved 2026-09-21, with the amendments marked **[Amended 2026-09-21]** below (see LOG.md). Gate 3 results (blind test set `test_v1`) ready for review 2026-09-21; awaiting approval.*
+*Gate 1 draft, 2026-09-19. Gates 1–3 approved 2026-09-21, with the amendments marked **[Amended 2026-09-21]** below (see LOG.md). Gate 4 analysis (blind tests `test_v1`, `test_v2`) ready for review 2026-09-21; awaiting approval. Phase 2 not started.*
 
 ## 1. Question
 

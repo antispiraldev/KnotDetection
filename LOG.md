@@ -5,7 +5,27 @@ parked as out of scope. Newest entries at the top.
 
 ---
 
-## 2026-09-21 — `test_v2` results (second blind test); Gate 4 write-up next
+## 2026-09-21 — Gate 4 analysis written; stopping for review
+
+The plain-language Gate 4 analysis is a Claude Doc on claude.ai, "Forecasting
+Inflection Points: Gate 4 Analysis". Its main conclusions:
+
+- **Whether** is moderately forecastable (AUC ~0.78 on clean data), but the skill is
+  fragility-recognition.
+- **What** is somewhat forecastable on good data (0.47 against 0.17) and near
+  chance on poor data.
+- **When** is not forecastable beyond the transition window.
+- **Classic EWS** are at chance.
+- Every implication for cliodynamics is stated as a claim about methods and
+  testing, not about real history.
+
+My recommendation is Phase 2 (real data), which needs Luca's approval and his help
+getting the datasets. The deep-learning classifier and an alternative simulator
+design are offered as optional robustness checks.
+
+---
+
+## 2026-09-21 — `test_v2` results (second blind test)
 
 Seed committed at `2df73e5`. Expectations written at `d473e56`. Pool built from
 generator `d473e56` (clean tree): 420 worlds, none failed (`0ce6200`). 45 forecasts
