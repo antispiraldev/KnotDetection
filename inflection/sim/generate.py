@@ -30,7 +30,7 @@ import numpy as np
 
 from . import models
 from .integrate import simulate
-from .label import label
+from .label import in_high_state_before, label
 from .realism import CLEAN, Realism, apply as apply_realism
 
 T = 300.0
@@ -48,6 +48,7 @@ TSTAR_WINDOW = (0.33, 0.50)  # shared across every transition type
 # of any society, so it is calibrated away rather than reported as a finding.
 CV_TARGET = (0.02, 0.15)
 CV_CLIP = (0.1, 12.0)       # bounds on the noise rescaling a single calibration may apply
+CV_TOL = 0.10               # accepted runs further than this from target are re-simulated
 
 
 def tstar_range() -> tuple[float, float]:
@@ -166,7 +167,7 @@ def _usable(w_label: dict, origin: float, t_star_lo: float, t_star_hi: float) ->
 def generate_world(
     transition_type: str,
     rng: np.random.Generator,
-    max_attempts: int = 60,
+    max_attempts: int = 250,
     failed_designs: list | None = None,
 ) -> World | None:
     """Draw worlds of this type until one is usable, or give up.
@@ -184,6 +185,11 @@ def generate_world(
     it as `sd` separating shock worlds at auc 0.80. A variable the leakage gate
     treats as nuisance must be assigned where selection cannot act on it.
 
+    The attempt cap is high (250) because `noise_induced` accepts only ~5-15% of
+    attempts at any noise level: an escape time is roughly exponential, and it must
+    land in a 50-step window without an escape before the origin. At the old cap of
+    60, a 5% acceptance rate failed one design in twenty.
+
     Returns None if no usable world is found at these design values. That is itself
     a bias if it happens often for some types and not others, so failures are
     counted and reported by `generate_pool`. If `failed_designs` is given, the design
@@ -200,18 +206,52 @@ def generate_world(
     else:
         t_star_req = float(rng.uniform(lo, hi))
 
+    def accept(run):
+        lab = label(run)
+        ok, _ = _usable(lab, origin, lo, hi)
+        if ok and transition_type == "exogenous_shock":
+            ok = in_high_state_before(run, t_star_req)   # not escaped before the shock
+        return lab if ok else None
+
     for attempt in range(1, max_attempts + 1):
         try:
-            spec = models.build(transition_type, rng, T, t_star_req)
+            spec = models.build(transition_type, rng, T, t_star_req, target_cv=target_cv)
             _calibrate_cv(spec, target_cv, origin, rng)
+            state = rng.bit_generator.state
             run = simulate(spec, T, DT, OBS_STEP, rng)
         except RuntimeError:
             continue
-
-        lab = label(run)
-        ok, _ = _usable(lab, origin, lo, hi)
-        if not ok:
+        lab = accept(run)
+        if lab is None:
             continue
+
+        # Second calibration pass, on the accepted run itself. The pilot measures an
+        # unconditioned path, but acceptance conditions on the path: a run must not
+        # visibly depart before the origin, which excludes exactly the large
+        # excursions toward the separatrix that near-critical worlds make. So accepted
+        # runs came out quieter than their pilots -- realised CV at 0.81 of target for
+        # `exogenous_shock`, 0.86 for `fold`, 0.90 for `noise_induced`, ~1.0 for the
+        # far-from-critical types -- and spread separated types again (AUC ~0.62 for
+        # shock and fold over three pools; LOG.md, Gate 3 step 1). Re-running the same
+        # noise increments at the corrected scale pins the delivered CV to its target;
+        # the rerun must pass acceptance again, or the attempt is spent.
+        pre = run.series[run.t < origin]
+        realised = float(np.std(pre) / np.median(pre))
+        if realised > 0 and abs(realised / target_cv - 1) > CV_TOL:
+            factor = target_cv / realised
+            spec.noise_scale = spec.noise_scale * factor
+            spec.params = dict(spec.params, cv_recalibration=factor)
+            after = rng.bit_generator.state
+            rng.bit_generator.state = state
+            try:
+                run = simulate(spec, T, DT, OBS_STEP, rng)
+            except RuntimeError:
+                continue
+            finally:
+                rng.bit_generator.state = after
+            lab = accept(run)
+            if lab is None:
+                continue
 
         pre = run.series[run.t < origin]
         unit = float(np.median(pre))
@@ -275,6 +315,7 @@ def save_pool(
     realism: Realism = CLEAN,
     seed: int = 0,
     seal: bool = True,
+    write_truth: bool = True,
 ) -> dict:
     """Write records and (optionally sealed) truth, with a hash manifest.
 
@@ -297,7 +338,9 @@ def save_pool(
     truth_json = json.dumps(truth, indent=2, sort_keys=True)
     truth_hash = hashlib.sha256(truth_json.encode()).hexdigest()
 
-    if seal:
+    if not write_truth:
+        pass                             # caller seals the truth itself (eval.blind)
+    elif seal:
         sealed = out_dir / "sealed"
         sealed.mkdir(exist_ok=True)
         (sealed / "truth.json").write_text(truth_json)

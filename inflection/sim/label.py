@@ -67,6 +67,37 @@ def _centered_rolling_median(x: np.ndarray, width: int) -> np.ndarray:
     return out
 
 
+def _centered_rolling_iqr(x: np.ndarray, width: int) -> np.ndarray:
+    """Interquartile range of the window centred on each point; NaN where incomplete."""
+    out = np.full(len(x), np.nan)
+    if len(x) < width:
+        return out
+    half = width // 2
+    windows = np.lib.stride_tricks.sliding_window_view(x, width)
+    q75, q25 = np.quantile(windows, [0.75, 0.25], axis=1)
+    out[half:half + len(windows)] = q75 - q25
+    return out
+
+
+def in_high_state_before(run: Run, t: float) -> bool:
+    """Was a bistable run still above its separatrix at the last observation before `t`?
+
+    For `exogenous_shock` the transition is dated to the shock. That is only true if
+    the system was still in the high state when the shock arrived. The shock worlds
+    sit in the same near-critical window as `noise_induced`, so some escape on their
+    own first: in the Gate 2 pool 6 of 40 had collapsed 6 to 57 steps before the
+    shock, which then struck an empty state (and, having a fixed target, briefly
+    pushed it *up*). Those worlds are noise-induced escapes under the wrong label and
+    with a transition time that is too late, so generation rejects them.
+    """
+    eq = run.params.get("equilibria")
+    if eq is None or len(eq) != 3:
+        return True
+    separatrix = sorted(eq)[1] * run.params.get("scale", 1.0)
+    before = np.where(run.t < t)[0]
+    return bool(len(before) and run.series[before[-1]] >= separatrix)
+
+
 def _first_sustained_run(flags: np.ndarray, hold: int) -> int | None:
     """Index where the first run of at least `hold` consecutive True values begins."""
     run = 0
@@ -82,7 +113,8 @@ def observable_onset(
     baseline_frac: float = 0.20,
     width: int = 20,
     z_level: float = 6.0,
-    k_amp: float = 3.5,
+    amp_width: int = 30,
+    k_amp: float = 3.0,
     hold: int = 60,
 ) -> float | None:
     """First sustained departure from the run's own early behaviour, to the time step.
@@ -104,8 +136,28 @@ def observable_onset(
 
     - level: centred rolling median of the series, against the baseline median, in
       units of the baseline's point-wise MAD.
-    - amplitude: centred rolling median of each point's absolute deviation from the
-      local level, against its own baseline value. Median-based for the same reason.
+    - amplitude: centred rolling IQR, over `amp_width` steps, of each point's
+      deviation from the local level *as a fraction of that level*, against its own
+      baseline value.
+
+    The amplitude signal was changed after the oracle check (Gate 3, step 1; see
+    LOG.md). It used to be the rolling median of |deviation|, which barely moves on
+    the spiky cycles of the elite-commoner model: long flat troughs keep the median
+    small while the peaks triple. Hopf onsets ran 45+ steps behind an oracle told the
+    true regimes in the worst tenth of worlds, with large cycles plainly visible in
+    the plots. The IQR sees a quarter of the window, so it catches the peaks. Two
+    choices keep that sensitivity from making other types early:
+
+    - deviations are taken from the local level, so a step in level is not read as
+      a burst of spread;
+    - they are relative to that level. Noise here is multiplicative, so a
+      mechanism change that quadruples the level also quadruples the absolute
+      spread, and an absolute-IQR window -- which reacts once a quarter of it lies
+      past the step -- fired up to seven steps before the change. Relative spread
+      does not move on a pure level change and moves fully on a Hopf, whose mean
+      does not change.
+
+    With both, every non-Hopf onset in the Gate 2 pool is unchanged to the step.
 
     `hold` consecutive steps must depart, which keeps a stationary series quiet even
     though stride-1 windows give it many more chances to wander over the line.
@@ -122,8 +174,9 @@ def observable_onset(
         mad = float(np.std(base)) or 1e-9
 
     level = _centered_rolling_median(s, width)
-    local_dev = np.abs(s - np.where(np.isnan(level), med, level))
-    amp = _centered_rolling_median(local_dev, width)
+    local = np.where(np.isnan(level), med, level)
+    rel_dev = (s - local) / np.where(local > 0, local, med)
+    amp = _centered_rolling_iqr(rel_dev, amp_width)
     base_amp = float(np.nanmedian(amp[:n_base]))
     if not np.isfinite(base_amp) or base_amp <= 0:
         base_amp = 1e-9

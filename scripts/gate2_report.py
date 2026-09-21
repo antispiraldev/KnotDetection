@@ -148,6 +148,15 @@ def main() -> None:
     OUT.mkdir(parents=True, exist_ok=True)
     worlds, stats = get_pool(args.n, args.seed, args.fresh)
 
+    # Calibration can be undone by selection (it has been, twice), so show what was
+    # delivered, not only what was targeted.
+    print("  delivered / target CV, median by type (should be ~1.0 for all):")
+    for tt in models.TRANSITION_TYPES:
+        r = [float(np.std(w.raw[w.t < w.origin]) / np.median(w.raw[w.t < w.origin]))
+             / w.params["target_cv"] for w in worlds if w.transition_type == tt]
+        if r:
+            print(f"    {tt:18s} {np.median(r):.3f}")
+
     figure_examples(worlds, OUT / "gate2_examples.png")
     figure_onset_lag(worlds, OUT / "gate2_onset_lag.png")
 
