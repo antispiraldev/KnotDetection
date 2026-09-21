@@ -42,9 +42,12 @@ def get_pool(n_per_type: int, seed: int, fresh: bool):
     OUT.mkdir(parents=True, exist_ok=True)
     CACHE.write_bytes(pickle.dumps((worlds, stats)))
     print(f"generated {stats['n_generated']}/{stats['n_requested']} in {time.time() - t0:.0f}s")
-    print("  mean attempts per accepted world:")
+    print("  per type: mean attempts per accepted world, and worlds that failed outright")
     for k, v in sorted(stats["mean_attempts"].items(), key=lambda kv: -kv[1]):
-        print(f"    {k:18s} {v:.1f}")
+        # Failures matter as much as attempts: design variables are fixed before the
+        # rejection loop, so a type that often exhausts its attempts at some target
+        # CV is dropping those targets from the pool -- selection by another route.
+        print(f"    {k:18s} {v:5.1f}   failed {stats['failures'][k]}")
     return worlds, stats
 
 
@@ -109,7 +112,7 @@ def figure_onset_lag(worlds, path: Path) -> None:
     print(f"wrote {path}")
 
 
-def audit_across_layers(worlds, seed: int) -> dict:
+def audit_across_layers(worlds, seed: int, n_perm: int = 30) -> dict:
     results = {}
     for name, layer in R.LAYERS.items():
         rng = np.random.default_rng(seed)
@@ -122,12 +125,15 @@ def audit_across_layers(worlds, seed: int) -> dict:
         classes, counts = np.unique(y, return_counts=True)
         base = float(counts.max() / counts.sum())
         stat, _ = leakage._accuracy(X, y, leakage.STATIC_FEATURES, 5, seed)
+        null = leakage.permutation_null(X, y, leakage.STATIC_FEATURES, n_perm, 5, seed)
+        p = float((np.sum(null >= stat) + 1) / (n_perm + 1))
         phys, _ = leakage._accuracy(X, y, leakage.TEMPORAL_FEATURES, 5, seed)
         comb, recall = leakage._accuracy(X, y, leakage.FEATURE_NAMES, 5, seed)
         results[name] = dict(
             base_rate=base,
-            scale_dependent=stat, scale_dependent_excess=stat - base,
+            scale_dependent=stat, scale_dependent_null=float(null.mean()), scale_dependent_p=p,
             physical=phys, combined=comb, per_type_recall=recall,
+            leak=bool(p < 0.05 and stat - null.mean() > 0.05),
         )
     return results
 
@@ -150,12 +156,13 @@ def main() -> None:
 
     print()
     print("=== cheap-classifier accuracy under each realism layer ===")
-    print(f"{'layer':20s} {'scale-dep':>10s} {'physical':>10s} {'combined':>10s}")
+    print(f"{'layer':20s} {'scale-dep':>10s} {'(chance)':>9s} {'p':>6s} "
+          f"{'physical':>10s} {'combined':>10s}")
     results = audit_across_layers(worlds, args.seed)
     for name, r in results.items():
-        flag = "" if r["scale_dependent_excess"] <= 0.05 else "  <-- LEAK"
-        print(f"{name:20s} {r['scale_dependent']:10.3f} {r['physical']:10.3f} "
-              f"{r['combined']:10.3f}{flag}")
+        flag = "  <-- LEAK" if r["leak"] else ""
+        print(f"{name:20s} {r['scale_dependent']:10.3f} {r['scale_dependent_null']:9.3f} "
+              f"{r['scale_dependent_p']:6.3f} {r['physical']:10.3f} {r['combined']:10.3f}{flag}")
     print(f"\n(base rate {results['clean']['base_rate']:.3f}; "
           "'combined' is the difficulty floor a real method must beat)")
 

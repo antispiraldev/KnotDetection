@@ -5,6 +5,179 @@ parked as out of scope. Newest entries at the top.
 
 ---
 
+## 2026-09-21 (later) — What the Gate 2 figures and a second audit draw turned up
+
+The first Gate 2 run passed the leakage gate. Looking at the example trajectories, and
+then regenerating, showed that the pass had been partly luck. Five defects, all fixed,
+plus two open design questions for Luca.
+
+### 1. `noise_induced` ground truth was wrong
+
+The example figure put the "transition" at t≈118. The series then visibly recovered
+to the high state and did not commit to the low one until t≈240. The label used first
+passage below the separatrix, and a noisy bistable system crosses, wanders, and comes
+back. It now uses the **last departure**, the point after which the system never
+returns (`label.separatrix_crossing`). The test that asserted first-passage semantics
+was itself wrong, so it was rewritten, and a synthetic dip → recover → commit case was
+added.
+
+### 2. The gate was measuring the random draw
+
+After the label fix, the same generator run again scored +0.063 excess, up from
+−0.011, and the verdict flipped from PASS to FAIL. The `exogenous_shock` model had not
+changed. The label fix alters how many `noise_induced` worlds get rejected, which
+shifts the random stream for every type generated afterwards, so these were different
+worlds. With 7 classes of 25 worlds each, a fixed 0.05 threshold on cross-validated
+accuracy is inside the sampling noise. The gate now builds a **label-permutation
+null** for the pool and fails only if the leak is *significant* (p < 0.05) *and*
+*material* (more than 0.05 above chance). Either condition alone misfires: size alone
+fails small pools on noise, and significance alone fails large pools on leaks too
+small to exploit.
+
+### 3. `exogenous_shock` was being made identifiable by selection
+
+The second draw was not only noise, though. The audit singled out `exogenous_shock`
+by spread (`sd` AUC 0.80), and the cause turned out to be real. Two routes led to it,
+and both are fixed.
+
+- **Selection on a design variable** (diagnosed by a parallel session; see the note
+  below). The target CV was redrawn on every retry, so the rejection loop filtered it.
+  A loud, near-critical shock world tends to escape on its own before its shock
+  arrives, gets rejected, and redraws. Accepted shock worlds ended up with a median
+  target CV of **0.045 against an unbiased 0.085**, while every other type sat at
+  0.074–0.094. I confirmed this against the pre-fix pool. **Rule adopted: design
+  variables are assigned before the rejection loop and held fixed through retries.**
+  A variable the gate treats as nuisance must be assigned where selection cannot act
+  on it.
+- **A corrupted calibration pilot.** When a near-critical pilot escapes inside the
+  calibration window, the collapse makes std/median enormous and the noise gets cut
+  to the clip. Three of 25 shock worlds arrived that way. `noise_induced` undoes this
+  damage itself, because a nearly silent world never escapes and is rejected.
+  `exogenous_shock` imposes its transition, so it accepted those worlds with a tenth
+  of the proper noise. A pilot that transitions now causes a redraw.
+
+The lesson generalises. Rejection sampling is safe only when nothing it can select
+on is something the audit assumes is independent of type. The two types differ in
+exactly one respect, whether the transition is emergent or imposed, and that decided
+whether the bias corrected itself or survived into the pool.
+
+### 4. Float-dust AUCs in the report
+
+`median` and `log_median` showed up at AUC 0.76. The generator pins both to a
+constant, 1 ± 1e-16 and 0 ± 1e-16, so the rank test was finding structure in rounding
+error. The fix needs both a relative and an absolute tolerance, because `log_median`
+sits at zero: its spread is the same size as its values. Harmless to the verdict, but
+it would have misled anyone reading the report.
+
+Also corrected: I had documented the scale-dependent gate as structural throughout.
+Only `median`, `log_median` and `n_points` are degenerate by construction. `sd`,
+`iqr` and `mad` track the per-world CV, so that half of the gate depends on the
+calibration working. Defect 3 is exactly that failure. Tests now check that the CV
+lands near its target and that no type sits pinned against the clip.
+
+### 5. Observable onsets were quantised and reported early
+
+The regenerated example figure had every orange onset line at exactly 100, 120 or
+140. The detector used non-overlapping 20-step windows and reported the *left edge*
+of the first window to depart. A shock landing at t=106 falls in [100, 120) and was
+recorded as visible at t=100, six steps before it happened. That is why the
+instantaneous types, `exogenous_shock` and `mechanism_change`, showed median lags of
+about −5 when their true lag cannot be negative. It also inflated the apparent early
+decline of `transcritical`.
+
+This had to be fixed before Gate 2, not after, because `observable_onset` is the
+timestamp I am recommending as the "when" target (below). A target with a built-in
+early bias of up to 20 steps would have been scored against for the rest of the
+project. Onsets are now computed with centred rolling medians at every time step. A
+centred median flips only once more than half its window is past a step, so a step
+lands where it actually is: a synthetic step at t=106 is now placed at 106–109. The
+threshold-crossing definition and its thresholds are unchanged, so this is a
+resolution fix, not a redefinition. A test pins it for steps at 106, 113 and 127.
+
+A general point, since it has now happened three times (the first-passage label, the
+float-dust AUCs, and this): **each of these was caught by looking at a picture or a
+single world, not by an aggregate statistic.** Every summary number looked plausible.
+Before each gate, inspect individual worlds, not only tables.
+
+### Open, for Luca: what "when" should mean
+
+The gap between the mechanism change and the first visible change is a property of
+each transition type, and it runs in both directions. Measured on the final 274-world
+pool, with the onset-resolution fix in place (lag = observable onset − mechanism
+change):
+
+| Type | Median lag | 10th–90th pct | Share negative | Why |
+|---|---|---|---|---|
+| mechanism_change | +1.4 | +0.6 to +2.4 | 0% | instantaneous; this is the detector's own delay |
+| exogenous_shock | +0.8 | −6.5 to +2.3 | 17% | instantaneous, but the shallow basin wanders just before the shock |
+| fold | +1.5 | −21.5 to +14.1 | 45% | the upper equilibrium descends before the fold point |
+| noise_induced | +9.5 | +2.6 to +23.7 | 3% | commitment, then descent past the detection band |
+| transcritical | −8.2 | −39.8 to +1.1 | 88% | a smooth slide; t* marks where it *ends* |
+| hopf | +19.6 | −13.9 to +66.6 | 23% | amplitude swells before the Hopf point, then the bifurcation delay |
+
+Fold is catastrophic, transcritical is continuous, and the Hopf is continuous with a
+delay. A single mechanism-time target would reward different things for different
+types: a method that fires on the first visible change would look early on
+transcritical and late on hopf while being right about the series both times.
+
+**Recommendation:** score "when" against `observable_onset`, which is defined the same
+way for every type and is what a forecaster can actually aim at, and report
+mechanism-time error next to it. This changes §4.4, so it is Luca's decision.
+
+**Caveat on that recommendation.** `observable_onset` is operational: it is when
+this fixed, deliberately conservative detector fires (6-MAD level shift or 3.5× amplitude
+rise, sustained for 60 steps). It is not literally the earliest any detector could
+fire, and the docstrings were overstating that. It is conservative for spiky Hopf
+cycles in particular. With sharp peaks over long flat troughs, a median-based
+amplitude signal mostly sees the troughs, so in the example world the cycles are
+visibly growing by t≈150–175 but the onset is recorded at 186. A method that fires
+correctly at 160 would be scored early by 26. If onset becomes the target, I would
+first calibrate the detector against an oracle, a likelihood-ratio detector that
+knows the true pre- and post-change distributions, and report the gap. The oracle
+gives a principled floor, and a fixed threshold only gives an arbitrary one.
+
+### Gate 2 status: ready for review
+
+Final pool: 274 worlds, 40 requested per type, seed 11. Figures and audit table are
+in `inflection/notebooks/` (`gate2_examples.png`, `gate2_onset_lag.png`,
+`gate2_audit.json`), regenerated after every fix above.
+
+- **Leakage gate: passes.** Scale-dependent accuracy is 0.157 against a permutation
+  chance level of 0.141 (p = 0.33), and the gate passes on all seven realism layers.
+  The closest call is `short` (p = 0.065, +0.048 over chance). The likely reason is
+  that a 40-point record is short enough for pre-origin drift to show up in its
+  spread, so arguably that is physics leaking into a nuisance feature rather than a
+  fingerprint. It is a watch item.
+- **Difficulty floor.** A cheap classifier on physical features names the type at
+  0.39 against a 0.146 base rate (clean), falling to 0.18 under `harsh`. Any real
+  method has to beat that. The strongest single signal is lag-1 autocorrelation,
+  which is critical slowing down: what the benchmark is meant to contain.
+- **Generation.** `noise_induced` needs about 13 attempts per accepted world and 6 of
+  40 failed outright. The generator now records the design values of failures, but
+  that change postdates this pool. The next pool will show directly whether failures
+  cluster at particular target CVs. Accepted `noise_induced` worlds show no skew in
+  target CV.
+- **Tests.** 22 passing.
+
+Decisions needed from Luca at Gate 2:
+1. The "when" target (above).
+2. §4.1's expectation for `noise_induced`: "little or no" warning under the plan,
+   "elevated but trendless" under the shallow-basin design.
+3. Whether the simulator design as a whole is approved to move on to blind test-set
+   generation and the first methods (Gate 3).
+
+### Coordination note: a second session
+
+Partway through, another process of this same conversation turned out to be editing
+the working tree. It shares this session's history, which suggests the conversation
+was resumed twice. It diagnosed the target-CV selection effect independently and made
+the `generate_world` change. We checked that neither had overwritten the other and
+agreed that this session owns `sim/`, `eval/`, `tests/` and this log. The other
+session stood down and handed over its notes, which are folded into this entry. Luca
+should close one of the two.
+
+---
+
 ## 2026-09-21 — Session 2 (beelink). Gate 1 approved; Gate 2 work begins
 
 ### Recovering from the power loss

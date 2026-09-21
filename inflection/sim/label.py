@@ -11,8 +11,10 @@ visible, and for two types it does not know the transition time at all:
 
 So the benchmark carries two timestamps. `transition_time` is the mechanism change:
 the honest target for "when did the system change?". `observable_onset` is the first
-moment the series itself departs: the earliest a perfect detector with no model
-could possibly fire. Scoring "when" against the first without reporting the second
+moment the series itself departs, as judged by one fixed and deliberately
+conservative threshold detector. It approximates the earliest a model-free detector
+could fire, but is not that bound: it runs late on spiky oscillations in particular
+(see LOG.md, onset caveat). Scoring "when" against the first without reporting the second
 would charge every method for a delay that belongs to the system.
 """
 
@@ -21,22 +23,6 @@ from __future__ import annotations
 import numpy as np
 
 from .integrate import Run
-
-
-def _rolling(x: np.ndarray, width: int, fn) -> tuple[np.ndarray, np.ndarray]:
-    """Non-overlapping window statistic; returns (window start index, value)."""
-    idx, vals = [], []
-    for lo in range(0, len(x) - width + 1, width):
-        idx.append(lo)
-        vals.append(fn(x[lo:lo + width]))
-    return np.array(idx), np.array(vals)
-
-
-def _first_sustained(flags: np.ndarray, need: int) -> int | None:
-    for i in range(len(flags) - need + 1):
-        if flags[i:i + need].all():
-            return i
-    return None
 
 
 def separatrix_crossing(run: Run, hold: int = 15) -> float | None:
@@ -70,25 +56,61 @@ def separatrix_crossing(run: Run, hold: int = 15) -> float | None:
     return float(run.t[last_above + 1])
 
 
+def _centered_rolling_median(x: np.ndarray, width: int) -> np.ndarray:
+    """Median of the window centred on each point; NaN where the window is incomplete."""
+    out = np.full(len(x), np.nan)
+    if len(x) < width:
+        return out
+    half = width // 2
+    windows = np.lib.stride_tricks.sliding_window_view(x, width)
+    out[half:half + len(windows)] = np.median(windows, axis=1)
+    return out
+
+
+def _first_sustained_run(flags: np.ndarray, hold: int) -> int | None:
+    """Index where the first run of at least `hold` consecutive True values begins."""
+    run = 0
+    for i, f in enumerate(flags):
+        run = run + 1 if f else 0
+        if run >= hold:
+            return i - hold + 1
+    return None
+
+
 def observable_onset(
     run: Run,
     baseline_frac: float = 0.20,
     width: int = 20,
     z_level: float = 6.0,
     k_amp: float = 3.5,
-    need: int = 3,
+    hold: int = 60,
 ) -> float | None:
-    """First sustained departure from the run's own early behaviour.
+    """First sustained departure from the run's own early behaviour, to the time step.
 
     Two departures count, because the types differ in what changes. A level shift
     catches fold, shock, transcritical and mechanism change. An amplitude shift
-    catches the Hopf, whose mean is unmoved while its cycles grow. The earlier of
-    the two is returned.
+    catches the Hopf, whose mean is unmoved while its cycles grow. The earlier of the
+    two is returned.
 
-    `need` consecutive windows must exceed the threshold, which is what keeps single
-    noisy windows from registering as onsets.
+    Both signals are *centred rolling medians*, evaluated at every time step. An
+    earlier version used non-overlapping 20-step windows and reported the left edge
+    of the first window to depart, which quantised every onset to a multiple of 20
+    and biased it early by up to a full window: a shock landing at t=106 fell inside
+    [100, 120) and was reported as visible at t=100, before it happened. Instantaneous
+    transitions showed median lags of about -5 as a result. A centred median flips
+    only once more than half its window lies past a step, so it places a step where
+    it actually is -- which matters because this timestamp is the proposed target for
+    scoring "when".
+
+    - level: centred rolling median of the series, against the baseline median, in
+      units of the baseline's point-wise MAD.
+    - amplitude: centred rolling median of each point's absolute deviation from the
+      local level, against its own baseline value. Median-based for the same reason.
+
+    `hold` consecutive steps must depart, which keeps a stationary series quiet even
+    though stride-1 windows give it many more chances to wander over the line.
     """
-    s = run.series
+    s = np.asarray(run.series, dtype=float)
     n_base = max(int(len(s) * baseline_frac), 3 * width)
     if n_base >= len(s):
         return None
@@ -99,23 +121,24 @@ def observable_onset(
     if mad <= 0:
         mad = float(np.std(base)) or 1e-9
 
-    idx, level = _rolling(s, width, np.median)
-    _, amp = _rolling(s, width, lambda w: float(np.ptp(w)))
+    level = _centered_rolling_median(s, width)
+    local_dev = np.abs(s - np.where(np.isnan(level), med, level))
+    amp = _centered_rolling_median(local_dev, width)
+    base_amp = float(np.nanmedian(amp[:n_base]))
+    if not np.isfinite(base_amp) or base_amp <= 0:
+        base_amp = 1e-9
 
-    n_base_win = max(n_base // width, 2)
-    base_amp = float(np.median(amp[:n_base_win])) or 1e-9
+    with np.errstate(invalid="ignore"):
+        level_hot = np.abs(level - med) > z_level * mad
+        amp_hot = amp > k_amp * base_amp
+    level_hot[:n_base] = False
+    amp_hot[:n_base] = False
 
-    after = idx >= n_base
     onsets = []
-
-    hit = _first_sustained((np.abs(level - med) > z_level * mad)[after], need)
-    if hit is not None:
-        onsets.append(float(run.t[idx[after][hit]]))
-
-    hit = _first_sustained((amp > k_amp * base_amp)[after], need)
-    if hit is not None:
-        onsets.append(float(run.t[idx[after][hit]]))
-
+    for hot in (level_hot, amp_hot):
+        i = _first_sustained_run(hot, hold)
+        if i is not None:
+            onsets.append(float(run.t[i]))
     return min(onsets) if onsets else None
 
 
