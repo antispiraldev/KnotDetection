@@ -1,0 +1,3782 @@
+[
+  {
+    "observable_onset": 113.0,
+    "onset_lag": 1.948360073425306,
+    "robust_shock": null,
+    "transition_time": 111.0516399265747,
+    "transition_type": "mechanism_change",
+    "transitioned": true,
+    "world_id": "test_v2-0000"
+  },
+  {
+    "observable_onset": 122.0,
+    "onset_lag": 18.0,
+    "robust_shock": null,
+    "transition_time": 104.0,
+    "transition_type": "noise_induced",
+    "transitioned": true,
+    "world_id": "test_v2-0001"
+  },
+  {
+    "observable_onset": 123.0,
+    "onset_lag": 6.0,
+    "robust_shock": null,
+    "transition_time": 117.0,
+    "transition_type": "noise_induced",
+    "transitioned": true,
+    "world_id": "test_v2-0002"
+  },
+  {
+    "observable_onset": 140.0,
+    "onset_lag": 12.585513978904444,
+    "robust_shock": null,
+    "transition_time": 127.41448602109556,
+    "transition_type": "fold",
+    "transitioned": true,
+    "world_id": "test_v2-0003"
+  },
+  {
+    "observable_onset": null,
+    "onset_lag": null,
+    "robust_shock": null,
+    "transition_time": null,
+    "transition_type": "null",
+    "transitioned": false,
+    "world_id": "test_v2-0004"
+  },
+  {
+    "observable_onset": 132.0,
+    "onset_lag": 1.610983161340016,
+    "robust_shock": null,
+    "transition_time": 130.38901683865998,
+    "transition_type": "transcritical",
+    "transitioned": true,
+    "world_id": "test_v2-0005"
+  },
+  {
+    "observable_onset": 118.0,
+    "onset_lag": 1.607352346335773,
+    "robust_shock": false,
+    "transition_time": 116.39264765366423,
+    "transition_type": "exogenous_shock",
+    "transitioned": true,
+    "world_id": "test_v2-0006"
+  },
+  {
+    "observable_onset": 118.0,
+    "onset_lag": 5.0,
+    "robust_shock": null,
+    "transition_time": 113.0,
+    "transition_type": "noise_induced",
+    "transitioned": true,
+    "world_id": "test_v2-0007"
+  },
+  {
+    "observable_onset": 130.0,
+    "onset_lag": 18.074459518292983,
+    "robust_shock": null,
+    "transition_time": 111.92554048170702,
+    "transition_type": "fold",
+    "transitioned": true,
+    "world_id": "test_v2-0008"
+  },
+  {
+    "observable_onset": 109.0,
+    "onset_lag": 0.14157613194100804,
+    "robust_shock": true,
+    "transition_time": 108.85842386805899,
+    "transition_type": "exogenous_shock",
+    "transitioned": true,
+    "world_id": "test_v2-0009"
+  },
+  {
+    "observable_onset": 148.0,
+    "onset_lag": -0.7957619573325587,
+    "robust_shock": null,
+    "transition_time": 148.79576195733256,
+    "transition_type": "transcritical",
+    "transitioned": true,
+    "world_id": "test_v2-0010"
+  },
+  {
+    "observable_onset": 144.0,
+    "onset_lag": 12.209537977499792,
+    "robust_shock": null,
+    "transition_time": 131.7904620225002,
+    "transition_type": "hopf",
+    "transitioned": true,
+    "world_id": "test_v2-0011"
+  },
+  {
+    "observable_onset": 144.0,
+    "onset_lag": 4.36591841743774,
+    "robust_shock": null,
+    "transition_time": 139.63408158256226,
+    "transition_type": "fold",
+    "transitioned": true,
+    "world_id": "test_v2-0012"
+  },
+  {
+    "observable_onset": 124.0,
+    "onset_lag": 13.0,
+    "robust_shock": null,
+    "transition_time": 111.0,
+    "transition_type": "noise_induced",
+    "transitioned": true,
+    "world_id": "test_v2-0013"
+  },
+  {
+    "observable_onset": 119.0,
+    "onset_lag": 7.0,
+    "robust_shock": null,
+    "transition_time": 112.0,
+    "transition_type": "noise_induced",
+    "transitioned": true,
+    "world_id": "test_v2-0014"
+  },
+  {
+    "observable_onset": 108.0,
+    "onset_lag": -14.24623281463451,
+    "robust_shock": null,
+    "transition_time": 122.24623281463451,
+    "transition_type": "transcritical",
+    "transitioned": true,
+    "world_id": "test_v2-0015"
+  },
+  {
+    "observable_onset": 116.0,
+    "onset_lag": 1.7299053847395385,
+    "robust_shock": null,
+    "transition_time": 114.27009461526046,
+    "transition_type": "mechanism_change",
+    "transitioned": true,
+    "world_id": "test_v2-0016"
+  },
+  {
+    "observable_onset": 121.0,
+    "onset_lag": 2.643621538923398,
+    "robust_shock": null,
+    "transition_time": 118.3563784610766,
+    "transition_type": "transcritical",
+    "transitioned": true,
+    "world_id": "test_v2-0017"
+  },
+  {
+    "observable_onset": null,
+    "onset_lag": null,
+    "robust_shock": null,
+    "transition_time": null,
+    "transition_type": "null",
+    "transitioned": false,
+    "world_id": "test_v2-0018"
+  },
+  {
+    "observable_onset": 117.0,
+    "onset_lag": 1.1905117891478483,
+    "robust_shock": null,
+    "transition_time": 115.80948821085215,
+    "transition_type": "mechanism_change",
+    "transitioned": true,
+    "world_id": "test_v2-0019"
+  },
+  {
+    "observable_onset": null,
+    "onset_lag": null,
+    "robust_shock": null,
+    "transition_time": null,
+    "transition_type": "null",
+    "transitioned": false,
+    "world_id": "test_v2-0020"
+  },
+  {
+    "observable_onset": 143.0,
+    "onset_lag": 1.0648608955508223,
+    "robust_shock": null,
+    "transition_time": 141.93513910444918,
+    "transition_type": "mechanism_change",
+    "transitioned": true,
+    "world_id": "test_v2-0021"
+  },
+  {
+    "observable_onset": 176.0,
+    "onset_lag": 33.17128002700065,
+    "robust_shock": null,
+    "transition_time": 142.82871997299935,
+    "transition_type": "hopf",
+    "transitioned": true,
+    "world_id": "test_v2-0022"
+  },
+  {
+    "observable_onset": null,
+    "onset_lag": null,
+    "robust_shock": null,
+    "transition_time": null,
+    "transition_type": "null",
+    "transitioned": false,
+    "world_id": "test_v2-0023"
+  },
+  {
+    "observable_onset": 137.0,
+    "onset_lag": 6.0,
+    "robust_shock": null,
+    "transition_time": 131.0,
+    "transition_type": "noise_induced",
+    "transitioned": true,
+    "world_id": "test_v2-0024"
+  },
+  {
+    "observable_onset": 132.0,
+    "onset_lag": 1.820820954256675,
+    "robust_shock": null,
+    "transition_time": 130.17917904574333,
+    "transition_type": "mechanism_change",
+    "transitioned": true,
+    "world_id": "test_v2-0025"
+  },
+  {
+    "observable_onset": null,
+    "onset_lag": null,
+    "robust_shock": null,
+    "transition_time": null,
+    "transition_type": "null",
+    "transitioned": false,
+    "world_id": "test_v2-0026"
+  },
+  {
+    "observable_onset": 110.0,
+    "onset_lag": 1.440508353848088,
+    "robust_shock": true,
+    "transition_time": 108.55949164615191,
+    "transition_type": "exogenous_shock",
+    "transitioned": true,
+    "world_id": "test_v2-0027"
+  },
+  {
+    "observable_onset": 96.0,
+    "onset_lag": -17.907391384587285,
+    "robust_shock": null,
+    "transition_time": 113.90739138458729,
+    "transition_type": "hopf",
+    "transitioned": true,
+    "world_id": "test_v2-0028"
+  },
+  {
+    "observable_onset": 118.0,
+    "onset_lag": 3.363551578532764,
+    "robust_shock": null,
+    "transition_time": 114.63644842146724,
+    "transition_type": "mechanism_change",
+    "transitioned": true,
+    "world_id": "test_v2-0029"
+  },
+  {
+    "observable_onset": 138.0,
+    "onset_lag": 1.61930674487769,
+    "robust_shock": true,
+    "transition_time": 136.3806932551223,
+    "transition_type": "exogenous_shock",
+    "transitioned": true,
+    "world_id": "test_v2-0030"
+  },
+  {
+    "observable_onset": 114.0,
+    "onset_lag": 0.1622697742411816,
+    "robust_shock": null,
+    "transition_time": 113.83773022575882,
+    "transition_type": "transcritical",
+    "transitioned": true,
+    "world_id": "test_v2-0031"
+  },
+  {
+    "observable_onset": 125.0,
+    "onset_lag": 8.883659955801505,
+    "robust_shock": null,
+    "transition_time": 116.1163400441985,
+    "transition_type": "fold",
+    "transitioned": true,
+    "world_id": "test_v2-0032"
+  },
+  {
+    "observable_onset": 122.0,
+    "onset_lag": -6.068777178484055,
+    "robust_shock": null,
+    "transition_time": 128.06877717848405,
+    "transition_type": "fold",
+    "transitioned": true,
+    "world_id": "test_v2-0033"
+  },
+  {
+    "observable_onset": 117.0,
+    "onset_lag": 15.0,
+    "robust_shock": null,
+    "transition_time": 102.0,
+    "transition_type": "noise_induced",
+    "transitioned": true,
+    "world_id": "test_v2-0034"
+  },
+  {
+    "observable_onset": 149.0,
+    "onset_lag": 0.07753729838938739,
+    "robust_shock": false,
+    "transition_time": 148.9224627016106,
+    "transition_type": "exogenous_shock",
+    "transitioned": true,
+    "world_id": "test_v2-0035"
+  },
+  {
+    "observable_onset": 151.0,
+    "onset_lag": 9.0,
+    "robust_shock": null,
+    "transition_time": 142.0,
+    "transition_type": "noise_induced",
+    "transitioned": true,
+    "world_id": "test_v2-0036"
+  },
+  {
+    "observable_onset": 110.0,
+    "onset_lag": 4.781696873060753,
+    "robust_shock": null,
+    "transition_time": 105.21830312693925,
+    "transition_type": "transcritical",
+    "transitioned": true,
+    "world_id": "test_v2-0037"
+  },
+  {
+    "observable_onset": 160.0,
+    "onset_lag": 18.0,
+    "robust_shock": null,
+    "transition_time": 142.0,
+    "transition_type": "noise_induced",
+    "transitioned": true,
+    "world_id": "test_v2-0038"
+  },
+  {
+    "observable_onset": 119.0,
+    "onset_lag": 8.658141142466107,
+    "robust_shock": null,
+    "transition_time": 110.3418588575339,
+    "transition_type": "hopf",
+    "transitioned": true,
+    "world_id": "test_v2-0039"
+  },
+  {
+    "observable_onset": 131.0,
+    "onset_lag": 8.08219029649382,
+    "robust_shock": false,
+    "transition_time": 122.91780970350618,
+    "transition_type": "exogenous_shock",
+    "transitioned": true,
+    "world_id": "test_v2-0040"
+  },
+  {
+    "observable_onset": 131.0,
+    "onset_lag": 1.0987742988126854,
+    "robust_shock": false,
+    "transition_time": 129.90122570118731,
+    "transition_type": "exogenous_shock",
+    "transitioned": true,
+    "world_id": "test_v2-0041"
+  },
+  {
+    "observable_onset": 161.0,
+    "onset_lag": 27.866890404652054,
+    "robust_shock": null,
+    "transition_time": 133.13310959534795,
+    "transition_type": "hopf",
+    "transitioned": true,
+    "world_id": "test_v2-0042"
+  },
+  {
+    "observable_onset": null,
+    "onset_lag": null,
+    "robust_shock": null,
+    "transition_time": null,
+    "transition_type": "null",
+    "transitioned": false,
+    "world_id": "test_v2-0043"
+  },
+  {
+    "observable_onset": 122.0,
+    "onset_lag": 1.9204894914552142,
+    "robust_shock": false,
+    "transition_time": 120.07951050854479,
+    "transition_type": "exogenous_shock",
+    "transitioned": true,
+    "world_id": "test_v2-0044"
+  },
+  {
+    "observable_onset": 203.0,
+    "onset_lag": 66.84870266562359,
+    "robust_shock": null,
+    "transition_time": 136.1512973343764,
+    "transition_type": "hopf",
+    "transitioned": true,
+    "world_id": "test_v2-0045"
+  },
+  {
+    "observable_onset": 124.0,
+    "onset_lag": 12.034934003003215,
+    "robust_shock": null,
+    "transition_time": 111.96506599699678,
+    "transition_type": "hopf",
+    "transitioned": true,
+    "world_id": "test_v2-0046"
+  },
+  {
+    "observable_onset": 128.0,
+    "onset_lag": 6.0,
+    "robust_shock": null,
+    "transition_time": 122.0,
+    "transition_type": "noise_induced",
+    "transitioned": true,
+    "world_id": "test_v2-0047"
+  },
+  {
+    "observable_onset": null,
+    "onset_lag": null,
+    "robust_shock": null,
+    "transition_time": null,
+    "transition_type": "null",
+    "transitioned": false,
+    "world_id": "test_v2-0048"
+  },
+  {
+    "observable_onset": 172.0,
+    "onset_lag": 36.14400010437981,
+    "robust_shock": null,
+    "transition_time": 135.8559998956202,
+    "transition_type": "hopf",
+    "transitioned": true,
+    "world_id": "test_v2-0049"
+  },
+  {
+    "observable_onset": null,
+    "onset_lag": null,
+    "robust_shock": null,
+    "transition_time": null,
+    "transition_type": "null",
+    "transitioned": false,
+    "world_id": "test_v2-0050"
+  },
+  {
+    "observable_onset": null,
+    "onset_lag": null,
+    "robust_shock": null,
+    "transition_time": null,
+    "transition_type": "null",
+    "transitioned": false,
+    "world_id": "test_v2-0051"
+  },
+  {
+    "observable_onset": 104.0,
+    "onset_lag": -12.02331152588664,
+    "robust_shock": null,
+    "transition_time": 116.02331152588664,
+    "transition_type": "hopf",
+    "transitioned": true,
+    "world_id": "test_v2-0052"
+  },
+  {
+    "observable_onset": 135.0,
+    "onset_lag": 11.0,
+    "robust_shock": null,
+    "transition_time": 124.0,
+    "transition_type": "noise_induced",
+    "transitioned": true,
+    "world_id": "test_v2-0053"
+  },
+  {
+    "observable_onset": 147.0,
+    "onset_lag": 11.32524653704374,
+    "robust_shock": null,
+    "transition_time": 135.67475346295626,
+    "transition_type": "transcritical",
+    "transitioned": true,
+    "world_id": "test_v2-0054"
+  },
+  {
+    "observable_onset": 197.0,
+    "onset_lag": 50.0,
+    "robust_shock": null,
+    "transition_time": 147.0,
+    "transition_type": "noise_induced",
+    "transitioned": true,
+    "world_id": "test_v2-0055"
+  },
+  {
+    "observable_onset": 131.0,
+    "onset_lag": 12.0,
+    "robust_shock": null,
+    "transition_time": 119.0,
+    "transition_type": "noise_induced",
+    "transitioned": true,
+    "world_id": "test_v2-0056"
+  },
+  {
+    "observable_onset": 111.0,
+    "onset_lag": 1.3305992743223953,
+    "robust_shock": null,
+    "transition_time": 109.6694007256776,
+    "transition_type": "transcritical",
+    "transitioned": true,
+    "world_id": "test_v2-0057"
+  },
+  {
+    "observable_onset": null,
+    "onset_lag": null,
+    "robust_shock": null,
+    "transition_time": null,
+    "transition_type": "null",
+    "transitioned": false,
+    "world_id": "test_v2-0058"
+  },
+  {
+    "observable_onset": 130.0,
+    "onset_lag": 2.353492257613979,
+    "robust_shock": null,
+    "transition_time": 127.64650774238602,
+    "transition_type": "fold",
+    "transitioned": true,
+    "world_id": "test_v2-0059"
+  },
+  {
+    "observable_onset": 130.0,
+    "onset_lag": 0.6220983327536658,
+    "robust_shock": null,
+    "transition_time": 129.37790166724633,
+    "transition_type": "mechanism_change",
+    "transitioned": true,
+    "world_id": "test_v2-0060"
+  },
+  {
+    "observable_onset": 101.0,
+    "onset_lag": -0.04150881646226878,
+    "robust_shock": null,
+    "transition_time": 101.04150881646227,
+    "transition_type": "fold",
+    "transitioned": true,
+    "world_id": "test_v2-0061"
+  },
+  {
+    "observable_onset": 115.0,
+    "onset_lag": 11.87497991309985,
+    "robust_shock": null,
+    "transition_time": 103.12502008690015,
+    "transition_type": "transcritical",
+    "transitioned": true,
+    "world_id": "test_v2-0062"
+  },
+  {
+    "observable_onset": null,
+    "onset_lag": null,
+    "robust_shock": null,
+    "transition_time": null,
+    "transition_type": "null",
+    "transitioned": false,
+    "world_id": "test_v2-0063"
+  },
+  {
+    "observable_onset": 185.0,
+    "onset_lag": 76.71372141100639,
+    "robust_shock": null,
+    "transition_time": 108.28627858899361,
+    "transition_type": "hopf",
+    "transitioned": true,
+    "world_id": "test_v2-0064"
+  },
+  {
+    "observable_onset": 140.0,
+    "onset_lag": 6.0089527576136845,
+    "robust_shock": false,
+    "transition_time": 133.99104724238632,
+    "transition_type": "exogenous_shock",
+    "transitioned": true,
+    "world_id": "test_v2-0065"
+  },
+  {
+    "observable_onset": 149.0,
+    "onset_lag": 0.390009452086872,
+    "robust_shock": false,
+    "transition_time": 148.60999054791313,
+    "transition_type": "exogenous_shock",
+    "transitioned": true,
+    "world_id": "test_v2-0066"
+  },
+  {
+    "observable_onset": 132.0,
+    "onset_lag": -11.259328982899092,
+    "robust_shock": null,
+    "transition_time": 143.2593289828991,
+    "transition_type": "fold",
+    "transitioned": true,
+    "world_id": "test_v2-0067"
+  },
+  {
+    "observable_onset": 92.0,
+    "onset_lag": -21.90684971085986,
+    "robust_shock": null,
+    "transition_time": 113.90684971085986,
+    "transition_type": "fold",
+    "transitioned": true,
+    "world_id": "test_v2-0068"
+  },
+  {
+    "observable_onset": null,
+    "onset_lag": null,
+    "robust_shock": null,
+    "transition_time": null,
+    "transition_type": "null",
+    "transitioned": false,
+    "world_id": "test_v2-0069"
+  },
+  {
+    "observable_onset": 149.0,
+    "onset_lag": 0.8314360731309307,
+    "robust_shock": null,
+    "transition_time": 148.16856392686907,
+    "transition_type": "mechanism_change",
+    "transitioned": true,
+    "world_id": "test_v2-0070"
+  },
+  {
+    "observable_onset": 137.0,
+    "onset_lag": 1.4028093633781964,
+    "robust_shock": false,
+    "transition_time": 135.5971906366218,
+    "transition_type": "exogenous_shock",
+    "transitioned": true,
+    "world_id": "test_v2-0071"
+  },
+  {
+    "observable_onset": null,
+    "onset_lag": null,
+    "robust_shock": null,
+    "transition_time": null,
+    "transition_type": "null",
+    "transitioned": false,
+    "world_id": "test_v2-0072"
+  },
+  {
+    "observable_onset": 137.0,
+    "onset_lag": 10.0,
+    "robust_shock": null,
+    "transition_time": 127.0,
+    "transition_type": "noise_induced",
+    "transitioned": true,
+    "world_id": "test_v2-0073"
+  },
+  {
+    "observable_onset": 136.0,
+    "onset_lag": 9.13427402640626,
+    "robust_shock": null,
+    "transition_time": 126.86572597359374,
+    "transition_type": "fold",
+    "transitioned": true,
+    "world_id": "test_v2-0074"
+  },
+  {
+    "observable_onset": 169.0,
+    "onset_lag": 19.05155532539311,
+    "robust_shock": null,
+    "transition_time": 149.9484446746069,
+    "transition_type": "fold",
+    "transitioned": true,
+    "world_id": "test_v2-0075"
+  },
+  {
+    "observable_onset": 104.0,
+    "onset_lag": 1.6975325546407447,
+    "robust_shock": null,
+    "transition_time": 102.30246744535926,
+    "transition_type": "mechanism_change",
+    "transitioned": true,
+    "world_id": "test_v2-0076"
+  },
+  {
+    "observable_onset": 149.0,
+    "onset_lag": 28.066170745384596,
+    "robust_shock": null,
+    "transition_time": 120.9338292546154,
+    "transition_type": "transcritical",
+    "transitioned": true,
+    "world_id": "test_v2-0077"
+  },
+  {
+    "observable_onset": 100.0,
+    "onset_lag": 0.7853484219185987,
+    "robust_shock": null,
+    "transition_time": 99.2146515780814,
+    "transition_type": "mechanism_change",
+    "transitioned": true,
+    "world_id": "test_v2-0078"
+  },
+  {
+    "observable_onset": 125.0,
+    "onset_lag": -17.05192562471376,
+    "robust_shock": null,
+    "transition_time": 142.05192562471376,
+    "transition_type": "fold",
+    "transitioned": true,
+    "world_id": "test_v2-0079"
+  },
+  {
+    "observable_onset": 101.0,
+    "onset_lag": -11.902804217802696,
+    "robust_shock": null,
+    "transition_time": 112.9028042178027,
+    "transition_type": "transcritical",
+    "transitioned": true,
+    "world_id": "test_v2-0080"
+  },
+  {
+    "observable_onset": 107.0,
+    "onset_lag": 1.5526360209396017,
+    "robust_shock": null,
+    "transition_time": 105.4473639790604,
+    "transition_type": "mechanism_change",
+    "transitioned": true,
+    "world_id": "test_v2-0081"
+  },
+  {
+    "observable_onset": 118.0,
+    "onset_lag": -4.5169282552867855,
+    "robust_shock": null,
+    "transition_time": 122.51692825528679,
+    "transition_type": "transcritical",
+    "transitioned": true,
+    "world_id": "test_v2-0082"
+  },
+  {
+    "observable_onset": 102.0,
+    "onset_lag": 1.7162480255920514,
+    "robust_shock": false,
+    "transition_time": 100.28375197440795,
+    "transition_type": "exogenous_shock",
+    "transitioned": true,
+    "world_id": "test_v2-0083"
+  },
+  {
+    "observable_onset": 146.0,
+    "onset_lag": 1.9523033546151396,
+    "robust_shock": false,
+    "transition_time": 144.04769664538486,
+    "transition_type": "exogenous_shock",
+    "transitioned": true,
+    "world_id": "test_v2-0084"
+  },
+  {
+    "observable_onset": null,
+    "onset_lag": null,
+    "robust_shock": null,
+    "transition_time": null,
+    "transition_type": "null",
+    "transitioned": false,
+    "world_id": "test_v2-0085"
+  },
+  {
+    "observable_onset": 207.0,
+    "onset_lag": 107.0,
+    "robust_shock": null,
+    "transition_time": 100.0,
+    "transition_type": "noise_induced",
+    "transitioned": true,
+    "world_id": "test_v2-0086"
+  },
+  {
+    "observable_onset": 158.0,
+    "onset_lag": 36.0,
+    "robust_shock": null,
+    "transition_time": 122.0,
+    "transition_type": "noise_induced",
+    "transitioned": true,
+    "world_id": "test_v2-0087"
+  },
+  {
+    "observable_onset": 124.0,
+    "onset_lag": 7.0,
+    "robust_shock": null,
+    "transition_time": 117.0,
+    "transition_type": "noise_induced",
+    "transitioned": true,
+    "world_id": "test_v2-0088"
+  },
+  {
+    "observable_onset": null,
+    "onset_lag": null,
+    "robust_shock": null,
+    "transition_time": null,
+    "transition_type": "null",
+    "transitioned": false,
+    "world_id": "test_v2-0089"
+  },
+  {
+    "observable_onset": 100.0,
+    "onset_lag": -31.483307367765008,
+    "robust_shock": null,
+    "transition_time": 131.483307367765,
+    "transition_type": "transcritical",
+    "transitioned": true,
+    "world_id": "test_v2-0090"
+  },
+  {
+    "observable_onset": 183.0,
+    "onset_lag": 65.53012575641002,
+    "robust_shock": null,
+    "transition_time": 117.46987424358998,
+    "transition_type": "transcritical",
+    "transitioned": true,
+    "world_id": "test_v2-0091"
+  },
+  {
+    "observable_onset": 105.0,
+    "onset_lag": -32.050955145728665,
+    "robust_shock": null,
+    "transition_time": 137.05095514572866,
+    "transition_type": "transcritical",
+    "transitioned": true,
+    "world_id": "test_v2-0092"
+  },
+  {
+    "observable_onset": 134.0,
+    "onset_lag": 12.990633896220729,
+    "robust_shock": null,
+    "transition_time": 121.00936610377927,
+    "transition_type": "fold",
+    "transitioned": true,
+    "world_id": "test_v2-0093"
+  },
+  {
+    "observable_onset": 166.0,
+    "onset_lag": 38.54542276750348,
+    "robust_shock": null,
+    "transition_time": 127.45457723249652,
+    "transition_type": "hopf",
+    "transitioned": true,
+    "world_id": "test_v2-0094"
+  },
+  {
+    "observable_onset": 109.0,
+    "onset_lag": -3.484234347174194,
+    "robust_shock": null,
+    "transition_time": 112.4842343471742,
+    "transition_type": "fold",
+    "transitioned": true,
+    "world_id": "test_v2-0095"
+  },
+  {
+    "observable_onset": 97.0,
+    "onset_lag": -50.25929476937998,
+    "robust_shock": null,
+    "transition_time": 147.25929476937998,
+    "transition_type": "transcritical",
+    "transitioned": true,
+    "world_id": "test_v2-0096"
+  },
+  {
+    "observable_onset": 126.0,
+    "onset_lag": 9.0,
+    "robust_shock": null,
+    "transition_time": 117.0,
+    "transition_type": "noise_induced",
+    "transitioned": true,
+    "world_id": "test_v2-0097"
+  },
+  {
+    "observable_onset": 138.0,
+    "onset_lag": 0.16343935279937227,
+    "robust_shock": true,
+    "transition_time": 137.83656064720063,
+    "transition_type": "exogenous_shock",
+    "transitioned": true,
+    "world_id": "test_v2-0098"
+  },
+  {
+    "observable_onset": 110.0,
+    "onset_lag": 1.4415161726643504,
+    "robust_shock": null,
+    "transition_time": 108.55848382733565,
+    "transition_type": "mechanism_change",
+    "transitioned": true,
+    "world_id": "test_v2-0099"
+  },
+  {
+    "observable_onset": 107.0,
+    "onset_lag": -0.3266121706685965,
+    "robust_shock": null,
+    "transition_time": 107.3266121706686,
+    "transition_type": "fold",
+    "transitioned": true,
+    "world_id": "test_v2-0100"
+  },
+  {
+    "observable_onset": 161.0,
+    "onset_lag": 12.0,
+    "robust_shock": null,
+    "transition_time": 149.0,
+    "transition_type": "noise_induced",
+    "transitioned": true,
+    "world_id": "test_v2-0101"
+  },
+  {
+    "observable_onset": 142.0,
+    "onset_lag": 39.0,
+    "robust_shock": null,
+    "transition_time": 103.0,
+    "transition_type": "noise_induced",
+    "transitioned": true,
+    "world_id": "test_v2-0102"
+  },
+  {
+    "observable_onset": null,
+    "onset_lag": null,
+    "robust_shock": null,
+    "transition_time": null,
+    "transition_type": "null",
+    "transitioned": false,
+    "world_id": "test_v2-0103"
+  },
+  {
+    "observable_onset": 107.0,
+    "onset_lag": 7.0,
+    "robust_shock": null,
+    "transition_time": 100.0,
+    "transition_type": "noise_induced",
+    "transitioned": true,
+    "world_id": "test_v2-0104"
+  },
+  {
+    "observable_onset": null,
+    "onset_lag": null,
+    "robust_shock": null,
+    "transition_time": null,
+    "transition_type": "null",
+    "transitioned": false,
+    "world_id": "test_v2-0105"
+  },
+  {
+    "observable_onset": 119.0,
+    "onset_lag": -4.3509952383644475,
+    "robust_shock": null,
+    "transition_time": 123.35099523836445,
+    "transition_type": "fold",
+    "transitioned": true,
+    "world_id": "test_v2-0106"
+  },
+  {
+    "observable_onset": 144.0,
+    "onset_lag": 4.253550939032351,
+    "robust_shock": null,
+    "transition_time": 139.74644906096765,
+    "transition_type": "fold",
+    "transitioned": true,
+    "world_id": "test_v2-0107"
+  },
+  {
+    "observable_onset": 217.0,
+    "onset_lag": 72.51381641745428,
+    "robust_shock": null,
+    "transition_time": 144.48618358254572,
+    "transition_type": "fold",
+    "transitioned": true,
+    "world_id": "test_v2-0108"
+  },
+  {
+    "observable_onset": null,
+    "onset_lag": null,
+    "robust_shock": null,
+    "transition_time": null,
+    "transition_type": "null",
+    "transitioned": false,
+    "world_id": "test_v2-0109"
+  },
+  {
+    "observable_onset": 111.0,
+    "onset_lag": 6.424231847277227,
+    "robust_shock": null,
+    "transition_time": 104.57576815272277,
+    "transition_type": "fold",
+    "transitioned": true,
+    "world_id": "test_v2-0110"
+  },
+  {
+    "observable_onset": 134.0,
+    "onset_lag": 3.320901094642892,
+    "robust_shock": null,
+    "transition_time": 130.6790989053571,
+    "transition_type": "mechanism_change",
+    "transitioned": true,
+    "world_id": "test_v2-0111"
+  },
+  {
+    "observable_onset": 97.0,
+    "onset_lag": -9.579329927701977,
+    "robust_shock": null,
+    "transition_time": 106.57932992770198,
+    "transition_type": "fold",
+    "transitioned": true,
+    "world_id": "test_v2-0112"
+  },
+  {
+    "observable_onset": 104.0,
+    "onset_lag": 2.5340542149205874,
+    "robust_shock": null,
+    "transition_time": 101.46594578507941,
+    "transition_type": "mechanism_change",
+    "transitioned": true,
+    "world_id": "test_v2-0113"
+  },
+  {
+    "observable_onset": 109.0,
+    "onset_lag": -4.515454972666902,
+    "robust_shock": null,
+    "transition_time": 113.5154549726669,
+    "transition_type": "fold",
+    "transitioned": true,
+    "world_id": "test_v2-0114"
+  },
+  {
+    "observable_onset": 99.0,
+    "onset_lag": -23.16154510744701,
+    "robust_shock": null,
+    "transition_time": 122.16154510744701,
+    "transition_type": "transcritical",
+    "transitioned": true,
+    "world_id": "test_v2-0115"
+  },
+  {
+    "observable_onset": 113.0,
+    "onset_lag": 11.0,
+    "robust_shock": null,
+    "transition_time": 102.0,
+    "transition_type": "noise_induced",
+    "transitioned": true,
+    "world_id": "test_v2-0116"
+  },
+  {
+    "observable_onset": 110.0,
+    "onset_lag": 6.0,
+    "robust_shock": null,
+    "transition_time": 104.0,
+    "transition_type": "noise_induced",
+    "transitioned": true,
+    "world_id": "test_v2-0117"
+  },
+  {
+    "observable_onset": 164.0,
+    "onset_lag": 15.0,
+    "robust_shock": null,
+    "transition_time": 149.0,
+    "transition_type": "noise_induced",
+    "transitioned": true,
+    "world_id": "test_v2-0118"
+  },
+  {
+    "observable_onset": 173.0,
+    "onset_lag": 37.26798252979336,
+    "robust_shock": null,
+    "transition_time": 135.73201747020664,
+    "transition_type": "hopf",
+    "transitioned": true,
+    "world_id": "test_v2-0119"
+  },
+  {
+    "observable_onset": 127.0,
+    "onset_lag": -4.251683690541569,
+    "robust_shock": null,
+    "transition_time": 131.25168369054157,
+    "transition_type": "fold",
+    "transitioned": true,
+    "world_id": "test_v2-0120"
+  },
+  {
+    "observable_onset": 112.0,
+    "onset_lag": 0.38494902328149294,
+    "robust_shock": true,
+    "transition_time": 111.6150509767185,
+    "transition_type": "exogenous_shock",
+    "transitioned": true,
+    "world_id": "test_v2-0121"
+  },
+  {
+    "observable_onset": null,
+    "onset_lag": null,
+    "robust_shock": null,
+    "transition_time": null,
+    "transition_type": "null",
+    "transitioned": false,
+    "world_id": "test_v2-0122"
+  },
+  {
+    "observable_onset": 125.0,
+    "onset_lag": 3.440086951882634,
+    "robust_shock": null,
+    "transition_time": 121.55991304811737,
+    "transition_type": "hopf",
+    "transitioned": true,
+    "world_id": "test_v2-0123"
+  },
+  {
+    "observable_onset": 133.0,
+    "onset_lag": 7.476949808033027,
+    "robust_shock": null,
+    "transition_time": 125.52305019196697,
+    "transition_type": "transcritical",
+    "transitioned": true,
+    "world_id": "test_v2-0124"
+  },
+  {
+    "observable_onset": 147.0,
+    "onset_lag": 0.5305671833340284,
+    "robust_shock": true,
+    "transition_time": 146.46943281666597,
+    "transition_type": "exogenous_shock",
+    "transitioned": true,
+    "world_id": "test_v2-0125"
+  },
+  {
+    "observable_onset": 148.0,
+    "onset_lag": 5.610423637462873,
+    "robust_shock": false,
+    "transition_time": 142.38957636253713,
+    "transition_type": "exogenous_shock",
+    "transitioned": true,
+    "world_id": "test_v2-0126"
+  },
+  {
+    "observable_onset": 127.0,
+    "onset_lag": 2.274752151495022,
+    "robust_shock": null,
+    "transition_time": 124.72524784850498,
+    "transition_type": "transcritical",
+    "transitioned": true,
+    "world_id": "test_v2-0127"
+  },
+  {
+    "observable_onset": 154.0,
+    "onset_lag": 39.493314902700334,
+    "robust_shock": null,
+    "transition_time": 114.50668509729967,
+    "transition_type": "hopf",
+    "transitioned": true,
+    "world_id": "test_v2-0128"
+  },
+  {
+    "observable_onset": 119.0,
+    "onset_lag": -18.639193780414644,
+    "robust_shock": null,
+    "transition_time": 137.63919378041464,
+    "transition_type": "transcritical",
+    "transitioned": true,
+    "world_id": "test_v2-0129"
+  },
+  {
+    "observable_onset": 159.0,
+    "onset_lag": 59.0,
+    "robust_shock": null,
+    "transition_time": 100.0,
+    "transition_type": "noise_induced",
+    "transitioned": true,
+    "world_id": "test_v2-0130"
+  },
+  {
+    "observable_onset": 145.0,
+    "onset_lag": 11.207112708627477,
+    "robust_shock": null,
+    "transition_time": 133.79288729137252,
+    "transition_type": "fold",
+    "transitioned": true,
+    "world_id": "test_v2-0131"
+  },
+  {
+    "observable_onset": 145.0,
+    "onset_lag": 10.0,
+    "robust_shock": null,
+    "transition_time": 135.0,
+    "transition_type": "noise_induced",
+    "transitioned": true,
+    "world_id": "test_v2-0132"
+  },
+  {
+    "observable_onset": 115.0,
+    "onset_lag": -13.7254726298805,
+    "robust_shock": null,
+    "transition_time": 128.7254726298805,
+    "transition_type": "transcritical",
+    "transitioned": true,
+    "world_id": "test_v2-0133"
+  },
+  {
+    "observable_onset": 142.0,
+    "onset_lag": 6.0,
+    "robust_shock": null,
+    "transition_time": 136.0,
+    "transition_type": "noise_induced",
+    "transitioned": true,
+    "world_id": "test_v2-0134"
+  },
+  {
+    "observable_onset": 126.0,
+    "onset_lag": 1.0677329450487605,
+    "robust_shock": true,
+    "transition_time": 124.93226705495124,
+    "transition_type": "exogenous_shock",
+    "transitioned": true,
+    "world_id": "test_v2-0135"
+  },
+  {
+    "observable_onset": 148.0,
+    "onset_lag": 28.843271221340643,
+    "robust_shock": null,
+    "transition_time": 119.15672877865936,
+    "transition_type": "hopf",
+    "transitioned": true,
+    "world_id": "test_v2-0136"
+  },
+  {
+    "observable_onset": 130.0,
+    "onset_lag": 0.0,
+    "robust_shock": null,
+    "transition_time": 130.0,
+    "transition_type": "noise_induced",
+    "transitioned": true,
+    "world_id": "test_v2-0137"
+  },
+  {
+    "observable_onset": 130.0,
+    "onset_lag": 1.8810816780742812,
+    "robust_shock": null,
+    "transition_time": 128.11891832192572,
+    "transition_type": "mechanism_change",
+    "transitioned": true,
+    "world_id": "test_v2-0138"
+  },
+  {
+    "observable_onset": 145.0,
+    "onset_lag": -0.6576979422716249,
+    "robust_shock": null,
+    "transition_time": 145.65769794227162,
+    "transition_type": "fold",
+    "transitioned": true,
+    "world_id": "test_v2-0139"
+  },
+  {
+    "observable_onset": 130.0,
+    "onset_lag": 1.3064004624106644,
+    "robust_shock": true,
+    "transition_time": 128.69359953758934,
+    "transition_type": "exogenous_shock",
+    "transitioned": true,
+    "world_id": "test_v2-0140"
+  },
+  {
+    "observable_onset": 149.0,
+    "onset_lag": 9.775208801149915,
+    "robust_shock": null,
+    "transition_time": 139.22479119885008,
+    "transition_type": "fold",
+    "transitioned": true,
+    "world_id": "test_v2-0141"
+  },
+  {
+    "observable_onset": 120.0,
+    "onset_lag": 11.0,
+    "robust_shock": null,
+    "transition_time": 109.0,
+    "transition_type": "noise_induced",
+    "transitioned": true,
+    "world_id": "test_v2-0142"
+  },
+  {
+    "observable_onset": 145.0,
+    "onset_lag": 7.876146265558191,
+    "robust_shock": null,
+    "transition_time": 137.1238537344418,
+    "transition_type": "hopf",
+    "transitioned": true,
+    "world_id": "test_v2-0143"
+  },
+  {
+    "observable_onset": 105.0,
+    "onset_lag": -6.6483252687155385,
+    "robust_shock": null,
+    "transition_time": 111.64832526871554,
+    "transition_type": "hopf",
+    "transitioned": true,
+    "world_id": "test_v2-0144"
+  },
+  {
+    "observable_onset": 136.0,
+    "onset_lag": -8.922212076784149,
+    "robust_shock": null,
+    "transition_time": 144.92221207678415,
+    "transition_type": "transcritical",
+    "transitioned": true,
+    "world_id": "test_v2-0145"
+  },
+  {
+    "observable_onset": null,
+    "onset_lag": null,
+    "robust_shock": null,
+    "transition_time": null,
+    "transition_type": "null",
+    "transitioned": false,
+    "world_id": "test_v2-0146"
+  },
+  {
+    "observable_onset": 137.0,
+    "onset_lag": -12.23482027391762,
+    "robust_shock": null,
+    "transition_time": 149.23482027391762,
+    "transition_type": "hopf",
+    "transitioned": true,
+    "world_id": "test_v2-0147"
+  },
+  {
+    "observable_onset": 206.0,
+    "onset_lag": 58.90993155349085,
+    "robust_shock": null,
+    "transition_time": 147.09006844650915,
+    "transition_type": "hopf",
+    "transitioned": true,
+    "world_id": "test_v2-0148"
+  },
+  {
+    "observable_onset": 154.0,
+    "onset_lag": 13.933824815044972,
+    "robust_shock": null,
+    "transition_time": 140.06617518495503,
+    "transition_type": "hopf",
+    "transitioned": true,
+    "world_id": "test_v2-0149"
+  },
+  {
+    "observable_onset": 102.0,
+    "onset_lag": -14.638947714457913,
+    "robust_shock": null,
+    "transition_time": 116.63894771445791,
+    "transition_type": "hopf",
+    "transitioned": true,
+    "world_id": "test_v2-0150"
+  },
+  {
+    "observable_onset": null,
+    "onset_lag": null,
+    "robust_shock": null,
+    "transition_time": null,
+    "transition_type": "null",
+    "transitioned": false,
+    "world_id": "test_v2-0151"
+  },
+  {
+    "observable_onset": 127.0,
+    "onset_lag": -11.859098501147201,
+    "robust_shock": null,
+    "transition_time": 138.8590985011472,
+    "transition_type": "fold",
+    "transitioned": true,
+    "world_id": "test_v2-0152"
+  },
+  {
+    "observable_onset": 152.0,
+    "onset_lag": 4.5252480938727615,
+    "robust_shock": null,
+    "transition_time": 147.47475190612724,
+    "transition_type": "fold",
+    "transitioned": true,
+    "world_id": "test_v2-0153"
+  },
+  {
+    "observable_onset": 113.0,
+    "onset_lag": 0.633793949863346,
+    "robust_shock": null,
+    "transition_time": 112.36620605013665,
+    "transition_type": "mechanism_change",
+    "transitioned": true,
+    "world_id": "test_v2-0154"
+  },
+  {
+    "observable_onset": 114.0,
+    "onset_lag": 6.0,
+    "robust_shock": null,
+    "transition_time": 108.0,
+    "transition_type": "noise_induced",
+    "transitioned": true,
+    "world_id": "test_v2-0155"
+  },
+  {
+    "observable_onset": 155.0,
+    "onset_lag": 14.0,
+    "robust_shock": null,
+    "transition_time": 141.0,
+    "transition_type": "noise_induced",
+    "transitioned": true,
+    "world_id": "test_v2-0156"
+  },
+  {
+    "observable_onset": 119.0,
+    "onset_lag": 14.0,
+    "robust_shock": null,
+    "transition_time": 105.0,
+    "transition_type": "noise_induced",
+    "transitioned": true,
+    "world_id": "test_v2-0157"
+  },
+  {
+    "observable_onset": 154.0,
+    "onset_lag": 10.520393893649327,
+    "robust_shock": null,
+    "transition_time": 143.47960610635067,
+    "transition_type": "fold",
+    "transitioned": true,
+    "world_id": "test_v2-0158"
+  },
+  {
+    "observable_onset": 108.0,
+    "onset_lag": 0.9159249336543382,
+    "robust_shock": null,
+    "transition_time": 107.08407506634566,
+    "transition_type": "mechanism_change",
+    "transitioned": true,
+    "world_id": "test_v2-0159"
+  },
+  {
+    "observable_onset": 142.0,
+    "onset_lag": 0.8362775891737897,
+    "robust_shock": null,
+    "transition_time": 141.1637224108262,
+    "transition_type": "mechanism_change",
+    "transitioned": true,
+    "world_id": "test_v2-0160"
+  },
+  {
+    "observable_onset": 120.0,
+    "onset_lag": 9.0,
+    "robust_shock": null,
+    "transition_time": 111.0,
+    "transition_type": "noise_induced",
+    "transitioned": true,
+    "world_id": "test_v2-0161"
+  },
+  {
+    "observable_onset": 119.0,
+    "onset_lag": 3.7918664373631685,
+    "robust_shock": false,
+    "transition_time": 115.20813356263683,
+    "transition_type": "exogenous_shock",
+    "transitioned": true,
+    "world_id": "test_v2-0162"
+  },
+  {
+    "observable_onset": 171.0,
+    "onset_lag": 53.16280931998887,
+    "robust_shock": null,
+    "transition_time": 117.83719068001113,
+    "transition_type": "hopf",
+    "transitioned": true,
+    "world_id": "test_v2-0163"
+  },
+  {
+    "observable_onset": 136.0,
+    "onset_lag": -1.874155596631823,
+    "robust_shock": null,
+    "transition_time": 137.87415559663182,
+    "transition_type": "transcritical",
+    "transitioned": true,
+    "world_id": "test_v2-0164"
+  },
+  {
+    "observable_onset": 121.0,
+    "onset_lag": -2.275083299692568,
+    "robust_shock": null,
+    "transition_time": 123.27508329969257,
+    "transition_type": "transcritical",
+    "transitioned": true,
+    "world_id": "test_v2-0165"
+  },
+  {
+    "observable_onset": null,
+    "onset_lag": null,
+    "robust_shock": null,
+    "transition_time": null,
+    "transition_type": "null",
+    "transitioned": false,
+    "world_id": "test_v2-0166"
+  },
+  {
+    "observable_onset": 131.0,
+    "onset_lag": 5.216065299600359,
+    "robust_shock": false,
+    "transition_time": 125.78393470039964,
+    "transition_type": "exogenous_shock",
+    "transitioned": true,
+    "world_id": "test_v2-0167"
+  },
+  {
+    "observable_onset": 145.0,
+    "onset_lag": 3.1417353021136023,
+    "robust_shock": null,
+    "transition_time": 141.8582646978864,
+    "transition_type": "mechanism_change",
+    "transitioned": true,
+    "world_id": "test_v2-0168"
+  },
+  {
+    "observable_onset": 140.0,
+    "onset_lag": 1.8849537827750567,
+    "robust_shock": true,
+    "transition_time": 138.11504621722494,
+    "transition_type": "exogenous_shock",
+    "transitioned": true,
+    "world_id": "test_v2-0169"
+  },
+  {
+    "observable_onset": 114.0,
+    "onset_lag": -12.655305307602433,
+    "robust_shock": null,
+    "transition_time": 126.65530530760243,
+    "transition_type": "transcritical",
+    "transitioned": true,
+    "world_id": "test_v2-0170"
+  },
+  {
+    "observable_onset": 149.0,
+    "onset_lag": 1.6582498439545361,
+    "robust_shock": null,
+    "transition_time": 147.34175015604546,
+    "transition_type": "mechanism_change",
+    "transitioned": true,
+    "world_id": "test_v2-0171"
+  },
+  {
+    "observable_onset": 121.0,
+    "onset_lag": 2.0875180960548647,
+    "robust_shock": null,
+    "transition_time": 118.91248190394514,
+    "transition_type": "fold",
+    "transitioned": true,
+    "world_id": "test_v2-0172"
+  },
+  {
+    "observable_onset": 140.0,
+    "onset_lag": 0.7883646706741274,
+    "robust_shock": true,
+    "transition_time": 139.21163532932587,
+    "transition_type": "exogenous_shock",
+    "transitioned": true,
+    "world_id": "test_v2-0173"
+  },
+  {
+    "observable_onset": 109.0,
+    "onset_lag": 1.4453067775235127,
+    "robust_shock": false,
+    "transition_time": 107.55469322247649,
+    "transition_type": "exogenous_shock",
+    "transitioned": true,
+    "world_id": "test_v2-0174"
+  },
+  {
+    "observable_onset": 112.0,
+    "onset_lag": 6.0,
+    "robust_shock": null,
+    "transition_time": 106.0,
+    "transition_type": "noise_induced",
+    "transitioned": true,
+    "world_id": "test_v2-0175"
+  },
+  {
+    "observable_onset": 117.0,
+    "onset_lag": -24.82492058642879,
+    "robust_shock": null,
+    "transition_time": 141.8249205864288,
+    "transition_type": "transcritical",
+    "transitioned": true,
+    "world_id": "test_v2-0176"
+  },
+  {
+    "observable_onset": 111.0,
+    "onset_lag": 0.9530079612815427,
+    "robust_shock": true,
+    "transition_time": 110.04699203871846,
+    "transition_type": "exogenous_shock",
+    "transitioned": true,
+    "world_id": "test_v2-0177"
+  },
+  {
+    "observable_onset": 113.0,
+    "onset_lag": -14.387134517876774,
+    "robust_shock": null,
+    "transition_time": 127.38713451787677,
+    "transition_type": "transcritical",
+    "transitioned": true,
+    "world_id": "test_v2-0178"
+  },
+  {
+    "observable_onset": 107.0,
+    "onset_lag": 0.12886079976571807,
+    "robust_shock": true,
+    "transition_time": 106.87113920023428,
+    "transition_type": "exogenous_shock",
+    "transitioned": true,
+    "world_id": "test_v2-0179"
+  },
+  {
+    "observable_onset": 103.0,
+    "onset_lag": -6.167515161705438,
+    "robust_shock": null,
+    "transition_time": 109.16751516170544,
+    "transition_type": "transcritical",
+    "transitioned": true,
+    "world_id": "test_v2-0180"
+  },
+  {
+    "observable_onset": 136.0,
+    "onset_lag": 1.0563300347850486,
+    "robust_shock": null,
+    "transition_time": 134.94366996521495,
+    "transition_type": "mechanism_change",
+    "transitioned": true,
+    "world_id": "test_v2-0181"
+  },
+  {
+    "observable_onset": 104.0,
+    "onset_lag": 1.7154788135159436,
+    "robust_shock": false,
+    "transition_time": 102.28452118648406,
+    "transition_type": "exogenous_shock",
+    "transitioned": true,
+    "world_id": "test_v2-0182"
+  },
+  {
+    "observable_onset": 123.0,
+    "onset_lag": -20.979461175914196,
+    "robust_shock": null,
+    "transition_time": 143.9794611759142,
+    "transition_type": "transcritical",
+    "transitioned": true,
+    "world_id": "test_v2-0183"
+  },
+  {
+    "observable_onset": 123.0,
+    "onset_lag": 5.0,
+    "robust_shock": null,
+    "transition_time": 118.0,
+    "transition_type": "noise_induced",
+    "transitioned": true,
+    "world_id": "test_v2-0184"
+  },
+  {
+    "observable_onset": 122.0,
+    "onset_lag": 5.002144982699889,
+    "robust_shock": null,
+    "transition_time": 116.99785501730011,
+    "transition_type": "fold",
+    "transitioned": true,
+    "world_id": "test_v2-0185"
+  },
+  {
+    "observable_onset": 174.0,
+    "onset_lag": 59.531208444600125,
+    "robust_shock": null,
+    "transition_time": 114.46879155539987,
+    "transition_type": "hopf",
+    "transitioned": true,
+    "world_id": "test_v2-0186"
+  },
+  {
+    "observable_onset": 122.0,
+    "onset_lag": 0.9150784918713128,
+    "robust_shock": null,
+    "transition_time": 121.08492150812869,
+    "transition_type": "mechanism_change",
+    "transitioned": true,
+    "world_id": "test_v2-0187"
+  },
+  {
+    "observable_onset": null,
+    "onset_lag": null,
+    "robust_shock": null,
+    "transition_time": null,
+    "transition_type": "null",
+    "transitioned": false,
+    "world_id": "test_v2-0188"
+  },
+  {
+    "observable_onset": 124.0,
+    "onset_lag": 9.051069072347744,
+    "robust_shock": null,
+    "transition_time": 114.94893092765226,
+    "transition_type": "fold",
+    "transitioned": true,
+    "world_id": "test_v2-0189"
+  },
+  {
+    "observable_onset": 118.0,
+    "onset_lag": 2.447824917176959,
+    "robust_shock": false,
+    "transition_time": 115.55217508282304,
+    "transition_type": "exogenous_shock",
+    "transitioned": true,
+    "world_id": "test_v2-0190"
+  },
+  {
+    "observable_onset": 103.0,
+    "onset_lag": 3.4724818955383085,
+    "robust_shock": null,
+    "transition_time": 99.52751810446169,
+    "transition_type": "transcritical",
+    "transitioned": true,
+    "world_id": "test_v2-0191"
+  },
+  {
+    "observable_onset": 140.0,
+    "onset_lag": 12.0,
+    "robust_shock": null,
+    "transition_time": 128.0,
+    "transition_type": "noise_induced",
+    "transitioned": true,
+    "world_id": "test_v2-0192"
+  },
+  {
+    "observable_onset": 115.0,
+    "onset_lag": 8.286131429667734,
+    "robust_shock": null,
+    "transition_time": 106.71386857033227,
+    "transition_type": "transcritical",
+    "transitioned": true,
+    "world_id": "test_v2-0193"
+  },
+  {
+    "observable_onset": null,
+    "onset_lag": null,
+    "robust_shock": null,
+    "transition_time": null,
+    "transition_type": "null",
+    "transitioned": false,
+    "world_id": "test_v2-0194"
+  },
+  {
+    "observable_onset": null,
+    "onset_lag": null,
+    "robust_shock": null,
+    "transition_time": null,
+    "transition_type": "null",
+    "transitioned": false,
+    "world_id": "test_v2-0195"
+  },
+  {
+    "observable_onset": 160.0,
+    "onset_lag": 17.0,
+    "robust_shock": null,
+    "transition_time": 143.0,
+    "transition_type": "noise_induced",
+    "transitioned": true,
+    "world_id": "test_v2-0196"
+  },
+  {
+    "observable_onset": null,
+    "onset_lag": null,
+    "robust_shock": null,
+    "transition_time": null,
+    "transition_type": "null",
+    "transitioned": false,
+    "world_id": "test_v2-0197"
+  },
+  {
+    "observable_onset": 126.0,
+    "onset_lag": 2.7835233297906825,
+    "robust_shock": null,
+    "transition_time": 123.21647667020932,
+    "transition_type": "transcritical",
+    "transitioned": true,
+    "world_id": "test_v2-0198"
+  },
+  {
+    "observable_onset": 198.0,
+    "onset_lag": 56.12625619727072,
+    "robust_shock": null,
+    "transition_time": 141.87374380272928,
+    "transition_type": "hopf",
+    "transitioned": true,
+    "world_id": "test_v2-0199"
+  },
+  {
+    "observable_onset": 133.0,
+    "onset_lag": 0.5175202260324454,
+    "robust_shock": null,
+    "transition_time": 132.48247977396755,
+    "transition_type": "mechanism_change",
+    "transitioned": true,
+    "world_id": "test_v2-0200"
+  },
+  {
+    "observable_onset": 140.0,
+    "onset_lag": 4.0,
+    "robust_shock": null,
+    "transition_time": 136.0,
+    "transition_type": "noise_induced",
+    "transitioned": true,
+    "world_id": "test_v2-0201"
+  },
+  {
+    "observable_onset": 113.0,
+    "onset_lag": 1.539984556689575,
+    "robust_shock": null,
+    "transition_time": 111.46001544331043,
+    "transition_type": "mechanism_change",
+    "transitioned": true,
+    "world_id": "test_v2-0202"
+  },
+  {
+    "observable_onset": 113.0,
+    "onset_lag": 2.1980310429365346,
+    "robust_shock": null,
+    "transition_time": 110.80196895706347,
+    "transition_type": "mechanism_change",
+    "transitioned": true,
+    "world_id": "test_v2-0203"
+  },
+  {
+    "observable_onset": 114.0,
+    "onset_lag": -13.405133497425425,
+    "robust_shock": null,
+    "transition_time": 127.40513349742542,
+    "transition_type": "transcritical",
+    "transitioned": true,
+    "world_id": "test_v2-0204"
+  },
+  {
+    "observable_onset": 100.0,
+    "onset_lag": -4.292807623166752,
+    "robust_shock": null,
+    "transition_time": 104.29280762316675,
+    "transition_type": "fold",
+    "transitioned": true,
+    "world_id": "test_v2-0205"
+  },
+  {
+    "observable_onset": 150.0,
+    "onset_lag": 6.908704173050921,
+    "robust_shock": null,
+    "transition_time": 143.09129582694908,
+    "transition_type": "fold",
+    "transitioned": true,
+    "world_id": "test_v2-0206"
+  },
+  {
+    "observable_onset": 111.0,
+    "onset_lag": 1.5250351041344885,
+    "robust_shock": false,
+    "transition_time": 109.47496489586551,
+    "transition_type": "exogenous_shock",
+    "transitioned": true,
+    "world_id": "test_v2-0207"
+  },
+  {
+    "observable_onset": 131.0,
+    "onset_lag": 4.837389210149283,
+    "robust_shock": null,
+    "transition_time": 126.16261078985072,
+    "transition_type": "transcritical",
+    "transitioned": true,
+    "world_id": "test_v2-0208"
+  },
+  {
+    "observable_onset": 157.0,
+    "onset_lag": 15.133462542240693,
+    "robust_shock": null,
+    "transition_time": 141.8665374577593,
+    "transition_type": "transcritical",
+    "transitioned": true,
+    "world_id": "test_v2-0209"
+  },
+  {
+    "observable_onset": 106.0,
+    "onset_lag": -16.556282162210636,
+    "robust_shock": null,
+    "transition_time": 122.55628216221064,
+    "transition_type": "transcritical",
+    "transitioned": true,
+    "world_id": "test_v2-0210"
+  },
+  {
+    "observable_onset": 132.0,
+    "onset_lag": 1.8960730944576483,
+    "robust_shock": true,
+    "transition_time": 130.10392690554235,
+    "transition_type": "exogenous_shock",
+    "transitioned": true,
+    "world_id": "test_v2-0211"
+  },
+  {
+    "observable_onset": 131.0,
+    "onset_lag": 25.0,
+    "robust_shock": null,
+    "transition_time": 106.0,
+    "transition_type": "noise_induced",
+    "transitioned": true,
+    "world_id": "test_v2-0212"
+  },
+  {
+    "observable_onset": 111.0,
+    "onset_lag": -27.804032630482368,
+    "robust_shock": null,
+    "transition_time": 138.80403263048237,
+    "transition_type": "transcritical",
+    "transitioned": true,
+    "world_id": "test_v2-0213"
+  },
+  {
+    "observable_onset": null,
+    "onset_lag": null,
+    "robust_shock": null,
+    "transition_time": null,
+    "transition_type": "null",
+    "transitioned": false,
+    "world_id": "test_v2-0214"
+  },
+  {
+    "observable_onset": 133.0,
+    "onset_lag": 1.0,
+    "robust_shock": null,
+    "transition_time": 132.0,
+    "transition_type": "noise_induced",
+    "transitioned": true,
+    "world_id": "test_v2-0215"
+  },
+  {
+    "observable_onset": 129.0,
+    "onset_lag": 14.047566653151577,
+    "robust_shock": null,
+    "transition_time": 114.95243334684842,
+    "transition_type": "fold",
+    "transitioned": true,
+    "world_id": "test_v2-0216"
+  },
+  {
+    "observable_onset": 135.0,
+    "onset_lag": 1.18494209138629,
+    "robust_shock": null,
+    "transition_time": 133.8150579086137,
+    "transition_type": "mechanism_change",
+    "transitioned": true,
+    "world_id": "test_v2-0217"
+  },
+  {
+    "observable_onset": 108.0,
+    "onset_lag": 3.0496934473059127,
+    "robust_shock": null,
+    "transition_time": 104.95030655269409,
+    "transition_type": "mechanism_change",
+    "transitioned": true,
+    "world_id": "test_v2-0218"
+  },
+  {
+    "observable_onset": 124.0,
+    "onset_lag": 10.582429158427402,
+    "robust_shock": null,
+    "transition_time": 113.4175708415726,
+    "transition_type": "hopf",
+    "transitioned": true,
+    "world_id": "test_v2-0219"
+  },
+  {
+    "observable_onset": 157.0,
+    "onset_lag": 17.99358747635887,
+    "robust_shock": null,
+    "transition_time": 139.00641252364113,
+    "transition_type": "fold",
+    "transitioned": true,
+    "world_id": "test_v2-0220"
+  },
+  {
+    "observable_onset": 117.0,
+    "onset_lag": 4.560372639193716,
+    "robust_shock": null,
+    "transition_time": 112.43962736080628,
+    "transition_type": "fold",
+    "transitioned": true,
+    "world_id": "test_v2-0221"
+  },
+  {
+    "observable_onset": 144.0,
+    "onset_lag": 1.405054867626916,
+    "robust_shock": true,
+    "transition_time": 142.59494513237308,
+    "transition_type": "exogenous_shock",
+    "transitioned": true,
+    "world_id": "test_v2-0222"
+  },
+  {
+    "observable_onset": null,
+    "onset_lag": null,
+    "robust_shock": null,
+    "transition_time": null,
+    "transition_type": "null",
+    "transitioned": false,
+    "world_id": "test_v2-0223"
+  },
+  {
+    "observable_onset": 156.0,
+    "onset_lag": 8.0,
+    "robust_shock": null,
+    "transition_time": 148.0,
+    "transition_type": "noise_induced",
+    "transitioned": true,
+    "world_id": "test_v2-0224"
+  },
+  {
+    "observable_onset": 144.0,
+    "onset_lag": 2.190861008089712,
+    "robust_shock": null,
+    "transition_time": 141.8091389919103,
+    "transition_type": "mechanism_change",
+    "transitioned": true,
+    "world_id": "test_v2-0225"
+  },
+  {
+    "observable_onset": 100.0,
+    "onset_lag": -28.20447040858909,
+    "robust_shock": null,
+    "transition_time": 128.2044704085891,
+    "transition_type": "transcritical",
+    "transitioned": true,
+    "world_id": "test_v2-0226"
+  },
+  {
+    "observable_onset": 108.0,
+    "onset_lag": 4.446451436858624,
+    "robust_shock": null,
+    "transition_time": 103.55354856314138,
+    "transition_type": "fold",
+    "transitioned": true,
+    "world_id": "test_v2-0227"
+  },
+  {
+    "observable_onset": null,
+    "onset_lag": null,
+    "robust_shock": null,
+    "transition_time": null,
+    "transition_type": "null",
+    "transitioned": false,
+    "world_id": "test_v2-0228"
+  },
+  {
+    "observable_onset": 168.0,
+    "onset_lag": 62.853514001016904,
+    "robust_shock": null,
+    "transition_time": 105.1464859989831,
+    "transition_type": "hopf",
+    "transitioned": true,
+    "world_id": "test_v2-0229"
+  },
+  {
+    "observable_onset": 152.0,
+    "onset_lag": 2.174160238148829,
+    "robust_shock": null,
+    "transition_time": 149.82583976185117,
+    "transition_type": "mechanism_change",
+    "transitioned": true,
+    "world_id": "test_v2-0230"
+  },
+  {
+    "observable_onset": 122.0,
+    "onset_lag": 1.5806408132689853,
+    "robust_shock": null,
+    "transition_time": 120.41935918673101,
+    "transition_type": "mechanism_change",
+    "transitioned": true,
+    "world_id": "test_v2-0231"
+  },
+  {
+    "observable_onset": 108.0,
+    "onset_lag": 3.14886317501076,
+    "robust_shock": false,
+    "transition_time": 104.85113682498924,
+    "transition_type": "exogenous_shock",
+    "transitioned": true,
+    "world_id": "test_v2-0232"
+  },
+  {
+    "observable_onset": 159.0,
+    "onset_lag": 39.18464840346829,
+    "robust_shock": null,
+    "transition_time": 119.81535159653171,
+    "transition_type": "hopf",
+    "transitioned": true,
+    "world_id": "test_v2-0233"
+  },
+  {
+    "observable_onset": 103.0,
+    "onset_lag": 1.9022537698507165,
+    "robust_shock": true,
+    "transition_time": 101.09774623014928,
+    "transition_type": "exogenous_shock",
+    "transitioned": true,
+    "world_id": "test_v2-0234"
+  },
+  {
+    "observable_onset": 130.0,
+    "onset_lag": 0.35633172490383913,
+    "robust_shock": false,
+    "transition_time": 129.64366827509616,
+    "transition_type": "exogenous_shock",
+    "transitioned": true,
+    "world_id": "test_v2-0235"
+  },
+  {
+    "observable_onset": 104.0,
+    "onset_lag": 1.4893130874864227,
+    "robust_shock": null,
+    "transition_time": 102.51068691251358,
+    "transition_type": "mechanism_change",
+    "transitioned": true,
+    "world_id": "test_v2-0236"
+  },
+  {
+    "observable_onset": 209.0,
+    "onset_lag": 66.85006961829595,
+    "robust_shock": null,
+    "transition_time": 142.14993038170405,
+    "transition_type": "hopf",
+    "transitioned": true,
+    "world_id": "test_v2-0237"
+  },
+  {
+    "observable_onset": null,
+    "onset_lag": null,
+    "robust_shock": null,
+    "transition_time": null,
+    "transition_type": "null",
+    "transitioned": false,
+    "world_id": "test_v2-0238"
+  },
+  {
+    "observable_onset": 138.0,
+    "onset_lag": 2.2680304404258322,
+    "robust_shock": null,
+    "transition_time": 135.73196955957417,
+    "transition_type": "mechanism_change",
+    "transitioned": true,
+    "world_id": "test_v2-0239"
+  },
+  {
+    "observable_onset": 159.0,
+    "onset_lag": 31.72709605597109,
+    "robust_shock": null,
+    "transition_time": 127.27290394402891,
+    "transition_type": "hopf",
+    "transitioned": true,
+    "world_id": "test_v2-0240"
+  },
+  {
+    "observable_onset": 138.0,
+    "onset_lag": 5.0,
+    "robust_shock": null,
+    "transition_time": 133.0,
+    "transition_type": "noise_induced",
+    "transitioned": true,
+    "world_id": "test_v2-0241"
+  },
+  {
+    "observable_onset": 155.0,
+    "onset_lag": 16.0,
+    "robust_shock": null,
+    "transition_time": 139.0,
+    "transition_type": "noise_induced",
+    "transitioned": true,
+    "world_id": "test_v2-0242"
+  },
+  {
+    "observable_onset": 118.0,
+    "onset_lag": 14.0,
+    "robust_shock": null,
+    "transition_time": 104.0,
+    "transition_type": "noise_induced",
+    "transitioned": true,
+    "world_id": "test_v2-0243"
+  },
+  {
+    "observable_onset": 118.0,
+    "onset_lag": 1.4068195397207859,
+    "robust_shock": false,
+    "transition_time": 116.59318046027921,
+    "transition_type": "exogenous_shock",
+    "transitioned": true,
+    "world_id": "test_v2-0244"
+  },
+  {
+    "observable_onset": 149.0,
+    "onset_lag": 1.4666486176178921,
+    "robust_shock": null,
+    "transition_time": 147.5333513823821,
+    "transition_type": "fold",
+    "transitioned": true,
+    "world_id": "test_v2-0245"
+  },
+  {
+    "observable_onset": 121.0,
+    "onset_lag": 10.0,
+    "robust_shock": null,
+    "transition_time": 111.0,
+    "transition_type": "noise_induced",
+    "transitioned": true,
+    "world_id": "test_v2-0246"
+  },
+  {
+    "observable_onset": 117.0,
+    "onset_lag": -5.127047125623477,
+    "robust_shock": null,
+    "transition_time": 122.12704712562348,
+    "transition_type": "fold",
+    "transitioned": true,
+    "world_id": "test_v2-0247"
+  },
+  {
+    "observable_onset": 121.0,
+    "onset_lag": 14.920216725337895,
+    "robust_shock": null,
+    "transition_time": 106.0797832746621,
+    "transition_type": "hopf",
+    "transitioned": true,
+    "world_id": "test_v2-0248"
+  },
+  {
+    "observable_onset": null,
+    "onset_lag": null,
+    "robust_shock": null,
+    "transition_time": null,
+    "transition_type": "null",
+    "transitioned": false,
+    "world_id": "test_v2-0249"
+  },
+  {
+    "observable_onset": 102.0,
+    "onset_lag": 0.028948955713119062,
+    "robust_shock": true,
+    "transition_time": 101.97105104428688,
+    "transition_type": "exogenous_shock",
+    "transitioned": true,
+    "world_id": "test_v2-0250"
+  },
+  {
+    "observable_onset": 101.0,
+    "onset_lag": -1.9451446424577483,
+    "robust_shock": null,
+    "transition_time": 102.94514464245775,
+    "transition_type": "hopf",
+    "transitioned": true,
+    "world_id": "test_v2-0251"
+  },
+  {
+    "observable_onset": 151.0,
+    "onset_lag": 8.0,
+    "robust_shock": null,
+    "transition_time": 143.0,
+    "transition_type": "noise_induced",
+    "transitioned": true,
+    "world_id": "test_v2-0252"
+  },
+  {
+    "observable_onset": 128.0,
+    "onset_lag": 0.13615517622602624,
+    "robust_shock": null,
+    "transition_time": 127.86384482377397,
+    "transition_type": "transcritical",
+    "transitioned": true,
+    "world_id": "test_v2-0253"
+  },
+  {
+    "observable_onset": 120.0,
+    "onset_lag": 0.2187837365179064,
+    "robust_shock": true,
+    "transition_time": 119.7812162634821,
+    "transition_type": "exogenous_shock",
+    "transitioned": true,
+    "world_id": "test_v2-0254"
+  },
+  {
+    "observable_onset": 110.0,
+    "onset_lag": -6.043180597327961,
+    "robust_shock": null,
+    "transition_time": 116.04318059732796,
+    "transition_type": "transcritical",
+    "transitioned": true,
+    "world_id": "test_v2-0255"
+  },
+  {
+    "observable_onset": 123.0,
+    "onset_lag": 0.5609786129330416,
+    "robust_shock": null,
+    "transition_time": 122.43902138706696,
+    "transition_type": "mechanism_change",
+    "transitioned": true,
+    "world_id": "test_v2-0256"
+  },
+  {
+    "observable_onset": 118.0,
+    "onset_lag": 2.4825798062228444,
+    "robust_shock": null,
+    "transition_time": 115.51742019377716,
+    "transition_type": "mechanism_change",
+    "transitioned": true,
+    "world_id": "test_v2-0257"
+  },
+  {
+    "observable_onset": 99.0,
+    "onset_lag": -35.43354538805082,
+    "robust_shock": null,
+    "transition_time": 134.43354538805082,
+    "transition_type": "transcritical",
+    "transitioned": true,
+    "world_id": "test_v2-0258"
+  },
+  {
+    "observable_onset": 133.0,
+    "onset_lag": 1.440672217130583,
+    "robust_shock": true,
+    "transition_time": 131.55932778286942,
+    "transition_type": "exogenous_shock",
+    "transitioned": true,
+    "world_id": "test_v2-0259"
+  },
+  {
+    "observable_onset": 137.0,
+    "onset_lag": 17.560100191205095,
+    "robust_shock": null,
+    "transition_time": 119.4398998087949,
+    "transition_type": "hopf",
+    "transitioned": true,
+    "world_id": "test_v2-0260"
+  },
+  {
+    "observable_onset": 131.0,
+    "onset_lag": 0.932390938790121,
+    "robust_shock": null,
+    "transition_time": 130.06760906120988,
+    "transition_type": "mechanism_change",
+    "transitioned": true,
+    "world_id": "test_v2-0261"
+  },
+  {
+    "observable_onset": 140.0,
+    "onset_lag": 1.2329439504091226,
+    "robust_shock": true,
+    "transition_time": 138.76705604959088,
+    "transition_type": "exogenous_shock",
+    "transitioned": true,
+    "world_id": "test_v2-0262"
+  },
+  {
+    "observable_onset": 135.0,
+    "onset_lag": 1.1474476249072154,
+    "robust_shock": null,
+    "transition_time": 133.85255237509278,
+    "transition_type": "mechanism_change",
+    "transitioned": true,
+    "world_id": "test_v2-0263"
+  },
+  {
+    "observable_onset": null,
+    "onset_lag": null,
+    "robust_shock": null,
+    "transition_time": null,
+    "transition_type": "null",
+    "transitioned": false,
+    "world_id": "test_v2-0264"
+  },
+  {
+    "observable_onset": 177.0,
+    "onset_lag": 53.713117202938804,
+    "robust_shock": null,
+    "transition_time": 123.2868827970612,
+    "transition_type": "hopf",
+    "transitioned": true,
+    "world_id": "test_v2-0265"
+  },
+  {
+    "observable_onset": 129.0,
+    "onset_lag": 0.11562018762043635,
+    "robust_shock": true,
+    "transition_time": 128.88437981237956,
+    "transition_type": "exogenous_shock",
+    "transitioned": true,
+    "world_id": "test_v2-0266"
+  },
+  {
+    "observable_onset": 117.0,
+    "onset_lag": 12.0,
+    "robust_shock": null,
+    "transition_time": 105.0,
+    "transition_type": "noise_induced",
+    "transitioned": true,
+    "world_id": "test_v2-0267"
+  },
+  {
+    "observable_onset": null,
+    "onset_lag": null,
+    "robust_shock": null,
+    "transition_time": null,
+    "transition_type": "null",
+    "transitioned": false,
+    "world_id": "test_v2-0268"
+  },
+  {
+    "observable_onset": null,
+    "onset_lag": null,
+    "robust_shock": null,
+    "transition_time": null,
+    "transition_type": "null",
+    "transitioned": false,
+    "world_id": "test_v2-0269"
+  },
+  {
+    "observable_onset": null,
+    "onset_lag": null,
+    "robust_shock": null,
+    "transition_time": null,
+    "transition_type": "null",
+    "transitioned": false,
+    "world_id": "test_v2-0270"
+  },
+  {
+    "observable_onset": 104.0,
+    "onset_lag": 1.357851046366946,
+    "robust_shock": null,
+    "transition_time": 102.64214895363305,
+    "transition_type": "mechanism_change",
+    "transitioned": true,
+    "world_id": "test_v2-0271"
+  },
+  {
+    "observable_onset": 132.0,
+    "onset_lag": 9.0,
+    "robust_shock": null,
+    "transition_time": 123.0,
+    "transition_type": "noise_induced",
+    "transitioned": true,
+    "world_id": "test_v2-0272"
+  },
+  {
+    "observable_onset": 168.0,
+    "onset_lag": 26.0,
+    "robust_shock": null,
+    "transition_time": 142.0,
+    "transition_type": "noise_induced",
+    "transitioned": true,
+    "world_id": "test_v2-0273"
+  },
+  {
+    "observable_onset": 154.0,
+    "onset_lag": 52.29286146194505,
+    "robust_shock": null,
+    "transition_time": 101.70713853805495,
+    "transition_type": "hopf",
+    "transitioned": true,
+    "world_id": "test_v2-0274"
+  },
+  {
+    "observable_onset": 100.0,
+    "onset_lag": 0.04151491641684402,
+    "robust_shock": false,
+    "transition_time": 99.95848508358316,
+    "transition_type": "exogenous_shock",
+    "transitioned": true,
+    "world_id": "test_v2-0275"
+  },
+  {
+    "observable_onset": 129.0,
+    "onset_lag": -6.209045682189924,
+    "robust_shock": null,
+    "transition_time": 135.20904568218992,
+    "transition_type": "hopf",
+    "transitioned": true,
+    "world_id": "test_v2-0276"
+  },
+  {
+    "observable_onset": 103.0,
+    "onset_lag": 1.3319179292719525,
+    "robust_shock": null,
+    "transition_time": 101.66808207072805,
+    "transition_type": "mechanism_change",
+    "transitioned": true,
+    "world_id": "test_v2-0277"
+  },
+  {
+    "observable_onset": 115.0,
+    "onset_lag": 9.56526123535913,
+    "robust_shock": null,
+    "transition_time": 105.43473876464087,
+    "transition_type": "fold",
+    "transitioned": true,
+    "world_id": "test_v2-0278"
+  },
+  {
+    "observable_onset": 130.0,
+    "onset_lag": 11.835486884778177,
+    "robust_shock": null,
+    "transition_time": 118.16451311522182,
+    "transition_type": "fold",
+    "transitioned": true,
+    "world_id": "test_v2-0279"
+  },
+  {
+    "observable_onset": 147.0,
+    "onset_lag": 0.452760515673134,
+    "robust_shock": null,
+    "transition_time": 146.54723948432687,
+    "transition_type": "mechanism_change",
+    "transitioned": true,
+    "world_id": "test_v2-0280"
+  },
+  {
+    "observable_onset": 168.0,
+    "onset_lag": 26.27205665560487,
+    "robust_shock": null,
+    "transition_time": 141.72794334439513,
+    "transition_type": "hopf",
+    "transitioned": true,
+    "world_id": "test_v2-0281"
+  },
+  {
+    "observable_onset": 104.0,
+    "onset_lag": 0.7253450441544373,
+    "robust_shock": true,
+    "transition_time": 103.27465495584556,
+    "transition_type": "exogenous_shock",
+    "transitioned": true,
+    "world_id": "test_v2-0282"
+  },
+  {
+    "observable_onset": 172.0,
+    "onset_lag": 51.54677074803975,
+    "robust_shock": null,
+    "transition_time": 120.45322925196025,
+    "transition_type": "hopf",
+    "transitioned": true,
+    "world_id": "test_v2-0283"
+  },
+  {
+    "observable_onset": 139.0,
+    "onset_lag": 1.2070524002348009,
+    "robust_shock": null,
+    "transition_time": 137.7929475997652,
+    "transition_type": "mechanism_change",
+    "transitioned": true,
+    "world_id": "test_v2-0284"
+  },
+  {
+    "observable_onset": 123.0,
+    "onset_lag": 1.499918034395705,
+    "robust_shock": false,
+    "transition_time": 121.5000819656043,
+    "transition_type": "exogenous_shock",
+    "transitioned": true,
+    "world_id": "test_v2-0285"
+  },
+  {
+    "observable_onset": 130.0,
+    "onset_lag": 1.901851971874919,
+    "robust_shock": null,
+    "transition_time": 128.09814802812508,
+    "transition_type": "transcritical",
+    "transitioned": true,
+    "world_id": "test_v2-0286"
+  },
+  {
+    "observable_onset": 108.0,
+    "onset_lag": 5.28192949139806,
+    "robust_shock": null,
+    "transition_time": 102.71807050860194,
+    "transition_type": "fold",
+    "transitioned": true,
+    "world_id": "test_v2-0287"
+  },
+  {
+    "observable_onset": 95.0,
+    "onset_lag": -17.92251690456436,
+    "robust_shock": null,
+    "transition_time": 112.92251690456436,
+    "transition_type": "fold",
+    "transitioned": true,
+    "world_id": "test_v2-0288"
+  },
+  {
+    "observable_onset": 126.0,
+    "onset_lag": 1.1491126107443677,
+    "robust_shock": true,
+    "transition_time": 124.85088738925563,
+    "transition_type": "exogenous_shock",
+    "transitioned": true,
+    "world_id": "test_v2-0289"
+  },
+  {
+    "observable_onset": null,
+    "onset_lag": null,
+    "robust_shock": null,
+    "transition_time": null,
+    "transition_type": "null",
+    "transitioned": false,
+    "world_id": "test_v2-0290"
+  },
+  {
+    "observable_onset": null,
+    "onset_lag": null,
+    "robust_shock": null,
+    "transition_time": null,
+    "transition_type": "null",
+    "transitioned": false,
+    "world_id": "test_v2-0291"
+  },
+  {
+    "observable_onset": 144.0,
+    "onset_lag": 12.0,
+    "robust_shock": null,
+    "transition_time": 132.0,
+    "transition_type": "noise_induced",
+    "transitioned": true,
+    "world_id": "test_v2-0292"
+  },
+  {
+    "observable_onset": 111.0,
+    "onset_lag": -18.592952629604355,
+    "robust_shock": null,
+    "transition_time": 129.59295262960435,
+    "transition_type": "transcritical",
+    "transitioned": true,
+    "world_id": "test_v2-0293"
+  },
+  {
+    "observable_onset": null,
+    "onset_lag": null,
+    "robust_shock": null,
+    "transition_time": null,
+    "transition_type": "null",
+    "transitioned": false,
+    "world_id": "test_v2-0294"
+  },
+  {
+    "observable_onset": 134.0,
+    "onset_lag": 1.3792033552498992,
+    "robust_shock": null,
+    "transition_time": 132.6207966447501,
+    "transition_type": "mechanism_change",
+    "transitioned": true,
+    "world_id": "test_v2-0295"
+  },
+  {
+    "observable_onset": 133.0,
+    "onset_lag": 34.0,
+    "robust_shock": null,
+    "transition_time": 99.0,
+    "transition_type": "noise_induced",
+    "transitioned": true,
+    "world_id": "test_v2-0296"
+  },
+  {
+    "observable_onset": 132.0,
+    "onset_lag": 1.9418986760657049,
+    "robust_shock": false,
+    "transition_time": 130.0581013239343,
+    "transition_type": "exogenous_shock",
+    "transitioned": true,
+    "world_id": "test_v2-0297"
+  },
+  {
+    "observable_onset": 145.0,
+    "onset_lag": 1.6219123728223792,
+    "robust_shock": null,
+    "transition_time": 143.37808762717762,
+    "transition_type": "mechanism_change",
+    "transitioned": true,
+    "world_id": "test_v2-0298"
+  },
+  {
+    "observable_onset": 123.0,
+    "onset_lag": 1.7319260657085493,
+    "robust_shock": true,
+    "transition_time": 121.26807393429145,
+    "transition_type": "exogenous_shock",
+    "transitioned": true,
+    "world_id": "test_v2-0299"
+  },
+  {
+    "observable_onset": 107.0,
+    "onset_lag": 1.8656609758028253,
+    "robust_shock": null,
+    "transition_time": 105.13433902419717,
+    "transition_type": "mechanism_change",
+    "transitioned": true,
+    "world_id": "test_v2-0300"
+  },
+  {
+    "observable_onset": 147.0,
+    "onset_lag": 1.5402119242390597,
+    "robust_shock": null,
+    "transition_time": 145.45978807576094,
+    "transition_type": "mechanism_change",
+    "transitioned": true,
+    "world_id": "test_v2-0301"
+  },
+  {
+    "observable_onset": null,
+    "onset_lag": null,
+    "robust_shock": null,
+    "transition_time": null,
+    "transition_type": "null",
+    "transitioned": false,
+    "world_id": "test_v2-0302"
+  },
+  {
+    "observable_onset": 113.0,
+    "onset_lag": -15.590842707253216,
+    "robust_shock": null,
+    "transition_time": 128.59084270725322,
+    "transition_type": "transcritical",
+    "transitioned": true,
+    "world_id": "test_v2-0303"
+  },
+  {
+    "observable_onset": 146.0,
+    "onset_lag": 1.0946244677188872,
+    "robust_shock": false,
+    "transition_time": 144.9053755322811,
+    "transition_type": "exogenous_shock",
+    "transitioned": true,
+    "world_id": "test_v2-0304"
+  },
+  {
+    "observable_onset": 148.0,
+    "onset_lag": 33.64991183878533,
+    "robust_shock": null,
+    "transition_time": 114.35008816121467,
+    "transition_type": "hopf",
+    "transitioned": true,
+    "world_id": "test_v2-0305"
+  },
+  {
+    "observable_onset": 162.0,
+    "onset_lag": 16.0,
+    "robust_shock": null,
+    "transition_time": 146.0,
+    "transition_type": "noise_induced",
+    "transitioned": true,
+    "world_id": "test_v2-0306"
+  },
+  {
+    "observable_onset": 118.0,
+    "onset_lag": 17.09502469198044,
+    "robust_shock": null,
+    "transition_time": 100.90497530801956,
+    "transition_type": "transcritical",
+    "transitioned": true,
+    "world_id": "test_v2-0307"
+  },
+  {
+    "observable_onset": null,
+    "onset_lag": null,
+    "robust_shock": null,
+    "transition_time": null,
+    "transition_type": "null",
+    "transitioned": false,
+    "world_id": "test_v2-0308"
+  },
+  {
+    "observable_onset": null,
+    "onset_lag": null,
+    "robust_shock": null,
+    "transition_time": null,
+    "transition_type": "null",
+    "transitioned": false,
+    "world_id": "test_v2-0309"
+  },
+  {
+    "observable_onset": 105.0,
+    "onset_lag": 0.546911531440216,
+    "robust_shock": null,
+    "transition_time": 104.45308846855978,
+    "transition_type": "transcritical",
+    "transitioned": true,
+    "world_id": "test_v2-0310"
+  },
+  {
+    "observable_onset": 134.0,
+    "onset_lag": 35.0,
+    "robust_shock": null,
+    "transition_time": 99.0,
+    "transition_type": "noise_induced",
+    "transitioned": true,
+    "world_id": "test_v2-0311"
+  },
+  {
+    "observable_onset": 139.0,
+    "onset_lag": 1.681799021645901,
+    "robust_shock": null,
+    "transition_time": 137.3182009783541,
+    "transition_type": "mechanism_change",
+    "transitioned": true,
+    "world_id": "test_v2-0312"
+  },
+  {
+    "observable_onset": null,
+    "onset_lag": null,
+    "robust_shock": null,
+    "transition_time": null,
+    "transition_type": "null",
+    "transitioned": false,
+    "world_id": "test_v2-0313"
+  },
+  {
+    "observable_onset": 112.0,
+    "onset_lag": 1.2927990919015002,
+    "robust_shock": true,
+    "transition_time": 110.7072009080985,
+    "transition_type": "exogenous_shock",
+    "transitioned": true,
+    "world_id": "test_v2-0314"
+  },
+  {
+    "observable_onset": null,
+    "onset_lag": null,
+    "robust_shock": null,
+    "transition_time": null,
+    "transition_type": "null",
+    "transitioned": false,
+    "world_id": "test_v2-0315"
+  },
+  {
+    "observable_onset": 179.0,
+    "onset_lag": 29.077066428856597,
+    "robust_shock": null,
+    "transition_time": 149.9229335711434,
+    "transition_type": "hopf",
+    "transitioned": true,
+    "world_id": "test_v2-0316"
+  },
+  {
+    "observable_onset": 116.0,
+    "onset_lag": 1.8359333016900479,
+    "robust_shock": true,
+    "transition_time": 114.16406669830995,
+    "transition_type": "exogenous_shock",
+    "transitioned": true,
+    "world_id": "test_v2-0317"
+  },
+  {
+    "observable_onset": 122.0,
+    "onset_lag": 0.8128351403133109,
+    "robust_shock": null,
+    "transition_time": 121.18716485968669,
+    "transition_type": "mechanism_change",
+    "transitioned": true,
+    "world_id": "test_v2-0318"
+  },
+  {
+    "observable_onset": null,
+    "onset_lag": null,
+    "robust_shock": null,
+    "transition_time": null,
+    "transition_type": "null",
+    "transitioned": false,
+    "world_id": "test_v2-0319"
+  },
+  {
+    "observable_onset": 142.0,
+    "onset_lag": 3.2048966769380343,
+    "robust_shock": false,
+    "transition_time": 138.79510332306197,
+    "transition_type": "exogenous_shock",
+    "transitioned": true,
+    "world_id": "test_v2-0320"
+  },
+  {
+    "observable_onset": 128.0,
+    "onset_lag": -17.376027930789547,
+    "robust_shock": null,
+    "transition_time": 145.37602793078955,
+    "transition_type": "hopf",
+    "transitioned": true,
+    "world_id": "test_v2-0321"
+  },
+  {
+    "observable_onset": 154.0,
+    "onset_lag": 17.762720602099364,
+    "robust_shock": false,
+    "transition_time": 136.23727939790064,
+    "transition_type": "exogenous_shock",
+    "transitioned": true,
+    "world_id": "test_v2-0322"
+  },
+  {
+    "observable_onset": null,
+    "onset_lag": null,
+    "robust_shock": null,
+    "transition_time": null,
+    "transition_type": "null",
+    "transitioned": false,
+    "world_id": "test_v2-0323"
+  },
+  {
+    "observable_onset": 134.0,
+    "onset_lag": 1.8657738492950102,
+    "robust_shock": true,
+    "transition_time": 132.134226150705,
+    "transition_type": "exogenous_shock",
+    "transitioned": true,
+    "world_id": "test_v2-0324"
+  },
+  {
+    "observable_onset": 181.0,
+    "onset_lag": 60.42774392494317,
+    "robust_shock": null,
+    "transition_time": 120.57225607505683,
+    "transition_type": "hopf",
+    "transitioned": true,
+    "world_id": "test_v2-0325"
+  },
+  {
+    "observable_onset": 98.0,
+    "onset_lag": -1.600730268407787,
+    "robust_shock": null,
+    "transition_time": 99.60073026840779,
+    "transition_type": "transcritical",
+    "transitioned": true,
+    "world_id": "test_v2-0326"
+  },
+  {
+    "observable_onset": 122.0,
+    "onset_lag": 2.5399540551021573,
+    "robust_shock": null,
+    "transition_time": 119.46004594489784,
+    "transition_type": "mechanism_change",
+    "transitioned": true,
+    "world_id": "test_v2-0327"
+  },
+  {
+    "observable_onset": 154.0,
+    "onset_lag": 5.155248486761195,
+    "robust_shock": null,
+    "transition_time": 148.8447515132388,
+    "transition_type": "fold",
+    "transitioned": true,
+    "world_id": "test_v2-0328"
+  },
+  {
+    "observable_onset": 104.0,
+    "onset_lag": -16.78098945487784,
+    "robust_shock": null,
+    "transition_time": 120.78098945487784,
+    "transition_type": "transcritical",
+    "transitioned": true,
+    "world_id": "test_v2-0329"
+  },
+  {
+    "observable_onset": 93.0,
+    "onset_lag": -12.87393997622047,
+    "robust_shock": null,
+    "transition_time": 105.87393997622047,
+    "transition_type": "hopf",
+    "transitioned": true,
+    "world_id": "test_v2-0330"
+  },
+  {
+    "observable_onset": 147.0,
+    "onset_lag": 23.81753640120553,
+    "robust_shock": null,
+    "transition_time": 123.18246359879447,
+    "transition_type": "fold",
+    "transitioned": true,
+    "world_id": "test_v2-0331"
+  },
+  {
+    "observable_onset": null,
+    "onset_lag": null,
+    "robust_shock": null,
+    "transition_time": null,
+    "transition_type": "null",
+    "transitioned": false,
+    "world_id": "test_v2-0332"
+  },
+  {
+    "observable_onset": 146.0,
+    "onset_lag": 37.696826535287784,
+    "robust_shock": null,
+    "transition_time": 108.30317346471222,
+    "transition_type": "hopf",
+    "transitioned": true,
+    "world_id": "test_v2-0333"
+  },
+  {
+    "observable_onset": 157.0,
+    "onset_lag": 7.501169961230573,
+    "robust_shock": null,
+    "transition_time": 149.49883003876943,
+    "transition_type": "fold",
+    "transitioned": true,
+    "world_id": "test_v2-0334"
+  },
+  {
+    "observable_onset": 119.0,
+    "onset_lag": 1.4604442333600787,
+    "robust_shock": null,
+    "transition_time": 117.53955576663992,
+    "transition_type": "mechanism_change",
+    "transitioned": true,
+    "world_id": "test_v2-0335"
+  },
+  {
+    "observable_onset": null,
+    "onset_lag": null,
+    "robust_shock": null,
+    "transition_time": null,
+    "transition_type": "null",
+    "transitioned": false,
+    "world_id": "test_v2-0336"
+  },
+  {
+    "observable_onset": 129.0,
+    "onset_lag": -11.120020633476656,
+    "robust_shock": null,
+    "transition_time": 140.12002063347666,
+    "transition_type": "fold",
+    "transitioned": true,
+    "world_id": "test_v2-0337"
+  },
+  {
+    "observable_onset": null,
+    "onset_lag": null,
+    "robust_shock": null,
+    "transition_time": null,
+    "transition_type": "null",
+    "transitioned": false,
+    "world_id": "test_v2-0338"
+  },
+  {
+    "observable_onset": 150.0,
+    "onset_lag": 1.3635377525809815,
+    "robust_shock": null,
+    "transition_time": 148.63646224741902,
+    "transition_type": "mechanism_change",
+    "transitioned": true,
+    "world_id": "test_v2-0339"
+  },
+  {
+    "observable_onset": 191.0,
+    "onset_lag": 46.95640876867597,
+    "robust_shock": null,
+    "transition_time": 144.04359123132403,
+    "transition_type": "hopf",
+    "transitioned": true,
+    "world_id": "test_v2-0340"
+  },
+  {
+    "observable_onset": 154.0,
+    "onset_lag": 44.70302237772577,
+    "robust_shock": null,
+    "transition_time": 109.29697762227423,
+    "transition_type": "transcritical",
+    "transitioned": true,
+    "world_id": "test_v2-0341"
+  },
+  {
+    "observable_onset": 132.0,
+    "onset_lag": 1.782145866033062,
+    "robust_shock": false,
+    "transition_time": 130.21785413396694,
+    "transition_type": "exogenous_shock",
+    "transitioned": true,
+    "world_id": "test_v2-0342"
+  },
+  {
+    "observable_onset": null,
+    "onset_lag": null,
+    "robust_shock": null,
+    "transition_time": null,
+    "transition_type": "null",
+    "transitioned": false,
+    "world_id": "test_v2-0343"
+  },
+  {
+    "observable_onset": 153.0,
+    "onset_lag": 16.806332662140022,
+    "robust_shock": null,
+    "transition_time": 136.19366733785998,
+    "transition_type": "fold",
+    "transitioned": true,
+    "world_id": "test_v2-0344"
+  },
+  {
+    "observable_onset": 137.0,
+    "onset_lag": 0.7665509096599123,
+    "robust_shock": false,
+    "transition_time": 136.2334490903401,
+    "transition_type": "exogenous_shock",
+    "transitioned": true,
+    "world_id": "test_v2-0345"
+  },
+  {
+    "observable_onset": 122.0,
+    "onset_lag": 1.3684311522478083,
+    "robust_shock": null,
+    "transition_time": 120.63156884775219,
+    "transition_type": "fold",
+    "transitioned": true,
+    "world_id": "test_v2-0346"
+  },
+  {
+    "observable_onset": 112.0,
+    "onset_lag": -7.604572832695581,
+    "robust_shock": null,
+    "transition_time": 119.60457283269558,
+    "transition_type": "transcritical",
+    "transitioned": true,
+    "world_id": "test_v2-0347"
+  },
+  {
+    "observable_onset": 157.0,
+    "onset_lag": 28.462524744245286,
+    "robust_shock": null,
+    "transition_time": 128.5374752557547,
+    "transition_type": "hopf",
+    "transitioned": true,
+    "world_id": "test_v2-0348"
+  },
+  {
+    "observable_onset": 118.0,
+    "onset_lag": 5.68440445614489,
+    "robust_shock": null,
+    "transition_time": 112.31559554385511,
+    "transition_type": "fold",
+    "transitioned": true,
+    "world_id": "test_v2-0349"
+  },
+  {
+    "observable_onset": 130.0,
+    "onset_lag": 11.014782873340593,
+    "robust_shock": null,
+    "transition_time": 118.9852171266594,
+    "transition_type": "fold",
+    "transitioned": true,
+    "world_id": "test_v2-0350"
+  },
+  {
+    "observable_onset": 157.0,
+    "onset_lag": 30.71240056706445,
+    "robust_shock": null,
+    "transition_time": 126.28759943293555,
+    "transition_type": "hopf",
+    "transitioned": true,
+    "world_id": "test_v2-0351"
+  },
+  {
+    "observable_onset": 145.0,
+    "onset_lag": 2.4895708566205883,
+    "robust_shock": null,
+    "transition_time": 142.5104291433794,
+    "transition_type": "mechanism_change",
+    "transitioned": true,
+    "world_id": "test_v2-0352"
+  },
+  {
+    "observable_onset": null,
+    "onset_lag": null,
+    "robust_shock": null,
+    "transition_time": null,
+    "transition_type": "null",
+    "transitioned": false,
+    "world_id": "test_v2-0353"
+  },
+  {
+    "observable_onset": null,
+    "onset_lag": null,
+    "robust_shock": null,
+    "transition_time": null,
+    "transition_type": "null",
+    "transitioned": false,
+    "world_id": "test_v2-0354"
+  },
+  {
+    "observable_onset": 112.0,
+    "onset_lag": -36.37771981899701,
+    "robust_shock": null,
+    "transition_time": 148.377719818997,
+    "transition_type": "transcritical",
+    "transitioned": true,
+    "world_id": "test_v2-0355"
+  },
+  {
+    "observable_onset": 151.0,
+    "onset_lag": 6.0,
+    "robust_shock": null,
+    "transition_time": 145.0,
+    "transition_type": "noise_induced",
+    "transitioned": true,
+    "world_id": "test_v2-0356"
+  },
+  {
+    "observable_onset": 157.0,
+    "onset_lag": 54.23360692451348,
+    "robust_shock": null,
+    "transition_time": 102.76639307548652,
+    "transition_type": "hopf",
+    "transitioned": true,
+    "world_id": "test_v2-0357"
+  },
+  {
+    "observable_onset": 127.0,
+    "onset_lag": -12.72459731852166,
+    "robust_shock": null,
+    "transition_time": 139.72459731852166,
+    "transition_type": "transcritical",
+    "transitioned": true,
+    "world_id": "test_v2-0358"
+  },
+  {
+    "observable_onset": 124.0,
+    "onset_lag": 14.066289757447024,
+    "robust_shock": null,
+    "transition_time": 109.93371024255298,
+    "transition_type": "transcritical",
+    "transitioned": true,
+    "world_id": "test_v2-0359"
+  },
+  {
+    "observable_onset": 125.0,
+    "onset_lag": -13.599454300369558,
+    "robust_shock": null,
+    "transition_time": 138.59945430036956,
+    "transition_type": "transcritical",
+    "transitioned": true,
+    "world_id": "test_v2-0360"
+  },
+  {
+    "observable_onset": 145.0,
+    "onset_lag": 1.3941679910826394,
+    "robust_shock": false,
+    "transition_time": 143.60583200891736,
+    "transition_type": "exogenous_shock",
+    "transitioned": true,
+    "world_id": "test_v2-0361"
+  },
+  {
+    "observable_onset": 201.0,
+    "onset_lag": 73.50666897893544,
+    "robust_shock": null,
+    "transition_time": 127.49333102106456,
+    "transition_type": "hopf",
+    "transitioned": true,
+    "world_id": "test_v2-0362"
+  },
+  {
+    "observable_onset": 140.0,
+    "onset_lag": 7.0,
+    "robust_shock": null,
+    "transition_time": 133.0,
+    "transition_type": "noise_induced",
+    "transitioned": true,
+    "world_id": "test_v2-0363"
+  },
+  {
+    "observable_onset": 107.0,
+    "onset_lag": -37.6623975504981,
+    "robust_shock": null,
+    "transition_time": 144.6623975504981,
+    "transition_type": "hopf",
+    "transitioned": true,
+    "world_id": "test_v2-0364"
+  },
+  {
+    "observable_onset": 104.0,
+    "onset_lag": -25.62511612448597,
+    "robust_shock": null,
+    "transition_time": 129.62511612448597,
+    "transition_type": "transcritical",
+    "transitioned": true,
+    "world_id": "test_v2-0365"
+  },
+  {
+    "observable_onset": 101.0,
+    "onset_lag": 0.003545462613757877,
+    "robust_shock": false,
+    "transition_time": 100.99645453738624,
+    "transition_type": "exogenous_shock",
+    "transitioned": true,
+    "world_id": "test_v2-0366"
+  },
+  {
+    "observable_onset": 103.0,
+    "onset_lag": -5.02717928179203,
+    "robust_shock": null,
+    "transition_time": 108.02717928179203,
+    "transition_type": "transcritical",
+    "transitioned": true,
+    "world_id": "test_v2-0367"
+  },
+  {
+    "observable_onset": 187.0,
+    "onset_lag": 76.01127267905477,
+    "robust_shock": null,
+    "transition_time": 110.98872732094523,
+    "transition_type": "hopf",
+    "transitioned": true,
+    "world_id": "test_v2-0368"
+  },
+  {
+    "observable_onset": 108.0,
+    "onset_lag": 3.0,
+    "robust_shock": null,
+    "transition_time": 105.0,
+    "transition_type": "noise_induced",
+    "transitioned": true,
+    "world_id": "test_v2-0369"
+  },
+  {
+    "observable_onset": 107.0,
+    "onset_lag": 2.243665835053079,
+    "robust_shock": null,
+    "transition_time": 104.75633416494692,
+    "transition_type": "mechanism_change",
+    "transitioned": true,
+    "world_id": "test_v2-0370"
+  },
+  {
+    "observable_onset": 121.0,
+    "onset_lag": 0.26070180474957283,
+    "robust_shock": true,
+    "transition_time": 120.73929819525043,
+    "transition_type": "exogenous_shock",
+    "transitioned": true,
+    "world_id": "test_v2-0371"
+  },
+  {
+    "observable_onset": 119.0,
+    "onset_lag": 8.082062601744227,
+    "robust_shock": null,
+    "transition_time": 110.91793739825577,
+    "transition_type": "transcritical",
+    "transitioned": true,
+    "world_id": "test_v2-0372"
+  },
+  {
+    "observable_onset": null,
+    "onset_lag": null,
+    "robust_shock": null,
+    "transition_time": null,
+    "transition_type": "null",
+    "transitioned": false,
+    "world_id": "test_v2-0373"
+  },
+  {
+    "observable_onset": 127.0,
+    "onset_lag": 1.0316548142200759,
+    "robust_shock": null,
+    "transition_time": 125.96834518577992,
+    "transition_type": "mechanism_change",
+    "transitioned": true,
+    "world_id": "test_v2-0374"
+  },
+  {
+    "observable_onset": 143.0,
+    "onset_lag": 8.954542458525083,
+    "robust_shock": null,
+    "transition_time": 134.04545754147492,
+    "transition_type": "fold",
+    "transitioned": true,
+    "world_id": "test_v2-0375"
+  },
+  {
+    "observable_onset": 112.0,
+    "onset_lag": 1.2219967954907105,
+    "robust_shock": true,
+    "transition_time": 110.77800320450929,
+    "transition_type": "exogenous_shock",
+    "transitioned": true,
+    "world_id": "test_v2-0376"
+  },
+  {
+    "observable_onset": 104.0,
+    "onset_lag": 1.756211015025542,
+    "robust_shock": false,
+    "transition_time": 102.24378898497446,
+    "transition_type": "exogenous_shock",
+    "transitioned": true,
+    "world_id": "test_v2-0377"
+  },
+  {
+    "observable_onset": 135.0,
+    "onset_lag": 26.085019155168126,
+    "robust_shock": null,
+    "transition_time": 108.91498084483187,
+    "transition_type": "hopf",
+    "transitioned": true,
+    "world_id": "test_v2-0378"
+  },
+  {
+    "observable_onset": 92.0,
+    "onset_lag": -35.22316174719852,
+    "robust_shock": null,
+    "transition_time": 127.22316174719852,
+    "transition_type": "hopf",
+    "transitioned": true,
+    "world_id": "test_v2-0379"
+  },
+  {
+    "observable_onset": 110.0,
+    "onset_lag": 2.708400592797574,
+    "robust_shock": null,
+    "transition_time": 107.29159940720243,
+    "transition_type": "mechanism_change",
+    "transitioned": true,
+    "world_id": "test_v2-0380"
+  },
+  {
+    "observable_onset": 146.0,
+    "onset_lag": 28.624065659674045,
+    "robust_shock": null,
+    "transition_time": 117.37593434032595,
+    "transition_type": "hopf",
+    "transitioned": true,
+    "world_id": "test_v2-0381"
+  },
+  {
+    "observable_onset": 97.0,
+    "onset_lag": -24.56680256432216,
+    "robust_shock": null,
+    "transition_time": 121.56680256432216,
+    "transition_type": "transcritical",
+    "transitioned": true,
+    "world_id": "test_v2-0382"
+  },
+  {
+    "observable_onset": 119.0,
+    "onset_lag": -7.260589417466619,
+    "robust_shock": null,
+    "transition_time": 126.26058941746662,
+    "transition_type": "hopf",
+    "transitioned": true,
+    "world_id": "test_v2-0383"
+  },
+  {
+    "observable_onset": 136.0,
+    "onset_lag": 4.293765953266103,
+    "robust_shock": null,
+    "transition_time": 131.7062340467339,
+    "transition_type": "fold",
+    "transitioned": true,
+    "world_id": "test_v2-0384"
+  },
+  {
+    "observable_onset": 134.0,
+    "onset_lag": 13.963651882061413,
+    "robust_shock": null,
+    "transition_time": 120.03634811793859,
+    "transition_type": "hopf",
+    "transitioned": true,
+    "world_id": "test_v2-0385"
+  },
+  {
+    "observable_onset": null,
+    "onset_lag": null,
+    "robust_shock": null,
+    "transition_time": null,
+    "transition_type": "null",
+    "transitioned": false,
+    "world_id": "test_v2-0386"
+  },
+  {
+    "observable_onset": 99.0,
+    "onset_lag": -11.06715392790619,
+    "robust_shock": null,
+    "transition_time": 110.06715392790619,
+    "transition_type": "fold",
+    "transitioned": true,
+    "world_id": "test_v2-0387"
+  },
+  {
+    "observable_onset": 103.0,
+    "onset_lag": 1.8556378569819998,
+    "robust_shock": null,
+    "transition_time": 101.144362143018,
+    "transition_type": "mechanism_change",
+    "transitioned": true,
+    "world_id": "test_v2-0388"
+  },
+  {
+    "observable_onset": 111.0,
+    "onset_lag": 2.479301100849497,
+    "robust_shock": true,
+    "transition_time": 108.5206988991505,
+    "transition_type": "exogenous_shock",
+    "transitioned": true,
+    "world_id": "test_v2-0389"
+  },
+  {
+    "observable_onset": 139.0,
+    "onset_lag": -8.955799130731094,
+    "robust_shock": null,
+    "transition_time": 147.9557991307311,
+    "transition_type": "fold",
+    "transitioned": true,
+    "world_id": "test_v2-0390"
+  },
+  {
+    "observable_onset": 132.0,
+    "onset_lag": 17.0,
+    "robust_shock": null,
+    "transition_time": 115.0,
+    "transition_type": "noise_induced",
+    "transitioned": true,
+    "world_id": "test_v2-0391"
+  },
+  {
+    "observable_onset": null,
+    "onset_lag": null,
+    "robust_shock": null,
+    "transition_time": null,
+    "transition_type": "null",
+    "transitioned": false,
+    "world_id": "test_v2-0392"
+  },
+  {
+    "observable_onset": 143.0,
+    "onset_lag": 1.441152542995269,
+    "robust_shock": null,
+    "transition_time": 141.55884745700473,
+    "transition_type": "mechanism_change",
+    "transitioned": true,
+    "world_id": "test_v2-0393"
+  },
+  {
+    "observable_onset": 121.0,
+    "onset_lag": -8.243013345075127,
+    "robust_shock": null,
+    "transition_time": 129.24301334507513,
+    "transition_type": "transcritical",
+    "transitioned": true,
+    "world_id": "test_v2-0394"
+  },
+  {
+    "observable_onset": null,
+    "onset_lag": null,
+    "robust_shock": null,
+    "transition_time": null,
+    "transition_type": "null",
+    "transitioned": false,
+    "world_id": "test_v2-0395"
+  },
+  {
+    "observable_onset": null,
+    "onset_lag": null,
+    "robust_shock": null,
+    "transition_time": null,
+    "transition_type": "null",
+    "transitioned": false,
+    "world_id": "test_v2-0396"
+  },
+  {
+    "observable_onset": 135.0,
+    "onset_lag": 21.116598404081756,
+    "robust_shock": null,
+    "transition_time": 113.88340159591824,
+    "transition_type": "hopf",
+    "transitioned": true,
+    "world_id": "test_v2-0397"
+  },
+  {
+    "observable_onset": null,
+    "onset_lag": null,
+    "robust_shock": null,
+    "transition_time": null,
+    "transition_type": "null",
+    "transitioned": false,
+    "world_id": "test_v2-0398"
+  },
+  {
+    "observable_onset": 112.0,
+    "onset_lag": 2.207911301225863,
+    "robust_shock": null,
+    "transition_time": 109.79208869877414,
+    "transition_type": "mechanism_change",
+    "transitioned": true,
+    "world_id": "test_v2-0399"
+  },
+  {
+    "observable_onset": 111.0,
+    "onset_lag": 3.0,
+    "robust_shock": null,
+    "transition_time": 108.0,
+    "transition_type": "noise_induced",
+    "transitioned": true,
+    "world_id": "test_v2-0400"
+  },
+  {
+    "observable_onset": 120.0,
+    "onset_lag": -2.4941200483731905,
+    "robust_shock": null,
+    "transition_time": 122.49412004837319,
+    "transition_type": "hopf",
+    "transitioned": true,
+    "world_id": "test_v2-0401"
+  },
+  {
+    "observable_onset": 120.0,
+    "onset_lag": 1.3285757473730229,
+    "robust_shock": null,
+    "transition_time": 118.67142425262698,
+    "transition_type": "mechanism_change",
+    "transitioned": true,
+    "world_id": "test_v2-0402"
+  },
+  {
+    "observable_onset": 219.0,
+    "onset_lag": 96.87381556384912,
+    "robust_shock": null,
+    "transition_time": 122.12618443615088,
+    "transition_type": "hopf",
+    "transitioned": true,
+    "world_id": "test_v2-0403"
+  },
+  {
+    "observable_onset": 139.0,
+    "onset_lag": 3.672752677621446,
+    "robust_shock": null,
+    "transition_time": 135.32724732237855,
+    "transition_type": "fold",
+    "transitioned": true,
+    "world_id": "test_v2-0404"
+  },
+  {
+    "observable_onset": null,
+    "onset_lag": null,
+    "robust_shock": null,
+    "transition_time": null,
+    "transition_type": "null",
+    "transitioned": false,
+    "world_id": "test_v2-0405"
+  },
+  {
+    "observable_onset": 121.0,
+    "onset_lag": -17.836968483055102,
+    "robust_shock": null,
+    "transition_time": 138.8369684830551,
+    "transition_type": "fold",
+    "transitioned": true,
+    "world_id": "test_v2-0406"
+  },
+  {
+    "observable_onset": 112.0,
+    "onset_lag": 11.0,
+    "robust_shock": null,
+    "transition_time": 101.0,
+    "transition_type": "noise_induced",
+    "transitioned": true,
+    "world_id": "test_v2-0407"
+  },
+  {
+    "observable_onset": 97.0,
+    "onset_lag": -36.3462930922754,
+    "robust_shock": null,
+    "transition_time": 133.3462930922754,
+    "transition_type": "fold",
+    "transitioned": true,
+    "world_id": "test_v2-0408"
+  },
+  {
+    "observable_onset": 146.0,
+    "onset_lag": 31.0,
+    "robust_shock": null,
+    "transition_time": 115.0,
+    "transition_type": "noise_induced",
+    "transitioned": true,
+    "world_id": "test_v2-0409"
+  },
+  {
+    "observable_onset": 103.0,
+    "onset_lag": -0.31555221133703526,
+    "robust_shock": null,
+    "transition_time": 103.31555221133704,
+    "transition_type": "fold",
+    "transitioned": true,
+    "world_id": "test_v2-0410"
+  },
+  {
+    "observable_onset": null,
+    "onset_lag": null,
+    "robust_shock": null,
+    "transition_time": null,
+    "transition_type": "null",
+    "transitioned": false,
+    "world_id": "test_v2-0411"
+  },
+  {
+    "observable_onset": 151.0,
+    "onset_lag": 1.9700124271817856,
+    "robust_shock": null,
+    "transition_time": 149.02998757281821,
+    "transition_type": "mechanism_change",
+    "transitioned": true,
+    "world_id": "test_v2-0412"
+  },
+  {
+    "observable_onset": 91.0,
+    "onset_lag": -14.28884755522634,
+    "robust_shock": null,
+    "transition_time": 105.28884755522634,
+    "transition_type": "fold",
+    "transitioned": true,
+    "world_id": "test_v2-0413"
+  },
+  {
+    "observable_onset": null,
+    "onset_lag": null,
+    "robust_shock": null,
+    "transition_time": null,
+    "transition_type": "null",
+    "transitioned": false,
+    "world_id": "test_v2-0414"
+  },
+  {
+    "observable_onset": 110.0,
+    "onset_lag": -38.98079829151811,
+    "robust_shock": null,
+    "transition_time": 148.9807982915181,
+    "transition_type": "transcritical",
+    "transitioned": true,
+    "world_id": "test_v2-0415"
+  },
+  {
+    "observable_onset": 146.0,
+    "onset_lag": 2.5055477081064907,
+    "robust_shock": null,
+    "transition_time": 143.4944522918935,
+    "transition_type": "mechanism_change",
+    "transitioned": true,
+    "world_id": "test_v2-0416"
+  },
+  {
+    "observable_onset": 125.0,
+    "onset_lag": 11.525419034882773,
+    "robust_shock": null,
+    "transition_time": 113.47458096511723,
+    "transition_type": "hopf",
+    "transitioned": true,
+    "world_id": "test_v2-0417"
+  },
+  {
+    "observable_onset": 114.0,
+    "onset_lag": 1.467280663477311,
+    "robust_shock": null,
+    "transition_time": 112.53271933652269,
+    "transition_type": "mechanism_change",
+    "transitioned": true,
+    "world_id": "test_v2-0418"
+  },
+  {
+    "observable_onset": 101.0,
+    "onset_lag": -28.28762451322703,
+    "robust_shock": null,
+    "transition_time": 129.28762451322703,
+    "transition_type": "hopf",
+    "transitioned": true,
+    "world_id": "test_v2-0419"
+  }
+]

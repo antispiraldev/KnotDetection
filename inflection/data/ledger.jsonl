@@ -77,3 +77,5 @@
 {"event": "forecast_registered", "file": "feature_classifier__lead_30.json", "forecast_sha256": "fac687bda2c0e8b671724f9d08d3d40f8fd4c3e20fb24b587e302bc0c94254e4", "method": "feature_classifier/lead_30", "test_set": "test_v2", "time": "2026-09-21T18:45:03+00:00"}
 {"event": "forecast_registered", "file": "hybrid__lead_30.json", "forecast_sha256": "eb0c36c5d300ad4693f7e2db14b7244f1b9495a426ff1761f73260695ac10eee", "method": "hybrid/lead_30", "test_set": "test_v2", "time": "2026-09-21T18:46:03+00:00"}
 {"event": "unsealed", "test_set": "test_v2", "time": "2026-09-21T18:46:14+00:00"}
+{"event": "released", "test_set": "test_v1", "time": "2026-09-21T20:03:14+00:00"}
+{"event": "released", "test_set": "test_v2", "time": "2026-09-21T20:03:14+00:00"}

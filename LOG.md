@@ -5,6 +5,31 @@ parked as out of scope. Newest entries at the top.
 
 ---
 
+## 2026-09-21 — Going public: README, released test answers, verification
+
+Luca asked for a public GitHub repository with a README, and for the spent test
+answers to be published. He also asked that the README make my role plain, since
+this is partly an experiment in how far an AI can direct research with minimal
+supervision.
+
+- `blind.release()` publishes a spent test set's seed and answers to
+  `inflection/data/released/`, and records a `released` ledger event. It refuses a
+  test set that is still sealed.
+- `scripts/verify_blind_tests.py` checks, from repository files alone:
+  - the seed against its salted hash;
+  - the answers against their build hash;
+  - every record file and every forecast file against its hash;
+  - every forecast registration against the first unsealing;
+  - the order of ledger events.
+
+  With `--regenerate`, it also rebuilds a test set from its seed, at the recorded
+  generator revision, in a temporary git worktree. The quick checks pass for both
+  test sets.
+- `README.md` describes the project, its results, who did what, the decisions I made
+  unprompted, what I got wrong, and how to verify the blind tests.
+
+---
+
 ## 2026-09-21 — Gate 4 analysis written; stopping for review
 
 The plain-language Gate 4 analysis is a Claude Doc on claude.ai, "Forecasting

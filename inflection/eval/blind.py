@@ -209,3 +209,34 @@ def check_forecast(path: Path, name: str, ledger: Path = LEDGER) -> dict:
                 raise BlindingViolation(f"{path} was registered after {name!r} was unsealed")
             return e
     raise BlindingViolation(f"{path} was never registered for {name!r}, or has changed since")
+
+
+# --- 6. release, after the test set is spent -----------------------------------
+
+RELEASED = DATA / "released"
+
+
+def release(name: str, ledger: Path = LEDGER, sealed: Path = SEALED,
+            released: Path = RELEASED) -> Path:
+    """Publish a spent test set's seed and truth, so anyone can check the ledger.
+
+    Refused until the test set has been unsealed: releasing earlier would end the
+    blinding. After it, nothing is lost -- the set can no longer score a forecast --
+    and the ledger's hashes become checkable by anyone
+    (`scripts/verify_blind_tests.py`).
+    """
+    if not is_unsealed(name, ledger):
+        raise BlindingViolation(f"test set {name!r} is still sealed; releasing it would end the blinding")
+    seed_blob = (sealed / f"{name}.seed.json").read_bytes()
+    truth = (sealed / name / "truth.json").read_bytes()
+    _load_seed(name, ledger, sealed)                     # verifies against the commitment
+    built = _events(name, "pool_built", ledger)[-1][1]
+    if _sha256_bytes(truth) != built["truth_sha256"]:
+        raise BlindingViolation(f"sealed truth for {name!r} does not match its commitment")
+    out = released / name
+    out.mkdir(parents=True, exist_ok=True)
+    (out / "seed.json").write_bytes(seed_blob)
+    (out / "truth.json").write_bytes(truth)
+    if not _events(name, "released", ledger):
+        _append(dict(event="released", test_set=name), ledger)
+    return out
