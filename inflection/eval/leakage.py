@@ -163,7 +163,7 @@ def _accuracy(X: np.ndarray, y: np.ndarray, cols, n_splits: int, seed: int) -> t
         return float("nan"), {}
     idx = [FEATURE_NAMES.index(c) for c in cols]
     Xs = X[:, idx]
-    if np.allclose(Xs.std(axis=0), 0):
+    if all(_is_constant(Xs[:, k]) for k in range(Xs.shape[1])):
         classes, counts = np.unique(y, return_counts=True)
         return float(counts.max() / counts.sum()), {c: 0.0 for c in classes}
     cv = StratifiedKFold(n_splits=n_splits, shuffle=True, random_state=seed)
@@ -173,13 +173,34 @@ def _accuracy(X: np.ndarray, y: np.ndarray, cols, n_splits: int, seed: int) -> t
     return float((pred == y).mean()), recall
 
 
+def _is_constant(col: np.ndarray, rtol: float = 1e-9, atol: float = 1e-12) -> bool:
+    """Is this column constant to within floating-point noise?
+
+    Both tolerances are needed. A relative one catches a feature pinned near a
+    non-zero value -- `median` is forced to 1.0 and varies only at 1e-16. It cannot
+    catch one pinned near zero: `log_median` is the log of that same 1.0, so its
+    values *are* the 1e-16 dust and their spread is the same size as the values
+    themselves. Without the absolute floor it looks like a feature varying over its
+    full range, and the rank test duly reports auc 0.76 for pure rounding error.
+    """
+    sd = float(np.std(col))
+    scale = float(np.max(np.abs(col)))
+    return bool(sd <= atol or sd <= rtol * scale)
+
+
 def _single_feature_aucs(X: np.ndarray, y: np.ndarray, cols) -> list[tuple[float, str, str]]:
     out = []
     for c in np.unique(y):
         mask = y == c
         for name in cols:
             j = FEATURE_NAMES.index(name)
-            if np.std(X[:, j]) == 0:
+            if _is_constant(X[:, j]):
+                # A feature the generator pins to a constant still varies in its last
+                # bits: an even-length window makes the median an average of two
+                # values, so dividing by it returns 1.0 only to within rounding. The
+                # rank test happily finds structure in that dust and reports auc 0.76
+                # for a quantity that carries nothing. Compare against the feature's
+                # own magnitude rather than against exact zero.
                 continue
             a, b = X[mask, j], X[~mask, j]
             # Rank-based separability: P(feature higher for this type) -> AUC.
@@ -192,13 +213,37 @@ def _single_feature_aucs(X: np.ndarray, y: np.ndarray, cols) -> list[tuple[float
     return out
 
 
-def audit(worlds, n_splits: int = 5, seed: int = 0) -> dict:
+def permutation_null(
+    X: np.ndarray, y: np.ndarray, cols, n_perm: int, n_splits: int, seed: int,
+) -> np.ndarray:
+    """Accuracy the same classifier reaches when the labels carry no information.
+
+    The base rate is the wrong yardstick for a cross-validated accuracy on a pool of
+    this size. With 7 classes and 25 worlds each, the same generator scored -0.011
+    and +0.063 excess on two random draws, flipping the verdict without any change
+    to the model under test. A fixed threshold on the excess was measuring the draw.
+    Shuffling the labels gives the spread of accuracies that chance alone produces
+    for exactly these features and this pool, which is the comparison that means
+    something.
+    """
+    rng = np.random.default_rng(seed)
+    out = np.empty(n_perm)
+    for i in range(n_perm):
+        out[i], _ = _accuracy(X, rng.permutation(y), cols, n_splits, seed + 1 + i)
+    return out
+
+
+def audit(worlds, n_splits: int = 5, seed: int = 0, n_perm: int = 60) -> dict:
     """Two-tier audit: static leakage is gated, temporal signal is measured."""
     X, y = build_matrix(worlds)
     classes, counts = np.unique(y, return_counts=True)
     base_rate = float(counts.max() / counts.sum())
 
     stat_acc, stat_recall = _accuracy(X, y, STATIC_FEATURES, n_splits, seed)
+    null = permutation_null(X, y, STATIC_FEATURES, n_perm, n_splits, seed)
+    # +1 in numerator and denominator: the observed labelling is one of the
+    # permutations, so p can never be exactly zero from a finite sample.
+    p_static = float((np.sum(null >= stat_acc) + 1) / (n_perm + 1))
     temp_acc, temp_recall = _accuracy(X, y, TEMPORAL_FEATURES, n_splits, seed)
     all_acc, _ = _accuracy(X, y, FEATURE_NAMES, n_splits, seed)
 
@@ -206,6 +251,10 @@ def audit(worlds, n_splits: int = 5, seed: int = 0) -> dict:
         n=len(y),
         base_rate=base_rate,
         static_accuracy=stat_acc,
+        static_null_mean=float(null.mean()),
+        static_null_p95=float(np.percentile(null, 95)),
+        static_p=p_static,
+        n_perm=n_perm,
         static_excess=stat_acc - base_rate,
         static_recall=stat_recall,
         temporal_accuracy=temp_acc,
@@ -223,12 +272,27 @@ def audit(worlds, n_splits: int = 5, seed: int = 0) -> dict:
     )
 
 
+def verdict(result: dict, alpha: float = 0.05, min_excess: float = 0.05) -> bool:
+    """Pass unless the scale-dependent leak is both real and large enough to matter.
+
+    Two conditions, because each alone misfires. Significance alone fails a large
+    pool on a leak too small to exploit. Size alone fails a small pool on noise --
+    which is what happened when this gate was a bare threshold on the excess.
+    """
+    significant = result["static_p"] < alpha
+    material = result["static_accuracy"] - result["static_null_mean"] > min_excess
+    return not (significant and material)
+
+
 def report(result: dict, threshold: float = 0.05) -> str:
     lines = [
         f"leakage audit on {result['n']} worlds (base rate {result['base_rate']:.3f})",
         "",
         "  GATED -- scale-dependent features (level, spread, record length):",
         f"    accuracy {result['static_accuracy']:.3f}   excess {result['static_excess']:+.3f}",
+        f"    chance for this pool: mean {result['static_null_mean']:.3f}, "
+        f"95th pct {result['static_null_p95']:.3f}   (p = {result['static_p']:.3f}, "
+        f"{result['n_perm']} label shuffles)",
     ]
     for d in result["top_static_auc"]:
         lines.append(f"      {d['transition_type']:18s} {d['feature']:14s} auc={d['auc']:.3f}")
@@ -242,10 +306,10 @@ def report(result: dict, threshold: float = 0.05) -> str:
     for d in result["top_temporal_auc"]:
         lines.append(f"      {d['transition_type']:18s} {d['feature']:14s} auc={d['auc']:.3f}")
 
-    verdict = "PASS" if result["static_excess"] <= threshold else "FAIL"
+    verdict_txt = "PASS" if verdict(result, min_excess=threshold) else "FAIL"
     lines += [
         "",
         f"  combined accuracy: {result['combined_accuracy']:.3f}",
-        f"  verdict: {verdict} (gate: scale-dependent excess <= {threshold:.2f})",
+        f"  verdict: {verdict_txt} (fails only if p < 0.05 AND excess over chance > {threshold:.2f})",
     ]
     return "\n".join(lines)

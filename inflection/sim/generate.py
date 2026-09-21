@@ -118,6 +118,21 @@ def _calibrate_cv(spec, target_cv: float, origin: float, rng: np.random.Generato
     med = float(np.median(s))
     if not np.isfinite(med) or med <= 0:
         raise RuntimeError("pilot run degenerate")
+
+    # A pilot that has already transitioned cannot be calibrated against. Near-
+    # critical worlds sometimes escape spontaneously inside the pilot window; the
+    # collapse makes std/median enormous, and calibrating against it slashes the
+    # noise by an order of magnitude. That is not harmless. For `noise_induced` the
+    # nearly silent world then never escapes and is rejected, so the damage undoes
+    # itself -- but `exogenous_shock` has its transition *imposed*, so the same world
+    # is accepted with its noise a tenth of what it should be. Three of 25 shock
+    # worlds arrived that way, pinned against the calibration clip, and the
+    # resulting low spread identified the type at auc 0.80. Legitimate pre-origin
+    # records have CV <= 0.15, so a point beyond half or double the median is a
+    # regime change, never a fluctuation. Redraw the world instead.
+    if s.min() < 0.5 * med or s.max() > 2.0 * med:
+        raise RuntimeError("pilot run transitioned before the origin")
+
     cv = float(np.std(s)) / med
     if cv <= 0:
         raise RuntimeError("pilot run has no variation")
@@ -153,19 +168,38 @@ def generate_world(
     rng: np.random.Generator,
     max_attempts: int = 60,
 ) -> World | None:
-    """Draw worlds of this type until one is usable, or give up."""
+    """Draw worlds of this type until one is usable, or give up.
+
+    The design variables -- target fluctuation size and scheduled transition time --
+    are assigned once, *before* the rejection loop, and held fixed through every
+    retry. Retries resample only the physics and the noise path.
+
+    This ordering is what keeps rejection sampling honest. When the target CV was
+    redrawn on each attempt, acceptance quietly filtered it: a loud, near-critical
+    `exogenous_shock` world tends to escape on its own before its shock arrives, is
+    rejected, and redraws, so accepted shock worlds ended up with a median target CV
+    of 0.045 against ~0.085 for every other type -- despite all types drawing from
+    one shared range. The calibration was undone by selection, and the audit caught
+    it as `sd` separating shock worlds at auc 0.80. A variable the leakage gate
+    treats as nuisance must be assigned where selection cannot act on it.
+
+    Returns None if no usable world is found at these design values. That is itself
+    a bias if it happens often for some types and not others, so failures are
+    counted and reported by `generate_pool`.
+    """
     origin = ORIGIN_FRAC * T
     lo, hi = tstar_range()
 
-    for attempt in range(1, max_attempts + 1):
-        if transition_type in ("null", "noise_induced"):
-            t_star_req = None
-        else:
-            t_star_req = float(rng.uniform(lo, hi))
+    target_cv = float(rng.uniform(*CV_TARGET))
+    if transition_type in ("null", "noise_induced"):
+        t_star_req = None
+    else:
+        t_star_req = float(rng.uniform(lo, hi))
 
+    for attempt in range(1, max_attempts + 1):
         try:
             spec = models.build(transition_type, rng, T, t_star_req)
-            _calibrate_cv(spec, float(rng.uniform(*CV_TARGET)), origin, rng)
+            _calibrate_cv(spec, target_cv, origin, rng)
             run = simulate(spec, T, DT, OBS_STEP, rng)
         except RuntimeError:
             continue
