@@ -60,10 +60,16 @@ FEATURE_NAMES = (
 #
 # SCALE-DEPENDENT -- level, spread, record length: quantities that change if the
 #            series is multiplied by a constant or recorded in different units.
-#            These carry no information about a mechanism, and normalising the
-#            delivered series by its pre-origin median makes them degenerate by
-#            construction. Gated, and the gate is structural: it cannot quietly
-#            drift back to informative the way a tuned parameter range can.
+#            These carry no information about a mechanism, and are gated.
+#            Two different guarantees hold here, and they are not equally strong.
+#            `median`, `log_median` and `n_points` are degenerate by construction:
+#            normalising the delivered series by its pre-origin median forces them
+#            to 1, 0 and a constant whatever the generator does later. `sd`, `iqr`
+#            and `mad` are not -- after normalisation they track the per-world
+#            coefficient of variation, which genuinely varies. They are
+#            type-independent only because that CV is drawn from a shared range and
+#            calibrated toward it, so this half of the gate rests on the calibration
+#            working and is worth re-checking whenever the generator changes.
 # PHYSICAL -- relative spread, relaxation, asymmetry, and how all of those move
 #            across the window. Informative when the dynamics make them so, which is
 #            the phenomenon under study. Measured and reported, never gated.

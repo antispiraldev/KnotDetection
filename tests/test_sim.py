@@ -191,3 +191,28 @@ def test_simulate_is_reproducible_given_a_seed():
     run_a = simulate(spec_a, T, 0.01, 1.0, np.random.default_rng(3))
     run_b = simulate(spec_b, T, 0.01, 1.0, np.random.default_rng(3))
     np.testing.assert_allclose(run_a.series, run_b.series)
+
+
+# --- calibration -------------------------------------------------------------
+
+def test_cv_calibration_lands_near_its_target(one_per_type):
+    """Half the scale-dependent gate rests on this, so check it rather than assume it.
+
+    `sd`, `iqr` and `mad` are not degenerate after normalisation -- they track the
+    per-world coefficient of variation. They are type-independent only because that
+    CV is drawn from a shared range and calibrated toward it. A single pilot
+    iteration is not exact, so the test asks for the right order of magnitude.
+    """
+    for tt, w in one_per_type.items():
+        target = w.params["target_cv"]
+        _, y = w.record()
+        achieved = float(np.std(y)) / float(np.median(y))
+        assert 0.4 * target < achieved < 2.5 * target, (tt, target, achieved)
+
+
+def test_calibration_factor_is_not_pinned_at_the_clip(one_per_type):
+    """If a type always saturates the clip, its CV is not really being calibrated."""
+    for tt, w in one_per_type.items():
+        from inflection.sim.generate import CV_CLIP
+        factor = w.params["cv_calibration"]
+        assert CV_CLIP[0] < factor < CV_CLIP[1], (tt, factor)
