@@ -29,3 +29,4 @@
 {"event": "forecast_registered", "file": "generic_ews__harsh.json", "forecast_sha256": "d46ca75c17657e096bc6ba578b6b56f4f416f3f01fe21cce32d1be63d4f1ff86", "method": "generic_ews/harsh", "test_set": "test_v1", "time": "2026-09-21T08:16:20+00:00"}
 {"event": "forecast_registered", "file": "feature_classifier__harsh.json", "forecast_sha256": "83cc0d6832234ea4c88e89b595e8da4d0f1a1eb663df9b0f61c8a58fad404144", "method": "feature_classifier/harsh", "test_set": "test_v1", "time": "2026-09-21T08:17:06+00:00"}
 {"event": "unsealed", "test_set": "test_v1", "time": "2026-09-21T08:17:22+00:00"}
+{"event": "seed_committed", "seed_sha256": "8de12b728bc8421287e8acffe73ffe564fea833228f1d13353e89beef80ec0a8", "test_set": "test_v2", "time": "2026-09-21T17:54:39+00:00"}
