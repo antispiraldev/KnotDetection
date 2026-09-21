@@ -5,6 +5,49 @@ parked as out of scope. Newest entries at the top.
 
 ---
 
+## 2026-09-21 — `test_v2` results (second blind test); Gate 4 write-up next
+
+Seed committed at `2df73e5`. Expectations written at `d473e56`. Pool built from
+generator `d473e56` (clean tree): 420 worlds, none failed (`0ce6200`). 45 forecasts
+(5 methods × 9 layers) registered and committed before unsealing (`ad03486`). Tables
+are in `inflection/notebooks/gate3_tables_test_v2.md`, the figure in
+`gate3_summary.png` (now for test_v2), and every number in
+`gate3_scores_test_v2.json`.
+
+| | clean | harsh | lead_30 |
+|---|---|---|---|
+| Whether AUC, hybrid | 0.78 [0.73, 0.83] | 0.65 [0.57, 0.73] | 0.77 [0.72, 0.82] |
+| Whether AUC, feature clf. | 0.77 [0.72, 0.82] | 0.64 [0.57, 0.72] | 0.75 [0.70, 0.80] |
+| Whether AUC, generic EWS | 0.51 | 0.54 | 0.56 |
+| Onset MAE: base / feat. / hybrid | 18.2 / 17.1 / 17.0 | 18.2 / 18.2 / 18.1 | 18.2 / 17.4 / 17.3 |
+| Type acc.: feat. / hybrid (chance 0.167) | 0.44 / 0.47 | 0.18 / 0.20 | 0.41 / 0.43 |
+
+**Against the written expectations:**
+
+1. **Shock fix works: confirmed.** Mean p for robust shocks is 0.77–0.78, equal
+   to null (0.78). Fragile shocks get 0.92. By p alone, methods separate fragile
+   from robust shocks at AUC 0.88–0.90. Whether-AUC is 0.77–0.78, inside the
+   predicted 0.75–0.78.
+2. **Hybrid best on type: confirmed,** but narrowly (0.47 vs 0.44, overlapping
+   intervals). The feature classifier did better than predicted. Tied on whether.
+3. **Timing gains small: confirmed.** About 1.1 steps on clean, with overlapping
+   intervals. Under `harsh` it ties the base rate, where I predicted a small
+   loss. The gain comes from the drift-visible types: transcritical 11.4 vs 14.8,
+   Hopf 27.7 vs 32.9. Shock and mechanism change stay at the prior, as they must.
+   Hopf timing error was 28, not the predicted 23–24.
+4. **Slow decay with lead time: confirmed, and slower than predicted.** AUC drops
+   0.01–0.03 from clean to `lead_30`, against a predicted 0.03–0.07.
+5. **Generic EWS at chance: confirmed** on all 9 layers (AUC 0.49–0.56).
+
+Mechanism change remains unrecognized (mech-vs-null AUC 0.45–0.47).
+
+The two blind tests agree where they overlap: feature-classifier whether-AUC was
+0.81 on `test_v1` and 0.77 on `test_v2`, a drop consistent with half the shocks now
+being unforeseeable. Type accuracy was 0.39 and 0.44. Timing was base + 1 step both
+times.
+
+---
+
 ## 2026-09-21 — Gate 3 approved; decisions and the plan toward Gate 4
 
 Luca approved continuing and left the Gate 3 decisions to me ("I defer to your
