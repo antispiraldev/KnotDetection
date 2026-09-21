@@ -39,18 +39,35 @@ def _first_sustained(flags: np.ndarray, need: int) -> int | None:
     return None
 
 
-def separatrix_crossing(run: Run) -> float | None:
-    """First time the series falls below the unstable middle equilibrium.
+def separatrix_crossing(run: Run, hold: int = 15) -> float | None:
+    """When the system commits to the low state, not when it first dips.
 
-    Only meaningful for runs built in the bistable window; returns None if the
-    system never leaves the high state.
+    The obvious definition -- first passage below the unstable middle equilibrium --
+    is wrong for a noisy bistable system, and visibly so: a trajectory can cross the
+    separatrix, wander, and climb back to the high state. Labelling that first dip as
+    the transition put the transition time 120 units before the series actually left,
+    with a full recovery in between.
+
+    So the escape is the *last* departure: the point after which the system never
+    returns above the separatrix. `hold` guards the other end, requiring the low
+    state to persist to the end of the run rather than counting a dip in the final
+    few observations, where there is no evidence it would have stayed.
+
+    Only meaningful for runs built in the bistable window; returns None if the system
+    never leaves the high state, or leaves too late to tell.
     """
     eq = run.params.get("equilibria")
     if eq is None or len(eq) != 3:
         return None
-    separatrix = sorted(eq)[1]
-    below = np.where(run.series < separatrix)[0]
-    return float(run.t[below[0]]) if len(below) else None
+    separatrix = sorted(eq)[1] * run.params.get("scale", 1.0)
+
+    above = np.where(run.series >= separatrix)[0]
+    if len(above) == 0:
+        return float(run.t[0])          # started below: not a usable escape
+    last_above = int(above[-1])
+    if last_above >= len(run.series) - hold - 1:
+        return None                      # never left, or left too late to confirm
+    return float(run.t[last_above + 1])
 
 
 def observable_onset(

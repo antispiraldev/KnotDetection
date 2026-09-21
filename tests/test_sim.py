@@ -118,13 +118,35 @@ def test_null_worlds_never_transition(one_per_type):
     assert not w.transitioned
 
 
-def test_noise_induced_time_is_measured_not_scheduled(one_per_type):
-    """It has no scheduled time; the escape exists only once the path is drawn."""
+def test_noise_induced_time_marks_commitment_not_first_dip(one_per_type):
+    """The escape is when the system stops coming back, not when it first dips.
+
+    This test previously asserted the reverse -- that the series stays above the
+    separatrix until the transition -- which is the first-passage definition, and
+    first passage is wrong for a noisy bistable system: trajectories cross, wander,
+    and recover. So the invariant is on the far side: once committed, it stays low.
+    Earlier dips below the separatrix are allowed and expected.
+    """
     w = one_per_type["noise_induced"]
     assert w.transitioned and w.transition_time is not None
     sep = sorted(w.params["equilibria"])[1] * w.params.get("scale", 1.0)
-    before = w.raw[w.t < w.transition_time]
-    assert np.all(before >= sep * 0.99)
+    after = w.raw[w.t >= w.transition_time]
+    assert np.all(after < sep)
+    # And it was genuinely in the high state at some point beforehand.
+    assert np.any(w.raw[w.t < w.transition_time] >= sep)
+
+
+def test_transient_excursion_is_not_mistaken_for_escape():
+    """Dip below, recover, then commit: the label must land on the commitment."""
+    from inflection.sim.integrate import Run
+    from inflection.sim.label import separatrix_crossing
+    t = np.arange(300.0)
+    y = np.full(300, 6.0)
+    y[100:110] = 2.0           # transient dip below the separatrix at 3.0 ...
+    y[200:] = 1.0              # ... then the real, permanent escape
+    run = Run(t=t, x=y[:, None], state_names=("y",), transition_type="noise_induced",
+              transition_time=None, primary=0, params=dict(equilibria=[1.0, 3.0, 6.0]))
+    assert separatrix_crossing(run) == 200.0
 
 
 def test_onset_detector_is_quiet_on_a_stationary_series():
