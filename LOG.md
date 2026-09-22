@@ -5,6 +5,39 @@ parked as out of scope. Newest entries at the top.
 
 ---
 
+## 2026-09-22 — `real_v3` pre-registered, and the hypothesis already looks weak
+
+Luca asked for the calm-quartile observation to be pre-registered properly, so it is:
+`phase2/PREREGISTRATION_v3.md`, seed committed at `9013d6a`. H1 is that among the
+calmest quarter of records, higher lag-1 autocorrelation predicts a coming contraction
+— the simulator's signal surviving where noise is low. Fresh data (World Bank WDI GDP
+per capita, 1960–2024), because the hypothesis came from `real_v2`'s dev half and its
+test half is spent. The pre-registration fixes the quartile and AUC definitions, a
+power rule (under 15 calm-quartile events = underpowered, not refuted), the partial
+overlap with Maddison, and the modern-era limit.
+
+**Then the exploratory check the pre-registration allows, run after committing it:** the
+same statistic on `real_v2`'s test half, which never contributed to finding the
+hypothesis.
+
+| volatility quartile (real_v2 test) | events | AUC of lag1_ac |
+|---|---|---|
+| calmest | 10 | **0.410** [0.038, 0.908] |
+| second | 27 | 0.400 |
+| third | 36 | 0.488 |
+| jumpiest | 57 | 0.437 |
+
+It does not replicate. The dev half's 0.874 rested on 12 events; the test half gives
+0.41 on 10. The main volatility effect does replicate (0.679 test against 0.730 dev),
+which is reassuring about everything else.
+
+My expectation for `real_v3` is amended in the pre-registration to 0.45–0.60, centred
+on chance, written before any `real_v3` data existed. The test is now a long shot worth
+running rather than a promising lead — which is the right way round for a hypothesis
+that came out of a post-hoc split.
+
+---
+
 ## 2026-09-22 — `real_v2` (Maddison GDP per capita): signal, but the theory's sign is wrong
 
 Second real test, pre-registered at `525110d` before the download. Data by subagent

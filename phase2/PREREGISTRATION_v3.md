@@ -108,6 +108,29 @@ simulator's warning sign is real in history after all, in the low-noise corner w
 simulator's own conditions most nearly hold — and would make "calm but sluggish" a
 sensible thing to watch for.
 
+## Amendment, 2026-09-22 (after committing the seed, before any `real_v3` data existed)
+
+Having committed this pre-registration, I ran the exploratory check it permits: the
+same calm-quartile statistic on `real_v2`'s **test** half, which is spent and unsealed
+but was never used to find the hypothesis.
+
+| volatility quartile (real_v2 test) | windows | events | AUC of lag-1 autocorrelation |
+|---|---|---|---|
+| calmest | 245 | 10 | **0.410** [0.038, 0.908] |
+| second | 245 | 27 | 0.400 |
+| third | 245 | 36 | 0.488 |
+| jumpiest | 246 | 57 | 0.437 |
+
+The effect does not reappear: 0.41 against the development half's 0.874, on 10 events,
+with an interval covering nearly everything. The main volatility effect does replicate
+(AUC 0.679 on the test half against 0.730 on dev).
+
+**Revised expectation for H1, written now and not to be revised again:** AUC 0.45–0.60,
+centred on chance. I now expect the development-half figure to have been a 12-event
+fluctuation. The test is still worth running, on fresh data with more modern events, but
+it is a long shot rather than a promising lead, and I am recording that before the data
+exists rather than after the result.
+
 ## Out of scope
 
 Any claim about particular countries. Any use of the identity key before scoring.
