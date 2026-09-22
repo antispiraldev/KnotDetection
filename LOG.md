@@ -5,6 +5,50 @@ parked as out of scope. Newest entries at the top.
 
 ---
 
+## 2026-09-22 — `real_v1` built by the data subagent; one amendment; window robustness
+
+**Data (by the subagent; full record in `phase2/logs/data_prep.md`).**
+- **Source:** Cliopatria at commit `ad28a69` (release `v0.2.0-duplicate`), zip sha256
+  `d01ae3a2…`. 13,380 polity rows, 1,583 polities.
+- **Windows:** 599 polities have eligible windows. Dev has 299 polities and 1,267
+  windows (407 events: 219 area loss, 188 endings). Test has 300 polities and 300
+  windows, one per polity.
+- The fallback design was not needed.
+- The name-leak check passed: all 1,583 names were searched across every open file,
+  with no hits.
+- The seal was called once, so the ledger has one `pool_built` event.
+- I read the public log, and it contains no identities. I have not opened the sealed
+  key, the truth or the private log.
+- **The subagent's own transcript** is saved by Claude Code in this session's
+  subagent directory. It contains identities, so I have not read it; it is there for
+  Luca.
+
+**Amendment (pre-registration, dated).** The subagent pointed out that the event
+definition, applied literally, counts a polity that had *already* fallen below half
+its record maximum inside the record as an "event" in the first horizon year. The
+primary analysis is unchanged. I added a secondary analysis, S1, which excludes
+windows whose last recorded value is below half the record's maximum. That is a
+record-only rule. It was written before any forecast or result existed. From the open
+records, 36 of 300 test windows and 105 of 1,267 dev windows qualify.
+
+**Window robustness (simulation, development data; `inflection/notebooks/robustness_window.json`).**
+With transitions spread over steps 100–210 instead of 100–150 (420 worlds, zero
+failures):
+
+| | onset MAE | mechanism MAE | whether AUC |
+|---|---|---|---|
+| base rate (window prior) | 28.9 | 26.8 | 0.50 |
+| feature classifier | 30.2 | 29.9 | 0.68 |
+| hybrid | 30.3 | 30.3 | 0.71 |
+
+The flexible-model ceiling on pressure-driven worlds gives onset 30.8 vs 31.3, and
+mechanism time 31.6 vs 27.8. **The timing conclusion holds, and is stronger:** with a
+wider window, the modest onset gain seen in the narrow window disappears, and nothing
+beats the prior. "Whether" also weakens (0.77 → about 0.70), because more worlds are far
+from their change at the forecast point.
+
+---
+
 ## 2026-09-22 — Phase 2 approved; pre-registration committed before any real data
 
 Luca: "Go ahead with phase 2. You download. A script to anonymize data is fine. If

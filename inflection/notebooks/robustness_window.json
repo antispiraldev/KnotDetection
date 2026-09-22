@@ -1,0 +1,56 @@
+{
+  "window": [
+    0.33,
+    0.7
+  ],
+  "n_worlds": 420,
+  "failures": {
+    "fold": 0,
+    "hopf": 0,
+    "transcritical": 0,
+    "noise_induced": 0,
+    "exogenous_shock": 0,
+    "mechanism_change": 0,
+    "null": 0
+  },
+  "base_rate": {
+    "auc": 0.5,
+    "mae_onset": 28.880555555555556,
+    "mae_onset_ci": [
+      27.13461050826719,
+      30.55116333736491
+    ],
+    "mae_mechanism": 26.815320163280962,
+    "type_accuracy": 0.16666666666666666
+  },
+  "feature_classifier": {
+    "auc": 0.6840277777777777,
+    "mae_onset": 30.185502862745746,
+    "mae_onset_ci": [
+      28.12248824126479,
+      32.37910286826949
+    ],
+    "mae_mechanism": 29.909271373400593,
+    "type_accuracy": 0.4
+  },
+  "hybrid": {
+    "auc": 0.7070833333333333,
+    "mae_onset": 30.265131044724743,
+    "mae_onset_ci": [
+      28.19849106624253,
+      32.28535382799177
+    ],
+    "mae_mechanism": 30.294788508261178,
+    "type_accuracy": 0.4638888888888889
+  },
+  "ceiling_observable_onset": {
+    "model": 30.770054062895603,
+    "prior": 31.294444444444444,
+    "n": 180
+  },
+  "ceiling_transition_time": {
+    "model": 31.60577444303506,
+    "prior": 27.791001983740166,
+    "n": 180
+  }
+}
