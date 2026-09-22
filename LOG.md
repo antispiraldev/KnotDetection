@@ -5,6 +5,30 @@ parked as out of scope. Newest entries at the top.
 
 ---
 
+## 2026-09-22 — Phase 2 approved; pre-registration committed before any real data
+
+Luca: "Go ahead with phase 2. You download. A script to anonymize data is fine. If
+passing that task off to a subagent helps, you can do that too. Just make sure
+everything you or any subagent does is logged for me to see later."
+
+- **Dataset: Cliopatria** (Seshat), polity territory 3400 BCE–2024 CE, CC-BY 4.0.
+  Before pre-registering I read only its repository README and licence, to learn the
+  format.
+- **Pre-registration:** `phase2/PREREGISTRATION.md`. It fixes the windows (100-year
+  record, 50-year horizon), the collapse definition, the anonymisation, the
+  dev/test split by polity, seven methods and five hypotheses with expected ranges.
+- **An outcome leak caught during design, and fixed:** the test half uses one window
+  per polity. Overlapping windows from one polity could be matched up, and a later
+  window's existence reveals that the polity survived.
+- `blind.seal_external_pool()` and `blind.split_seed()` were added, so a real-data
+  test set goes through the same ledger. The seal refuses any metadata that would
+  reveal outcomes.
+- The `real_v1` seed was committed before download. The data work is delegated to a
+  subagent, so identities stay hidden from me. Its public log goes to `phase2/logs/`.
+  Its private log and the identity key stay sealed until scoring.
+
+---
+
 ## 2026-09-21 — Going public: README, released test answers, verification
 
 Luca asked for a public GitHub repository with a README, and for the spent test

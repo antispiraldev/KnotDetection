@@ -79,3 +79,4 @@
 {"event": "unsealed", "test_set": "test_v2", "time": "2026-09-21T18:46:14+00:00"}
 {"event": "released", "test_set": "test_v1", "time": "2026-09-21T20:03:14+00:00"}
 {"event": "released", "test_set": "test_v2", "time": "2026-09-21T20:03:14+00:00"}
+{"event": "seed_committed", "seed_sha256": "1c7c4967f29fbe246e79b707f0206aa646e41cacdc1e6fdcf07f1de8a3d959c2", "test_set": "real_v1", "time": "2026-09-22T02:51:50+00:00"}

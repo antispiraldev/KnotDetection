@@ -117,3 +117,17 @@ def test_release_is_refused_until_the_test_set_is_spent(built, tmp_path):
     blind.unseal("t", **p)
     out = blind.release("t", released=tmp_path / "rel", **p)
     assert (out / "seed.json").exists() and (out / "truth.json").exists()
+
+
+def test_external_pool_seals_truth_and_refuses_outcome_meta(paths, tmp_path):
+    blind.commit_test_seed("r", **paths)
+    rec = tmp_path / "series.npz"
+    np.savez(rec, a=np.ones(3))
+    truth = [dict(world_id="r-0000", transitioned=True)]
+    with pytest.raises(BlindingViolation):
+        blind.seal_external_pool("r", rec, truth, dict(base_rate=0.3), **paths)
+    ev = blind.seal_external_pool("r", rec, truth, dict(source="x"), **paths)
+    assert "transitioned" not in paths["ledger"].read_text().split("pool_built")[1]
+    assert blind.unseal("r", **paths) == truth
+    with pytest.raises(BlindingViolation):
+        blind.seal_external_pool("r", rec, truth, dict(source="x"), **paths)
