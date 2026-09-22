@@ -14,6 +14,11 @@ from __future__ import annotations
 import json
 from pathlib import Path
 
+from doc_render import render_markdown, render_pdf
+
+import sys
+sys.path.insert(0, str(Path(__file__).resolve().parent))
+
 import matplotlib
 matplotlib.use("Agg")
 import matplotlib.pyplot as plt
@@ -331,106 +336,14 @@ FIGURES = {
 
 # --- renderers ----------------------------------------------------------------
 
-def render_markdown(path: Path) -> None:
-    lines = []
-    for kind, body in CONTENT:
-        if kind == "h1":
-            lines += [f"# {body}", ""]
-        elif kind == "h2":
-            lines += [f"## {body}", ""]
-        elif kind == "p":
-            lines += [body, ""]
-        elif kind == "bullets":
-            lines += [f"- {b}" for b in body] + [""]
-        elif kind == "fig":
-            name, caption = body
-            lines += [f"![{caption}]({name})", "", f"*{caption}*", ""]
-        elif kind == "table":
-            lines += ["| Term | Meaning |", "| --- | --- |"]
-            lines += [f"| {a} | {b} |" for a, b in body] + [""]
-    path.write_text("\n".join(lines))
-
-
-def render_pdf(path: Path) -> None:
-    from fpdf import FPDF
-
-    pdf = FPDF(format="A4")
-    pdf.set_margins(18, 16, 18)
-    pdf.set_auto_page_break(True, margin=16)
-    pdf.add_font("DV", "", str(FONT_DIR / "DejaVuSans.ttf"))
-    pdf.add_font("DV", "B", str(FONT_DIR / "DejaVuSans-Bold.ttf"))
-    pdf.add_page()
-    width = pdf.w - pdf.l_margin - pdf.r_margin
-
-    def para(text: str, size: float = 10.5, gap: float = 2.5) -> None:
-        pdf.set_font("DV", "", size)
-        pdf.set_text_color(34, 34, 34)
-        pdf.multi_cell(width, 5.4, text, markdown=True, new_x="LMARGIN", new_y="NEXT")
-        pdf.ln(gap)
-
-    def fig_height(name: str) -> float:
-        import PIL.Image
-        with PIL.Image.open(OUT / name) as im:
-            return width * im.height / im.width
-
-    for i, (kind, body) in enumerate(CONTENT):
-        if kind == "h1":
-            pdf.set_font("DV", "B", 19)
-            pdf.set_text_color(20, 20, 20)
-            pdf.multi_cell(width, 9, body, new_x="LMARGIN", new_y="NEXT")
-            pdf.ln(1)
-        elif kind == "h2":
-            # Keep a heading with what follows it: a figure if one comes next.
-            nxt = CONTENT[i + 1] if i + 1 < len(CONTENT) else None
-            need = 45 if not (nxt and nxt[0] == "fig") else fig_height(nxt[1][0]) + 25
-            if pdf.get_y() + need > pdf.h - pdf.b_margin:
-                pdf.add_page()
-            pdf.ln(2)
-            pdf.set_font("DV", "B", 13)
-            pdf.set_text_color(47, 111, 176)
-            pdf.cell(width, 7, body, new_x="LMARGIN", new_y="NEXT")
-            pdf.ln(1)
-        elif kind == "p":
-            para(body)
-        elif kind == "bullets":
-            for b in body:
-                pdf.set_font("DV", "", 10.5)
-                pdf.set_text_color(34, 34, 34)
-                pdf.cell(5, 5.4, "•")
-                pdf.multi_cell(width - 5, 5.4, b, markdown=True, new_x="LMARGIN", new_y="NEXT")
-                pdf.ln(1)
-            pdf.ln(1.5)
-        elif kind == "fig":
-            name, caption = body
-            img = OUT / name
-            import PIL.Image
-            with PIL.Image.open(img) as im:
-                h = width * im.height / im.width
-            if pdf.get_y() + h + 12 > pdf.h - pdf.b_margin:
-                pdf.add_page()
-            pdf.image(str(img), x=pdf.l_margin, w=width)
-            pdf.set_font("DV", "", 8.8)
-            pdf.set_text_color(110, 110, 110)
-            pdf.multi_cell(width, 4.6, caption, new_x="LMARGIN", new_y="NEXT")
-            pdf.ln(3)
-        elif kind == "table":
-            pdf.set_font("DV", "", 9.5)
-            pdf.set_text_color(34, 34, 34)
-            with pdf.table(col_widths=(32, 68), line_height=5.2, first_row_as_headings=True) as t:
-                row = t.row(); row.cell("Term"); row.cell("Meaning")
-                for a, b in body:
-                    row = t.row(); row.cell(a); row.cell(b)
-    pdf.output(str(path))
-
-
 def main() -> None:
     OUT.mkdir(parents=True, exist_ok=True)
     for name, make in FIGURES.items():
         make(OUT / name)
         print(f"wrote {OUT / name}")
-    render_markdown(OUT / "primer.md")
+    render_markdown(OUT / "primer.md", CONTENT)
     print(f"wrote {OUT / 'primer.md'}")
-    render_pdf(OUT / "primer.pdf")
+    render_pdf(OUT / "primer.pdf", CONTENT, OUT)
     print(f"wrote {OUT / 'primer.pdf'}")
 
 
