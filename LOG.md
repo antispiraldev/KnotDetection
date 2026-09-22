@@ -5,6 +5,56 @@ parked as out of scope. Newest entries at the top.
 
 ---
 
+## 2026-09-22 — Phase 2 first result: real history, blind (`real_v1`)
+
+Unsealed after the seven forecast files were registered and pushed (`66a4f95`). Test:
+300 windows, one per polity, 138 events (base rate 0.46). Scores in
+`phase2/results/test_scores.json`; seed, answers, identity key and the subagent's
+private log are now released in `inflection/data/released/real_v1/`.
+
+| method | AUC (primary) | AUC, S1 (already-collapsed excluded) | AUC, endings only |
+|---|---|---|---|
+| M0 base rate | 0.500 | 0.500 | 0.500 |
+| M1 own history (trend) | 0.643 [0.593, 0.692] | 0.529 [0.479, 0.584] | 0.501 |
+| M2 generic EWS | 0.494 [0.427, 0.564] | 0.473 | 0.468 |
+| M3 feature clf., sim-trained | 0.510 [0.445, 0.574] | 0.503 | 0.464 |
+| M4 hybrid, sim-trained | 0.515 [0.452, 0.582] | 0.518 | 0.484 |
+| M5 feature clf., real-trained | 0.650 [0.586, 0.708] | 0.541 [0.470, 0.611] | 0.504 |
+| M6 fragility at rest | 0.651 [0.586, 0.713] | 0.559 [0.490, 0.630] | 0.518 |
+
+**The headline is in the S1 column.** 35 of the 36 already-collapsed windows are
+events, so the primary AUCs of about 0.65 mostly reward seeing a collapse that is
+already in the record. With those 36 windows removed, every method falls to
+0.47–0.56 and every interval includes 0.5.
+
+Against the pre-registered hypotheses:
+
+1. **H1 transfer: confirmed, at the bottom of the predicted range.** Methods trained
+   on the simulator score 0.51 and 0.52. Simulated fragility does not transfer to
+   5-year territorial step data.
+2. **H2 fragility at rest: confirmed in the primary analysis (0.65, predicted
+   0.55–0.65), not in S1** (0.56, interval includes chance).
+3. **H3 classic warning signs at chance: confirmed** (0.49), as in simulation.
+4. **H4 momentum: confirmed** (0.64, predicted 0.55–0.65); S1 0.53.
+5. **H5 real-trained best: confirmed but tied.** M5 0.650, M6 0.651, M1 0.643 are
+   indistinguishable.
+
+The pre-registered falsification criterion — M6's interval including 0.5 *and* M5 no
+better than M1 — is not met in the primary analysis, because M6's primary interval
+clears 0.5. In S1 both halves of it hold. So the fragility account survives only in
+the analysis that counts already-collapsed polities as forecastable.
+
+**The clearest negative result: nothing forecasts a polity's end.** Every method is
+at 0.46–0.52 on windows whose event is the polity ceasing to exist. The signal that
+exists is entirely about territory already contracting.
+
+**Caveats.** Territorial snapshots at 5-year sampling are a thin proxy for "fragility".
+A polity "ending" in Cliopatria mixes conquest, collapse, merger and renaming. One
+dataset, one operationalisation, 300 windows. This does not test whether a richer
+record (population, elite numbers, state revenue) would carry more.
+
+---
+
 ## 2026-09-22 — `real_v1`: dev check and registered forecasts (before unsealing)
 
 Dev, grouped 5-fold CV by polity, mean AUC over folds. This is a sanity check; the
