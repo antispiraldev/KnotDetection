@@ -99,3 +99,5 @@
 {"event": "forecast_registered", "file": "M4_hybrid_sim.json", "forecast_sha256": "66961dc9be91d393741cf3312e250109a8a7bd22405d374f454feb258859247e", "method": "M4_hybrid_sim", "test_set": "real_v2", "time": "2026-09-22T19:47:29+00:00"}
 {"event": "forecast_registered", "file": "M5_feature_clf_real.json", "forecast_sha256": "ad567409ec5d485cea326a9dd9cf493b7c9dbbd59a7e6661de4c2c3d3758d633", "method": "M5_feature_clf_real", "test_set": "real_v2", "time": "2026-09-22T19:47:31+00:00"}
 {"event": "forecast_registered", "file": "M6_fragility.json", "forecast_sha256": "d4286b7a2c3ea26b7e7b4b04b51db95949963fe9a3b5077811deb1f641e506fa", "method": "M6_fragility", "test_set": "real_v2", "time": "2026-09-22T19:47:32+00:00"}
+{"event": "unsealed", "test_set": "real_v2", "time": "2026-09-22T19:48:59+00:00"}
+{"event": "released", "test_set": "real_v2", "time": "2026-09-22T19:57:43+00:00"}

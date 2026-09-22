@@ -5,6 +5,70 @@ parked as out of scope. Newest entries at the top.
 
 ---
 
+## 2026-09-22 — `real_v2` (Maddison GDP per capita): signal, but the theory's sign is wrong
+
+Second real test, pre-registered at `525110d` before the download. Data by subagent
+(`phase2/logs/data_prep_v2.md`): Maddison Project Database 2020, sha256 `d20853c2…`,
+`Full data` sheet, 169 countries, 19,704 recorded country-years. Windows W=30, H=15,
+origins every 5 years, already-collapsing records excluded by eligibility. Test: 981
+windows over 74 countries (130 events, base rate 0.133). Dev: 1,030 windows over 73
+countries. Forecasts registered and pushed (`a0ed20e`) before unsealing.
+
+| method | AUC (country-clustered CI) | S2: one window per country | severe falls |
+|---|---|---|---|
+| M0 base rate | 0.500 | 0.500 | 0.500 |
+| M1 own history | 0.538 [0.492, 0.581] | 0.558 | 0.593 |
+| M2 generic EWS | 0.490 [0.422, 0.553] | 0.395 | 0.499 |
+| M3 feature clf., sim-trained | **0.428 [0.358, 0.486]** | 0.178 | 0.445 |
+| M4 hybrid, sim-trained | **0.394 [0.328, 0.448]** | 0.190 | 0.403 |
+| M5 feature clf., real-trained | **0.697 [0.619, 0.764]** | 0.696 | 0.761 |
+| M6 fragility at rest | 0.589 [0.505, 0.663] | 0.442 | 0.521 |
+
+**Two findings.**
+
+1. **Contractions are forecastable from dense annual income data** (M5 AUC 0.70,
+   0.70 on one window per country, 0.76 on severe falls). So `real_v1`'s null result
+   was at least partly the thinness of 5-yearly territorial snapshots.
+2. **Simulation-trained methods score significantly *below* chance** (0.43 and 0.39,
+   intervals excluding 0.5; 0.18–0.19 under S2). This is negative transfer, not
+   absence of transfer.
+
+**Why, diagnosed on dev (labels public there):** single-feature AUCs in real dev
+against the same features in the simulated dev pool.
+
+| feature | real | simulated |
+|---|---|---|
+| step-to-step volatility (`log_step_sd`) | **0.730** | 0.454 |
+| lag-1 autocorrelation (`lag1_ac`) | **0.411** | 0.681 |
+| kurtosis | 0.545 | 0.406 |
+
+The simulator's central warning sign — rising autocorrelation, i.e. critical slowing
+down — **points the opposite way in real income data**: smoother economies are more
+likely to contract. What predicts a real contraction is raw jumpiness, which the
+simulator deliberately calibrated away as a nuisance variable to stop it leaking the
+transition type. A model trained on the simulator therefore applies an inverted rule
+and lands below chance.
+
+**Against the pre-registered hypotheses:**
+
+1. **H1 transfer (expected 0.55–0.65): falsified, in the opposite direction.**
+2. **H2 fragility (expected 0.58–0.68): mixed.** 0.589 primary, but the interval
+   nearly touches 0.5 and S2 gives 0.442. Not a dependable effect.
+3. **H3 EWS at chance (expected 0.50–0.57): confirmed** (0.490).
+4. **H4 momentum (expected 0.55–0.65): weaker than predicted** (0.538, interval
+   includes chance).
+5. **H5 real-trained best (expected 0.62–0.72): confirmed** (0.697).
+
+The falsification criterion for the fragility account — M6's interval including 0.5 —
+is met under S2 and only just missed in the primary. Taken with `real_v1`, fragility
+as the simulator defines it does not carry real-world forecasts.
+
+Seed, answers, identity key and the private log are released in
+`inflection/data/released/real_v2/`. All four test sets pass
+`scripts/verify_blind_tests.py`.
+
+---
+
 ## 2026-09-22 — Phase 2 first result: real history, blind (`real_v1`)
 
 Unsealed after the seven forecast files were registered and pushed (`66a4f95`). Test:
