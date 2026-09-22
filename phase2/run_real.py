@@ -226,6 +226,12 @@ CLASSES = dict(zip(METHODS, (M0, M1, M2, M3, M4, M5, M6)))
 
 # --- steps --------------------------------------------------------------------
 
+def _one_per_group(groups: np.ndarray, seed: int = 0) -> np.ndarray:
+    """Indices of one window per country, drawn uniformly with a fixed seed."""
+    rng = np.random.default_rng(seed)
+    return np.array([rng.choice(np.where(groups == g)[0]) for g in np.unique(groups)])
+
+
 def auc_ci(y, p, n_boot=2000, seed=0, groups=None):
     """AUC with a bootstrap interval, resampling countries when `groups` is given.
 
@@ -293,7 +299,8 @@ def cmd_score(_):
     truth = {t["world_id"]: t for t in blind.unseal(TEST_SET)}
     ids = sorted(truth)
     y = np.array([truth[w]["transitioned"] for w in ids], dtype=bool)
-    kind = np.array([truth[w]["event_kind"] or "none" for w in ids])
+    # real_v1 records an event kind (area loss vs ending); real_v2 has a single kind.
+    kind = np.array([(truth[w].get("event_kind") or "none") for w in ids])
     # Secondary analysis S1 (pre-registration amendment): drop "already collapsed"
     # windows, whose last recorded value is below half the record's maximum. Uses only
     # the open record.
@@ -321,6 +328,9 @@ def cmd_score(_):
             sel = (kind == k) | ~y
             if (kind == k).sum() >= 5:
                 row[f"auc_{k}"] = auc_ci(y[sel], p[sel], groups=None if groups is None else groups[sel])[0]
+        if groups is not None:   # S2 (amendment): one window per country, seeded
+            pick = _one_per_group(groups)
+            row["auc_S2"], row["auc_S2_ci"] = auc_ci(y[pick], p[pick])
         if "severe" in extra:      # severe events only, against all controls
             sel = extra["severe"].astype(bool) | ~y
             row["auc_severe"] = auc_ci(y[sel], p[sel], groups=None if groups is None else groups[sel])[0]
@@ -333,6 +343,7 @@ def cmd_score(_):
                     row[f"n_{era}"] = int(sel.sum())
         res[name] = row
         s1 = f"S1 {row['auc_S1']:.3f} [{row['auc_S1_ci'][0]:.3f}, {row['auc_S1_ci'][1]:.3f}]  " if "auc_S1" in row else ""
+        s1 += f"S2 {row['auc_S2']:.3f} [{row['auc_S2_ci'][0]:.3f}, {row['auc_S2_ci'][1]:.3f}]  " if "auc_S2" in row else ""
         print(f"  {name:22s} AUC {auc:.3f} [{ci[0]:.3f}, {ci[1]:.3f}]  Brier skill {row['brier_skill']:+.3f}  " + s1
               + "  ".join(f"{k[4:]} {row[k]:.3f}" for k in
                           ("auc_area_loss", "auc_ending", "auc_severe", "auc_pre1950", "auc_post1950")
