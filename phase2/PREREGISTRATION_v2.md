@@ -104,6 +104,19 @@ is coming.
 above chance here would show that the earlier failure was the thinness of territorial
 data, not a general failure of simulation-trained methods.
 
+## Amendment, 2026-09-22 (after the data were built, before any forecasting or scoring)
+
+The public preparation log reports that record lengths vary a great deal: in the dev
+half the median country contributes 5 windows and the largest contributes 138. Test
+intervals already cluster by country, but a headline AUC computed over all windows is
+still dominated by a few long-record countries.
+
+The primary analysis is unchanged. **Added secondary analysis S2:** the same AUCs on
+one window per country, drawn uniformly at random with a fixed seed (`numpy`
+default_rng(0), countries in sorted group order). It uses only the group ids in the
+open manifest, never the outcome, and gives 74 independent test windows. Written
+before any forecast or score existed for this test set.
+
 ## Out of scope
 
 Explanations of particular countries' contractions. Forecasts of current economies.

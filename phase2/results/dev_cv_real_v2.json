@@ -1,0 +1,37 @@
+{
+  "M0_base_rate": {
+    "auc_fold_mean": 0.5,
+    "auc_fold_sd": 0.0,
+    "folds": 5
+  },
+  "M1_own_history": {
+    "auc_fold_mean": 0.5550239704410785,
+    "auc_fold_sd": 0.0493583841542033,
+    "folds": 5
+  },
+  "M2_generic_ews": {
+    "auc_fold_mean": 0.5400740165479098,
+    "auc_fold_sd": 0.04892727655859197,
+    "folds": 5
+  },
+  "M3_feature_clf_sim": {
+    "auc_fold_mean": 0.5004126938001351,
+    "auc_fold_sd": 0.056486865876394475,
+    "folds": 5
+  },
+  "M4_hybrid_sim": {
+    "auc_fold_mean": 0.43564309382591426,
+    "auc_fold_sd": 0.06719293177992541,
+    "folds": 5
+  },
+  "M5_feature_clf_real": {
+    "auc_fold_mean": 0.7362929796747293,
+    "auc_fold_sd": 0.02798035409804487,
+    "folds": 5
+  },
+  "M6_fragility": {
+    "auc_fold_mean": 0.5994237177676711,
+    "auc_fold_sd": 0.07903282545600362,
+    "folds": 5
+  }
+}
