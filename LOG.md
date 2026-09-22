@@ -5,6 +5,64 @@ parked as out of scope. Newest entries at the top.
 
 ---
 
+## 2026-09-22 — State of play, for whoever picks this up next
+
+Everything is committed and pushed to https://github.com/antispiraldev/KnotDetection
+(public). The working tree is clean; `.venv` is not in it (rebuild from
+`requirements.txt`). Run anything with `PYTHONPATH=. .venv/bin/python …`, and commit with
+`-c user.name="Luca Del Signore" -c user.email="lucavdelsignore@gmail.com"`, because the
+beelink has no git identity.
+
+**Where the research stands**
+
+- Simulation phase complete, four gates approved. Two blind tests (`test_v1`,
+  `test_v2`), both spent and released.
+- Real data: `real_v1` (Cliopatria territory) null once already-collapsing polities are
+  excluded; `real_v2` (Maddison income) shows real skill (AUC 0.70) but **negative**
+  transfer from the simulator (0.43, 0.39) because the warning signs carry opposite
+  signs in the two domains. Both spent and released.
+- `real_v3` is **pre-registered with its seed committed, and not yet run**:
+  `phase2/PREREGISTRATION_v3.md`. Luca chose to stop before running it. To run it:
+  a data subagent following the `real_v2` brief (see this log's entries and
+  `phase2/prepare_maddison.py`), then `phase2/run_real.py dev|forecast|score
+  --test-set real_v3`. Expect a null; the power rule in the pre-registration says what
+  to do if the calm quartile holds fewer than 15 events.
+- All four spent test sets verify: `PYTHONPATH=. .venv/bin/python
+  scripts/verify_blind_tests.py` (add `--regenerate test_v2` for the slow, full check).
+
+**Write-ups**
+
+- `docs/findings/findings.pdf` and `.md`: the results write-up, figures built from the
+  score files by `scripts/build_report.py`.
+- `docs/primer/primer.pdf` and `.md`: plain-language introduction,
+  `scripts/build_primer.py`.
+- Claude Docs for Luca (plain language): Gate 3 report
+  `claude.ai/code/artifact/c57fa988-33d1-4cdc-acfa-a06e1e8baa46`, Gate 4 analysis
+  `…/79240afd-7c98-49a1-b12e-0452ee7827ef`, Phase 2 report
+  `…/b02bc988-652d-4c3d-a63b-01e51fbf416f`.
+
+**Obvious next steps, in rough order of value**
+
+1. Run `real_v3` as pre-registered, or formally park it.
+2. A third real test on a different *kind* of series (political instability, conflict,
+   or an ecological series where critical slowing down was first proposed), which is
+   the only way to tell whether the sign reversal is specific to income.
+3. Phase 3 of the plan: register forecasts now for series whose outcomes are not yet
+   known, and score them later. That is the only fully clean test.
+4. Parked: the deep-learning classifier, and a simulator whose noise level is not
+   calibrated away — the `real_v2` result suggests that calibration removed the very
+   cue that matters in reality.
+
+**Discipline that must not slip:** pre-register before building a test set, commit the
+seed by hash first, register forecasts before unsealing, never open
+`inflection/data/sealed/` except through `blind.unseal`, re-run the leakage audit after
+any simulator change, and never reuse a spent test set.
+
+**Housekeeping note:** `phase2/raw/` holds 202 MB of re-downloadable source data
+(git-ignored). Delete it freely; `phase2/prepare_*.py` fetch it again.
+
+---
+
 ## 2026-09-22 — `real_v3` pre-registered, and the hypothesis already looks weak
 
 Luca asked for the calm-quartile observation to be pre-registered properly, so it is:
