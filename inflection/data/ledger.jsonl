@@ -101,3 +101,4 @@
 {"event": "forecast_registered", "file": "M6_fragility.json", "forecast_sha256": "d4286b7a2c3ea26b7e7b4b04b51db95949963fe9a3b5077811deb1f641e506fa", "method": "M6_fragility", "test_set": "real_v2", "time": "2026-09-22T19:47:32+00:00"}
 {"event": "unsealed", "test_set": "real_v2", "time": "2026-09-22T19:48:59+00:00"}
 {"event": "released", "test_set": "real_v2", "time": "2026-09-22T19:57:43+00:00"}
+{"event": "seed_committed", "seed_sha256": "f61ebb12e69b08b1b2f6b359ec22490dbe8444845a7e2c961121a1aa34bdaf92", "test_set": "real_v3", "time": "2026-09-22T22:17:52+00:00"}
