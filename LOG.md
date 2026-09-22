@@ -5,6 +5,21 @@ parked as out of scope. Newest entries at the top.
 
 ---
 
+## 2026-09-22 — `real_v1`: dev check and registered forecasts (before unsealing)
+
+Dev, grouped 5-fold CV by polity, mean AUC over folds. This is a sanity check; the
+pre-registered expectations are not revised.
+
+| M0 base | M1 own history | M2 EWS | M3 feat. (sim) | M4 hybrid (sim) | M5 feat. (real) | M6 fragility |
+|---|---|---|---|---|---|---|
+| 0.500 | 0.667 | 0.515 | 0.547 | 0.564 | 0.683 | 0.672 |
+
+These include the already-collapsed windows, which probably flatter the trend-based
+methods; S1 will show how much. Seven test forecast files were then registered in
+the ledger and committed before unsealing.
+
+---
+
 ## 2026-09-22 — `real_v1` built by the data subagent; one amendment; window robustness
 
 **Data (by the subagent; full record in `phase2/logs/data_prep.md`).**
