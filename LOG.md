@@ -49,6 +49,8 @@ supervision.
   With `--regenerate`, it also rebuilds a test set from its seed, at the recorded
   generator revision, in a temporary git worktree. The quick checks pass for both
   test sets.
+  The full regeneration of `test_v2` also passes: the released seed, at generator
+  `d473e56`, reproduces the sealed answers exactly.
 - `README.md` describes the project, its results, who did what, the decisions I made
   unprompted, what I got wrong, and how to verify the blind tests.
 

@@ -9,3 +9,6 @@ __pycache__/
 
 # Regenerable from a seed; large and not worth versioning.
 inflection/notebooks/_*.pkl
+
+# Phase 2 raw downloads: large, re-downloadable by phase2/prepare_cliopatria.py
+phase2/raw/
