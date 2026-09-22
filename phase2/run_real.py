@@ -38,11 +38,22 @@ from inflection.methods.hybrid import Hybrid                         # noqa: E40
 from inflection.sim.generate import T                                # noqa: E402
 from inflection.sim.realism import Realism                           # noqa: E402
 
+# Set by main() from --test-set; `real_v1` is Cliopatria territory, `real_v2` Maddison
+# GDP per capita. They differ in where their dev half lives and in whether the test
+# half has one window per unit (v1) or several (v2, so intervals cluster by country).
 TEST_SET = "real_v1"
 DEV_DIR = ROOT / "phase2" / "data" / "dev"
 TEST_DIR = ROOT / "inflection" / "data" / TEST_SET
 FC_DIR = ROOT / "inflection" / "data" / "forecasts" / TEST_SET
 OUT = ROOT / "phase2" / "results"
+
+
+def use_test_set(name: str) -> None:
+    global TEST_SET, DEV_DIR, TEST_DIR, FC_DIR
+    TEST_SET = name
+    DEV_DIR = ROOT / "phase2" / "data" / ("dev" if name == "real_v1" else "dev_v2")
+    TEST_DIR = ROOT / "inflection" / "data" / name
+    FC_DIR = ROOT / "inflection" / "data" / "forecasts" / name
 SIM_POOL = ROOT / "inflection" / "notebooks" / "_dev_pool_s102_n100.pkl"
 METHODS = ("M0_base_rate", "M1_own_history", "M2_generic_ews", "M3_feature_clf_sim",
            "M4_hybrid_sim", "M5_feature_clf_real", "M6_fragility")
@@ -215,12 +226,22 @@ CLASSES = dict(zip(METHODS, (M0, M1, M2, M3, M4, M5, M6)))
 
 # --- steps --------------------------------------------------------------------
 
-def auc_ci(y, p, n_boot=2000, seed=0):
+def auc_ci(y, p, n_boot=2000, seed=0, groups=None):
+    """AUC with a bootstrap interval, resampling countries when `groups` is given.
+
+    `real_v2` keeps several windows per country, which are not independent, so its
+    intervals resample whole countries. `real_v1` has one window per polity.
+    """
     rng = np.random.default_rng(seed)
     point = float(roc_auc_score(y, p)) if 0 < y.sum() < len(y) else float("nan")
+    units = None if groups is None else [np.where(groups == g)[0] for g in np.unique(groups)]
     boots = []
     for _ in range(n_boot):
-        i = rng.integers(0, len(y), len(y))
+        if units is None:
+            i = rng.integers(0, len(y), len(y))
+        else:
+            pick = rng.integers(0, len(units), len(units))
+            i = np.concatenate([units[k] for k in pick])
         if 0 < y[i].sum() < len(i):
             boots.append(roc_auc_score(y[i], p[i]))
     return point, [float(np.quantile(boots, 0.025)), float(np.quantile(boots, 0.975))]
@@ -247,7 +268,7 @@ def cmd_dev(_):
                          auc_fold_sd=float(np.std(fold_aucs)), folds=len(fold_aucs))
         print(f"  {name:22s} dev AUC (mean over grouped folds) {np.mean(fold_aucs):.3f} "
               f"(sd {np.std(fold_aucs):.3f}, {len(fold_aucs)} folds)")
-    (OUT / "dev_cv.json").write_text(json.dumps(res, indent=2))
+    (OUT / f"dev_cv_{TEST_SET}.json").write_text(json.dumps(res, indent=2))
 
 
 def cmd_forecast(_):
@@ -278,34 +299,54 @@ def cmd_score(_):
     # the open record.
     recs = {r.world_id: r for r in load_test()}
     collapsed = np.array([recs[w].y[-1] < 0.5 * recs[w].y.max() for w in ids])
+    manifest = json.loads((TEST_DIR / "manifest.json").read_text())
+    groups = np.array([manifest["groups"][w] for w in ids]) if "groups" in manifest else None
+    extra = {k: np.array([truth[w].get(k) for w in ids]) for k in ("severe", "era")
+             if k in truth[ids[0]]}
     res = dict(n=len(ids), n_events=int(y.sum()), base_rate=float(y.mean()),
                n_already_collapsed=int(collapsed.sum()),
-               n_events_among_already_collapsed=int((y & collapsed).sum()))
+               n_events_among_already_collapsed=int((y & collapsed).sum()),
+               n_units=int(len(np.unique(groups))) if groups is not None else len(ids))
     print(f"test: {len(ids)} windows, {int(y.sum())} events (base rate {y.mean():.3f})")
     ref = float(np.mean((y.mean() - y) ** 2))
     for name in METHODS:
         p = np.array([fcs[name][w]["p_transition"] for w in ids])
-        auc, ci = auc_ci(y, p)
+        auc, ci = auc_ci(y, p, groups=groups)
         row = dict(auc=auc, auc_ci=ci, brier=float(np.mean((p - y) ** 2)))
         row["brier_skill"] = 1 - row["brier"] / ref if ref > 0 else float("nan")
-        keep = ~collapsed
-        row["auc_S1"], row["auc_S1_ci"] = auc_ci(y[keep], p[keep])
+        if collapsed.any():        # S1 only bites on real_v1; real_v2 excludes these by design
+            keep = ~collapsed
+            row["auc_S1"], row["auc_S1_ci"] = auc_ci(y[keep], p[keep], groups=None if groups is None else groups[keep])
         for k in ("area_loss", "ending"):
             sel = (kind == k) | ~y
             if (kind == k).sum() >= 5:
-                row[f"auc_{k}"] = auc_ci(y[sel], p[sel])[0]
+                row[f"auc_{k}"] = auc_ci(y[sel], p[sel], groups=None if groups is None else groups[sel])[0]
+        if "severe" in extra:      # severe events only, against all controls
+            sel = extra["severe"].astype(bool) | ~y
+            row["auc_severe"] = auc_ci(y[sel], p[sel], groups=None if groups is None else groups[sel])[0]
+        if "era" in extra:
+            for era in ("pre1950", "post1950"):
+                sel = extra["era"] == era
+                if 0 < y[sel].sum() < sel.sum():
+                    row[f"auc_{era}"] = auc_ci(y[sel], p[sel],
+                                               groups=None if groups is None else groups[sel])[0]
+                    row[f"n_{era}"] = int(sel.sum())
         res[name] = row
-        print(f"  {name:22s} AUC {auc:.3f} [{ci[0]:.3f}, {ci[1]:.3f}]  Brier skill {row['brier_skill']:+.3f}  "
-              + f"S1 {row['auc_S1']:.3f} [{row['auc_S1_ci'][0]:.3f}, {row['auc_S1_ci'][1]:.3f}]  "
-              + "  ".join(f"{k} {row[k]:.3f}" for k in ("auc_area_loss", "auc_ending") if k in row))
-    (OUT / "test_scores.json").write_text(json.dumps(res, indent=2))
-    print(f"wrote {OUT / 'test_scores.json'}")
+        s1 = f"S1 {row['auc_S1']:.3f} [{row['auc_S1_ci'][0]:.3f}, {row['auc_S1_ci'][1]:.3f}]  " if "auc_S1" in row else ""
+        print(f"  {name:22s} AUC {auc:.3f} [{ci[0]:.3f}, {ci[1]:.3f}]  Brier skill {row['brier_skill']:+.3f}  " + s1
+              + "  ".join(f"{k[4:]} {row[k]:.3f}" for k in
+                          ("auc_area_loss", "auc_ending", "auc_severe", "auc_pre1950", "auc_post1950")
+                          if k in row))
+    (OUT / f"test_scores_{TEST_SET}.json").write_text(json.dumps(res, indent=2))
+    print(f"wrote {OUT / f'test_scores_{TEST_SET}.json'}")
 
 
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("step", choices=["dev", "forecast", "score"])
+    ap.add_argument("--test-set", default="real_v1", choices=["real_v1", "real_v2"])
     args = ap.parse_args()
+    use_test_set(args.test_set)
     dict(dev=cmd_dev, forecast=cmd_forecast, score=cmd_score)[args.step](args)
 
 
