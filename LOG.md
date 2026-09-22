@@ -43,11 +43,30 @@ against the same features in the simulated dev pool.
 | kurtosis | 0.545 | 0.406 |
 
 The simulator's central warning sign — rising autocorrelation, i.e. critical slowing
-down — **points the opposite way in real income data**: smoother economies are more
-likely to contract. What predicts a real contraction is raw jumpiness, which the
-simulator deliberately calibrated away as a nuisance variable to stop it leaking the
-transition type. A model trained on the simulator therefore applies an inverted rule
-and lands below chance.
+down — **carries the opposite sign in real income data**. High autocorrelation there
+means a smooth, steadily growing record, and those almost never contract; what marks a
+coming contraction is raw year-to-year volatility, which the simulator deliberately
+calibrated away as a nuisance variable to stop it leaking the transition type. A model
+trained on the simulator therefore applies an inverted rule and lands below chance.
+
+**(Correction, same day.)** An earlier version of this entry, and of the README and
+the findings write-up, glossed this as "smoother economies are more likely to
+contract". That is backwards: `lag1_ac` has AUC 0.411, so high autocorrelation goes
+with *fewer* contractions. Luca caught the inconsistency by asking how a smooth economy
+could also be volatile. It cannot: the two features correlate at -0.26, so they agree
+rather than conflict. Corrected everywhere; the numbers were always right, the words
+were not.
+
+**Detail behind it (dev half).** Event rate by volatility quartile: 0.05, 0.10, 0.24,
+0.35. By autocorrelation quartile: 0.21, 0.24, 0.20, 0.09. A window that contracts
+typically swings ~9% a year with ~0.4%/yr average growth; one that does not swings
+~2% with ~0.7%/yr growth.
+
+**One exploratory finding, post-unsealing, not pre-registered:** within the calmest
+volatility quartile, higher autocorrelation *does* predict contraction (AUC 0.874 on
+12 events in 258 windows). That is the simulator's signal appearing where noise is low
+enough for it to show. Too few events to lean on; a candidate hypothesis for a future
+pre-registered test.
 
 **Against the pre-registered hypotheses:**
 

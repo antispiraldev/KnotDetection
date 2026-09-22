@@ -122,10 +122,21 @@ CONTENT = [
              "development data. Above zero means the feature warns of a coming fall.")),
     ("p", "The cause is visible in the features. In the simulator the strongest warning sign "
           "is rising autocorrelation, the signature of critical slowing down. In real income "
-          "data that same feature points the other way: smoother economies are more likely "
-          "to contract. What predicts a real contraction is raw step-to-step volatility — a "
-          "quantity the simulator deliberately calibrates away, because in a synthetic "
-          "benchmark it would leak the mechanism."),
+          "data that feature carries the opposite sign: the smoothest economies are the "
+          "**least** likely to contract. What marks a coming contraction is raw year-to-year "
+          "volatility — a quantity the simulator deliberately calibrates away, because in a "
+          "synthetic benchmark it would leak the mechanism."),
+    ("p", "The two real-data features agree rather than conflict: volatility and "
+          "autocorrelation are negatively correlated (-0.26), so a jumpy record is also a "
+          "low-autocorrelation one. Event rates rise steadily across volatility quartiles "
+          "(5%, 10%, 24%, 35%) and fall in the smoothest quartile (20%, 24%, 20%, 9%). The "
+          "typical window that contracts swings about 9% a year with average growth near "
+          "zero; the typical window that does not swings about 2% a year and grows steadily."),
+    ("p", "One exploratory detail, found after unsealing and not pre-registered: **within "
+          "the calmest quarter of records**, higher autocorrelation does go with contraction "
+          "(AUC 0.87), which is what the simulator predicts. It rests on 12 events out of "
+          "258 windows, so it is a hypothesis for a future test, not a result. If it holds, "
+          "slow recovery is readable only where the noise is small enough not to drown it."),
 
     ("h2", "4. What follows"),
     ("bullets", [
