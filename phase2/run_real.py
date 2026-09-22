@@ -273,7 +273,14 @@ def cmd_score(_):
     ids = sorted(truth)
     y = np.array([truth[w]["transitioned"] for w in ids], dtype=bool)
     kind = np.array([truth[w]["event_kind"] or "none" for w in ids])
-    res = dict(n=len(ids), n_events=int(y.sum()), base_rate=float(y.mean()))
+    # Secondary analysis S1 (pre-registration amendment): drop "already collapsed"
+    # windows, whose last recorded value is below half the record's maximum. Uses only
+    # the open record.
+    recs = {r.world_id: r for r in load_test()}
+    collapsed = np.array([recs[w].y[-1] < 0.5 * recs[w].y.max() for w in ids])
+    res = dict(n=len(ids), n_events=int(y.sum()), base_rate=float(y.mean()),
+               n_already_collapsed=int(collapsed.sum()),
+               n_events_among_already_collapsed=int((y & collapsed).sum()))
     print(f"test: {len(ids)} windows, {int(y.sum())} events (base rate {y.mean():.3f})")
     ref = float(np.mean((y.mean() - y) ** 2))
     for name in METHODS:
@@ -281,13 +288,16 @@ def cmd_score(_):
         auc, ci = auc_ci(y, p)
         row = dict(auc=auc, auc_ci=ci, brier=float(np.mean((p - y) ** 2)))
         row["brier_skill"] = 1 - row["brier"] / ref if ref > 0 else float("nan")
+        keep = ~collapsed
+        row["auc_S1"], row["auc_S1_ci"] = auc_ci(y[keep], p[keep])
         for k in ("area_loss", "ending"):
             sel = (kind == k) | ~y
             if (kind == k).sum() >= 5:
                 row[f"auc_{k}"] = auc_ci(y[sel], p[sel])[0]
         res[name] = row
         print(f"  {name:22s} AUC {auc:.3f} [{ci[0]:.3f}, {ci[1]:.3f}]  Brier skill {row['brier_skill']:+.3f}  "
-              + "  ".join(f"{k} {row[k]:.3f}" for k in row if k.startswith("auc_") and k != "auc_ci"))
+              + f"S1 {row['auc_S1']:.3f} [{row['auc_S1_ci'][0]:.3f}, {row['auc_S1_ci'][1]:.3f}]  "
+              + "  ".join(f"{k} {row[k]:.3f}" for k in ("auc_area_loss", "auc_ending") if k in row))
     (OUT / "test_scores.json").write_text(json.dumps(res, indent=2))
     print(f"wrote {OUT / 'test_scores.json'}")
 

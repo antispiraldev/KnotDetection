@@ -116,6 +116,22 @@ rates is not expected).
 *and* M5 no better than M1. That would mean recent trend, not fragility, is all the
 record carries.
 
+## Amendment, 2026-09-22 (after the data were built, before any forecasting or scoring)
+
+The data subagent pointed out a property of the event definition. It is followed
+literally, so if a polity's Area has **already** fallen below half of its record
+maximum inside the record, and stays there, the first horizon year counts as an
+area-loss event. Such a window does not forecast a future collapse: the collapse is
+visible in the record itself.
+
+The primary analysis is unchanged, and is reported exactly as specified above.
+**Added secondary analysis S1:** the same AUCs with "already collapsed" windows
+excluded. A window is already collapsed when the last recorded value is below 0.5 ×
+the maximum of its 20 recorded values. The rule uses only the open record, never the
+outcome, so it could be applied without seeing any result. From the open records:
+36 of 300 test windows and 105 of 1,267 dev windows meet it. No test forecast
+existed, and no dev or test result had been computed, when this was written.
+
 ## Out of scope
 
 Claims about why particular polities fell. Forecasts of present-day states. Any use
