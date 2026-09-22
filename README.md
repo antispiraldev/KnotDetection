@@ -147,7 +147,7 @@ before the answers were opened.
 
 Adding `--regenerate test_v2` goes further, and takes 15–30 minutes. It rebuilds the
 test set from its seed, at the generator revision recorded in the ledger, and
-confirms that it reproduces the released answers. The ledger itself is in git, so
+confirms that it reproduces the released answers. This check has been run for `test_v2`, and it passes. The ledger itself is in git, so
 `git log -p inflection/data/ledger.jsonl` shows when each event was committed.
 
 ---
