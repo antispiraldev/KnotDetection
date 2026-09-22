@@ -306,12 +306,26 @@ CONTENT = [
         "the change.",
     ]),
 
-    ("h2", "What comes next"),
-    ("p", "The next phase tests the key assumption on real historical data: do societies that "
-          "went through sudden changes look fragile beforehand, and can that be detected "
-          "without hindsight? Candidate sources include Seshat, CrisisDB and published "
-          "instability records. The series will be anonymised before analysis, so that "
-          "recognising a famous case cannot substitute for forecasting it."),
+    ("h2", "What happened when we tried real history"),
+    ("p", "Two tests on real data followed, each planned in writing before the data was "
+          "downloaded, and each anonymised by a separate assistant so that recognising a "
+          "famous case could not substitute for forecasting it."),
+    ("bullets", [
+        "**Territory of 300 historical polities** (which lands a state held, over time). "
+        "Almost all of the apparent skill turned out to be polities already visibly "
+        "shrinking when the forecast was made. Excluding those, nothing beat a coin flip, "
+        "and nothing at all predicted which states would disappear.",
+        "**Income per person, annually, for 74 countries.** Here a simple model fitted to "
+        "real history did predict large falls in income, and reasonably well.",
+        "**But the methods trained on the simulated societies did worse than chance** on "
+        "that same data. The reason is a reversal: in the simulations, a society heading "
+        "for a tipping point recovers from small knocks more and more slowly, so its "
+        "record looks smoother. In real income data it is the opposite; the economies that "
+        "fell were the jumpy ones. A method taught the simulated rule applies it backwards.",
+    ]),
+    ("p", "That is the project's sharpest practical lesson: a forecasting method that works "
+          "on simulated data should not be assumed to work on history, even when the "
+          "simulation was built carefully and tested honestly."),
 
     ("h2", "A few terms"),
     ("table", [

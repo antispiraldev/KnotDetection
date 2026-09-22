@@ -13,6 +13,13 @@ from pathlib import Path
 FONT_DIR = Path("/usr/share/fonts/truetype/dejavu")
 
 
+def _table(body) -> tuple[list[str], list[list[str]]]:
+    """A table payload is either {"header": [...], "rows": [...]} or rows of pairs."""
+    if isinstance(body, dict):
+        return list(body["header"]), [list(r) for r in body["rows"]]
+    return ["Term", "Meaning"], [list(r) for r in body]
+
+
 def render_markdown(path: Path, content: list) -> None:
     lines = []
     for kind, body in content:
@@ -28,8 +35,9 @@ def render_markdown(path: Path, content: list) -> None:
             name, caption = body
             lines += [f"![{caption}]({name})", "", f"*{caption}*", ""]
         elif kind == "table":
-            lines += ["| Term | Meaning |", "| --- | --- |"]
-            lines += [f"| {a} | {b} |" for a, b in body] + [""]
+            head, rows = _table(body)
+            lines += ["| " + " | ".join(head) + " |", "|" + "---|" * len(head)]
+            lines += ["| " + " | ".join(r) + " |" for r in rows] + [""]
     path.write_text("\n".join(lines))
 
 
@@ -96,12 +104,19 @@ def render_pdf(path: Path, content: list, out_dir: Path) -> None:
             pdf.multi_cell(width, 4.6, caption, new_x="LMARGIN", new_y="NEXT")
             pdf.ln(3)
         elif kind == "table":
+            head, rows = _table(body)
             pdf.set_font("DV", "", 9.5)
             pdf.set_text_color(34, 34, 34)
-            with pdf.table(col_widths=(32, 68), line_height=5.2, first_row_as_headings=True) as t:
-                row = t.row(); row.cell("Term"); row.cell("Meaning")
-                for a, b in body:
-                    row = t.row(); row.cell(a); row.cell(b)
+            widths = (32, 68) if len(head) == 2 else tuple([100 // len(head)] * len(head))
+            with pdf.table(col_widths=widths, line_height=5.2, first_row_as_headings=True,
+                           markdown=True) as t:
+                row = t.row()
+                for h in head:
+                    row.cell(h)
+                for r in rows:
+                    row = t.row()
+                    for c in r:
+                        row.cell(c)
     pdf.output(str(path))
 
 

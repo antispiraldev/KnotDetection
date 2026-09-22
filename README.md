@@ -15,7 +15,9 @@ and otherwise deliberately deferred to Claude's judgement. See
 
 **New to the topic?** Start with the four-page primer:
 [docs/primer/primer.pdf](docs/primer/primer.pdf)
-([Markdown version](docs/primer/primer.md)).
+([Markdown](docs/primer/primer.md)). **Want the results?**
+[docs/findings/findings.pdf](docs/findings/findings.pdf)
+([Markdown](docs/findings/findings.md)).
 
 ---
 
@@ -58,8 +60,22 @@ saw which polity was which, with answers sealed and forecasts hashed before unse
 - **Nothing forecasts a polity's end** (AUC 0.46–0.52).
 - Classic early-warning signals are at chance here too (0.49).
 
-Details, including the pre-registration written before the data were downloaded, are
-in [phase2/](phase2/) and [LOG.md](LOG.md).
+A second real test on **annual income per head** (Maddison Project Database, 981
+windows over 74 countries) then separated "history has no warning" from "that dataset
+was too thin":
+
+- Methods fitted to real data reach **AUC 0.70** (0.76 on severe falls). Real
+  contractions *are* forecastable.
+- Simulation-trained methods score **significantly below chance** (0.43 and 0.39).
+  Not absent transfer: **negative** transfer.
+- The reason is a sign reversal. In the simulator the strongest warning sign is rising
+  autocorrelation (critical slowing down). In real income data that feature points the
+  other way, and what predicts a contraction is raw volatility — which the simulator
+  deliberately calibrates away as a nuisance.
+
+Full write-up: [docs/findings/findings.pdf](docs/findings/findings.pdf)
+([Markdown](docs/findings/findings.md)). Pre-registrations, written before each
+download, are in [phase2/](phase2/); the blow-by-blow is in [LOG.md](LOG.md).
 
 These are results about methods, not claims about why particular polities fell. Full details are in
 the plain-language reports and in [LOG.md](LOG.md).
@@ -197,6 +213,6 @@ A new blind test goes through `scripts/gate3_run.py`, one step per call:
 
 ## Status
 
-The simulation phase is complete, with all four gates reached. Phase 2 has produced
-its first blind result on real data (above). Phase 3, forecasts registered now and
-scored when outcomes arrive, has not started.
+The simulation phase is complete, with all four gates reached, and Phase 2 has run two
+blind tests on real data. All four test sets are spent and released. Phase 3, forecasts
+registered now and scored when outcomes arrive, has not started.
