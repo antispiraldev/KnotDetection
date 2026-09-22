@@ -135,9 +135,34 @@ def fig_timing(path: Path) -> None:
     plt.close(fig)
 
 
+def fig_features(path: Path) -> None:
+    """The same feature, opposite meanings: real income data against the simulator."""
+    d = _load(RES / "feature_direction.json")
+    nice = {"log_step_sd": "step-to-step\nvolatility", "lag1_ac": "autocorrelation\n(slowing down)",
+            "cv": "relative\nspread", "var_ratio": "variance\nrising", "cv_ratio": "spread\nrising",
+            "slope_norm": "trend", "kurtosis": "heavy tails", "skew": "skew",
+            "lag1_delta": "autocorrelation\nrising"}
+    keys = ["log_step_sd", "lag1_ac", "cv_ratio", "var_ratio", "slope_norm", "cv"]
+    real = [d[k]["real"] - 0.5 for k in keys]
+    sim = [d[k]["simulated"] - 0.5 for k in keys]
+    x = np.arange(len(keys))
+    fig, ax = plt.subplots(figsize=(9, 3.4))
+    ax.bar(x - 0.2, real, 0.38, color=WARN, label="real income data")
+    ax.bar(x + 0.2, sim, 0.38, color=ACCENT, label="simulated societies")
+    ax.axhline(0, color=INK, lw=1)
+    ax.set_xticks(x); ax.set_xticklabels([nice[k] for k in keys], fontsize=8)
+    ax.set_ylabel("predictive value\n(above 0 = warns of a fall)", fontsize=9)
+    ax.legend(fontsize=8)
+    ax.set_title("The same warning signs point opposite ways", fontsize=11)
+    fig.tight_layout()
+    fig.savefig(path, dpi=160, bbox_inches="tight")
+    plt.close(fig)
+
+
 FIGURES = {
     "fig_simulation.png": fig_simulation,
     "fig_real.png": fig_real,
     "fig_artifact.png": fig_artifact,
     "fig_timing.png": fig_timing,
+    "fig_features.png": fig_features,
 }

@@ -67,14 +67,20 @@ The same person builds the methods and the tests, and it is easy to fool yoursel
 - **The methods are relatively simple.** Stronger ones might do better on "what kind", but the timing analysis suggests the information about "when" is simply not in the data.
 - **Forecasts were made a limited distance ahead**, roughly 10 to 90 time steps before the change.
 
-## What comes next
+## What happened when we tried real history
 
-The next phase tests the key assumption on real historical data: do societies that went through sudden changes look fragile beforehand, and can that be detected without hindsight? Candidate sources include Seshat, CrisisDB and published instability records. The series will be anonymised before analysis, so that recognising a famous case cannot substitute for forecasting it.
+Two tests on real data followed, each planned in writing before the data was downloaded, and each anonymised by a separate assistant so that recognising a famous case could not substitute for forecasting it.
+
+- **Territory of 300 historical polities** (which lands a state held, over time). Almost all of the apparent skill turned out to be polities already visibly shrinking when the forecast was made. Excluding those, nothing beat a coin flip, and nothing at all predicted which states would disappear.
+- **Income per person, annually, for 74 countries.** Here a simple model fitted to real history did predict large falls in income, and reasonably well.
+- **But the methods trained on the simulated societies did worse than chance** on that same data. The reason is a reversal: in the simulations, a society heading for a tipping point recovers from small knocks more and more slowly, so its record looks smoother. In real income data it is the opposite; the economies that fell were the jumpy ones. A method taught the simulated rule applies it backwards.
+
+That is the project's sharpest practical lesson: a forecasting method that works on simulated data should not be assumed to work on history, even when the simulation was built carefully and tested honestly.
 
 ## A few terms
 
 | Term | Meaning |
-| --- | --- |
+|---|---|
 | Cliodynamics | The quantitative, model-based study of historical change. |
 | Dynamical system | Anything whose state changes over time according to rules. |
 | Tipping point | A threshold past which a system shifts suddenly to a new state. |
