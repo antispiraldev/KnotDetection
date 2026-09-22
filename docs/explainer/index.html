@@ -1,0 +1,490 @@
+<title>Seeing Collapse Coming</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;600;700&family=Newsreader:opsz,wght@6..72,400;6..72,500;6..72,600&display=swap">
+<style>
+  :root {
+    color-scheme: light;
+    --ground: #eceef1;
+    --surface: #f6f7f9;
+    --plate: #f6f7f9;
+    --ink: #171c22;
+    --ink-soft: #3c4650;
+    --muted: #626d78;
+    --rule: #d8dde3;
+    --blue: #2f6fb0;
+    --rust: #c8553d;
+    --rail: #c3ccd5;
+    --shadow: 0 1px 2px rgba(23, 28, 34, .06), 0 8px 24px rgba(23, 28, 34, .06);
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      color-scheme: dark;
+      --ground: #12161b;
+      --surface: #191f26;
+      --ink: #e6eaef;
+      --ink-soft: #c2cad2;
+      --muted: #97a2ad;
+      --rule: #2a323b;
+      --blue: #7fb0e0;
+      --rust: #e08a76;
+      --rail: #3a444f;
+      --shadow: 0 1px 2px rgba(0, 0, 0, .4), 0 8px 24px rgba(0, 0, 0, .35);
+    }
+  }
+  :root[data-theme="dark"] {
+    color-scheme: dark;
+    --ground: #12161b;
+    --surface: #191f26;
+    --ink: #e6eaef;
+    --ink-soft: #c2cad2;
+    --muted: #97a2ad;
+    --rule: #2a323b;
+    --blue: #7fb0e0;
+    --rust: #e08a76;
+    --rail: #3a444f;
+    --shadow: 0 1px 2px rgba(0, 0, 0, .4), 0 8px 24px rgba(0, 0, 0, .35);
+  }
+
+  body {
+    background: var(--ground);
+    color: var(--ink);
+    font-family: Newsreader, Georgia, "Times New Roman", serif;
+    font-size: 19px;
+    line-height: 1.62;
+    padding-block: 0 0;
+  }
+  .wrap { max-width: 44rem; margin: 0 auto; padding: 0 20px 9rem; }
+  h1, h2, .label, .ui { font-family: Archivo, "Helvetica Neue", Arial, sans-serif; }
+
+  header.top { padding-block: 3.2rem 1.6rem; border-bottom: 1px solid var(--rule); }
+  h1 {
+    font-size: clamp(2.1rem, 6vw, 3.1rem); line-height: 1.04; font-weight: 700;
+    letter-spacing: -.02em; margin: 0 0 .7rem; text-wrap: balance;
+  }
+  .standfirst { font-size: 1.14rem; color: var(--ink-soft); margin: 0 0 1.4rem; max-width: 34rem; }
+  .meta { font-family: Archivo, sans-serif; font-size: .78rem; letter-spacing: .09em;
+          text-transform: uppercase; color: var(--muted); display: flex; gap: 1.2rem; flex-wrap: wrap; }
+
+  section.sec { padding-block: 2.4rem; border-bottom: 1px solid var(--rule); position: relative; }
+  section.sec:last-of-type { border-bottom: 0; }
+  .label { font-size: .74rem; letter-spacing: .12em; text-transform: uppercase;
+           color: var(--muted); display: block; margin-bottom: .55rem; }
+  h2 { font-size: 1.44rem; font-weight: 600; letter-spacing: -.01em; margin: 0 0 1rem;
+       text-wrap: balance; }
+  p { margin: 0 0 1.1rem; }
+  p:last-child { margin-bottom: 0; }
+  strong { font-weight: 600; }
+  .rust { color: var(--rust); font-weight: 500; }
+  .blue { color: var(--blue); font-weight: 500; }
+
+  /* the paragraph currently being read */
+  [data-say] { transition: none; border-left: 2px solid transparent; padding-left: .9rem;
+               margin-left: -1.1rem; }
+  [data-say].speaking { border-left-color: var(--rust); background: color-mix(in srgb, var(--rust) 7%, transparent); }
+
+  figure { margin: 1.8rem 0; }
+  figure img { width: 100%; display: block; border-radius: 10px; background: var(--plate);
+               box-shadow: var(--shadow); }
+  figcaption { font-family: Archivo, sans-serif; font-size: .82rem; color: var(--muted);
+               margin-top: .7rem; line-height: 1.5; }
+
+  .listen {
+    font-family: Archivo, sans-serif; font-size: .75rem; letter-spacing: .06em;
+    text-transform: uppercase; color: var(--muted); background: none; border: 1px solid var(--rule);
+    border-radius: 999px; padding: .28rem .8rem; cursor: pointer; margin-bottom: .9rem;
+  }
+  .listen:hover { color: var(--ink); border-color: var(--muted); }
+  .listen:focus-visible, button:focus-visible { outline: 2px solid var(--blue); outline-offset: 2px; }
+
+  .takeaway {
+    background: var(--surface); border-radius: 12px; padding: 1.2rem 1.4rem; margin: 1.6rem 0 0;
+    border-left: 3px solid var(--rust); box-shadow: var(--shadow);
+  }
+  .takeaway p { font-size: 1.04rem; }
+
+  /* player */
+  .player {
+    position: fixed; left: 0; right: 0; bottom: 0; background: var(--surface);
+    border-top: 1px solid var(--rule); box-shadow: var(--shadow); z-index: 20;
+    padding: .7rem 16px calc(.7rem + env(safe-area-inset-bottom, 0px));
+  }
+  .player-in { max-width: 44rem; margin: 0 auto; display: flex; align-items: center; gap: .8rem; }
+  .ui { font-size: .8rem; color: var(--muted); }
+  .now { flex: 1 1 auto; min-width: 0; overflow: hidden; text-overflow: ellipsis;
+         white-space: nowrap; color: var(--ink-soft); }
+  button.ctl {
+    font-family: Archivo, sans-serif; background: none; border: 1px solid var(--rule);
+    color: var(--ink); border-radius: 8px; padding: .34rem .6rem; cursor: pointer; font-size: .82rem;
+  }
+  button.ctl:hover { border-color: var(--muted); }
+  button.play {
+    background: var(--ink); color: var(--ground); border-color: var(--ink); font-weight: 600;
+    min-width: 5.4rem;
+  }
+  select.ctl { font-family: Archivo, sans-serif; background: none; color: var(--ink);
+               border: 1px solid var(--rule); border-radius: 8px; padding: .3rem .4rem; font-size: .8rem; }
+  .unsupported { display: none; }
+  @media (max-width: 460px) {
+    .player-in { gap: .5rem; }
+    .now { flex-basis: 100%; order: 3; }
+    .player-in { flex-wrap: wrap; }
+  }
+</style>
+
+<div class="wrap">
+  <header class="top">
+    <h1>Seeing collapse coming</h1>
+    <p class="standfirst">Eight ideas from a blinded study of whether a society's sudden
+      change can be forecast before it happens — and why a careful simulation taught its
+      methods a rule that turned out to be backwards.</p>
+    <div class="meta">
+      <span>About 9 minutes</span>
+      <span>Press play — it reads itself</span>
+    </div>
+  </header>
+
+  <section class="sec" id="s1">
+    <span class="label">One · The setup problem</span>
+    <h2>You cannot test this on history directly</h2>
+    <button class="listen" data-listen>▶ Listen to this part</button>
+    <div class="body">
+      <p>The question is whether a sudden change in a society — a collapse, the onset of
+        boom-and-bust cycles, a shift to some new normal — can be anticipated from data
+        gathered before it happens.</p>
+      <p>History cannot settle that on its own. We rarely know what truly caused a past
+        collapse, and there are few clean cases to learn from. So the study begins with
+        invented societies: thousands of them, each following rules I chose, each with a
+        known future. A method is shown only the early part of a society's life and asked
+        what comes next. Because I made the worlds, I can grade the answers exactly.</p>
+      <p>Three questions, in rising order of ambition. Is a change coming at all? When will
+        it arrive? And what kind of change will it be?</p>
+    </div>
+  </section>
+
+  <section class="sec" id="s2">
+    <span class="label">Two · The cheating problem</span>
+    <h2>Invented worlds can be accidentally easy</h2>
+    <button class="listen" data-listen>▶ Listen to this part</button>
+    <div class="body">
+      <p>The danger with invented data is that a method can score well without detecting
+        anything real. If the societies destined to collapse happen to be larger, or noisier,
+        or measured for longer, a method can simply notice that and look clever.</p>
+      <p>So the project carries a standing check: can the answer be guessed from things that
+        ought to be irrelevant — the overall size of the numbers, how much they wobble, how
+        long the record runs? Whenever the answer was yes, that was a bug in my world-building,
+        not a finding. It happened nine times, and each time I fixed the generator and reran
+        everything.</p>
+      <p>Remember this one. It turns out to be the hinge of the whole story.</p>
+    </div>
+  </section>
+
+  <section class="sec" id="s3">
+    <span class="label">Three · The self-deception problem</span>
+    <h2>Sealing the answers before forecasting</h2>
+    <button class="listen" data-listen>▶ Listen to this part</button>
+    <div class="body">
+      <p>I built both the methods and the tests, which is exactly the arrangement where
+        someone fools themselves without noticing: run a method, glance at the score, adjust
+        something, run again, and forget that the adjusting was steered by the glancing.</p>
+      <p>The guard is procedural. Before each test I wrote down what I expected, in numbers.
+        The answers went into a sealed file. Every forecast was fingerprinted and published
+        before anything was opened. The order of those events is recorded permanently, so
+        anyone can confirm the forecasts existed before the answers did.</p>
+      <p>It earned its keep. It caught me predicting wrongly several times, and once stopped
+        me from quietly adjusting the simulation after a method I expected to work didn't.</p>
+    </div>
+  </section>
+
+  <section class="sec" id="s4">
+    <span class="label">Four · What the invented worlds said</span>
+    <h2>Fragility is visible; timing is not</h2>
+    <button class="listen" data-listen>▶ Listen to this part</button>
+    <div class="body">
+      <p>Whether a change was coming turned out to be moderately forecastable. Given one
+        society that changed and one that didn't, the best method ranked them correctly
+        about four times in five.</p>
+      <p>But look at how it managed that, and the achievement shrinks. It was recognising
+        societies that already sat close to the edge — not watching a change approach. Where
+        the change had no antecedents at all, such as a sudden shift in the rules, nothing
+        was foreseen, which is exactly as it should be.</p>
+      <p>Timing was a wall. No method dated a change better than simply knowing the window
+        in which changes tend to happen. A direct measurement showed why: a record tells you
+        how far a slow change has already travelled, and nothing about when the threshold
+        will be crossed.</p>
+      <p>And the famous warning sign from ecology — that systems recover more sluggishly just
+        before they tip — scored no better than a coin flip in every single condition. The
+        signal genuinely exists inside these worlds. It is just undetectable in records this
+        short, because stable societies throw up the same apparent pattern by chance often
+        enough to bury it.</p>
+    </div>
+  </section>
+
+  <section class="sec" id="s5">
+    <span class="label">Five · The first real test</span>
+    <h2>Territory, and a mistake worth knowing about</h2>
+    <button class="listen" data-listen>▶ Listen to this part</button>
+    <div class="body">
+      <p>Then to real history: the territory held by three hundred historical states, and
+        whether each lost half its land or vanished within the following fifty years. Another
+        assistant downloaded and anonymised everything, so I never knew which state was which
+        and could not quietly forecast what I already knew.</p>
+      <p>At first it looked like a success. Then I noticed how "collapse" had been defined: a
+        fall to less than half of the recent peak. For some states that fall had <em>already
+        happened</em> inside the record the method was handed. Of thirty-six such cases,
+        thirty-five counted as collapses. The method was being congratulated for noticing a
+        catastrophe already printed in its own data.</p>
+      <figure>
+        <img src="already_fallen.png" alt="A line chart in which the fall happens inside the shaded record period, before the forecast point.">
+        <figcaption>The shaded stretch is what the method sees. When the fall sits inside it,
+          predicting "collapse" is not a forecast.</figcaption>
+      </figure>
+      <p>Take those cases out, and everything drops to chance. Nothing predicted which states
+        would disappear — the outcome closest to what people mean by collapse.</p>
+    </div>
+  </section>
+
+  <section class="sec" id="s6">
+    <span class="label">Six · The second real test</span>
+    <h2>Income, where something real showed up</h2>
+    <button class="listen" data-listen>▶ Listen to this part</button>
+    <div class="body">
+      <p>Territory is thin evidence: borders get redrawn on a historian's map, and the record
+        changes only when someone redraws it. So the next test used the densest long-run
+        measure available — income per person, year by year, for seventy-four countries —
+        asking whether income would fall by at least a quarter from its recent peak within
+        fifteen years.</p>
+      <p>Here a plain model fitted to real history did work, getting the ranking right about
+        seven times in ten. And what it keyed on was not subtle.</p>
+      <figure>
+        <img src="two_records.png" alt="Two thirty-year income records: a steady one that did not fall, and a jumpy one that did.">
+        <figcaption>Two real countries, both growing. The jumpy one fell within fifteen years;
+          the steady one did not.</figcaption>
+      </figure>
+      <figure>
+        <img src="jumpiness.png" alt="Bar chart: share of records that later fell, rising from 5% for the calmest quarter to 35% for the jumpiest.">
+        <figcaption>Sort the records by how much income lurches from year to year, and the
+          chance of a later fall rises steadily.</figcaption>
+      </figure>
+      <p>Economies that lurch from year to year, with little average growth, fell often.
+        Steady growers rarely did. That is intuitive enough that it barely sounds like a
+        finding — until you compare it with what the invented worlds taught.</p>
+    </div>
+  </section>
+
+  <section class="sec" id="s7">
+    <span class="label">Seven · The sting</span>
+    <h2>The simulation taught the rule backwards</h2>
+    <button class="listen" data-listen>▶ Listen to this part</button>
+    <div class="body">
+      <p>The methods trained on my invented societies performed <em>worse than a coin flip</em>
+        on real income. Not merely useless — reliably wrong, which takes some doing.</p>
+      <figure>
+        <img src="flip.png" alt="Two clues compared: jumpiness warns of a fall in real economies but suggests safety in the simulation; sluggishness does the reverse.">
+        <figcaption>The same two clues, read in opposite directions by the two worlds.</figcaption>
+      </figure>
+      <p>Here is why, and it comes straight back to the cheating problem. To stop methods
+        identifying a society's fate from how noisy its record was, I had equalised the
+        jumpiness across all my invented worlds. It was the right call for the integrity of
+        the benchmark. But it deleted, by construction, the one clue that matters in reality.</p>
+      <p>What remained for a method to learn was the sluggish-recovery signal — which makes a
+        record look <em>smoother</em> as danger approaches. So the simulation taught:
+        <span class="blue">smooth means danger</span>. Reality says:
+        <span class="rust">smooth means safe, jumpy means danger</span>. Apply the first rule
+        to the second world and you land below chance.</p>
+      <div class="takeaway">
+        <p>My anti-cheating measure removed the only clue that mattered — and I could not have
+          discovered that from inside the simulation. Only real data could show it.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="sec" id="s8">
+    <span class="label">Eight · What I'd attack next</span>
+    <h2>The part I'm least sure of</h2>
+    <button class="listen" data-listen>▶ Listen to this part</button>
+    <div class="body">
+      <p>One weakness deserves naming before anyone repeats this. A "fall of a quarter from
+        the recent peak" is a threshold defined relative to the record itself — and a jumpy
+        series crosses such a threshold more easily simply by being jumpy. So some of the
+        headline result may be mechanical rather than meaningful. Before leaning on it, I'd
+        redefine the event so that jumpiness cannot win by accident, and see what survives.</p>
+      <p>Two things I'd stand behind regardless. A method validated on simulated data should
+        not be assumed to work on reality: here the transfer was not weak but inverted. And a
+        collapse threshold measured against a recent peak will manufacture apparent skill
+        unless you exclude the cases that have already crossed it.</p>
+      <p>The rest — the machinery of sealed answers, fingerprinted forecasts and written
+        predictions — exists so that findings like these can be distinguished from
+        well-organised hindsight. That part worked.</p>
+    </div>
+  </section>
+</div>
+
+<div class="player" id="player">
+  <div class="player-in">
+    <button class="ctl play ui" id="play" aria-label="Play narration">▶ Play</button>
+    <button class="ctl ui" id="prev" aria-label="Previous part">↑</button>
+    <button class="ctl ui" id="next" aria-label="Next part">↓</button>
+    <span class="now ui" id="now">Eight parts · about 9 minutes</span>
+    <label class="ui" for="rate" style="display:flex;align-items:center;gap:.35rem">
+      <span aria-hidden="true">speed</span>
+      <select class="ctl" id="rate">
+        <option value="0.85">0.85×</option>
+        <option value="1" selected>1×</option>
+        <option value="1.15">1.15×</option>
+        <option value="1.35">1.35×</option>
+      </select>
+    </label>
+  </div>
+  <div class="player-in unsupported ui" id="unsupported">
+    This browser has no built-in voice, so the page can only be read.
+  </div>
+</div>
+
+<script>
+(function () {
+  var synth = window.speechSynthesis;
+  var sections = Array.prototype.slice.call(document.querySelectorAll("section.sec"));
+  var playBtn = document.getElementById("play");
+  var nowEl = document.getElementById("now");
+  var rateEl = document.getElementById("rate");
+
+  // Every paragraph is a speech unit, so the rail can mark where the voice is.
+  sections.forEach(function (sec) {
+    sec.querySelectorAll(".body > p, .body figcaption, .takeaway p").forEach(function (el) {
+      el.setAttribute("data-say", "");
+    });
+  });
+
+  if (!synth || typeof SpeechSynthesisUtterance === "undefined") {
+    document.getElementById("player").querySelector(".player-in").hidden = true;
+    var un = document.getElementById("unsupported");
+    un.style.display = "flex";
+    document.querySelectorAll("[data-listen]").forEach(function (b) { b.hidden = true; });
+    return;
+  }
+
+  var units = [];                        // {el, text, section}
+  sections.forEach(function (sec, si) {
+    sec.querySelectorAll("[data-say]").forEach(function (el) {
+      var text = el.textContent.replace(/\s+/g, " ").trim();
+      if (text) units.push({ el: el, text: text, section: si });
+    });
+  });
+
+  var cursor = 0, playing = false, voice = null, chunks = [], chunkAt = 0;
+
+  function pickVoice() {
+    var vs = synth.getVoices().filter(function (v) { return /^en/i.test(v.lang); });
+    if (!vs.length) return null;
+    var local = vs.filter(function (v) { return v.localService; });
+    return (local.length ? local : vs)[0];
+  }
+  pickVoice();
+  if (typeof synth.onvoiceschanged !== "undefined") {
+    synth.onvoiceschanged = function () { voice = voice || pickVoice(); };
+  }
+
+  // Long utterances get cut off in some browsers, so speak sentence-sized pieces.
+  function splitSentences(text) {
+    var parts = text.match(/[^.!?]+[.!?]*\s*/g) || [text];
+    var out = [], buf = "";
+    parts.forEach(function (p) {
+      if ((buf + p).length > 180 && buf) { out.push(buf.trim()); buf = p; }
+      else { buf += p; }
+    });
+    if (buf.trim()) out.push(buf.trim());
+    return out;
+  }
+
+  function mark(unit) {
+    document.querySelectorAll("[data-say].speaking").forEach(function (el) {
+      el.classList.remove("speaking");
+    });
+    if (!unit) return;
+    unit.el.classList.add("speaking");
+    var sec = sections[unit.section];
+    var label = sec.querySelector(".label").textContent.split("·")[0].trim();
+    var title = sec.querySelector("h2").textContent;
+    nowEl.textContent = label + " · " + title;
+    var box = unit.el.getBoundingClientRect();
+    if (box.top < 90 || box.bottom > window.innerHeight - 130) {
+      unit.el.scrollIntoView({ block: "center",
+        behavior: window.matchMedia("(prefers-reduced-motion: reduce)").matches ? "auto" : "smooth" });
+    }
+  }
+
+  function speakChunk() {
+    if (!playing) return;
+    if (chunkAt >= chunks.length) {           // unit finished
+      cursor += 1;
+      if (cursor >= units.length) { stop(); nowEl.textContent = "Finished"; return; }
+      startUnit();
+      return;
+    }
+    var u = new SpeechSynthesisUtterance(chunks[chunkAt]);
+    voice = voice || pickVoice();
+    if (voice) { u.voice = voice; u.lang = voice.lang; }
+    u.rate = parseFloat(rateEl.value) || 1;
+    u.onend = function () { chunkAt += 1; speakChunk(); };
+    u.onerror = function () { chunkAt += 1; speakChunk(); };
+    synth.speak(u);
+  }
+
+  function startUnit() {
+    var unit = units[cursor];
+    mark(unit);
+    chunks = splitSentences(unit.text);
+    chunkAt = 0;
+    speakChunk();
+  }
+
+  function play() {
+    playing = true;
+    playBtn.textContent = "❚❚ Pause";
+    playBtn.setAttribute("aria-label", "Pause narration");
+    synth.cancel();
+    startUnit();
+  }
+
+  function stop() {
+    playing = false;
+    synth.cancel();
+    playBtn.textContent = "▶ Play";
+    playBtn.setAttribute("aria-label", "Play narration");
+    document.querySelectorAll("[data-say].speaking").forEach(function (el) {
+      el.classList.remove("speaking");
+    });
+  }
+
+  playBtn.addEventListener("click", function () { playing ? stop() : play(); });
+
+  function jump(delta) {
+    var here = units[cursor] ? units[cursor].section : 0;
+    var target = Math.min(sections.length - 1, Math.max(0, here + delta));
+    for (var i = 0; i < units.length; i++) {
+      if (units[i].section === target) { cursor = i; break; }
+    }
+    sections[target].scrollIntoView({ block: "start",
+      behavior: window.matchMedia("(prefers-reduced-motion: reduce)").matches ? "auto" : "smooth" });
+    if (playing) play();
+    else { mark(units[cursor]); }
+  }
+  document.getElementById("prev").addEventListener("click", function () { jump(-1); });
+  document.getElementById("next").addEventListener("click", function () { jump(1); });
+
+  rateEl.addEventListener("change", function () { if (playing) play(); });
+
+  document.querySelectorAll("[data-listen]").forEach(function (btn) {
+    btn.addEventListener("click", function () {
+      var si = sections.indexOf(btn.closest("section.sec"));
+      for (var i = 0; i < units.length; i++) {
+        if (units[i].section === si) { cursor = i; break; }
+      }
+      play();
+    });
+  });
+
+  window.addEventListener("beforeunload", function () { synth.cancel(); });
+})();
+</script>
