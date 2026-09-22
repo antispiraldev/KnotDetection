@@ -44,8 +44,24 @@ on the same three measures.
 - **Changes with no antecedents** (a change in the rules themselves) were not
   foreseen, as designed.
 
-These are results about methods on simulated data, not claims about real history.
-Testing on real historical data is Phase 2 and has not started. Full details are in
+### Phase 2: a first test on real history
+
+The same protocol was then run on real data: 300 windows of polity territory from
+**Cliopatria** (Seshat), one per polity, anonymised by a subagent so the analyst never
+saw which polity was which, with answers sealed and forecasts hashed before unsealing.
+
+- Methods trained on the simulator **do not transfer**: AUC 0.51–0.52.
+- Methods fitted on real data reach **AUC 0.65**, but that is mostly an artifact: 35
+  of the 36 windows whose territory had *already* collapsed inside the record count as
+  events. Excluding them, every method falls to **0.47–0.56, with intervals including
+  chance**.
+- **Nothing forecasts a polity's end** (AUC 0.46–0.52).
+- Classic early-warning signals are at chance here too (0.49).
+
+Details, including the pre-registration written before the data were downloaded, are
+in [phase2/](phase2/) and [LOG.md](LOG.md).
+
+These are results about methods, not claims about why particular polities fell. Full details are in
 the plain-language reports and in [LOG.md](LOG.md).
 
 ---
@@ -181,5 +197,6 @@ A new blind test goes through `scripts/gate3_run.py`, one step per call:
 
 ## Status
 
-The simulation phase is complete, with all four gates reached. Phase 2, real
-historical data, awaits approval and datasets.
+The simulation phase is complete, with all four gates reached. Phase 2 has produced
+its first blind result on real data (above). Phase 3, forecasts registered now and
+scored when outcomes arrive, has not started.

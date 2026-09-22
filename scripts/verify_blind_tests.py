@@ -54,7 +54,10 @@ def check(name: str, events: list[dict]) -> list[str]:
     if sha((rel / "truth.json").read_bytes()) != built["truth_sha256"]:
         fails.append("answers do not match the hash recorded at build")
     for layer, h in built["record_sha256"].items():
-        if sha((DATA / name / layer / "series.npz").read_bytes()) != h:
+        # Simulated test sets keep one folder per realism layer; external (real-data)
+        # ones keep a single record file at the top.
+        path = DATA / name / "series.npz" if built.get("external") else DATA / name / layer / "series.npz"
+        if sha(path.read_bytes()) != h:
             fails.append(f"record file {layer} does not match its hash")
 
     regs = {e["forecast_sha256"]: i for i, e in ev if e["event"] == "forecast_registered"}
