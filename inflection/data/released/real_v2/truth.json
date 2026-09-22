@@ -1,0 +1,5888 @@
+[
+  {
+    "era": "post1950",
+    "severe": false,
+    "transitioned": false,
+    "world_id": "real_v2-0000"
+  },
+  {
+    "era": "post1950",
+    "severe": false,
+    "transitioned": false,
+    "world_id": "real_v2-0001"
+  },
+  {
+    "era": "post1950",
+    "severe": false,
+    "transitioned": false,
+    "world_id": "real_v2-0002"
+  },
+  {
+    "era": "pre1950",
+    "severe": false,
+    "transitioned": false,
+    "world_id": "real_v2-0003"
+  },
+  {
+    "era": "pre1950",
+    "severe": false,
+    "transitioned": false,
+    "world_id": "real_v2-0004"
+  },
+  {
+    "era": "pre1950",
+    "severe": false,
+    "transitioned": true,
+    "world_id": "real_v2-0005"
+  },
+  {
+    "era": "pre1950",
+    "severe": false,
+    "transitioned": false,
+    "world_id": "real_v2-0006"
+  },
+  {
+    "era": "post1950",
+    "severe": false,
+    "transitioned": false,
+    "world_id": "real_v2-0007"
+  },
+  {
+    "era": "post1950",
+    "severe": false,
+    "transitioned": false,
+    "world_id": "real_v2-0008"
+  },
+  {
+    "era": "pre1950",
+    "severe": false,
+    "transitioned": false,
+    "world_id": "real_v2-0009"
+  },
+  {
+    "era": "pre1950",
+    "severe": false,
+    "transitioned": false,
+    "world_id": "real_v2-0010"
+  },
+  {
+    "era": "pre1950",
+    "severe": false,
+    "transitioned": false,
+    "world_id": "real_v2-0011"
+  },
+  {
+    "era": "pre1950",
+    "severe": false,
+    "transitioned": false,
+    "world_id": "real_v2-0012"
+  },
+  {
+    "era": "pre1950",
+    "severe": false,
+    "transitioned": false,
+    "world_id": "real_v2-0013"
+  },
+  {
+    "era": "pre1950",
+    "severe": false,
+    "transitioned": false,
+    "world_id": "real_v2-0014"
+  },
+  {
+    "era": "pre1950",
+    "severe": false,
+    "transitioned": false,
+    "world_id": "real_v2-0015"
+  },
+  {
+    "era": "pre1950",
+    "severe": false,
+    "transitioned": true,
+    "world_id": "real_v2-0016"
+  },
+  {
+    "era": "pre1950",
+    "severe": false,
+    "transitioned": false,
+    "world_id": "real_v2-0017"
+  },
+  {
+    "era": "pre1950",
+    "severe": false,
+    "transitioned": false,
+    "world_id": "real_v2-0018"
+  },
+  {
+    "era": "post1950",
+    "severe": false,
+    "transitioned": true,
+    "world_id": "real_v2-0019"
+  },
+  {
+    "era": "post1950",
+    "severe": true,
+    "transitioned": true,
+    "world_id": "real_v2-0020"
+  },
+  {
+    "era": "pre1950",
+    "severe": false,
+    "transitioned": false,
+    "world_id": "real_v2-0021"
+  },
+  {
+    "era": "post1950",
+    "severe": false,
+    "transitioned": false,
+    "world_id": "real_v2-0022"
+  },
+  {
+    "era": "pre1950",
+    "severe": false,
+    "transitioned": false,
+    "world_id": "real_v2-0023"
+  },
+  {
+    "era": "pre1950",
+    "severe": false,
+    "transitioned": false,
+    "world_id": "real_v2-0024"
+  },
+  {
+    "era": "post1950",
+    "severe": false,
+    "transitioned": false,
+    "world_id": "real_v2-0025"
+  },
+  {
+    "era": "post1950",
+    "severe": false,
+    "transitioned": false,
+    "world_id": "real_v2-0026"
+  },
+  {
+    "era": "pre1950",
+    "severe": false,
+    "transitioned": false,
+    "world_id": "real_v2-0027"
+  },
+  {
+    "era": "pre1950",
+    "severe": false,
+    "transitioned": false,
+    "world_id": "real_v2-0028"
+  },
+  {
+    "era": "post1950",
+    "severe": false,
+    "transitioned": false,
+    "world_id": "real_v2-0029"
+  },
+  {
+    "era": "pre1950",
+    "severe": false,
+    "transitioned": false,
+    "world_id": "real_v2-0030"
+  },
+  {
+    "era": "pre1950",
+    "severe": false,
+    "transitioned": true,
+    "world_id": "real_v2-0031"
+  },
+  {
+    "era": "post1950",
+    "severe": false,
+    "transitioned": false,
+    "world_id": "real_v2-0032"
+  },
+  {
+    "era": "pre1950",
+    "severe": false,
+    "transitioned": false,
+    "world_id": "real_v2-0033"
+  },
+  {
+    "era": "pre1950",
+    "severe": false,
+    "transitioned": false,
+    "world_id": "real_v2-0034"
+  },
+  {
+    "era": "post1950",
+    "severe": false,
+    "transitioned": false,
+    "world_id": "real_v2-0035"
+  },
+  {
+    "era": "post1950",
+    "severe": false,
+    "transitioned": false,
+    "world_id": "real_v2-0036"
+  },
+  {
+    "era": "post1950",
+    "severe": true,
+    "transitioned": true,
+    "world_id": "real_v2-0037"
+  },
+  {
+    "era": "post1950",
+    "severe": false,
+    "transitioned": false,
+    "world_id": "real_v2-0038"
+  },
+  {
+    "era": "pre1950",
+    "severe": false,
+    "transitioned": false,
+    "world_id": "real_v2-0039"
+  },
+  {
+    "era": "post1950",
+    "severe": false,
+    "transitioned": false,
+    "world_id": "real_v2-0040"
+  },
+  {
+    "era": "pre1950",
+    "severe": false,
+    "transitioned": false,
+    "world_id": "real_v2-0041"
+  },
+  {
+    "era": "pre1950",
+    "severe": false,
+    "transitioned": false,
+    "world_id": "real_v2-0042"
+  },
+  {
+    "era": "pre1950",
+    "severe": false,
+    "transitioned": false,
+    "world_id": "real_v2-0043"
+  },
+  {
+    "era": "pre1950",
+    "severe": false,
+    "transitioned": false,
+    "world_id": "real_v2-0044"
+  },
+  {
+    "era": "pre1950",
+    "severe": false,
+    "transitioned": false,
+    "world_id": "real_v2-0045"
+  },
+  {
+    "era": "pre1950",
+    "severe": false,
+    "transitioned": true,
+    "world_id": "real_v2-0046"
+  },
+  {
+    "era": "pre1950",
+    "severe": false,
+    "transitioned": false,
+    "world_id": "real_v2-0047"
+  },
+  {
+    "era": "pre1950",
+    "severe": false,
+    "transitioned": false,
+    "world_id": "real_v2-0048"
+  },
+  {
+    "era": "post1950",
+    "severe": false,
+    "transitioned": false,
+    "world_id": "real_v2-0049"
+  },
+  {
+    "era": "post1950",
+    "severe": false,
+    "transitioned": false,
+    "world_id": "real_v2-0050"
+  },
+  {
+    "era": "pre1950",
+    "severe": true,
+    "transitioned": true,
+    "world_id": "real_v2-0051"
+  },
+  {
+    "era": "post1950",
+    "severe": false,
+    "transitioned": false,
+    "world_id": "real_v2-0052"
+  },
+  {
+    "era": "post1950",
+    "severe": false,
+    "transitioned": false,
+    "world_id": "real_v2-0053"
+  },
+  {
+    "era": "pre1950",
+    "severe": false,
+    "transitioned": false,
+    "world_id": "real_v2-0054"
+  },
+  {
+    "era": "post1950",
+    "severe": false,
+    "transitioned": false,
+    "world_id": "real_v2-0055"
+  },
+  {
+    "era": "pre1950",
+    "severe": false,
+    "transitioned": false,
+    "world_id": "real_v2-0056"
+  },
+  {
+    "era": "pre1950",
+    "severe": false,
+    "transitioned": true,
+    "world_id": "real_v2-0057"
+  },
+  {
+    "era": "pre1950",
+    "severe": true,
+    "transitioned": true,
+    "world_id": "real_v2-0058"
+  },
+  {
+    "era": "pre1950",
+    "severe": false,
+    "transitioned": false,
+    "world_id": "real_v2-0059"
+  },
+  {
+    "era": "pre1950",
+    "severe": false,
+    "transitioned": false,
+    "world_id": "real_v2-0060"
+  },
+  {
+    "era": "pre1950",
+    "severe": false,
+    "transitioned": false,
+    "world_id": "real_v2-0061"
+  },
+  {
+    "era": "pre1950",
+    "severe": false,
+    "transitioned": false,
+    "world_id": "real_v2-0062"
+  },
+  {
+    "era": "post1950",
+    "severe": false,
+    "transitioned": false,
+    "world_id": "real_v2-0063"
+  },
+  {
+    "era": "post1950",
+    "severe": false,
+    "transitioned": true,
+    "world_id": "real_v2-0064"
+  },
+  {
+    "era": "pre1950",
+    "severe": false,
+    "transitioned": false,
+    "world_id": "real_v2-0065"
+  },
+  {
+    "era": "post1950",
+    "severe": false,
+    "transitioned": false,
+    "world_id": "real_v2-0066"
+  },
+  {
+    "era": "post1950",
+    "severe": false,
+    "transitioned": true,
+    "world_id": "real_v2-0067"
+  },
+  {
+    "era": "pre1950",
+    "severe": false,
+    "transitioned": false,
+    "world_id": "real_v2-0068"
+  },
+  {
+    "era": "post1950",
+    "severe": false,
+    "transitioned": false,
+    "world_id": "real_v2-0069"
+  },
+  {
+    "era": "post1950",
+    "severe": false,
+    "transitioned": false,
+    "world_id": "real_v2-0070"
+  },
+  {
+    "era": "pre1950",
+    "severe": false,
+    "transitioned": false,
+    "world_id": "real_v2-0071"
+  },
+  {
+    "era": "pre1950",
+    "severe": false,
+    "transitioned": false,
+    "world_id": "real_v2-0072"
+  },
+  {
+    "era": "post1950",
+    "severe": false,
+    "transitioned": false,
+    "world_id": "real_v2-0073"
+  },
+  {
+    "era": "pre1950",
+    "severe": false,
+    "transitioned": false,
+    "world_id": "real_v2-0074"
+  },
+  {
+    "era": "post1950",
+    "severe": false,
+    "transitioned": false,
+    "world_id": "real_v2-0075"
+  },
+  {
+    "era": "pre1950",
+    "severe": false,
+    "transitioned": false,
+    "world_id": "real_v2-0076"
+  },
+  {
+    "era": "pre1950",
+    "severe": false,
+    "transitioned": false,
+    "world_id": "real_v2-0077"
+  },
+  {
+    "era": "post1950",
+    "severe": false,
+    "transitioned": false,
+    "world_id": "real_v2-0078"
+  },
+  {
+    "era": "pre1950",
+    "severe": false,
+    "transitioned": true,
+    "world_id": "real_v2-0079"
+  },
+  {
+    "era": "pre1950",
+    "severe": false,
+    "transitioned": false,
+    "world_id": "real_v2-0080"
+  },
+  {
+    "era": "post1950",
+    "severe": false,
+    "transitioned": true,
+    "world_id": "real_v2-0081"
+  },
+  {
+    "era": "post1950",
+    "severe": true,
+    "transitioned": true,
+    "world_id": "real_v2-0082"
+  },
+  {
+    "era": "pre1950",
+    "severe": true,
+    "transitioned": true,
+    "world_id": "real_v2-0083"
+  },
+  {
+    "era": "pre1950",
+    "severe": false,
+    "transitioned": false,
+    "world_id": "real_v2-0084"
+  },
+  {
+    "era": "post1950",
+    "severe": false,
+    "transitioned": false,
+    "world_id": "real_v2-0085"
+  },
+  {
+    "era": "pre1950",
+    "severe": false,
+    "transitioned": false,
+    "world_id": "real_v2-0086"
+  },
+  {
+    "era": "post1950",
+    "severe": false,
+    "transitioned": false,
+    "world_id": "real_v2-0087"
+  },
+  {
+    "era": "pre1950",
+    "severe": false,
+    "transitioned": false,
+    "world_id": "real_v2-0088"
+  },
+  {
+    "era": "pre1950",
+    "severe": false,
+    "transitioned": false,
+    "world_id": "real_v2-0089"
+  },
+  {
+    "era": "pre1950",
+    "severe": false,
+    "transitioned": false,
+    "world_id": "real_v2-0090"
+  },
+  {
+    "era": "post1950",
+    "severe": false,
+    "transitioned": false,
+    "world_id": "real_v2-0091"
+  },
+  {
+    "era": "post1950",
+    "severe": false,
+    "transitioned": false,
+    "world_id": "real_v2-0092"
+  },
+  {
+    "era": "post1950",
+    "severe": false,
+    "transitioned": false,
+    "world_id": "real_v2-0093"
+  },
+  {
+    "era": "post1950",
+    "severe": false,
+    "transitioned": false,
+    "world_id": "real_v2-0094"
+  },
+  {
+    "era": "post1950",
+    "severe": false,
+    "transitioned": false,
+    "world_id": "real_v2-0095"
+  },
+  {
+    "era": "pre1950",
+    "severe": false,
+    "transitioned": true,
+    "world_id": "real_v2-0096"
+  },
+  {
+    "era": "pre1950",
+    "severe": false,
+    "transitioned": false,
+    "world_id": "real_v2-0097"
+  },
+  {
+    "era": "post1950",
+    "severe": false,
+    "transitioned": false,
+    "world_id": "real_v2-0098"
+  },
+  {
+    "era": "pre1950",
+    "severe": false,
+    "transitioned": false,
+    "world_id": "real_v2-0099"
+  },
+  {
+    "era": "pre1950",
+    "severe": false,
+    "transitioned": false,
+    "world_id": "real_v2-0100"
+  },
+  {
+    "era": "pre1950",
+    "severe": false,
+    "transitioned": true,
+    "world_id": "real_v2-0101"
+  },
+  {
+    "era": "pre1950",
+    "severe": false,
+    "transitioned": false,
+    "world_id": "real_v2-0102"
+  },
+  {
+    "era": "pre1950",
+    "severe": false,
+    "transitioned": true,
+    "world_id": "real_v2-0103"
+  },
+  {
+    "era": "pre1950",
+    "severe": false,
+    "transitioned": false,
+    "world_id": "real_v2-0104"
+  },
+  {
+    "era": "post1950",
+    "severe": false,
+    "transitioned": false,
+    "world_id": "real_v2-0105"
+  },
+  {
+    "era": "post1950",
+    "severe": false,
+    "transitioned": false,
+    "world_id": "real_v2-0106"
+  },
+  {
+    "era": "pre1950",
+    "severe": false,
+    "transitioned": false,
+    "world_id": "real_v2-0107"
+  },
+  {
+    "era": "post1950",
+    "severe": false,
+    "transitioned": false,
+    "world_id": "real_v2-0108"
+  },
+  {
+    "era": "pre1950",
+    "severe": false,
+    "transitioned": false,
+    "world_id": "real_v2-0109"
+  },
+  {
+    "era": "pre1950",
+    "severe": false,
+    "transitioned": true,
+    "world_id": "real_v2-0110"
+  },
+  {
+    "era": "post1950",
+    "severe": false,
+    "transitioned": false,
+    "world_id": "real_v2-0111"
+  },
+  {
+    "era": "pre1950",
+    "severe": false,
+    "transitioned": false,
+    "world_id": "real_v2-0112"
+  },
+  {
+    "era": "post1950",
+    "severe": false,
+    "transitioned": false,
+    "world_id": "real_v2-0113"
+  },
+  {
+    "era": "pre1950",
+    "severe": false,
+    "transitioned": true,
+    "world_id": "real_v2-0114"
+  },
+  {
+    "era": "post1950",
+    "severe": false,
+    "transitioned": false,
+    "world_id": "real_v2-0115"
+  },
+  {
+    "era": "post1950",
+    "severe": false,
+    "transitioned": false,
+    "world_id": "real_v2-0116"
+  },
+  {
+    "era": "post1950",
+    "severe": false,
+    "transitioned": false,
+    "world_id": "real_v2-0117"
+  },
+  {
+    "era": "post1950",
+    "severe": false,
+    "transitioned": false,
+    "world_id": "real_v2-0118"
+  },
+  {
+    "era": "pre1950",
+    "severe": false,
+    "transitioned": false,
+    "world_id": "real_v2-0119"
+  },
+  {
+    "era": "post1950",
+    "severe": false,
+    "transitioned": false,
+    "world_id": "real_v2-0120"
+  },
+  {
+    "era": "pre1950",
+    "severe": false,
+    "transitioned": false,
+    "world_id": "real_v2-0121"
+  },
+  {
+    "era": "pre1950",
+    "severe": false,
+    "transitioned": false,
+    "world_id": "real_v2-0122"
+  },
+  {
+    "era": "post1950",
+    "severe": false,
+    "transitioned": false,
+    "world_id": "real_v2-0123"
+  },
+  {
+    "era": "post1950",
+    "severe": false,
+    "transitioned": false,
+    "world_id": "real_v2-0124"
+  },
+  {
+    "era": "pre1950",
+    "severe": false,
+    "transitioned": false,
+    "world_id": "real_v2-0125"
+  },
+  {
+    "era": "pre1950",
+    "severe": false,
+    "transitioned": false,
+    "world_id": "real_v2-0126"
+  },
+  {
+    "era": "pre1950",
+    "severe": false,
+    "transitioned": true,
+    "world_id": "real_v2-0127"
+  },
+  {
+    "era": "pre1950",
+    "severe": false,
+    "transitioned": false,
+    "world_id": "real_v2-0128"
+  },
+  {
+    "era": "pre1950",
+    "severe": false,
+    "transitioned": false,
+    "world_id": "real_v2-0129"
+  },
+  {
+    "era": "post1950",
+    "severe": false,
+    "transitioned": false,
+    "world_id": "real_v2-0130"
+  },
+  {
+    "era": "pre1950",
+    "severe": false,
+    "transitioned": false,
+    "world_id": "real_v2-0131"
+  },
+  {
+    "era": "pre1950",
+    "severe": false,
+    "transitioned": true,
+    "world_id": "real_v2-0132"
+  },
+  {
+    "era": "post1950",
+    "severe": false,
+    "transitioned": false,
+    "world_id": "real_v2-0133"
+  },
+  {
+    "era": "post1950",
+    "severe": false,
+    "transitioned": false,
+    "world_id": "real_v2-0134"
+  },
+  {
+    "era": "pre1950",
+    "severe": false,
+    "transitioned": false,
+    "world_id": "real_v2-0135"
+  },
+  {
+    "era": "post1950",
+    "severe": false,
+    "transitioned": false,
+    "world_id": "real_v2-0136"
+  },
+  {
+    "era": "pre1950",
+    "severe": false,
+    "transitioned": false,
+    "world_id": "real_v2-0137"
+  },
+  {
+    "era": "pre1950",
+    "severe": false,
+    "transitioned": false,
+    "world_id": "real_v2-0138"
+  },
+  {
+    "era": "post1950",
+    "severe": false,
+    "transitioned": false,
+    "world_id": "real_v2-0139"
+  },
+  {
+    "era": "pre1950",
+    "severe": false,
+    "transitioned": false,
+    "world_id": "real_v2-0140"
+  },
+  {
+    "era": "pre1950",
+    "severe": false,
+    "transitioned": false,
+    "world_id": "real_v2-0141"
+  },
+  {
+    "era": "post1950",
+    "severe": false,
+    "transitioned": false,
+    "world_id": "real_v2-0142"
+  },
+  {
+    "era": "pre1950",
+    "severe": false,
+    "transitioned": true,
+    "world_id": "real_v2-0143"
+  },
+  {
+    "era": "post1950",
+    "severe": false,
+    "transitioned": false,
+    "world_id": "real_v2-0144"
+  },
+  {
+    "era": "post1950",
+    "severe": false,
+    "transitioned": false,
+    "world_id": "real_v2-0145"
+  },
+  {
+    "era": "pre1950",
+    "severe": false,
+    "transitioned": true,
+    "world_id": "real_v2-0146"
+  },
+  {
+    "era": "post1950",
+    "severe": false,
+    "transitioned": false,
+    "world_id": "real_v2-0147"
+  },
+  {
+    "era": "post1950",
+    "severe": false,
+    "transitioned": false,
+    "world_id": "real_v2-0148"
+  },
+  {
+    "era": "post1950",
+    "severe": false,
+    "transitioned": false,
+    "world_id": "real_v2-0149"
+  },
+  {
+    "era": "pre1950",
+    "severe": false,
+    "transitioned": false,
+    "world_id": "real_v2-0150"
+  },
+  {
+    "era": "post1950",
+    "severe": false,
+    "transitioned": false,
+    "world_id": "real_v2-0151"
+  },
+  {
+    "era": "post1950",
+    "severe": false,
+    "transitioned": false,
+    "world_id": "real_v2-0152"
+  },
+  {
+    "era": "post1950",
+    "severe": false,
+    "transitioned": false,
+    "world_id": "real_v2-0153"
+  },
+  {
+    "era": "pre1950",
+    "severe": false,
+    "transitioned": false,
+    "world_id": "real_v2-0154"
+  },
+  {
+    "era": "post1950",
+    "severe": false,
+    "transitioned": false,
+    "world_id": "real_v2-0155"
+  },
+  {
+    "era": "post1950",
+    "severe": false,
+    "transitioned": false,
+    "world_id": "real_v2-0156"
+  },
+  {
+    "era": "pre1950",
+    "severe": false,
+    "transitioned": false,
+    "world_id": "real_v2-0157"
+  },
+  {
+    "era": "post1950",
+    "severe": false,
+    "transitioned": true,
+    "world_id": "real_v2-0158"
+  },
+  {
+    "era": "pre1950",
+    "severe": false,
+    "transitioned": false,
+    "world_id": "real_v2-0159"
+  },
+  {
+    "era": "pre1950",
+    "severe": false,
+    "transitioned": false,
+    "world_id": "real_v2-0160"
+  },
+  {
+    "era": "pre1950",
+    "severe": false,
+    "transitioned": false,
+    "world_id": "real_v2-0161"
+  },
+  {
+    "era": "post1950",
+    "severe": false,
+    "transitioned": false,
+    "world_id": "real_v2-0162"
+  },
+  {
+    "era": "pre1950",
+    "severe": false,
+    "transitioned": false,
+    "world_id": "real_v2-0163"
+  },
+  {
+    "era": "pre1950",
+    "severe": false,
+    "transitioned": false,
+    "world_id": "real_v2-0164"
+  },
+  {
+    "era": "pre1950",
+    "severe": true,
+    "transitioned": true,
+    "world_id": "real_v2-0165"
+  },
+  {
+    "era": "post1950",
+    "severe": true,
+    "transitioned": true,
+    "world_id": "real_v2-0166"
+  },
+  {
+    "era": "pre1950",
+    "severe": false,
+    "transitioned": false,
+    "world_id": "real_v2-0167"
+  },
+  {
+    "era": "pre1950",
+    "severe": false,
+    "transitioned": false,
+    "world_id": "real_v2-0168"
+  },
+  {
+    "era": "pre1950",
+    "severe": false,
+    "transitioned": false,
+    "world_id": "real_v2-0169"
+  },
+  {
+    "era": "post1950",
+    "severe": false,
+    "transitioned": false,
+    "world_id": "real_v2-0170"
+  },
+  {
+    "era": "post1950",
+    "severe": false,
+    "transitioned": false,
+    "world_id": "real_v2-0171"
+  },
+  {
+    "era": "post1950",
+    "severe": false,
+    "transitioned": true,
+    "world_id": "real_v2-0172"
+  },
+  {
+    "era": "post1950",
+    "severe": false,
+    "transitioned": false,
+    "world_id": "real_v2-0173"
+  },
+  {
+    "era": "post1950",
+    "severe": false,
+    "transitioned": false,
+    "world_id": "real_v2-0174"
+  },
+  {
+    "era": "pre1950",
+    "severe": false,
+    "transitioned": false,
+    "world_id": "real_v2-0175"
+  },
+  {
+    "era": "post1950",
+    "severe": false,
+    "transitioned": false,
+    "world_id": "real_v2-0176"
+  },
+  {
+    "era": "pre1950",
+    "severe": false,
+    "transitioned": false,
+    "world_id": "real_v2-0177"
+  },
+  {
+    "era": "post1950",
+    "severe": false,
+    "transitioned": false,
+    "world_id": "real_v2-0178"
+  },
+  {
+    "era": "post1950",
+    "severe": false,
+    "transitioned": false,
+    "world_id": "real_v2-0179"
+  },
+  {
+    "era": "post1950",
+    "severe": false,
+    "transitioned": false,
+    "world_id": "real_v2-0180"
+  },
+  {
+    "era": "pre1950",
+    "severe": false,
+    "transitioned": false,
+    "world_id": "real_v2-0181"
+  },
+  {
+    "era": "pre1950",
+    "severe": false,
+    "transitioned": false,
+    "world_id": "real_v2-0182"
+  },
+  {
+    "era": "post1950",
+    "severe": false,
+    "transitioned": false,
+    "world_id": "real_v2-0183"
+  },
+  {
+    "era": "pre1950",
+    "severe": false,
+    "transitioned": false,
+    "world_id": "real_v2-0184"
+  },
+  {
+    "era": "post1950",
+    "severe": false,
+    "transitioned": false,
+    "world_id": "real_v2-0185"
+  },
+  {
+    "era": "post1950",
+    "severe": false,
+    "transitioned": false,
+    "world_id": "real_v2-0186"
+  },
+  {
+    "era": "pre1950",
+    "severe": false,
+    "transitioned": true,
+    "world_id": "real_v2-0187"
+  },
+  {
+    "era": "pre1950",
+    "severe": false,
+    "transitioned": false,
+    "world_id": "real_v2-0188"
+  },
+  {
+    "era": "post1950",
+    "severe": false,
+    "transitioned": false,
+    "world_id": "real_v2-0189"
+  },
+  {
+    "era": "pre1950",
+    "severe": false,
+    "transitioned": false,
+    "world_id": "real_v2-0190"
+  },
+  {
+    "era": "pre1950",
+    "severe": false,
+    "transitioned": false,
+    "world_id": "real_v2-0191"
+  },
+  {
+    "era": "post1950",
+    "severe": false,
+    "transitioned": false,
+    "world_id": "real_v2-0192"
+  },
+  {
+    "era": "pre1950",
+    "severe": false,
+    "transitioned": false,
+    "world_id": "real_v2-0193"
+  },
+  {
+    "era": "post1950",
+    "severe": false,
+    "transitioned": false,
+    "world_id": "real_v2-0194"
+  },
+  {
+    "era": "post1950",
+    "severe": false,
+    "transitioned": false,
+    "world_id": "real_v2-0195"
+  },
+  {
+    "era": "post1950",
+    "severe": false,
+    "transitioned": false,
+    "world_id": "real_v2-0196"
+  },
+  {
+    "era": "pre1950",
+    "severe": false,
+    "transitioned": false,
+    "world_id": "real_v2-0197"
+  },
+  {
+    "era": "pre1950",
+    "severe": false,
+    "transitioned": true,
+    "world_id": "real_v2-0198"
+  },
+  {
+    "era": "pre1950",
+    "severe": false,
+    "transitioned": false,
+    "world_id": "real_v2-0199"
+  },
+  {
+    "era": "post1950",
+    "severe": false,
+    "transitioned": false,
+    "world_id": "real_v2-0200"
+  },
+  {
+    "era": "pre1950",
+    "severe": false,
+    "transitioned": false,
+    "world_id": "real_v2-0201"
+  },
+  {
+    "era": "post1950",
+    "severe": false,
+    "transitioned": false,
+    "world_id": "real_v2-0202"
+  },
+  {
+    "era": "post1950",
+    "severe": false,
+    "transitioned": false,
+    "world_id": "real_v2-0203"
+  },
+  {
+    "era": "post1950",
+    "severe": false,
+    "transitioned": false,
+    "world_id": "real_v2-0204"
+  },
+  {
+    "era": "post1950",
+    "severe": false,
+    "transitioned": false,
+    "world_id": "real_v2-0205"
+  },
+  {
+    "era": "pre1950",
+    "severe": false,
+    "transitioned": false,
+    "world_id": "real_v2-0206"
+  },
+  {
+    "era": "post1950",
+    "severe": false,
+    "transitioned": false,
+    "world_id": "real_v2-0207"
+  },
+  {
+    "era": "post1950",
+    "severe": false,
+    "transitioned": false,
+    "world_id": "real_v2-0208"
+  },
+  {
+    "era": "post1950",
+    "severe": false,
+    "transitioned": false,
+    "world_id": "real_v2-0209"
+  },
+  {
+    "era": "post1950",
+    "severe": false,
+    "transitioned": false,
+    "world_id": "real_v2-0210"
+  },
+  {
+    "era": "pre1950",
+    "severe": false,
+    "transitioned": false,
+    "world_id": "real_v2-0211"
+  },
+  {
+    "era": "post1950",
+    "severe": false,
+    "transitioned": false,
+    "world_id": "real_v2-0212"
+  },
+  {
+    "era": "pre1950",
+    "severe": false,
+    "transitioned": false,
+    "world_id": "real_v2-0213"
+  },
+  {
+    "era": "post1950",
+    "severe": false,
+    "transitioned": false,
+    "world_id": "real_v2-0214"
+  },
+  {
+    "era": "post1950",
+    "severe": false,
+    "transitioned": false,
+    "world_id": "real_v2-0215"
+  },
+  {
+    "era": "post1950",
+    "severe": false,
+    "transitioned": false,
+    "world_id": "real_v2-0216"
+  },
+  {
+    "era": "post1950",
+    "severe": false,
+    "transitioned": false,
+    "world_id": "real_v2-0217"
+  },
+  {
+    "era": "pre1950",
+    "severe": false,
+    "transitioned": false,
+    "world_id": "real_v2-0218"
+  },
+  {
+    "era": "pre1950",
+    "severe": false,
+    "transitioned": false,
+    "world_id": "real_v2-0219"
+  },
+  {
+    "era": "post1950",
+    "severe": false,
+    "transitioned": false,
+    "world_id": "real_v2-0220"
+  },
+  {
+    "era": "pre1950",
+    "severe": false,
+    "transitioned": false,
+    "world_id": "real_v2-0221"
+  },
+  {
+    "era": "pre1950",
+    "severe": false,
+    "transitioned": false,
+    "world_id": "real_v2-0222"
+  },
+  {
+    "era": "post1950",
+    "severe": false,
+    "transitioned": false,
+    "world_id": "real_v2-0223"
+  },
+  {
+    "era": "pre1950",
+    "severe": false,
+    "transitioned": false,
+    "world_id": "real_v2-0224"
+  },
+  {
+    "era": "post1950",
+    "severe": false,
+    "transitioned": false,
+    "world_id": "real_v2-0225"
+  },
+  {
+    "era": "pre1950",
+    "severe": false,
+    "transitioned": false,
+    "world_id": "real_v2-0226"
+  },
+  {
+    "era": "post1950",
+    "severe": false,
+    "transitioned": false,
+    "world_id": "real_v2-0227"
+  },
+  {
+    "era": "pre1950",
+    "severe": false,
+    "transitioned": false,
+    "world_id": "real_v2-0228"
+  },
+  {
+    "era": "pre1950",
+    "severe": false,
+    "transitioned": false,
+    "world_id": "real_v2-0229"
+  },
+  {
+    "era": "post1950",
+    "severe": false,
+    "transitioned": false,
+    "world_id": "real_v2-0230"
+  },
+  {
+    "era": "pre1950",
+    "severe": false,
+    "transitioned": false,
+    "world_id": "real_v2-0231"
+  },
+  {
+    "era": "post1950",
+    "severe": false,
+    "transitioned": false,
+    "world_id": "real_v2-0232"
+  },
+  {
+    "era": "pre1950",
+    "severe": false,
+    "transitioned": false,
+    "world_id": "real_v2-0233"
+  },
+  {
+    "era": "pre1950",
+    "severe": false,
+    "transitioned": false,
+    "world_id": "real_v2-0234"
+  },
+  {
+    "era": "post1950",
+    "severe": false,
+    "transitioned": true,
+    "world_id": "real_v2-0235"
+  },
+  {
+    "era": "pre1950",
+    "severe": false,
+    "transitioned": false,
+    "world_id": "real_v2-0236"
+  },
+  {
+    "era": "pre1950",
+    "severe": false,
+    "transitioned": false,
+    "world_id": "real_v2-0237"
+  },
+  {
+    "era": "pre1950",
+    "severe": false,
+    "transitioned": false,
+    "world_id": "real_v2-0238"
+  },
+  {
+    "era": "pre1950",
+    "severe": false,
+    "transitioned": false,
+    "world_id": "real_v2-0239"
+  },
+  {
+    "era": "pre1950",
+    "severe": true,
+    "transitioned": true,
+    "world_id": "real_v2-0240"
+  },
+  {
+    "era": "post1950",
+    "severe": false,
+    "transitioned": false,
+    "world_id": "real_v2-0241"
+  },
+  {
+    "era": "pre1950",
+    "severe": false,
+    "transitioned": false,
+    "world_id": "real_v2-0242"
+  },
+  {
+    "era": "post1950",
+    "severe": false,
+    "transitioned": false,
+    "world_id": "real_v2-0243"
+  },
+  {
+    "era": "post1950",
+    "severe": false,
+    "transitioned": false,
+    "world_id": "real_v2-0244"
+  },
+  {
+    "era": "pre1950",
+    "severe": false,
+    "transitioned": false,
+    "world_id": "real_v2-0245"
+  },
+  {
+    "era": "pre1950",
+    "severe": false,
+    "transitioned": false,
+    "world_id": "real_v2-0246"
+  },
+  {
+    "era": "post1950",
+    "severe": false,
+    "transitioned": false,
+    "world_id": "real_v2-0247"
+  },
+  {
+    "era": "pre1950",
+    "severe": false,
+    "transitioned": false,
+    "world_id": "real_v2-0248"
+  },
+  {
+    "era": "pre1950",
+    "severe": false,
+    "transitioned": true,
+    "world_id": "real_v2-0249"
+  },
+  {
+    "era": "post1950",
+    "severe": false,
+    "transitioned": true,
+    "world_id": "real_v2-0250"
+  },
+  {
+    "era": "pre1950",
+    "severe": false,
+    "transitioned": false,
+    "world_id": "real_v2-0251"
+  },
+  {
+    "era": "pre1950",
+    "severe": true,
+    "transitioned": true,
+    "world_id": "real_v2-0252"
+  },
+  {
+    "era": "post1950",
+    "severe": false,
+    "transitioned": false,
+    "world_id": "real_v2-0253"
+  },
+  {
+    "era": "post1950",
+    "severe": false,
+    "transitioned": false,
+    "world_id": "real_v2-0254"
+  },
+  {
+    "era": "post1950",
+    "severe": false,
+    "transitioned": true,
+    "world_id": "real_v2-0255"
+  },
+  {
+    "era": "post1950",
+    "severe": false,
+    "transitioned": false,
+    "world_id": "real_v2-0256"
+  },
+  {
+    "era": "pre1950",
+    "severe": false,
+    "transitioned": false,
+    "world_id": "real_v2-0257"
+  },
+  {
+    "era": "post1950",
+    "severe": false,
+    "transitioned": false,
+    "world_id": "real_v2-0258"
+  },
+  {
+    "era": "pre1950",
+    "severe": false,
+    "transitioned": false,
+    "world_id": "real_v2-0259"
+  },
+  {
+    "era": "post1950",
+    "severe": false,
+    "transitioned": false,
+    "world_id": "real_v2-0260"
+  },
+  {
+    "era": "pre1950",
+    "severe": false,
+    "transitioned": false,
+    "world_id": "real_v2-0261"
+  },
+  {
+    "era": "post1950",
+    "severe": true,
+    "transitioned": true,
+    "world_id": "real_v2-0262"
+  },
+  {
+    "era": "post1950",
+    "severe": false,
+    "transitioned": false,
+    "world_id": "real_v2-0263"
+  },
+  {
+    "era": "pre1950",
+    "severe": false,
+    "transitioned": false,
+    "world_id": "real_v2-0264"
+  },
+  {
+    "era": "pre1950",
+    "severe": false,
+    "transitioned": false,
+    "world_id": "real_v2-0265"
+  },
+  {
+    "era": "pre1950",
+    "severe": false,
+    "transitioned": false,
+    "world_id": "real_v2-0266"
+  },
+  {
+    "era": "pre1950",
+    "severe": false,
+    "transitioned": false,
+    "world_id": "real_v2-0267"
+  },
+  {
+    "era": "pre1950",
+    "severe": false,
+    "transitioned": false,
+    "world_id": "real_v2-0268"
+  },
+  {
+    "era": "post1950",
+    "severe": false,
+    "transitioned": false,
+    "world_id": "real_v2-0269"
+  },
+  {
+    "era": "post1950",
+    "severe": true,
+    "transitioned": true,
+    "world_id": "real_v2-0270"
+  },
+  {
+    "era": "post1950",
+    "severe": false,
+    "transitioned": false,
+    "world_id": "real_v2-0271"
+  },
+  {
+    "era": "post1950",
+    "severe": false,
+    "transitioned": false,
+    "world_id": "real_v2-0272"
+  },
+  {
+    "era": "post1950",
+    "severe": false,
+    "transitioned": false,
+    "world_id": "real_v2-0273"
+  },
+  {
+    "era": "pre1950",
+    "severe": false,
+    "transitioned": false,
+    "world_id": "real_v2-0274"
+  },
+  {
+    "era": "post1950",
+    "severe": false,
+    "transitioned": false,
+    "world_id": "real_v2-0275"
+  },
+  {
+    "era": "pre1950",
+    "severe": false,
+    "transitioned": false,
+    "world_id": "real_v2-0276"
+  },
+  {
+    "era": "post1950",
+    "severe": false,
+    "transitioned": false,
+    "world_id": "real_v2-0277"
+  },
+  {
+    "era": "post1950",
+    "severe": false,
+    "transitioned": false,
+    "world_id": "real_v2-0278"
+  },
+  {
+    "era": "pre1950",
+    "severe": false,
+    "transitioned": false,
+    "world_id": "real_v2-0279"
+  },
+  {
+    "era": "post1950",
+    "severe": false,
+    "transitioned": false,
+    "world_id": "real_v2-0280"
+  },
+  {
+    "era": "pre1950",
+    "severe": false,
+    "transitioned": false,
+    "world_id": "real_v2-0281"
+  },
+  {
+    "era": "post1950",
+    "severe": false,
+    "transitioned": false,
+    "world_id": "real_v2-0282"
+  },
+  {
+    "era": "post1950",
+    "severe": false,
+    "transitioned": false,
+    "world_id": "real_v2-0283"
+  },
+  {
+    "era": "post1950",
+    "severe": false,
+    "transitioned": false,
+    "world_id": "real_v2-0284"
+  },
+  {
+    "era": "pre1950",
+    "severe": true,
+    "transitioned": true,
+    "world_id": "real_v2-0285"
+  },
+  {
+    "era": "post1950",
+    "severe": false,
+    "transitioned": false,
+    "world_id": "real_v2-0286"
+  },
+  {
+    "era": "post1950",
+    "severe": false,
+    "transitioned": false,
+    "world_id": "real_v2-0287"
+  },
+  {
+    "era": "pre1950",
+    "severe": false,
+    "transitioned": false,
+    "world_id": "real_v2-0288"
+  },
+  {
+    "era": "pre1950",
+    "severe": false,
+    "transitioned": false,
+    "world_id": "real_v2-0289"
+  },
+  {
+    "era": "pre1950",
+    "severe": false,
+    "transitioned": false,
+    "world_id": "real_v2-0290"
+  },
+  {
+    "era": "pre1950",
+    "severe": false,
+    "transitioned": false,
+    "world_id": "real_v2-0291"
+  },
+  {
+    "era": "post1950",
+    "severe": false,
+    "transitioned": false,
+    "world_id": "real_v2-0292"
+  },
+  {
+    "era": "pre1950",
+    "severe": false,
+    "transitioned": false,
+    "world_id": "real_v2-0293"
+  },
+  {
+    "era": "pre1950",
+    "severe": false,
+    "transitioned": false,
+    "world_id": "real_v2-0294"
+  },
+  {
+    "era": "pre1950",
+    "severe": false,
+    "transitioned": false,
+    "world_id": "real_v2-0295"
+  },
+  {
+    "era": "pre1950",
+    "severe": false,
+    "transitioned": false,
+    "world_id": "real_v2-0296"
+  },
+  {
+    "era": "post1950",
+    "severe": false,
+    "transitioned": false,
+    "world_id": "real_v2-0297"
+  },
+  {
+    "era": "post1950",
+    "severe": false,
+    "transitioned": false,
+    "world_id": "real_v2-0298"
+  },
+  {
+    "era": "pre1950",
+    "severe": false,
+    "transitioned": false,
+    "world_id": "real_v2-0299"
+  },
+  {
+    "era": "pre1950",
+    "severe": false,
+    "transitioned": false,
+    "world_id": "real_v2-0300"
+  },
+  {
+    "era": "pre1950",
+    "severe": false,
+    "transitioned": false,
+    "world_id": "real_v2-0301"
+  },
+  {
+    "era": "pre1950",
+    "severe": false,
+    "transitioned": false,
+    "world_id": "real_v2-0302"
+  },
+  {
+    "era": "pre1950",
+    "severe": false,
+    "transitioned": true,
+    "world_id": "real_v2-0303"
+  },
+  {
+    "era": "post1950",
+    "severe": false,
+    "transitioned": false,
+    "world_id": "real_v2-0304"
+  },
+  {
+    "era": "pre1950",
+    "severe": true,
+    "transitioned": true,
+    "world_id": "real_v2-0305"
+  },
+  {
+    "era": "pre1950",
+    "severe": false,
+    "transitioned": false,
+    "world_id": "real_v2-0306"
+  },
+  {
+    "era": "pre1950",
+    "severe": false,
+    "transitioned": false,
+    "world_id": "real_v2-0307"
+  },
+  {
+    "era": "pre1950",
+    "severe": false,
+    "transitioned": false,
+    "world_id": "real_v2-0308"
+  },
+  {
+    "era": "pre1950",
+    "severe": false,
+    "transitioned": false,
+    "world_id": "real_v2-0309"
+  },
+  {
+    "era": "post1950",
+    "severe": false,
+    "transitioned": false,
+    "world_id": "real_v2-0310"
+  },
+  {
+    "era": "pre1950",
+    "severe": false,
+    "transitioned": false,
+    "world_id": "real_v2-0311"
+  },
+  {
+    "era": "pre1950",
+    "severe": false,
+    "transitioned": false,
+    "world_id": "real_v2-0312"
+  },
+  {
+    "era": "post1950",
+    "severe": false,
+    "transitioned": false,
+    "world_id": "real_v2-0313"
+  },
+  {
+    "era": "post1950",
+    "severe": false,
+    "transitioned": false,
+    "world_id": "real_v2-0314"
+  },
+  {
+    "era": "post1950",
+    "severe": false,
+    "transitioned": false,
+    "world_id": "real_v2-0315"
+  },
+  {
+    "era": "pre1950",
+    "severe": false,
+    "transitioned": true,
+    "world_id": "real_v2-0316"
+  },
+  {
+    "era": "post1950",
+    "severe": true,
+    "transitioned": true,
+    "world_id": "real_v2-0317"
+  },
+  {
+    "era": "pre1950",
+    "severe": false,
+    "transitioned": false,
+    "world_id": "real_v2-0318"
+  },
+  {
+    "era": "post1950",
+    "severe": false,
+    "transitioned": false,
+    "world_id": "real_v2-0319"
+  },
+  {
+    "era": "pre1950",
+    "severe": false,
+    "transitioned": true,
+    "world_id": "real_v2-0320"
+  },
+  {
+    "era": "post1950",
+    "severe": false,
+    "transitioned": false,
+    "world_id": "real_v2-0321"
+  },
+  {
+    "era": "pre1950",
+    "severe": false,
+    "transitioned": false,
+    "world_id": "real_v2-0322"
+  },
+  {
+    "era": "pre1950",
+    "severe": false,
+    "transitioned": false,
+    "world_id": "real_v2-0323"
+  },
+  {
+    "era": "pre1950",
+    "severe": false,
+    "transitioned": false,
+    "world_id": "real_v2-0324"
+  },
+  {
+    "era": "pre1950",
+    "severe": false,
+    "transitioned": false,
+    "world_id": "real_v2-0325"
+  },
+  {
+    "era": "post1950",
+    "severe": true,
+    "transitioned": true,
+    "world_id": "real_v2-0326"
+  },
+  {
+    "era": "pre1950",
+    "severe": false,
+    "transitioned": false,
+    "world_id": "real_v2-0327"
+  },
+  {
+    "era": "post1950",
+    "severe": false,
+    "transitioned": false,
+    "world_id": "real_v2-0328"
+  },
+  {
+    "era": "pre1950",
+    "severe": false,
+    "transitioned": false,
+    "world_id": "real_v2-0329"
+  },
+  {
+    "era": "pre1950",
+    "severe": false,
+    "transitioned": false,
+    "world_id": "real_v2-0330"
+  },
+  {
+    "era": "post1950",
+    "severe": false,
+    "transitioned": false,
+    "world_id": "real_v2-0331"
+  },
+  {
+    "era": "pre1950",
+    "severe": false,
+    "transitioned": false,
+    "world_id": "real_v2-0332"
+  },
+  {
+    "era": "pre1950",
+    "severe": false,
+    "transitioned": false,
+    "world_id": "real_v2-0333"
+  },
+  {
+    "era": "pre1950",
+    "severe": false,
+    "transitioned": true,
+    "world_id": "real_v2-0334"
+  },
+  {
+    "era": "pre1950",
+    "severe": false,
+    "transitioned": false,
+    "world_id": "real_v2-0335"
+  },
+  {
+    "era": "pre1950",
+    "severe": false,
+    "transitioned": false,
+    "world_id": "real_v2-0336"
+  },
+  {
+    "era": "pre1950",
+    "severe": true,
+    "transitioned": true,
+    "world_id": "real_v2-0337"
+  },
+  {
+    "era": "post1950",
+    "severe": false,
+    "transitioned": false,
+    "world_id": "real_v2-0338"
+  },
+  {
+    "era": "pre1950",
+    "severe": false,
+    "transitioned": false,
+    "world_id": "real_v2-0339"
+  },
+  {
+    "era": "pre1950",
+    "severe": false,
+    "transitioned": false,
+    "world_id": "real_v2-0340"
+  },
+  {
+    "era": "pre1950",
+    "severe": false,
+    "transitioned": false,
+    "world_id": "real_v2-0341"
+  },
+  {
+    "era": "post1950",
+    "severe": false,
+    "transitioned": false,
+    "world_id": "real_v2-0342"
+  },
+  {
+    "era": "pre1950",
+    "severe": false,
+    "transitioned": false,
+    "world_id": "real_v2-0343"
+  },
+  {
+    "era": "pre1950",
+    "severe": false,
+    "transitioned": false,
+    "world_id": "real_v2-0344"
+  },
+  {
+    "era": "pre1950",
+    "severe": false,
+    "transitioned": false,
+    "world_id": "real_v2-0345"
+  },
+  {
+    "era": "pre1950",
+    "severe": true,
+    "transitioned": true,
+    "world_id": "real_v2-0346"
+  },
+  {
+    "era": "pre1950",
+    "severe": false,
+    "transitioned": false,
+    "world_id": "real_v2-0347"
+  },
+  {
+    "era": "pre1950",
+    "severe": false,
+    "transitioned": false,
+    "world_id": "real_v2-0348"
+  },
+  {
+    "era": "post1950",
+    "severe": false,
+    "transitioned": false,
+    "world_id": "real_v2-0349"
+  },
+  {
+    "era": "post1950",
+    "severe": false,
+    "transitioned": false,
+    "world_id": "real_v2-0350"
+  },
+  {
+    "era": "pre1950",
+    "severe": false,
+    "transitioned": false,
+    "world_id": "real_v2-0351"
+  },
+  {
+    "era": "post1950",
+    "severe": false,
+    "transitioned": false,
+    "world_id": "real_v2-0352"
+  },
+  {
+    "era": "post1950",
+    "severe": false,
+    "transitioned": false,
+    "world_id": "real_v2-0353"
+  },
+  {
+    "era": "post1950",
+    "severe": false,
+    "transitioned": false,
+    "world_id": "real_v2-0354"
+  },
+  {
+    "era": "post1950",
+    "severe": false,
+    "transitioned": false,
+    "world_id": "real_v2-0355"
+  },
+  {
+    "era": "post1950",
+    "severe": false,
+    "transitioned": false,
+    "world_id": "real_v2-0356"
+  },
+  {
+    "era": "pre1950",
+    "severe": false,
+    "transitioned": false,
+    "world_id": "real_v2-0357"
+  },
+  {
+    "era": "pre1950",
+    "severe": false,
+    "transitioned": true,
+    "world_id": "real_v2-0358"
+  },
+  {
+    "era": "pre1950",
+    "severe": false,
+    "transitioned": false,
+    "world_id": "real_v2-0359"
+  },
+  {
+    "era": "post1950",
+    "severe": false,
+    "transitioned": false,
+    "world_id": "real_v2-0360"
+  },
+  {
+    "era": "post1950",
+    "severe": true,
+    "transitioned": true,
+    "world_id": "real_v2-0361"
+  },
+  {
+    "era": "pre1950",
+    "severe": false,
+    "transitioned": false,
+    "world_id": "real_v2-0362"
+  },
+  {
+    "era": "pre1950",
+    "severe": false,
+    "transitioned": false,
+    "world_id": "real_v2-0363"
+  },
+  {
+    "era": "pre1950",
+    "severe": false,
+    "transitioned": false,
+    "world_id": "real_v2-0364"
+  },
+  {
+    "era": "pre1950",
+    "severe": true,
+    "transitioned": true,
+    "world_id": "real_v2-0365"
+  },
+  {
+    "era": "pre1950",
+    "severe": false,
+    "transitioned": false,
+    "world_id": "real_v2-0366"
+  },
+  {
+    "era": "post1950",
+    "severe": false,
+    "transitioned": false,
+    "world_id": "real_v2-0367"
+  },
+  {
+    "era": "post1950",
+    "severe": false,
+    "transitioned": false,
+    "world_id": "real_v2-0368"
+  },
+  {
+    "era": "pre1950",
+    "severe": false,
+    "transitioned": false,
+    "world_id": "real_v2-0369"
+  },
+  {
+    "era": "pre1950",
+    "severe": false,
+    "transitioned": false,
+    "world_id": "real_v2-0370"
+  },
+  {
+    "era": "pre1950",
+    "severe": false,
+    "transitioned": false,
+    "world_id": "real_v2-0371"
+  },
+  {
+    "era": "pre1950",
+    "severe": false,
+    "transitioned": false,
+    "world_id": "real_v2-0372"
+  },
+  {
+    "era": "post1950",
+    "severe": false,
+    "transitioned": false,
+    "world_id": "real_v2-0373"
+  },
+  {
+    "era": "pre1950",
+    "severe": false,
+    "transitioned": false,
+    "world_id": "real_v2-0374"
+  },
+  {
+    "era": "pre1950",
+    "severe": false,
+    "transitioned": true,
+    "world_id": "real_v2-0375"
+  },
+  {
+    "era": "post1950",
+    "severe": false,
+    "transitioned": false,
+    "world_id": "real_v2-0376"
+  },
+  {
+    "era": "post1950",
+    "severe": false,
+    "transitioned": false,
+    "world_id": "real_v2-0377"
+  },
+  {
+    "era": "pre1950",
+    "severe": false,
+    "transitioned": false,
+    "world_id": "real_v2-0378"
+  },
+  {
+    "era": "pre1950",
+    "severe": false,
+    "transitioned": false,
+    "world_id": "real_v2-0379"
+  },
+  {
+    "era": "pre1950",
+    "severe": false,
+    "transitioned": false,
+    "world_id": "real_v2-0380"
+  },
+  {
+    "era": "post1950",
+    "severe": false,
+    "transitioned": false,
+    "world_id": "real_v2-0381"
+  },
+  {
+    "era": "pre1950",
+    "severe": false,
+    "transitioned": false,
+    "world_id": "real_v2-0382"
+  },
+  {
+    "era": "pre1950",
+    "severe": false,
+    "transitioned": false,
+    "world_id": "real_v2-0383"
+  },
+  {
+    "era": "post1950",
+    "severe": false,
+    "transitioned": false,
+    "world_id": "real_v2-0384"
+  },
+  {
+    "era": "post1950",
+    "severe": false,
+    "transitioned": false,
+    "world_id": "real_v2-0385"
+  },
+  {
+    "era": "post1950",
+    "severe": false,
+    "transitioned": true,
+    "world_id": "real_v2-0386"
+  },
+  {
+    "era": "pre1950",
+    "severe": false,
+    "transitioned": false,
+    "world_id": "real_v2-0387"
+  },
+  {
+    "era": "pre1950",
+    "severe": false,
+    "transitioned": false,
+    "world_id": "real_v2-0388"
+  },
+  {
+    "era": "post1950",
+    "severe": false,
+    "transitioned": false,
+    "world_id": "real_v2-0389"
+  },
+  {
+    "era": "post1950",
+    "severe": false,
+    "transitioned": false,
+    "world_id": "real_v2-0390"
+  },
+  {
+    "era": "pre1950",
+    "severe": false,
+    "transitioned": false,
+    "world_id": "real_v2-0391"
+  },
+  {
+    "era": "pre1950",
+    "severe": true,
+    "transitioned": true,
+    "world_id": "real_v2-0392"
+  },
+  {
+    "era": "pre1950",
+    "severe": false,
+    "transitioned": false,
+    "world_id": "real_v2-0393"
+  },
+  {
+    "era": "pre1950",
+    "severe": false,
+    "transitioned": false,
+    "world_id": "real_v2-0394"
+  },
+  {
+    "era": "post1950",
+    "severe": false,
+    "transitioned": false,
+    "world_id": "real_v2-0395"
+  },
+  {
+    "era": "pre1950",
+    "severe": false,
+    "transitioned": false,
+    "world_id": "real_v2-0396"
+  },
+  {
+    "era": "pre1950",
+    "severe": false,
+    "transitioned": false,
+    "world_id": "real_v2-0397"
+  },
+  {
+    "era": "post1950",
+    "severe": false,
+    "transitioned": false,
+    "world_id": "real_v2-0398"
+  },
+  {
+    "era": "pre1950",
+    "severe": false,
+    "transitioned": false,
+    "world_id": "real_v2-0399"
+  },
+  {
+    "era": "pre1950",
+    "severe": false,
+    "transitioned": false,
+    "world_id": "real_v2-0400"
+  },
+  {
+    "era": "post1950",
+    "severe": false,
+    "transitioned": false,
+    "world_id": "real_v2-0401"
+  },
+  {
+    "era": "post1950",
+    "severe": false,
+    "transitioned": false,
+    "world_id": "real_v2-0402"
+  },
+  {
+    "era": "post1950",
+    "severe": true,
+    "transitioned": true,
+    "world_id": "real_v2-0403"
+  },
+  {
+    "era": "post1950",
+    "severe": false,
+    "transitioned": false,
+    "world_id": "real_v2-0404"
+  },
+  {
+    "era": "pre1950",
+    "severe": false,
+    "transitioned": false,
+    "world_id": "real_v2-0405"
+  },
+  {
+    "era": "post1950",
+    "severe": false,
+    "transitioned": true,
+    "world_id": "real_v2-0406"
+  },
+  {
+    "era": "post1950",
+    "severe": false,
+    "transitioned": false,
+    "world_id": "real_v2-0407"
+  },
+  {
+    "era": "pre1950",
+    "severe": false,
+    "transitioned": false,
+    "world_id": "real_v2-0408"
+  },
+  {
+    "era": "pre1950",
+    "severe": false,
+    "transitioned": false,
+    "world_id": "real_v2-0409"
+  },
+  {
+    "era": "post1950",
+    "severe": false,
+    "transitioned": false,
+    "world_id": "real_v2-0410"
+  },
+  {
+    "era": "post1950",
+    "severe": false,
+    "transitioned": true,
+    "world_id": "real_v2-0411"
+  },
+  {
+    "era": "pre1950",
+    "severe": false,
+    "transitioned": false,
+    "world_id": "real_v2-0412"
+  },
+  {
+    "era": "post1950",
+    "severe": false,
+    "transitioned": false,
+    "world_id": "real_v2-0413"
+  },
+  {
+    "era": "post1950",
+    "severe": false,
+    "transitioned": false,
+    "world_id": "real_v2-0414"
+  },
+  {
+    "era": "pre1950",
+    "severe": false,
+    "transitioned": true,
+    "world_id": "real_v2-0415"
+  },
+  {
+    "era": "pre1950",
+    "severe": false,
+    "transitioned": false,
+    "world_id": "real_v2-0416"
+  },
+  {
+    "era": "pre1950",
+    "severe": false,
+    "transitioned": false,
+    "world_id": "real_v2-0417"
+  },
+  {
+    "era": "pre1950",
+    "severe": false,
+    "transitioned": false,
+    "world_id": "real_v2-0418"
+  },
+  {
+    "era": "pre1950",
+    "severe": false,
+    "transitioned": false,
+    "world_id": "real_v2-0419"
+  },
+  {
+    "era": "pre1950",
+    "severe": false,
+    "transitioned": false,
+    "world_id": "real_v2-0420"
+  },
+  {
+    "era": "post1950",
+    "severe": false,
+    "transitioned": false,
+    "world_id": "real_v2-0421"
+  },
+  {
+    "era": "pre1950",
+    "severe": false,
+    "transitioned": false,
+    "world_id": "real_v2-0422"
+  },
+  {
+    "era": "pre1950",
+    "severe": true,
+    "transitioned": true,
+    "world_id": "real_v2-0423"
+  },
+  {
+    "era": "pre1950",
+    "severe": false,
+    "transitioned": false,
+    "world_id": "real_v2-0424"
+  },
+  {
+    "era": "pre1950",
+    "severe": false,
+    "transitioned": true,
+    "world_id": "real_v2-0425"
+  },
+  {
+    "era": "pre1950",
+    "severe": false,
+    "transitioned": false,
+    "world_id": "real_v2-0426"
+  },
+  {
+    "era": "post1950",
+    "severe": false,
+    "transitioned": false,
+    "world_id": "real_v2-0427"
+  },
+  {
+    "era": "pre1950",
+    "severe": true,
+    "transitioned": true,
+    "world_id": "real_v2-0428"
+  },
+  {
+    "era": "pre1950",
+    "severe": false,
+    "transitioned": false,
+    "world_id": "real_v2-0429"
+  },
+  {
+    "era": "post1950",
+    "severe": false,
+    "transitioned": false,
+    "world_id": "real_v2-0430"
+  },
+  {
+    "era": "post1950",
+    "severe": false,
+    "transitioned": true,
+    "world_id": "real_v2-0431"
+  },
+  {
+    "era": "pre1950",
+    "severe": false,
+    "transitioned": false,
+    "world_id": "real_v2-0432"
+  },
+  {
+    "era": "pre1950",
+    "severe": false,
+    "transitioned": false,
+    "world_id": "real_v2-0433"
+  },
+  {
+    "era": "pre1950",
+    "severe": false,
+    "transitioned": false,
+    "world_id": "real_v2-0434"
+  },
+  {
+    "era": "post1950",
+    "severe": false,
+    "transitioned": false,
+    "world_id": "real_v2-0435"
+  },
+  {
+    "era": "pre1950",
+    "severe": false,
+    "transitioned": false,
+    "world_id": "real_v2-0436"
+  },
+  {
+    "era": "post1950",
+    "severe": false,
+    "transitioned": false,
+    "world_id": "real_v2-0437"
+  },
+  {
+    "era": "post1950",
+    "severe": false,
+    "transitioned": false,
+    "world_id": "real_v2-0438"
+  },
+  {
+    "era": "pre1950",
+    "severe": false,
+    "transitioned": false,
+    "world_id": "real_v2-0439"
+  },
+  {
+    "era": "pre1950",
+    "severe": false,
+    "transitioned": false,
+    "world_id": "real_v2-0440"
+  },
+  {
+    "era": "pre1950",
+    "severe": false,
+    "transitioned": false,
+    "world_id": "real_v2-0441"
+  },
+  {
+    "era": "pre1950",
+    "severe": false,
+    "transitioned": false,
+    "world_id": "real_v2-0442"
+  },
+  {
+    "era": "pre1950",
+    "severe": false,
+    "transitioned": false,
+    "world_id": "real_v2-0443"
+  },
+  {
+    "era": "pre1950",
+    "severe": false,
+    "transitioned": false,
+    "world_id": "real_v2-0444"
+  },
+  {
+    "era": "pre1950",
+    "severe": false,
+    "transitioned": false,
+    "world_id": "real_v2-0445"
+  },
+  {
+    "era": "pre1950",
+    "severe": false,
+    "transitioned": false,
+    "world_id": "real_v2-0446"
+  },
+  {
+    "era": "post1950",
+    "severe": false,
+    "transitioned": false,
+    "world_id": "real_v2-0447"
+  },
+  {
+    "era": "pre1950",
+    "severe": false,
+    "transitioned": true,
+    "world_id": "real_v2-0448"
+  },
+  {
+    "era": "pre1950",
+    "severe": false,
+    "transitioned": false,
+    "world_id": "real_v2-0449"
+  },
+  {
+    "era": "post1950",
+    "severe": false,
+    "transitioned": false,
+    "world_id": "real_v2-0450"
+  },
+  {
+    "era": "post1950",
+    "severe": false,
+    "transitioned": false,
+    "world_id": "real_v2-0451"
+  },
+  {
+    "era": "pre1950",
+    "severe": false,
+    "transitioned": false,
+    "world_id": "real_v2-0452"
+  },
+  {
+    "era": "post1950",
+    "severe": false,
+    "transitioned": false,
+    "world_id": "real_v2-0453"
+  },
+  {
+    "era": "post1950",
+    "severe": false,
+    "transitioned": false,
+    "world_id": "real_v2-0454"
+  },
+  {
+    "era": "pre1950",
+    "severe": false,
+    "transitioned": false,
+    "world_id": "real_v2-0455"
+  },
+  {
+    "era": "post1950",
+    "severe": false,
+    "transitioned": false,
+    "world_id": "real_v2-0456"
+  },
+  {
+    "era": "pre1950",
+    "severe": false,
+    "transitioned": false,
+    "world_id": "real_v2-0457"
+  },
+  {
+    "era": "post1950",
+    "severe": false,
+    "transitioned": false,
+    "world_id": "real_v2-0458"
+  },
+  {
+    "era": "pre1950",
+    "severe": true,
+    "transitioned": true,
+    "world_id": "real_v2-0459"
+  },
+  {
+    "era": "post1950",
+    "severe": false,
+    "transitioned": false,
+    "world_id": "real_v2-0460"
+  },
+  {
+    "era": "post1950",
+    "severe": false,
+    "transitioned": false,
+    "world_id": "real_v2-0461"
+  },
+  {
+    "era": "pre1950",
+    "severe": false,
+    "transitioned": false,
+    "world_id": "real_v2-0462"
+  },
+  {
+    "era": "pre1950",
+    "severe": false,
+    "transitioned": false,
+    "world_id": "real_v2-0463"
+  },
+  {
+    "era": "post1950",
+    "severe": false,
+    "transitioned": false,
+    "world_id": "real_v2-0464"
+  },
+  {
+    "era": "pre1950",
+    "severe": false,
+    "transitioned": false,
+    "world_id": "real_v2-0465"
+  },
+  {
+    "era": "pre1950",
+    "severe": false,
+    "transitioned": false,
+    "world_id": "real_v2-0466"
+  },
+  {
+    "era": "post1950",
+    "severe": false,
+    "transitioned": false,
+    "world_id": "real_v2-0467"
+  },
+  {
+    "era": "post1950",
+    "severe": false,
+    "transitioned": false,
+    "world_id": "real_v2-0468"
+  },
+  {
+    "era": "post1950",
+    "severe": false,
+    "transitioned": false,
+    "world_id": "real_v2-0469"
+  },
+  {
+    "era": "post1950",
+    "severe": false,
+    "transitioned": false,
+    "world_id": "real_v2-0470"
+  },
+  {
+    "era": "post1950",
+    "severe": false,
+    "transitioned": false,
+    "world_id": "real_v2-0471"
+  },
+  {
+    "era": "post1950",
+    "severe": false,
+    "transitioned": false,
+    "world_id": "real_v2-0472"
+  },
+  {
+    "era": "post1950",
+    "severe": true,
+    "transitioned": true,
+    "world_id": "real_v2-0473"
+  },
+  {
+    "era": "post1950",
+    "severe": false,
+    "transitioned": false,
+    "world_id": "real_v2-0474"
+  },
+  {
+    "era": "post1950",
+    "severe": false,
+    "transitioned": false,
+    "world_id": "real_v2-0475"
+  },
+  {
+    "era": "post1950",
+    "severe": false,
+    "transitioned": false,
+    "world_id": "real_v2-0476"
+  },
+  {
+    "era": "pre1950",
+    "severe": false,
+    "transitioned": true,
+    "world_id": "real_v2-0477"
+  },
+  {
+    "era": "pre1950",
+    "severe": false,
+    "transitioned": false,
+    "world_id": "real_v2-0478"
+  },
+  {
+    "era": "pre1950",
+    "severe": false,
+    "transitioned": false,
+    "world_id": "real_v2-0479"
+  },
+  {
+    "era": "pre1950",
+    "severe": false,
+    "transitioned": false,
+    "world_id": "real_v2-0480"
+  },
+  {
+    "era": "post1950",
+    "severe": false,
+    "transitioned": false,
+    "world_id": "real_v2-0481"
+  },
+  {
+    "era": "pre1950",
+    "severe": false,
+    "transitioned": false,
+    "world_id": "real_v2-0482"
+  },
+  {
+    "era": "post1950",
+    "severe": false,
+    "transitioned": false,
+    "world_id": "real_v2-0483"
+  },
+  {
+    "era": "post1950",
+    "severe": false,
+    "transitioned": false,
+    "world_id": "real_v2-0484"
+  },
+  {
+    "era": "post1950",
+    "severe": false,
+    "transitioned": false,
+    "world_id": "real_v2-0485"
+  },
+  {
+    "era": "pre1950",
+    "severe": false,
+    "transitioned": false,
+    "world_id": "real_v2-0486"
+  },
+  {
+    "era": "pre1950",
+    "severe": false,
+    "transitioned": false,
+    "world_id": "real_v2-0487"
+  },
+  {
+    "era": "post1950",
+    "severe": false,
+    "transitioned": false,
+    "world_id": "real_v2-0488"
+  },
+  {
+    "era": "post1950",
+    "severe": false,
+    "transitioned": false,
+    "world_id": "real_v2-0489"
+  },
+  {
+    "era": "pre1950",
+    "severe": false,
+    "transitioned": false,
+    "world_id": "real_v2-0490"
+  },
+  {
+    "era": "pre1950",
+    "severe": false,
+    "transitioned": false,
+    "world_id": "real_v2-0491"
+  },
+  {
+    "era": "post1950",
+    "severe": false,
+    "transitioned": false,
+    "world_id": "real_v2-0492"
+  },
+  {
+    "era": "pre1950",
+    "severe": false,
+    "transitioned": false,
+    "world_id": "real_v2-0493"
+  },
+  {
+    "era": "pre1950",
+    "severe": false,
+    "transitioned": false,
+    "world_id": "real_v2-0494"
+  },
+  {
+    "era": "post1950",
+    "severe": false,
+    "transitioned": false,
+    "world_id": "real_v2-0495"
+  },
+  {
+    "era": "post1950",
+    "severe": false,
+    "transitioned": false,
+    "world_id": "real_v2-0496"
+  },
+  {
+    "era": "post1950",
+    "severe": false,
+    "transitioned": false,
+    "world_id": "real_v2-0497"
+  },
+  {
+    "era": "pre1950",
+    "severe": false,
+    "transitioned": true,
+    "world_id": "real_v2-0498"
+  },
+  {
+    "era": "post1950",
+    "severe": false,
+    "transitioned": false,
+    "world_id": "real_v2-0499"
+  },
+  {
+    "era": "post1950",
+    "severe": false,
+    "transitioned": false,
+    "world_id": "real_v2-0500"
+  },
+  {
+    "era": "post1950",
+    "severe": false,
+    "transitioned": false,
+    "world_id": "real_v2-0501"
+  },
+  {
+    "era": "pre1950",
+    "severe": false,
+    "transitioned": false,
+    "world_id": "real_v2-0502"
+  },
+  {
+    "era": "post1950",
+    "severe": false,
+    "transitioned": false,
+    "world_id": "real_v2-0503"
+  },
+  {
+    "era": "post1950",
+    "severe": false,
+    "transitioned": false,
+    "world_id": "real_v2-0504"
+  },
+  {
+    "era": "post1950",
+    "severe": false,
+    "transitioned": false,
+    "world_id": "real_v2-0505"
+  },
+  {
+    "era": "post1950",
+    "severe": false,
+    "transitioned": false,
+    "world_id": "real_v2-0506"
+  },
+  {
+    "era": "pre1950",
+    "severe": false,
+    "transitioned": false,
+    "world_id": "real_v2-0507"
+  },
+  {
+    "era": "post1950",
+    "severe": false,
+    "transitioned": false,
+    "world_id": "real_v2-0508"
+  },
+  {
+    "era": "pre1950",
+    "severe": false,
+    "transitioned": false,
+    "world_id": "real_v2-0509"
+  },
+  {
+    "era": "post1950",
+    "severe": false,
+    "transitioned": false,
+    "world_id": "real_v2-0510"
+  },
+  {
+    "era": "pre1950",
+    "severe": false,
+    "transitioned": true,
+    "world_id": "real_v2-0511"
+  },
+  {
+    "era": "pre1950",
+    "severe": false,
+    "transitioned": false,
+    "world_id": "real_v2-0512"
+  },
+  {
+    "era": "post1950",
+    "severe": false,
+    "transitioned": false,
+    "world_id": "real_v2-0513"
+  },
+  {
+    "era": "pre1950",
+    "severe": false,
+    "transitioned": true,
+    "world_id": "real_v2-0514"
+  },
+  {
+    "era": "pre1950",
+    "severe": false,
+    "transitioned": false,
+    "world_id": "real_v2-0515"
+  },
+  {
+    "era": "post1950",
+    "severe": false,
+    "transitioned": false,
+    "world_id": "real_v2-0516"
+  },
+  {
+    "era": "pre1950",
+    "severe": true,
+    "transitioned": true,
+    "world_id": "real_v2-0517"
+  },
+  {
+    "era": "post1950",
+    "severe": false,
+    "transitioned": false,
+    "world_id": "real_v2-0518"
+  },
+  {
+    "era": "pre1950",
+    "severe": false,
+    "transitioned": false,
+    "world_id": "real_v2-0519"
+  },
+  {
+    "era": "post1950",
+    "severe": true,
+    "transitioned": true,
+    "world_id": "real_v2-0520"
+  },
+  {
+    "era": "pre1950",
+    "severe": false,
+    "transitioned": false,
+    "world_id": "real_v2-0521"
+  },
+  {
+    "era": "post1950",
+    "severe": false,
+    "transitioned": false,
+    "world_id": "real_v2-0522"
+  },
+  {
+    "era": "post1950",
+    "severe": false,
+    "transitioned": false,
+    "world_id": "real_v2-0523"
+  },
+  {
+    "era": "post1950",
+    "severe": false,
+    "transitioned": false,
+    "world_id": "real_v2-0524"
+  },
+  {
+    "era": "post1950",
+    "severe": false,
+    "transitioned": false,
+    "world_id": "real_v2-0525"
+  },
+  {
+    "era": "post1950",
+    "severe": false,
+    "transitioned": false,
+    "world_id": "real_v2-0526"
+  },
+  {
+    "era": "post1950",
+    "severe": false,
+    "transitioned": false,
+    "world_id": "real_v2-0527"
+  },
+  {
+    "era": "post1950",
+    "severe": false,
+    "transitioned": true,
+    "world_id": "real_v2-0528"
+  },
+  {
+    "era": "post1950",
+    "severe": false,
+    "transitioned": false,
+    "world_id": "real_v2-0529"
+  },
+  {
+    "era": "post1950",
+    "severe": false,
+    "transitioned": false,
+    "world_id": "real_v2-0530"
+  },
+  {
+    "era": "pre1950",
+    "severe": false,
+    "transitioned": false,
+    "world_id": "real_v2-0531"
+  },
+  {
+    "era": "post1950",
+    "severe": false,
+    "transitioned": false,
+    "world_id": "real_v2-0532"
+  },
+  {
+    "era": "post1950",
+    "severe": false,
+    "transitioned": true,
+    "world_id": "real_v2-0533"
+  },
+  {
+    "era": "pre1950",
+    "severe": false,
+    "transitioned": false,
+    "world_id": "real_v2-0534"
+  },
+  {
+    "era": "pre1950",
+    "severe": false,
+    "transitioned": false,
+    "world_id": "real_v2-0535"
+  },
+  {
+    "era": "post1950",
+    "severe": false,
+    "transitioned": false,
+    "world_id": "real_v2-0536"
+  },
+  {
+    "era": "post1950",
+    "severe": false,
+    "transitioned": false,
+    "world_id": "real_v2-0537"
+  },
+  {
+    "era": "post1950",
+    "severe": false,
+    "transitioned": false,
+    "world_id": "real_v2-0538"
+  },
+  {
+    "era": "post1950",
+    "severe": false,
+    "transitioned": false,
+    "world_id": "real_v2-0539"
+  },
+  {
+    "era": "pre1950",
+    "severe": false,
+    "transitioned": false,
+    "world_id": "real_v2-0540"
+  },
+  {
+    "era": "pre1950",
+    "severe": false,
+    "transitioned": false,
+    "world_id": "real_v2-0541"
+  },
+  {
+    "era": "pre1950",
+    "severe": false,
+    "transitioned": false,
+    "world_id": "real_v2-0542"
+  },
+  {
+    "era": "pre1950",
+    "severe": false,
+    "transitioned": false,
+    "world_id": "real_v2-0543"
+  },
+  {
+    "era": "pre1950",
+    "severe": false,
+    "transitioned": false,
+    "world_id": "real_v2-0544"
+  },
+  {
+    "era": "pre1950",
+    "severe": false,
+    "transitioned": false,
+    "world_id": "real_v2-0545"
+  },
+  {
+    "era": "pre1950",
+    "severe": false,
+    "transitioned": false,
+    "world_id": "real_v2-0546"
+  },
+  {
+    "era": "post1950",
+    "severe": true,
+    "transitioned": true,
+    "world_id": "real_v2-0547"
+  },
+  {
+    "era": "pre1950",
+    "severe": false,
+    "transitioned": false,
+    "world_id": "real_v2-0548"
+  },
+  {
+    "era": "post1950",
+    "severe": false,
+    "transitioned": false,
+    "world_id": "real_v2-0549"
+  },
+  {
+    "era": "pre1950",
+    "severe": false,
+    "transitioned": false,
+    "world_id": "real_v2-0550"
+  },
+  {
+    "era": "post1950",
+    "severe": false,
+    "transitioned": true,
+    "world_id": "real_v2-0551"
+  },
+  {
+    "era": "post1950",
+    "severe": false,
+    "transitioned": true,
+    "world_id": "real_v2-0552"
+  },
+  {
+    "era": "pre1950",
+    "severe": true,
+    "transitioned": true,
+    "world_id": "real_v2-0553"
+  },
+  {
+    "era": "post1950",
+    "severe": false,
+    "transitioned": false,
+    "world_id": "real_v2-0554"
+  },
+  {
+    "era": "pre1950",
+    "severe": false,
+    "transitioned": false,
+    "world_id": "real_v2-0555"
+  },
+  {
+    "era": "pre1950",
+    "severe": false,
+    "transitioned": false,
+    "world_id": "real_v2-0556"
+  },
+  {
+    "era": "post1950",
+    "severe": false,
+    "transitioned": false,
+    "world_id": "real_v2-0557"
+  },
+  {
+    "era": "post1950",
+    "severe": false,
+    "transitioned": false,
+    "world_id": "real_v2-0558"
+  },
+  {
+    "era": "pre1950",
+    "severe": true,
+    "transitioned": true,
+    "world_id": "real_v2-0559"
+  },
+  {
+    "era": "post1950",
+    "severe": false,
+    "transitioned": false,
+    "world_id": "real_v2-0560"
+  },
+  {
+    "era": "pre1950",
+    "severe": false,
+    "transitioned": false,
+    "world_id": "real_v2-0561"
+  },
+  {
+    "era": "post1950",
+    "severe": false,
+    "transitioned": false,
+    "world_id": "real_v2-0562"
+  },
+  {
+    "era": "pre1950",
+    "severe": false,
+    "transitioned": false,
+    "world_id": "real_v2-0563"
+  },
+  {
+    "era": "post1950",
+    "severe": false,
+    "transitioned": false,
+    "world_id": "real_v2-0564"
+  },
+  {
+    "era": "pre1950",
+    "severe": false,
+    "transitioned": false,
+    "world_id": "real_v2-0565"
+  },
+  {
+    "era": "post1950",
+    "severe": false,
+    "transitioned": false,
+    "world_id": "real_v2-0566"
+  },
+  {
+    "era": "post1950",
+    "severe": false,
+    "transitioned": false,
+    "world_id": "real_v2-0567"
+  },
+  {
+    "era": "post1950",
+    "severe": false,
+    "transitioned": false,
+    "world_id": "real_v2-0568"
+  },
+  {
+    "era": "post1950",
+    "severe": false,
+    "transitioned": false,
+    "world_id": "real_v2-0569"
+  },
+  {
+    "era": "pre1950",
+    "severe": false,
+    "transitioned": false,
+    "world_id": "real_v2-0570"
+  },
+  {
+    "era": "pre1950",
+    "severe": false,
+    "transitioned": false,
+    "world_id": "real_v2-0571"
+  },
+  {
+    "era": "post1950",
+    "severe": false,
+    "transitioned": false,
+    "world_id": "real_v2-0572"
+  },
+  {
+    "era": "pre1950",
+    "severe": false,
+    "transitioned": false,
+    "world_id": "real_v2-0573"
+  },
+  {
+    "era": "pre1950",
+    "severe": false,
+    "transitioned": false,
+    "world_id": "real_v2-0574"
+  },
+  {
+    "era": "pre1950",
+    "severe": true,
+    "transitioned": true,
+    "world_id": "real_v2-0575"
+  },
+  {
+    "era": "post1950",
+    "severe": false,
+    "transitioned": false,
+    "world_id": "real_v2-0576"
+  },
+  {
+    "era": "post1950",
+    "severe": false,
+    "transitioned": false,
+    "world_id": "real_v2-0577"
+  },
+  {
+    "era": "post1950",
+    "severe": false,
+    "transitioned": false,
+    "world_id": "real_v2-0578"
+  },
+  {
+    "era": "pre1950",
+    "severe": false,
+    "transitioned": true,
+    "world_id": "real_v2-0579"
+  },
+  {
+    "era": "pre1950",
+    "severe": false,
+    "transitioned": false,
+    "world_id": "real_v2-0580"
+  },
+  {
+    "era": "post1950",
+    "severe": false,
+    "transitioned": false,
+    "world_id": "real_v2-0581"
+  },
+  {
+    "era": "pre1950",
+    "severe": false,
+    "transitioned": false,
+    "world_id": "real_v2-0582"
+  },
+  {
+    "era": "pre1950",
+    "severe": false,
+    "transitioned": false,
+    "world_id": "real_v2-0583"
+  },
+  {
+    "era": "pre1950",
+    "severe": false,
+    "transitioned": true,
+    "world_id": "real_v2-0584"
+  },
+  {
+    "era": "post1950",
+    "severe": false,
+    "transitioned": false,
+    "world_id": "real_v2-0585"
+  },
+  {
+    "era": "pre1950",
+    "severe": false,
+    "transitioned": false,
+    "world_id": "real_v2-0586"
+  },
+  {
+    "era": "pre1950",
+    "severe": true,
+    "transitioned": true,
+    "world_id": "real_v2-0587"
+  },
+  {
+    "era": "post1950",
+    "severe": false,
+    "transitioned": true,
+    "world_id": "real_v2-0588"
+  },
+  {
+    "era": "post1950",
+    "severe": false,
+    "transitioned": false,
+    "world_id": "real_v2-0589"
+  },
+  {
+    "era": "post1950",
+    "severe": false,
+    "transitioned": false,
+    "world_id": "real_v2-0590"
+  },
+  {
+    "era": "post1950",
+    "severe": false,
+    "transitioned": false,
+    "world_id": "real_v2-0591"
+  },
+  {
+    "era": "post1950",
+    "severe": false,
+    "transitioned": false,
+    "world_id": "real_v2-0592"
+  },
+  {
+    "era": "post1950",
+    "severe": false,
+    "transitioned": false,
+    "world_id": "real_v2-0593"
+  },
+  {
+    "era": "post1950",
+    "severe": false,
+    "transitioned": false,
+    "world_id": "real_v2-0594"
+  },
+  {
+    "era": "post1950",
+    "severe": false,
+    "transitioned": true,
+    "world_id": "real_v2-0595"
+  },
+  {
+    "era": "pre1950",
+    "severe": false,
+    "transitioned": false,
+    "world_id": "real_v2-0596"
+  },
+  {
+    "era": "pre1950",
+    "severe": false,
+    "transitioned": false,
+    "world_id": "real_v2-0597"
+  },
+  {
+    "era": "post1950",
+    "severe": false,
+    "transitioned": false,
+    "world_id": "real_v2-0598"
+  },
+  {
+    "era": "pre1950",
+    "severe": false,
+    "transitioned": false,
+    "world_id": "real_v2-0599"
+  },
+  {
+    "era": "pre1950",
+    "severe": false,
+    "transitioned": false,
+    "world_id": "real_v2-0600"
+  },
+  {
+    "era": "post1950",
+    "severe": false,
+    "transitioned": false,
+    "world_id": "real_v2-0601"
+  },
+  {
+    "era": "post1950",
+    "severe": false,
+    "transitioned": false,
+    "world_id": "real_v2-0602"
+  },
+  {
+    "era": "post1950",
+    "severe": false,
+    "transitioned": false,
+    "world_id": "real_v2-0603"
+  },
+  {
+    "era": "pre1950",
+    "severe": false,
+    "transitioned": false,
+    "world_id": "real_v2-0604"
+  },
+  {
+    "era": "pre1950",
+    "severe": false,
+    "transitioned": false,
+    "world_id": "real_v2-0605"
+  },
+  {
+    "era": "pre1950",
+    "severe": false,
+    "transitioned": false,
+    "world_id": "real_v2-0606"
+  },
+  {
+    "era": "post1950",
+    "severe": false,
+    "transitioned": false,
+    "world_id": "real_v2-0607"
+  },
+  {
+    "era": "post1950",
+    "severe": false,
+    "transitioned": false,
+    "world_id": "real_v2-0608"
+  },
+  {
+    "era": "post1950",
+    "severe": false,
+    "transitioned": false,
+    "world_id": "real_v2-0609"
+  },
+  {
+    "era": "post1950",
+    "severe": false,
+    "transitioned": false,
+    "world_id": "real_v2-0610"
+  },
+  {
+    "era": "post1950",
+    "severe": false,
+    "transitioned": false,
+    "world_id": "real_v2-0611"
+  },
+  {
+    "era": "post1950",
+    "severe": false,
+    "transitioned": false,
+    "world_id": "real_v2-0612"
+  },
+  {
+    "era": "post1950",
+    "severe": false,
+    "transitioned": true,
+    "world_id": "real_v2-0613"
+  },
+  {
+    "era": "pre1950",
+    "severe": false,
+    "transitioned": false,
+    "world_id": "real_v2-0614"
+  },
+  {
+    "era": "post1950",
+    "severe": false,
+    "transitioned": false,
+    "world_id": "real_v2-0615"
+  },
+  {
+    "era": "post1950",
+    "severe": false,
+    "transitioned": false,
+    "world_id": "real_v2-0616"
+  },
+  {
+    "era": "post1950",
+    "severe": false,
+    "transitioned": false,
+    "world_id": "real_v2-0617"
+  },
+  {
+    "era": "post1950",
+    "severe": false,
+    "transitioned": false,
+    "world_id": "real_v2-0618"
+  },
+  {
+    "era": "pre1950",
+    "severe": false,
+    "transitioned": false,
+    "world_id": "real_v2-0619"
+  },
+  {
+    "era": "post1950",
+    "severe": false,
+    "transitioned": false,
+    "world_id": "real_v2-0620"
+  },
+  {
+    "era": "post1950",
+    "severe": false,
+    "transitioned": false,
+    "world_id": "real_v2-0621"
+  },
+  {
+    "era": "pre1950",
+    "severe": false,
+    "transitioned": false,
+    "world_id": "real_v2-0622"
+  },
+  {
+    "era": "post1950",
+    "severe": false,
+    "transitioned": true,
+    "world_id": "real_v2-0623"
+  },
+  {
+    "era": "post1950",
+    "severe": false,
+    "transitioned": false,
+    "world_id": "real_v2-0624"
+  },
+  {
+    "era": "pre1950",
+    "severe": false,
+    "transitioned": false,
+    "world_id": "real_v2-0625"
+  },
+  {
+    "era": "pre1950",
+    "severe": false,
+    "transitioned": false,
+    "world_id": "real_v2-0626"
+  },
+  {
+    "era": "pre1950",
+    "severe": false,
+    "transitioned": false,
+    "world_id": "real_v2-0627"
+  },
+  {
+    "era": "pre1950",
+    "severe": false,
+    "transitioned": true,
+    "world_id": "real_v2-0628"
+  },
+  {
+    "era": "pre1950",
+    "severe": false,
+    "transitioned": false,
+    "world_id": "real_v2-0629"
+  },
+  {
+    "era": "post1950",
+    "severe": true,
+    "transitioned": true,
+    "world_id": "real_v2-0630"
+  },
+  {
+    "era": "pre1950",
+    "severe": false,
+    "transitioned": false,
+    "world_id": "real_v2-0631"
+  },
+  {
+    "era": "pre1950",
+    "severe": false,
+    "transitioned": false,
+    "world_id": "real_v2-0632"
+  },
+  {
+    "era": "post1950",
+    "severe": false,
+    "transitioned": false,
+    "world_id": "real_v2-0633"
+  },
+  {
+    "era": "post1950",
+    "severe": false,
+    "transitioned": false,
+    "world_id": "real_v2-0634"
+  },
+  {
+    "era": "post1950",
+    "severe": false,
+    "transitioned": false,
+    "world_id": "real_v2-0635"
+  },
+  {
+    "era": "pre1950",
+    "severe": false,
+    "transitioned": true,
+    "world_id": "real_v2-0636"
+  },
+  {
+    "era": "pre1950",
+    "severe": false,
+    "transitioned": false,
+    "world_id": "real_v2-0637"
+  },
+  {
+    "era": "post1950",
+    "severe": false,
+    "transitioned": false,
+    "world_id": "real_v2-0638"
+  },
+  {
+    "era": "pre1950",
+    "severe": false,
+    "transitioned": false,
+    "world_id": "real_v2-0639"
+  },
+  {
+    "era": "pre1950",
+    "severe": false,
+    "transitioned": false,
+    "world_id": "real_v2-0640"
+  },
+  {
+    "era": "pre1950",
+    "severe": false,
+    "transitioned": false,
+    "world_id": "real_v2-0641"
+  },
+  {
+    "era": "pre1950",
+    "severe": false,
+    "transitioned": true,
+    "world_id": "real_v2-0642"
+  },
+  {
+    "era": "post1950",
+    "severe": false,
+    "transitioned": false,
+    "world_id": "real_v2-0643"
+  },
+  {
+    "era": "pre1950",
+    "severe": false,
+    "transitioned": false,
+    "world_id": "real_v2-0644"
+  },
+  {
+    "era": "pre1950",
+    "severe": false,
+    "transitioned": false,
+    "world_id": "real_v2-0645"
+  },
+  {
+    "era": "pre1950",
+    "severe": false,
+    "transitioned": false,
+    "world_id": "real_v2-0646"
+  },
+  {
+    "era": "pre1950",
+    "severe": false,
+    "transitioned": false,
+    "world_id": "real_v2-0647"
+  },
+  {
+    "era": "post1950",
+    "severe": false,
+    "transitioned": false,
+    "world_id": "real_v2-0648"
+  },
+  {
+    "era": "post1950",
+    "severe": false,
+    "transitioned": false,
+    "world_id": "real_v2-0649"
+  },
+  {
+    "era": "pre1950",
+    "severe": false,
+    "transitioned": true,
+    "world_id": "real_v2-0650"
+  },
+  {
+    "era": "pre1950",
+    "severe": false,
+    "transitioned": false,
+    "world_id": "real_v2-0651"
+  },
+  {
+    "era": "post1950",
+    "severe": false,
+    "transitioned": false,
+    "world_id": "real_v2-0652"
+  },
+  {
+    "era": "post1950",
+    "severe": false,
+    "transitioned": false,
+    "world_id": "real_v2-0653"
+  },
+  {
+    "era": "pre1950",
+    "severe": false,
+    "transitioned": false,
+    "world_id": "real_v2-0654"
+  },
+  {
+    "era": "pre1950",
+    "severe": false,
+    "transitioned": false,
+    "world_id": "real_v2-0655"
+  },
+  {
+    "era": "post1950",
+    "severe": false,
+    "transitioned": false,
+    "world_id": "real_v2-0656"
+  },
+  {
+    "era": "post1950",
+    "severe": false,
+    "transitioned": false,
+    "world_id": "real_v2-0657"
+  },
+  {
+    "era": "post1950",
+    "severe": false,
+    "transitioned": false,
+    "world_id": "real_v2-0658"
+  },
+  {
+    "era": "post1950",
+    "severe": false,
+    "transitioned": false,
+    "world_id": "real_v2-0659"
+  },
+  {
+    "era": "post1950",
+    "severe": false,
+    "transitioned": false,
+    "world_id": "real_v2-0660"
+  },
+  {
+    "era": "pre1950",
+    "severe": false,
+    "transitioned": false,
+    "world_id": "real_v2-0661"
+  },
+  {
+    "era": "post1950",
+    "severe": false,
+    "transitioned": false,
+    "world_id": "real_v2-0662"
+  },
+  {
+    "era": "pre1950",
+    "severe": false,
+    "transitioned": false,
+    "world_id": "real_v2-0663"
+  },
+  {
+    "era": "post1950",
+    "severe": false,
+    "transitioned": false,
+    "world_id": "real_v2-0664"
+  },
+  {
+    "era": "post1950",
+    "severe": false,
+    "transitioned": false,
+    "world_id": "real_v2-0665"
+  },
+  {
+    "era": "pre1950",
+    "severe": false,
+    "transitioned": false,
+    "world_id": "real_v2-0666"
+  },
+  {
+    "era": "post1950",
+    "severe": false,
+    "transitioned": true,
+    "world_id": "real_v2-0667"
+  },
+  {
+    "era": "post1950",
+    "severe": false,
+    "transitioned": false,
+    "world_id": "real_v2-0668"
+  },
+  {
+    "era": "post1950",
+    "severe": false,
+    "transitioned": false,
+    "world_id": "real_v2-0669"
+  },
+  {
+    "era": "pre1950",
+    "severe": false,
+    "transitioned": false,
+    "world_id": "real_v2-0670"
+  },
+  {
+    "era": "post1950",
+    "severe": false,
+    "transitioned": false,
+    "world_id": "real_v2-0671"
+  },
+  {
+    "era": "post1950",
+    "severe": false,
+    "transitioned": false,
+    "world_id": "real_v2-0672"
+  },
+  {
+    "era": "post1950",
+    "severe": false,
+    "transitioned": true,
+    "world_id": "real_v2-0673"
+  },
+  {
+    "era": "pre1950",
+    "severe": false,
+    "transitioned": false,
+    "world_id": "real_v2-0674"
+  },
+  {
+    "era": "pre1950",
+    "severe": false,
+    "transitioned": false,
+    "world_id": "real_v2-0675"
+  },
+  {
+    "era": "pre1950",
+    "severe": false,
+    "transitioned": false,
+    "world_id": "real_v2-0676"
+  },
+  {
+    "era": "pre1950",
+    "severe": false,
+    "transitioned": false,
+    "world_id": "real_v2-0677"
+  },
+  {
+    "era": "pre1950",
+    "severe": false,
+    "transitioned": false,
+    "world_id": "real_v2-0678"
+  },
+  {
+    "era": "pre1950",
+    "severe": false,
+    "transitioned": false,
+    "world_id": "real_v2-0679"
+  },
+  {
+    "era": "pre1950",
+    "severe": false,
+    "transitioned": false,
+    "world_id": "real_v2-0680"
+  },
+  {
+    "era": "pre1950",
+    "severe": false,
+    "transitioned": false,
+    "world_id": "real_v2-0681"
+  },
+  {
+    "era": "pre1950",
+    "severe": false,
+    "transitioned": false,
+    "world_id": "real_v2-0682"
+  },
+  {
+    "era": "pre1950",
+    "severe": false,
+    "transitioned": false,
+    "world_id": "real_v2-0683"
+  },
+  {
+    "era": "post1950",
+    "severe": true,
+    "transitioned": true,
+    "world_id": "real_v2-0684"
+  },
+  {
+    "era": "pre1950",
+    "severe": false,
+    "transitioned": false,
+    "world_id": "real_v2-0685"
+  },
+  {
+    "era": "pre1950",
+    "severe": false,
+    "transitioned": false,
+    "world_id": "real_v2-0686"
+  },
+  {
+    "era": "post1950",
+    "severe": false,
+    "transitioned": false,
+    "world_id": "real_v2-0687"
+  },
+  {
+    "era": "pre1950",
+    "severe": false,
+    "transitioned": true,
+    "world_id": "real_v2-0688"
+  },
+  {
+    "era": "pre1950",
+    "severe": false,
+    "transitioned": false,
+    "world_id": "real_v2-0689"
+  },
+  {
+    "era": "pre1950",
+    "severe": false,
+    "transitioned": false,
+    "world_id": "real_v2-0690"
+  },
+  {
+    "era": "pre1950",
+    "severe": false,
+    "transitioned": false,
+    "world_id": "real_v2-0691"
+  },
+  {
+    "era": "pre1950",
+    "severe": false,
+    "transitioned": true,
+    "world_id": "real_v2-0692"
+  },
+  {
+    "era": "pre1950",
+    "severe": false,
+    "transitioned": false,
+    "world_id": "real_v2-0693"
+  },
+  {
+    "era": "pre1950",
+    "severe": false,
+    "transitioned": false,
+    "world_id": "real_v2-0694"
+  },
+  {
+    "era": "post1950",
+    "severe": false,
+    "transitioned": false,
+    "world_id": "real_v2-0695"
+  },
+  {
+    "era": "post1950",
+    "severe": false,
+    "transitioned": false,
+    "world_id": "real_v2-0696"
+  },
+  {
+    "era": "post1950",
+    "severe": false,
+    "transitioned": false,
+    "world_id": "real_v2-0697"
+  },
+  {
+    "era": "pre1950",
+    "severe": false,
+    "transitioned": false,
+    "world_id": "real_v2-0698"
+  },
+  {
+    "era": "post1950",
+    "severe": false,
+    "transitioned": false,
+    "world_id": "real_v2-0699"
+  },
+  {
+    "era": "pre1950",
+    "severe": false,
+    "transitioned": false,
+    "world_id": "real_v2-0700"
+  },
+  {
+    "era": "post1950",
+    "severe": false,
+    "transitioned": false,
+    "world_id": "real_v2-0701"
+  },
+  {
+    "era": "pre1950",
+    "severe": false,
+    "transitioned": false,
+    "world_id": "real_v2-0702"
+  },
+  {
+    "era": "post1950",
+    "severe": false,
+    "transitioned": false,
+    "world_id": "real_v2-0703"
+  },
+  {
+    "era": "pre1950",
+    "severe": false,
+    "transitioned": false,
+    "world_id": "real_v2-0704"
+  },
+  {
+    "era": "post1950",
+    "severe": false,
+    "transitioned": false,
+    "world_id": "real_v2-0705"
+  },
+  {
+    "era": "post1950",
+    "severe": false,
+    "transitioned": false,
+    "world_id": "real_v2-0706"
+  },
+  {
+    "era": "pre1950",
+    "severe": false,
+    "transitioned": true,
+    "world_id": "real_v2-0707"
+  },
+  {
+    "era": "post1950",
+    "severe": false,
+    "transitioned": false,
+    "world_id": "real_v2-0708"
+  },
+  {
+    "era": "pre1950",
+    "severe": false,
+    "transitioned": false,
+    "world_id": "real_v2-0709"
+  },
+  {
+    "era": "post1950",
+    "severe": false,
+    "transitioned": false,
+    "world_id": "real_v2-0710"
+  },
+  {
+    "era": "post1950",
+    "severe": false,
+    "transitioned": false,
+    "world_id": "real_v2-0711"
+  },
+  {
+    "era": "post1950",
+    "severe": false,
+    "transitioned": false,
+    "world_id": "real_v2-0712"
+  },
+  {
+    "era": "pre1950",
+    "severe": false,
+    "transitioned": false,
+    "world_id": "real_v2-0713"
+  },
+  {
+    "era": "post1950",
+    "severe": false,
+    "transitioned": false,
+    "world_id": "real_v2-0714"
+  },
+  {
+    "era": "post1950",
+    "severe": false,
+    "transitioned": true,
+    "world_id": "real_v2-0715"
+  },
+  {
+    "era": "post1950",
+    "severe": false,
+    "transitioned": false,
+    "world_id": "real_v2-0716"
+  },
+  {
+    "era": "post1950",
+    "severe": false,
+    "transitioned": true,
+    "world_id": "real_v2-0717"
+  },
+  {
+    "era": "post1950",
+    "severe": false,
+    "transitioned": false,
+    "world_id": "real_v2-0718"
+  },
+  {
+    "era": "pre1950",
+    "severe": false,
+    "transitioned": false,
+    "world_id": "real_v2-0719"
+  },
+  {
+    "era": "pre1950",
+    "severe": false,
+    "transitioned": false,
+    "world_id": "real_v2-0720"
+  },
+  {
+    "era": "pre1950",
+    "severe": false,
+    "transitioned": false,
+    "world_id": "real_v2-0721"
+  },
+  {
+    "era": "post1950",
+    "severe": false,
+    "transitioned": false,
+    "world_id": "real_v2-0722"
+  },
+  {
+    "era": "pre1950",
+    "severe": false,
+    "transitioned": false,
+    "world_id": "real_v2-0723"
+  },
+  {
+    "era": "post1950",
+    "severe": false,
+    "transitioned": false,
+    "world_id": "real_v2-0724"
+  },
+  {
+    "era": "post1950",
+    "severe": false,
+    "transitioned": false,
+    "world_id": "real_v2-0725"
+  },
+  {
+    "era": "post1950",
+    "severe": false,
+    "transitioned": false,
+    "world_id": "real_v2-0726"
+  },
+  {
+    "era": "pre1950",
+    "severe": false,
+    "transitioned": false,
+    "world_id": "real_v2-0727"
+  },
+  {
+    "era": "post1950",
+    "severe": false,
+    "transitioned": false,
+    "world_id": "real_v2-0728"
+  },
+  {
+    "era": "pre1950",
+    "severe": false,
+    "transitioned": false,
+    "world_id": "real_v2-0729"
+  },
+  {
+    "era": "post1950",
+    "severe": false,
+    "transitioned": false,
+    "world_id": "real_v2-0730"
+  },
+  {
+    "era": "pre1950",
+    "severe": false,
+    "transitioned": false,
+    "world_id": "real_v2-0731"
+  },
+  {
+    "era": "post1950",
+    "severe": false,
+    "transitioned": false,
+    "world_id": "real_v2-0732"
+  },
+  {
+    "era": "pre1950",
+    "severe": false,
+    "transitioned": false,
+    "world_id": "real_v2-0733"
+  },
+  {
+    "era": "pre1950",
+    "severe": false,
+    "transitioned": true,
+    "world_id": "real_v2-0734"
+  },
+  {
+    "era": "pre1950",
+    "severe": false,
+    "transitioned": true,
+    "world_id": "real_v2-0735"
+  },
+  {
+    "era": "post1950",
+    "severe": false,
+    "transitioned": false,
+    "world_id": "real_v2-0736"
+  },
+  {
+    "era": "pre1950",
+    "severe": false,
+    "transitioned": false,
+    "world_id": "real_v2-0737"
+  },
+  {
+    "era": "post1950",
+    "severe": false,
+    "transitioned": true,
+    "world_id": "real_v2-0738"
+  },
+  {
+    "era": "pre1950",
+    "severe": false,
+    "transitioned": false,
+    "world_id": "real_v2-0739"
+  },
+  {
+    "era": "post1950",
+    "severe": false,
+    "transitioned": false,
+    "world_id": "real_v2-0740"
+  },
+  {
+    "era": "post1950",
+    "severe": false,
+    "transitioned": false,
+    "world_id": "real_v2-0741"
+  },
+  {
+    "era": "post1950",
+    "severe": false,
+    "transitioned": true,
+    "world_id": "real_v2-0742"
+  },
+  {
+    "era": "pre1950",
+    "severe": false,
+    "transitioned": true,
+    "world_id": "real_v2-0743"
+  },
+  {
+    "era": "pre1950",
+    "severe": false,
+    "transitioned": false,
+    "world_id": "real_v2-0744"
+  },
+  {
+    "era": "post1950",
+    "severe": false,
+    "transitioned": false,
+    "world_id": "real_v2-0745"
+  },
+  {
+    "era": "pre1950",
+    "severe": false,
+    "transitioned": false,
+    "world_id": "real_v2-0746"
+  },
+  {
+    "era": "pre1950",
+    "severe": false,
+    "transitioned": false,
+    "world_id": "real_v2-0747"
+  },
+  {
+    "era": "pre1950",
+    "severe": false,
+    "transitioned": true,
+    "world_id": "real_v2-0748"
+  },
+  {
+    "era": "pre1950",
+    "severe": false,
+    "transitioned": false,
+    "world_id": "real_v2-0749"
+  },
+  {
+    "era": "post1950",
+    "severe": false,
+    "transitioned": false,
+    "world_id": "real_v2-0750"
+  },
+  {
+    "era": "post1950",
+    "severe": false,
+    "transitioned": false,
+    "world_id": "real_v2-0751"
+  },
+  {
+    "era": "post1950",
+    "severe": false,
+    "transitioned": false,
+    "world_id": "real_v2-0752"
+  },
+  {
+    "era": "post1950",
+    "severe": false,
+    "transitioned": false,
+    "world_id": "real_v2-0753"
+  },
+  {
+    "era": "pre1950",
+    "severe": false,
+    "transitioned": false,
+    "world_id": "real_v2-0754"
+  },
+  {
+    "era": "post1950",
+    "severe": false,
+    "transitioned": false,
+    "world_id": "real_v2-0755"
+  },
+  {
+    "era": "pre1950",
+    "severe": false,
+    "transitioned": false,
+    "world_id": "real_v2-0756"
+  },
+  {
+    "era": "post1950",
+    "severe": false,
+    "transitioned": false,
+    "world_id": "real_v2-0757"
+  },
+  {
+    "era": "post1950",
+    "severe": false,
+    "transitioned": false,
+    "world_id": "real_v2-0758"
+  },
+  {
+    "era": "pre1950",
+    "severe": false,
+    "transitioned": false,
+    "world_id": "real_v2-0759"
+  },
+  {
+    "era": "post1950",
+    "severe": false,
+    "transitioned": false,
+    "world_id": "real_v2-0760"
+  },
+  {
+    "era": "pre1950",
+    "severe": false,
+    "transitioned": false,
+    "world_id": "real_v2-0761"
+  },
+  {
+    "era": "post1950",
+    "severe": false,
+    "transitioned": false,
+    "world_id": "real_v2-0762"
+  },
+  {
+    "era": "pre1950",
+    "severe": false,
+    "transitioned": false,
+    "world_id": "real_v2-0763"
+  },
+  {
+    "era": "pre1950",
+    "severe": true,
+    "transitioned": true,
+    "world_id": "real_v2-0764"
+  },
+  {
+    "era": "pre1950",
+    "severe": false,
+    "transitioned": false,
+    "world_id": "real_v2-0765"
+  },
+  {
+    "era": "post1950",
+    "severe": true,
+    "transitioned": true,
+    "world_id": "real_v2-0766"
+  },
+  {
+    "era": "pre1950",
+    "severe": true,
+    "transitioned": true,
+    "world_id": "real_v2-0767"
+  },
+  {
+    "era": "pre1950",
+    "severe": false,
+    "transitioned": false,
+    "world_id": "real_v2-0768"
+  },
+  {
+    "era": "post1950",
+    "severe": false,
+    "transitioned": false,
+    "world_id": "real_v2-0769"
+  },
+  {
+    "era": "pre1950",
+    "severe": false,
+    "transitioned": false,
+    "world_id": "real_v2-0770"
+  },
+  {
+    "era": "post1950",
+    "severe": false,
+    "transitioned": false,
+    "world_id": "real_v2-0771"
+  },
+  {
+    "era": "post1950",
+    "severe": false,
+    "transitioned": false,
+    "world_id": "real_v2-0772"
+  },
+  {
+    "era": "post1950",
+    "severe": false,
+    "transitioned": false,
+    "world_id": "real_v2-0773"
+  },
+  {
+    "era": "post1950",
+    "severe": false,
+    "transitioned": false,
+    "world_id": "real_v2-0774"
+  },
+  {
+    "era": "pre1950",
+    "severe": false,
+    "transitioned": false,
+    "world_id": "real_v2-0775"
+  },
+  {
+    "era": "pre1950",
+    "severe": false,
+    "transitioned": false,
+    "world_id": "real_v2-0776"
+  },
+  {
+    "era": "pre1950",
+    "severe": false,
+    "transitioned": false,
+    "world_id": "real_v2-0777"
+  },
+  {
+    "era": "pre1950",
+    "severe": false,
+    "transitioned": false,
+    "world_id": "real_v2-0778"
+  },
+  {
+    "era": "post1950",
+    "severe": false,
+    "transitioned": false,
+    "world_id": "real_v2-0779"
+  },
+  {
+    "era": "pre1950",
+    "severe": false,
+    "transitioned": false,
+    "world_id": "real_v2-0780"
+  },
+  {
+    "era": "post1950",
+    "severe": false,
+    "transitioned": false,
+    "world_id": "real_v2-0781"
+  },
+  {
+    "era": "post1950",
+    "severe": false,
+    "transitioned": false,
+    "world_id": "real_v2-0782"
+  },
+  {
+    "era": "pre1950",
+    "severe": false,
+    "transitioned": false,
+    "world_id": "real_v2-0783"
+  },
+  {
+    "era": "post1950",
+    "severe": true,
+    "transitioned": true,
+    "world_id": "real_v2-0784"
+  },
+  {
+    "era": "post1950",
+    "severe": false,
+    "transitioned": false,
+    "world_id": "real_v2-0785"
+  },
+  {
+    "era": "post1950",
+    "severe": false,
+    "transitioned": false,
+    "world_id": "real_v2-0786"
+  },
+  {
+    "era": "pre1950",
+    "severe": false,
+    "transitioned": false,
+    "world_id": "real_v2-0787"
+  },
+  {
+    "era": "post1950",
+    "severe": false,
+    "transitioned": false,
+    "world_id": "real_v2-0788"
+  },
+  {
+    "era": "post1950",
+    "severe": false,
+    "transitioned": false,
+    "world_id": "real_v2-0789"
+  },
+  {
+    "era": "post1950",
+    "severe": false,
+    "transitioned": false,
+    "world_id": "real_v2-0790"
+  },
+  {
+    "era": "pre1950",
+    "severe": false,
+    "transitioned": false,
+    "world_id": "real_v2-0791"
+  },
+  {
+    "era": "post1950",
+    "severe": false,
+    "transitioned": false,
+    "world_id": "real_v2-0792"
+  },
+  {
+    "era": "post1950",
+    "severe": false,
+    "transitioned": false,
+    "world_id": "real_v2-0793"
+  },
+  {
+    "era": "pre1950",
+    "severe": true,
+    "transitioned": true,
+    "world_id": "real_v2-0794"
+  },
+  {
+    "era": "pre1950",
+    "severe": false,
+    "transitioned": false,
+    "world_id": "real_v2-0795"
+  },
+  {
+    "era": "pre1950",
+    "severe": true,
+    "transitioned": true,
+    "world_id": "real_v2-0796"
+  },
+  {
+    "era": "pre1950",
+    "severe": false,
+    "transitioned": false,
+    "world_id": "real_v2-0797"
+  },
+  {
+    "era": "pre1950",
+    "severe": false,
+    "transitioned": false,
+    "world_id": "real_v2-0798"
+  },
+  {
+    "era": "post1950",
+    "severe": false,
+    "transitioned": false,
+    "world_id": "real_v2-0799"
+  },
+  {
+    "era": "pre1950",
+    "severe": false,
+    "transitioned": false,
+    "world_id": "real_v2-0800"
+  },
+  {
+    "era": "pre1950",
+    "severe": false,
+    "transitioned": false,
+    "world_id": "real_v2-0801"
+  },
+  {
+    "era": "pre1950",
+    "severe": false,
+    "transitioned": false,
+    "world_id": "real_v2-0802"
+  },
+  {
+    "era": "post1950",
+    "severe": false,
+    "transitioned": false,
+    "world_id": "real_v2-0803"
+  },
+  {
+    "era": "post1950",
+    "severe": true,
+    "transitioned": true,
+    "world_id": "real_v2-0804"
+  },
+  {
+    "era": "pre1950",
+    "severe": false,
+    "transitioned": false,
+    "world_id": "real_v2-0805"
+  },
+  {
+    "era": "pre1950",
+    "severe": false,
+    "transitioned": false,
+    "world_id": "real_v2-0806"
+  },
+  {
+    "era": "post1950",
+    "severe": false,
+    "transitioned": false,
+    "world_id": "real_v2-0807"
+  },
+  {
+    "era": "pre1950",
+    "severe": false,
+    "transitioned": false,
+    "world_id": "real_v2-0808"
+  },
+  {
+    "era": "post1950",
+    "severe": false,
+    "transitioned": false,
+    "world_id": "real_v2-0809"
+  },
+  {
+    "era": "post1950",
+    "severe": false,
+    "transitioned": false,
+    "world_id": "real_v2-0810"
+  },
+  {
+    "era": "pre1950",
+    "severe": false,
+    "transitioned": false,
+    "world_id": "real_v2-0811"
+  },
+  {
+    "era": "post1950",
+    "severe": false,
+    "transitioned": false,
+    "world_id": "real_v2-0812"
+  },
+  {
+    "era": "pre1950",
+    "severe": false,
+    "transitioned": false,
+    "world_id": "real_v2-0813"
+  },
+  {
+    "era": "pre1950",
+    "severe": false,
+    "transitioned": false,
+    "world_id": "real_v2-0814"
+  },
+  {
+    "era": "pre1950",
+    "severe": false,
+    "transitioned": false,
+    "world_id": "real_v2-0815"
+  },
+  {
+    "era": "pre1950",
+    "severe": false,
+    "transitioned": false,
+    "world_id": "real_v2-0816"
+  },
+  {
+    "era": "post1950",
+    "severe": false,
+    "transitioned": false,
+    "world_id": "real_v2-0817"
+  },
+  {
+    "era": "post1950",
+    "severe": false,
+    "transitioned": false,
+    "world_id": "real_v2-0818"
+  },
+  {
+    "era": "post1950",
+    "severe": false,
+    "transitioned": false,
+    "world_id": "real_v2-0819"
+  },
+  {
+    "era": "post1950",
+    "severe": false,
+    "transitioned": false,
+    "world_id": "real_v2-0820"
+  },
+  {
+    "era": "pre1950",
+    "severe": false,
+    "transitioned": false,
+    "world_id": "real_v2-0821"
+  },
+  {
+    "era": "post1950",
+    "severe": true,
+    "transitioned": true,
+    "world_id": "real_v2-0822"
+  },
+  {
+    "era": "pre1950",
+    "severe": false,
+    "transitioned": false,
+    "world_id": "real_v2-0823"
+  },
+  {
+    "era": "pre1950",
+    "severe": false,
+    "transitioned": false,
+    "world_id": "real_v2-0824"
+  },
+  {
+    "era": "pre1950",
+    "severe": false,
+    "transitioned": false,
+    "world_id": "real_v2-0825"
+  },
+  {
+    "era": "pre1950",
+    "severe": false,
+    "transitioned": false,
+    "world_id": "real_v2-0826"
+  },
+  {
+    "era": "post1950",
+    "severe": false,
+    "transitioned": false,
+    "world_id": "real_v2-0827"
+  },
+  {
+    "era": "post1950",
+    "severe": false,
+    "transitioned": true,
+    "world_id": "real_v2-0828"
+  },
+  {
+    "era": "post1950",
+    "severe": false,
+    "transitioned": false,
+    "world_id": "real_v2-0829"
+  },
+  {
+    "era": "post1950",
+    "severe": true,
+    "transitioned": true,
+    "world_id": "real_v2-0830"
+  },
+  {
+    "era": "post1950",
+    "severe": false,
+    "transitioned": false,
+    "world_id": "real_v2-0831"
+  },
+  {
+    "era": "pre1950",
+    "severe": true,
+    "transitioned": true,
+    "world_id": "real_v2-0832"
+  },
+  {
+    "era": "pre1950",
+    "severe": false,
+    "transitioned": false,
+    "world_id": "real_v2-0833"
+  },
+  {
+    "era": "pre1950",
+    "severe": false,
+    "transitioned": false,
+    "world_id": "real_v2-0834"
+  },
+  {
+    "era": "post1950",
+    "severe": false,
+    "transitioned": false,
+    "world_id": "real_v2-0835"
+  },
+  {
+    "era": "post1950",
+    "severe": false,
+    "transitioned": false,
+    "world_id": "real_v2-0836"
+  },
+  {
+    "era": "pre1950",
+    "severe": false,
+    "transitioned": false,
+    "world_id": "real_v2-0837"
+  },
+  {
+    "era": "pre1950",
+    "severe": false,
+    "transitioned": false,
+    "world_id": "real_v2-0838"
+  },
+  {
+    "era": "pre1950",
+    "severe": false,
+    "transitioned": false,
+    "world_id": "real_v2-0839"
+  },
+  {
+    "era": "pre1950",
+    "severe": false,
+    "transitioned": false,
+    "world_id": "real_v2-0840"
+  },
+  {
+    "era": "pre1950",
+    "severe": false,
+    "transitioned": false,
+    "world_id": "real_v2-0841"
+  },
+  {
+    "era": "pre1950",
+    "severe": false,
+    "transitioned": false,
+    "world_id": "real_v2-0842"
+  },
+  {
+    "era": "pre1950",
+    "severe": false,
+    "transitioned": false,
+    "world_id": "real_v2-0843"
+  },
+  {
+    "era": "pre1950",
+    "severe": false,
+    "transitioned": false,
+    "world_id": "real_v2-0844"
+  },
+  {
+    "era": "post1950",
+    "severe": false,
+    "transitioned": false,
+    "world_id": "real_v2-0845"
+  },
+  {
+    "era": "post1950",
+    "severe": false,
+    "transitioned": false,
+    "world_id": "real_v2-0846"
+  },
+  {
+    "era": "pre1950",
+    "severe": false,
+    "transitioned": false,
+    "world_id": "real_v2-0847"
+  },
+  {
+    "era": "post1950",
+    "severe": false,
+    "transitioned": false,
+    "world_id": "real_v2-0848"
+  },
+  {
+    "era": "pre1950",
+    "severe": false,
+    "transitioned": false,
+    "world_id": "real_v2-0849"
+  },
+  {
+    "era": "pre1950",
+    "severe": false,
+    "transitioned": false,
+    "world_id": "real_v2-0850"
+  },
+  {
+    "era": "pre1950",
+    "severe": false,
+    "transitioned": false,
+    "world_id": "real_v2-0851"
+  },
+  {
+    "era": "pre1950",
+    "severe": false,
+    "transitioned": false,
+    "world_id": "real_v2-0852"
+  },
+  {
+    "era": "pre1950",
+    "severe": false,
+    "transitioned": false,
+    "world_id": "real_v2-0853"
+  },
+  {
+    "era": "pre1950",
+    "severe": false,
+    "transitioned": false,
+    "world_id": "real_v2-0854"
+  },
+  {
+    "era": "post1950",
+    "severe": false,
+    "transitioned": false,
+    "world_id": "real_v2-0855"
+  },
+  {
+    "era": "pre1950",
+    "severe": false,
+    "transitioned": false,
+    "world_id": "real_v2-0856"
+  },
+  {
+    "era": "pre1950",
+    "severe": false,
+    "transitioned": false,
+    "world_id": "real_v2-0857"
+  },
+  {
+    "era": "post1950",
+    "severe": false,
+    "transitioned": false,
+    "world_id": "real_v2-0858"
+  },
+  {
+    "era": "post1950",
+    "severe": false,
+    "transitioned": false,
+    "world_id": "real_v2-0859"
+  },
+  {
+    "era": "pre1950",
+    "severe": false,
+    "transitioned": true,
+    "world_id": "real_v2-0860"
+  },
+  {
+    "era": "pre1950",
+    "severe": false,
+    "transitioned": false,
+    "world_id": "real_v2-0861"
+  },
+  {
+    "era": "post1950",
+    "severe": false,
+    "transitioned": false,
+    "world_id": "real_v2-0862"
+  },
+  {
+    "era": "post1950",
+    "severe": false,
+    "transitioned": false,
+    "world_id": "real_v2-0863"
+  },
+  {
+    "era": "post1950",
+    "severe": false,
+    "transitioned": false,
+    "world_id": "real_v2-0864"
+  },
+  {
+    "era": "pre1950",
+    "severe": false,
+    "transitioned": false,
+    "world_id": "real_v2-0865"
+  },
+  {
+    "era": "post1950",
+    "severe": false,
+    "transitioned": false,
+    "world_id": "real_v2-0866"
+  },
+  {
+    "era": "pre1950",
+    "severe": false,
+    "transitioned": false,
+    "world_id": "real_v2-0867"
+  },
+  {
+    "era": "post1950",
+    "severe": false,
+    "transitioned": false,
+    "world_id": "real_v2-0868"
+  },
+  {
+    "era": "post1950",
+    "severe": false,
+    "transitioned": false,
+    "world_id": "real_v2-0869"
+  },
+  {
+    "era": "pre1950",
+    "severe": false,
+    "transitioned": true,
+    "world_id": "real_v2-0870"
+  },
+  {
+    "era": "post1950",
+    "severe": false,
+    "transitioned": false,
+    "world_id": "real_v2-0871"
+  },
+  {
+    "era": "post1950",
+    "severe": false,
+    "transitioned": false,
+    "world_id": "real_v2-0872"
+  },
+  {
+    "era": "post1950",
+    "severe": false,
+    "transitioned": false,
+    "world_id": "real_v2-0873"
+  },
+  {
+    "era": "pre1950",
+    "severe": false,
+    "transitioned": false,
+    "world_id": "real_v2-0874"
+  },
+  {
+    "era": "pre1950",
+    "severe": false,
+    "transitioned": false,
+    "world_id": "real_v2-0875"
+  },
+  {
+    "era": "post1950",
+    "severe": false,
+    "transitioned": false,
+    "world_id": "real_v2-0876"
+  },
+  {
+    "era": "pre1950",
+    "severe": false,
+    "transitioned": false,
+    "world_id": "real_v2-0877"
+  },
+  {
+    "era": "pre1950",
+    "severe": false,
+    "transitioned": false,
+    "world_id": "real_v2-0878"
+  },
+  {
+    "era": "post1950",
+    "severe": true,
+    "transitioned": true,
+    "world_id": "real_v2-0879"
+  },
+  {
+    "era": "pre1950",
+    "severe": false,
+    "transitioned": false,
+    "world_id": "real_v2-0880"
+  },
+  {
+    "era": "pre1950",
+    "severe": false,
+    "transitioned": false,
+    "world_id": "real_v2-0881"
+  },
+  {
+    "era": "pre1950",
+    "severe": false,
+    "transitioned": false,
+    "world_id": "real_v2-0882"
+  },
+  {
+    "era": "post1950",
+    "severe": false,
+    "transitioned": true,
+    "world_id": "real_v2-0883"
+  },
+  {
+    "era": "pre1950",
+    "severe": false,
+    "transitioned": false,
+    "world_id": "real_v2-0884"
+  },
+  {
+    "era": "pre1950",
+    "severe": false,
+    "transitioned": false,
+    "world_id": "real_v2-0885"
+  },
+  {
+    "era": "pre1950",
+    "severe": false,
+    "transitioned": false,
+    "world_id": "real_v2-0886"
+  },
+  {
+    "era": "pre1950",
+    "severe": false,
+    "transitioned": false,
+    "world_id": "real_v2-0887"
+  },
+  {
+    "era": "post1950",
+    "severe": false,
+    "transitioned": false,
+    "world_id": "real_v2-0888"
+  },
+  {
+    "era": "pre1950",
+    "severe": false,
+    "transitioned": false,
+    "world_id": "real_v2-0889"
+  },
+  {
+    "era": "post1950",
+    "severe": false,
+    "transitioned": true,
+    "world_id": "real_v2-0890"
+  },
+  {
+    "era": "pre1950",
+    "severe": false,
+    "transitioned": false,
+    "world_id": "real_v2-0891"
+  },
+  {
+    "era": "post1950",
+    "severe": false,
+    "transitioned": false,
+    "world_id": "real_v2-0892"
+  },
+  {
+    "era": "post1950",
+    "severe": false,
+    "transitioned": true,
+    "world_id": "real_v2-0893"
+  },
+  {
+    "era": "post1950",
+    "severe": false,
+    "transitioned": false,
+    "world_id": "real_v2-0894"
+  },
+  {
+    "era": "pre1950",
+    "severe": false,
+    "transitioned": false,
+    "world_id": "real_v2-0895"
+  },
+  {
+    "era": "pre1950",
+    "severe": false,
+    "transitioned": false,
+    "world_id": "real_v2-0896"
+  },
+  {
+    "era": "post1950",
+    "severe": false,
+    "transitioned": false,
+    "world_id": "real_v2-0897"
+  },
+  {
+    "era": "post1950",
+    "severe": false,
+    "transitioned": false,
+    "world_id": "real_v2-0898"
+  },
+  {
+    "era": "post1950",
+    "severe": false,
+    "transitioned": false,
+    "world_id": "real_v2-0899"
+  },
+  {
+    "era": "pre1950",
+    "severe": false,
+    "transitioned": false,
+    "world_id": "real_v2-0900"
+  },
+  {
+    "era": "pre1950",
+    "severe": true,
+    "transitioned": true,
+    "world_id": "real_v2-0901"
+  },
+  {
+    "era": "pre1950",
+    "severe": false,
+    "transitioned": false,
+    "world_id": "real_v2-0902"
+  },
+  {
+    "era": "pre1950",
+    "severe": false,
+    "transitioned": false,
+    "world_id": "real_v2-0903"
+  },
+  {
+    "era": "post1950",
+    "severe": false,
+    "transitioned": false,
+    "world_id": "real_v2-0904"
+  },
+  {
+    "era": "pre1950",
+    "severe": false,
+    "transitioned": false,
+    "world_id": "real_v2-0905"
+  },
+  {
+    "era": "pre1950",
+    "severe": false,
+    "transitioned": false,
+    "world_id": "real_v2-0906"
+  },
+  {
+    "era": "post1950",
+    "severe": false,
+    "transitioned": false,
+    "world_id": "real_v2-0907"
+  },
+  {
+    "era": "post1950",
+    "severe": false,
+    "transitioned": true,
+    "world_id": "real_v2-0908"
+  },
+  {
+    "era": "pre1950",
+    "severe": false,
+    "transitioned": false,
+    "world_id": "real_v2-0909"
+  },
+  {
+    "era": "post1950",
+    "severe": false,
+    "transitioned": false,
+    "world_id": "real_v2-0910"
+  },
+  {
+    "era": "pre1950",
+    "severe": false,
+    "transitioned": false,
+    "world_id": "real_v2-0911"
+  },
+  {
+    "era": "post1950",
+    "severe": false,
+    "transitioned": false,
+    "world_id": "real_v2-0912"
+  },
+  {
+    "era": "pre1950",
+    "severe": false,
+    "transitioned": false,
+    "world_id": "real_v2-0913"
+  },
+  {
+    "era": "pre1950",
+    "severe": false,
+    "transitioned": false,
+    "world_id": "real_v2-0914"
+  },
+  {
+    "era": "pre1950",
+    "severe": false,
+    "transitioned": false,
+    "world_id": "real_v2-0915"
+  },
+  {
+    "era": "pre1950",
+    "severe": false,
+    "transitioned": false,
+    "world_id": "real_v2-0916"
+  },
+  {
+    "era": "post1950",
+    "severe": false,
+    "transitioned": false,
+    "world_id": "real_v2-0917"
+  },
+  {
+    "era": "post1950",
+    "severe": false,
+    "transitioned": false,
+    "world_id": "real_v2-0918"
+  },
+  {
+    "era": "pre1950",
+    "severe": false,
+    "transitioned": false,
+    "world_id": "real_v2-0919"
+  },
+  {
+    "era": "pre1950",
+    "severe": false,
+    "transitioned": false,
+    "world_id": "real_v2-0920"
+  },
+  {
+    "era": "pre1950",
+    "severe": false,
+    "transitioned": false,
+    "world_id": "real_v2-0921"
+  },
+  {
+    "era": "pre1950",
+    "severe": false,
+    "transitioned": true,
+    "world_id": "real_v2-0922"
+  },
+  {
+    "era": "post1950",
+    "severe": false,
+    "transitioned": false,
+    "world_id": "real_v2-0923"
+  },
+  {
+    "era": "post1950",
+    "severe": false,
+    "transitioned": false,
+    "world_id": "real_v2-0924"
+  },
+  {
+    "era": "pre1950",
+    "severe": false,
+    "transitioned": false,
+    "world_id": "real_v2-0925"
+  },
+  {
+    "era": "post1950",
+    "severe": false,
+    "transitioned": false,
+    "world_id": "real_v2-0926"
+  },
+  {
+    "era": "post1950",
+    "severe": false,
+    "transitioned": false,
+    "world_id": "real_v2-0927"
+  },
+  {
+    "era": "pre1950",
+    "severe": false,
+    "transitioned": false,
+    "world_id": "real_v2-0928"
+  },
+  {
+    "era": "post1950",
+    "severe": false,
+    "transitioned": false,
+    "world_id": "real_v2-0929"
+  },
+  {
+    "era": "post1950",
+    "severe": false,
+    "transitioned": false,
+    "world_id": "real_v2-0930"
+  },
+  {
+    "era": "pre1950",
+    "severe": false,
+    "transitioned": true,
+    "world_id": "real_v2-0931"
+  },
+  {
+    "era": "pre1950",
+    "severe": false,
+    "transitioned": false,
+    "world_id": "real_v2-0932"
+  },
+  {
+    "era": "pre1950",
+    "severe": false,
+    "transitioned": false,
+    "world_id": "real_v2-0933"
+  },
+  {
+    "era": "pre1950",
+    "severe": false,
+    "transitioned": false,
+    "world_id": "real_v2-0934"
+  },
+  {
+    "era": "post1950",
+    "severe": false,
+    "transitioned": false,
+    "world_id": "real_v2-0935"
+  },
+  {
+    "era": "post1950",
+    "severe": false,
+    "transitioned": false,
+    "world_id": "real_v2-0936"
+  },
+  {
+    "era": "post1950",
+    "severe": false,
+    "transitioned": false,
+    "world_id": "real_v2-0937"
+  },
+  {
+    "era": "pre1950",
+    "severe": false,
+    "transitioned": false,
+    "world_id": "real_v2-0938"
+  },
+  {
+    "era": "pre1950",
+    "severe": false,
+    "transitioned": false,
+    "world_id": "real_v2-0939"
+  },
+  {
+    "era": "post1950",
+    "severe": false,
+    "transitioned": false,
+    "world_id": "real_v2-0940"
+  },
+  {
+    "era": "post1950",
+    "severe": false,
+    "transitioned": false,
+    "world_id": "real_v2-0941"
+  },
+  {
+    "era": "pre1950",
+    "severe": false,
+    "transitioned": false,
+    "world_id": "real_v2-0942"
+  },
+  {
+    "era": "pre1950",
+    "severe": false,
+    "transitioned": false,
+    "world_id": "real_v2-0943"
+  },
+  {
+    "era": "pre1950",
+    "severe": false,
+    "transitioned": false,
+    "world_id": "real_v2-0944"
+  },
+  {
+    "era": "pre1950",
+    "severe": false,
+    "transitioned": false,
+    "world_id": "real_v2-0945"
+  },
+  {
+    "era": "post1950",
+    "severe": false,
+    "transitioned": false,
+    "world_id": "real_v2-0946"
+  },
+  {
+    "era": "post1950",
+    "severe": false,
+    "transitioned": false,
+    "world_id": "real_v2-0947"
+  },
+  {
+    "era": "pre1950",
+    "severe": false,
+    "transitioned": false,
+    "world_id": "real_v2-0948"
+  },
+  {
+    "era": "post1950",
+    "severe": false,
+    "transitioned": false,
+    "world_id": "real_v2-0949"
+  },
+  {
+    "era": "pre1950",
+    "severe": false,
+    "transitioned": false,
+    "world_id": "real_v2-0950"
+  },
+  {
+    "era": "pre1950",
+    "severe": false,
+    "transitioned": false,
+    "world_id": "real_v2-0951"
+  },
+  {
+    "era": "post1950",
+    "severe": false,
+    "transitioned": false,
+    "world_id": "real_v2-0952"
+  },
+  {
+    "era": "pre1950",
+    "severe": false,
+    "transitioned": false,
+    "world_id": "real_v2-0953"
+  },
+  {
+    "era": "pre1950",
+    "severe": false,
+    "transitioned": false,
+    "world_id": "real_v2-0954"
+  },
+  {
+    "era": "post1950",
+    "severe": false,
+    "transitioned": false,
+    "world_id": "real_v2-0955"
+  },
+  {
+    "era": "post1950",
+    "severe": false,
+    "transitioned": false,
+    "world_id": "real_v2-0956"
+  },
+  {
+    "era": "pre1950",
+    "severe": false,
+    "transitioned": false,
+    "world_id": "real_v2-0957"
+  },
+  {
+    "era": "post1950",
+    "severe": false,
+    "transitioned": false,
+    "world_id": "real_v2-0958"
+  },
+  {
+    "era": "post1950",
+    "severe": false,
+    "transitioned": false,
+    "world_id": "real_v2-0959"
+  },
+  {
+    "era": "pre1950",
+    "severe": false,
+    "transitioned": true,
+    "world_id": "real_v2-0960"
+  },
+  {
+    "era": "post1950",
+    "severe": false,
+    "transitioned": false,
+    "world_id": "real_v2-0961"
+  },
+  {
+    "era": "pre1950",
+    "severe": false,
+    "transitioned": true,
+    "world_id": "real_v2-0962"
+  },
+  {
+    "era": "post1950",
+    "severe": false,
+    "transitioned": false,
+    "world_id": "real_v2-0963"
+  },
+  {
+    "era": "post1950",
+    "severe": false,
+    "transitioned": false,
+    "world_id": "real_v2-0964"
+  },
+  {
+    "era": "post1950",
+    "severe": false,
+    "transitioned": false,
+    "world_id": "real_v2-0965"
+  },
+  {
+    "era": "post1950",
+    "severe": false,
+    "transitioned": false,
+    "world_id": "real_v2-0966"
+  },
+  {
+    "era": "post1950",
+    "severe": false,
+    "transitioned": false,
+    "world_id": "real_v2-0967"
+  },
+  {
+    "era": "post1950",
+    "severe": false,
+    "transitioned": false,
+    "world_id": "real_v2-0968"
+  },
+  {
+    "era": "post1950",
+    "severe": false,
+    "transitioned": false,
+    "world_id": "real_v2-0969"
+  },
+  {
+    "era": "pre1950",
+    "severe": false,
+    "transitioned": false,
+    "world_id": "real_v2-0970"
+  },
+  {
+    "era": "post1950",
+    "severe": false,
+    "transitioned": false,
+    "world_id": "real_v2-0971"
+  },
+  {
+    "era": "pre1950",
+    "severe": false,
+    "transitioned": false,
+    "world_id": "real_v2-0972"
+  },
+  {
+    "era": "pre1950",
+    "severe": false,
+    "transitioned": false,
+    "world_id": "real_v2-0973"
+  },
+  {
+    "era": "pre1950",
+    "severe": false,
+    "transitioned": false,
+    "world_id": "real_v2-0974"
+  },
+  {
+    "era": "pre1950",
+    "severe": false,
+    "transitioned": false,
+    "world_id": "real_v2-0975"
+  },
+  {
+    "era": "post1950",
+    "severe": false,
+    "transitioned": false,
+    "world_id": "real_v2-0976"
+  },
+  {
+    "era": "pre1950",
+    "severe": false,
+    "transitioned": false,
+    "world_id": "real_v2-0977"
+  },
+  {
+    "era": "pre1950",
+    "severe": false,
+    "transitioned": true,
+    "world_id": "real_v2-0978"
+  },
+  {
+    "era": "post1950",
+    "severe": false,
+    "transitioned": false,
+    "world_id": "real_v2-0979"
+  },
+  {
+    "era": "post1950",
+    "severe": false,
+    "transitioned": false,
+    "world_id": "real_v2-0980"
+  }
+]
