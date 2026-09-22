@@ -240,3 +240,36 @@ def release(name: str, ledger: Path = LEDGER, sealed: Path = SEALED,
     if not _events(name, "released", ledger):
         _append(dict(event="released", test_set=name), ledger)
     return out
+
+
+# --- 7. external (real-data) test sets -------------------------------------------
+
+def split_seed(name: str, ledger: Path = LEDGER, sealed: Path = SEALED) -> int:
+    """The committed seed of an external test set, for its dev/test split."""
+    return _load_seed(name, ledger, sealed)
+
+
+def seal_external_pool(name: str, records: Path, truth: list[dict], meta: dict,
+                       ledger: Path = LEDGER, sealed: Path = SEALED) -> dict:
+    """Seal the answers of a test set built from real data, not from the simulator.
+
+    `records` is the open `series.npz` methods will read; `truth` is sealed and
+    only its hash goes to the ledger. `meta` is recorded in the open, so it must hold
+    nothing about outcomes (counts of windows are fine, class balance is not).
+    """
+    if not _events(name, "seed_committed", ledger):
+        raise BlindingViolation(f"no committed seed for test set {name!r}")
+    if _events(name, "pool_built", ledger) or is_unsealed(name, ledger):
+        raise BlindingViolation(f"test set {name!r} has already been built")
+    forbidden = {"n_events", "n_controls", "base_rate", "events", "transitioned"}
+    if forbidden & set(meta):
+        raise BlindingViolation(f"meta would reveal outcomes: {sorted(forbidden & set(meta))}")
+    text = json.dumps(truth, indent=2, sort_keys=True)
+    (sealed / name).mkdir(parents=True, exist_ok=True)
+    (sealed / name / "truth.json").write_text(text)
+    event = dict(event="pool_built", test_set=name, truth_sha256=_sha256_bytes(text.encode()),
+                 record_sha256={"real": _sha256_bytes(Path(records).read_bytes())},
+                 n_worlds=len(truth), n_requested=len(truth),
+                 generator_revision=_git_revision(), external=True, **meta)
+    _append(event, ledger)
+    return event
