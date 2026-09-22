@@ -69,9 +69,11 @@ was too thin":
 - Simulation-trained methods score **significantly below chance** (0.43 and 0.39).
   Not absent transfer: **negative** transfer.
 - The reason is a sign reversal. In the simulator the strongest warning sign is rising
-  autocorrelation (critical slowing down). In real income data that feature points the
-  other way, and what predicts a contraction is raw volatility — which the simulator
-  deliberately calibrates away as a nuisance.
+  autocorrelation (critical slowing down), which makes a record look smoother. In real
+  income data smoothness means safety instead: the steadiest growers almost never
+  contract, and what marks a coming contraction is raw year-to-year volatility — which
+  the simulator deliberately calibrates away as a nuisance. Event rates run 5%, 10%,
+  24%, 35% across volatility quartiles.
 
 Full write-up: [docs/findings/findings.pdf](docs/findings/findings.pdf)
 ([Markdown](docs/findings/findings.md)). Pre-registrations, written before each

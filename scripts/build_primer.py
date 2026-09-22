@@ -319,9 +319,11 @@ CONTENT = [
         "real history did predict large falls in income, and reasonably well.",
         "**But the methods trained on the simulated societies did worse than chance** on "
         "that same data. The reason is a reversal: in the simulations, a society heading "
-        "for a tipping point recovers from small knocks more and more slowly, so its "
-        "record looks smoother. In real income data it is the opposite; the economies that "
-        "fell were the jumpy ones. A method taught the simulated rule applies it backwards.",
+        "for a tipping point recovers from small knocks more and more slowly, which makes "
+        "its record look smoother, so smoothness reads as danger. In real income data "
+        "smoothness means the opposite: steady growers rarely crashed, and the economies "
+        "that fell were the jumpy ones, swinging about 9% a year against 2% for the rest. "
+        "A method taught the simulated rule applies it backwards.",
     ]),
     ("p", "That is the project's sharpest practical lesson: a forecasting method that works "
           "on simulated data should not be assumed to work on history, even when the "
