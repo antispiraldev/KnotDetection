@@ -26,6 +26,21 @@ everything you or any subagent does is logged for me to see later."
 - The `real_v1` seed was committed before download. The data work is delegated to a
   subagent, so identities stay hidden from me. Its public log goes to `phase2/logs/`.
   Its private log and the identity key stay sealed until scoring.
+- **Two fixes from a dry run, before any real data existed.** I ran
+  `phase2/run_real.py` on stand-in windows cut from simulated worlds:
+  - M1 (own history) inherited the simulator's rule that a departure must hold for
+    60 time units. The real horizon is 45 on that scale, so M1 could never fire.
+    It now counts extrapolated paths that fall below half the record's maximum
+    within the horizon: the pre-registered area-loss event itself, applied to the
+    record's own extrapolation.
+  - Dev cross-validation pooled predictions across folds, which gave even the
+    constant base rate an AUC of 0.38. AUC is now averaged within folds.
+- A Claude Code restart stopped the data subagent early, before it had written
+  anything except a probe download. It was resumed from its saved transcript. The
+  ledger shows no partial build.
+- Also started: `scripts/robustness_window.py`, the Gate 4 robustness check. It
+  widens the transition window from steps 100–150 to 100–210 and re-measures timing.
+  This is development data only.
 
 ---
 

@@ -18,6 +18,7 @@ import argparse
 import json
 import pickle
 import sys
+import zlib
 from pathlib import Path
 
 import numpy as np
@@ -30,8 +31,7 @@ sys.path.insert(0, str(ROOT))
 
 from inflection.eval import blind                                   # noqa: E402
 from inflection.eval.leakage import FEATURE_NAMES, features          # noqa: E402
-from inflection.methods.base import QUANTILE_LEVELS, Record          # noqa: E402
-from inflection.methods.baselines import OwnHistory                  # noqa: E402
+from inflection.methods.base import Record                           # noqa: E402
 from inflection.methods.ews import ews_indicators                    # noqa: E402
 from inflection.methods.features import FeatureClassifier, _calibrated, physical_features  # noqa: E402
 from inflection.methods.hybrid import Hybrid                         # noqa: E402
@@ -97,14 +97,45 @@ class M0:
 
 
 class M1:
-    """Own history: raw departure frequency from trend + AR(1) extrapolation, calibrated."""
+    """Own history: extrapolate the record's trend with AR(1) noise, and count how often it
+    falls below half of the record's maximum within the horizon -- the pre-registered
+    area-loss event, applied to the record's own extrapolation. Calibrated on real dev.
 
-    def __init__(self):
-        self.oh = OwnHistory()
-        self.oh.fallback = type("F", (), {"q": tuple(np.full(len(QUANTILE_LEVELS), 100.0))})()
+    The simulator version (`methods.baselines.OwnHistory`) requires a departure to hold
+    for 60 time units, but the real horizon is only 45 on the same scale, so it could
+    never fire (every forecast came out constant in a dry run on stand-in data). The
+    pre-registered event itself needs no hold, so it is used here.
+    """
+
+    n_paths = 400
 
     def raw(self, recs):
-        return np.array([self.oh._simulate(r)[0] for r in recs])
+        return np.array([self._p(r) for r in recs])
+
+    def _p(self, r):
+        rng = np.random.default_rng(zlib.crc32(r.world_id.encode()))
+        ly = np.log(np.maximum(r.y, 1e-9))
+        t = np.asarray(r.t, dtype=float)
+        tc = t - t.mean()
+        beta = np.polyfit(tc, ly, 1)
+        resid = ly - np.polyval(beta, tc)
+        phi = float(np.clip(np.corrcoef(resid[:-1], resid[1:])[0, 1], -0.95, 0.95)) \
+            if resid.std() > 0 else 0.0
+        phi = 0.0 if not np.isfinite(phi) else phi
+        sigma = float(resid.std()) or 1e-6
+        n_eff = max(len(resid) * (1 - phi) / (1 + phi), 3.0)
+        se = sigma / np.sqrt(np.sum(tc ** 2)) * np.sqrt(len(resid) / n_eff)
+        dt = float(np.median(np.diff(t)))
+        steps = np.arange(r.origin, r.horizon + 1e-9, dt)
+        slopes = beta[0] + se * rng.standard_normal(self.n_paths)
+        e = np.full(self.n_paths, resid[-1])
+        low = np.full(self.n_paths, np.inf)
+        for s_ in steps:
+            e = phi * e + sigma * np.sqrt(1 - phi ** 2) * rng.standard_normal(self.n_paths)
+            v = beta[1] + slopes * (s_ - t.mean()) + e
+            low = np.minimum(low, v)
+        p = float(np.mean(low < np.log(0.5 * np.max(r.y))))
+        return float(np.clip(p, 0.5 / self.n_paths, 1 - 0.5 / self.n_paths))
 
     def fit(self, recs, y):
         self.cal = LogisticRegression().fit(_logit(self.raw(recs))[:, None], y); return self
@@ -202,17 +233,20 @@ def cmd_dev(_):
     print(f"dev: {len(recs)} windows, {len(set(groups))} polities, {int(y.sum())} events")
     res = {}
     for name, cls in CLASSES.items():
-        p = np.zeros(len(recs))
-        if name in ("M3_feature_clf_sim", "M4_hybrid_sim"):
-            p = cls().fit(None, None).predict(recs)          # no real data used to fit
-        else:
-            for tr, te in GroupKFold(5).split(recs, y, groups):
-                m = cls().fit([recs[i] for i in tr], y[tr])
-                p[te] = m.predict([recs[i] for i in te])
-        auc, ci = auc_ci(y, p)
-        res[name] = dict(auc=auc, auc_ci=ci)
-        print(f"  {name:22s} dev AUC {auc:.3f} [{ci[0]:.3f}, {ci[1]:.3f}]  (bootstrap over windows; "
-              "windows within a polity are not independent)")
+        # AUC is averaged within folds. Pooling predictions across folds makes even a
+        # constant forecast score away from 0.5, because each fold's constant differs
+        # (the base rate came out at 0.38 that way in a dry run).
+        fold_aucs = []
+        sim_model = cls().fit(None, None) if name in ("M3_feature_clf_sim", "M4_hybrid_sim") else None
+        for tr, te in GroupKFold(5).split(recs, y, groups):
+            m = sim_model or cls().fit([recs[i] for i in tr], y[tr])   # sim models: no real data
+            p = m.predict([recs[i] for i in te])
+            if 0 < y[te].sum() < len(te):
+                fold_aucs.append(roc_auc_score(y[te], p))
+        res[name] = dict(auc_fold_mean=float(np.mean(fold_aucs)),
+                         auc_fold_sd=float(np.std(fold_aucs)), folds=len(fold_aucs))
+        print(f"  {name:22s} dev AUC (mean over grouped folds) {np.mean(fold_aucs):.3f} "
+              f"(sd {np.std(fold_aucs):.3f}, {len(fold_aucs)} folds)")
     (OUT / "dev_cv.json").write_text(json.dumps(res, indent=2))
 
 
