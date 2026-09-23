@@ -1,0 +1,216 @@
+{
+  "voice": "af_heart",
+  "speed": 1.0,
+  "units": [
+    {
+      "file": "u00.mp3",
+      "section": 0,
+      "sha1": "784ee460cba6136f989dc55b8d93a791818d24fd",
+      "bytes": 189357,
+      "text": "The question is whether a sudden change in a society \u2014 a collapse, the onset of boom-and-b"
+    },
+    {
+      "file": "u01.mp3",
+      "section": 0,
+      "sha1": "211e66a019afedcf9579b79e2e87c0b2e787860b",
+      "bytes": 397101,
+      "text": "History cannot settle that on its own. We rarely know what truly caused a past collapse, a"
+    },
+    {
+      "file": "u02.mp3",
+      "section": 0,
+      "sha1": "3e4ed5ecdffdf2cfac939ecd2982a4c99bc074c5",
+      "bytes": 122157,
+      "text": "Three questions, in rising order of ambition. Is a change coming at all? When will it arri"
+    },
+    {
+      "file": "u03.mp3",
+      "section": 1,
+      "sha1": "bbda201ccd490c30968a4b881f05354077ba35d1",
+      "bytes": 235821,
+      "text": "The danger with invented data is that a method can score well without detecting anything r"
+    },
+    {
+      "file": "u04.mp3",
+      "section": 1,
+      "sha1": "4534e101f01beb483d706e3ac929c467d61d794e",
+      "bytes": 334509,
+      "text": "So the project carries a standing check: can the answer be guessed from things that ought "
+    },
+    {
+      "file": "u05.mp3",
+      "section": 1,
+      "sha1": "cee17d4eebb35e4970def2fb5c1d7ab823443cd5",
+      "bytes": 61869,
+      "text": "Remember this one. It turns out to be the hinge of the whole story."
+    },
+    {
+      "file": "u06.mp3",
+      "section": 2,
+      "sha1": "96f01c98213ff247154e4990075760d39c9b6bc8",
+      "bytes": 234669,
+      "text": "I built both the methods and the tests, which is exactly the arrangement where someone foo"
+    },
+    {
+      "file": "u07.mp3",
+      "section": 2,
+      "sha1": "7bf0c6c442322c1fcaae81866cac460fe271766a",
+      "bytes": 313005,
+      "text": "The guard is procedural. Before each test I wrote down what I expected, in numbers. The an"
+    },
+    {
+      "file": "u08.mp3",
+      "section": 2,
+      "sha1": "6b5307d3df998122bf08ec799276b6c8d65cb130",
+      "bytes": 161325,
+      "text": "It earned its keep. It caught me predicting wrongly several times, and once stopped me fro"
+    },
+    {
+      "file": "u09.mp3",
+      "section": 3,
+      "sha1": "2143b23f3d3b8cbe1c4a0113604936dd972ea7ba",
+      "bytes": 181293,
+      "text": "Whether a change was coming turned out to be moderately forecastable. Given one society th"
+    },
+    {
+      "file": "u10.mp3",
+      "section": 3,
+      "sha1": "fee4807ba0b37652b733836e41fb1df4679cabd2",
+      "bytes": 277677,
+      "text": "But look at how it managed that, and the achievement shrinks. It was recognising societies"
+    },
+    {
+      "file": "u11.mp3",
+      "section": 3,
+      "sha1": "a56f703b6dfbc03d655771b3202529e1155628f3",
+      "bytes": 254253,
+      "text": "Timing was a wall. No method dated a change better than simply knowing the window in which"
+    },
+    {
+      "file": "u12.mp3",
+      "section": 3,
+      "sha1": "db30d12e6d1bc562fe7d41da479470935d9a8570",
+      "bytes": 354477,
+      "text": "And the famous warning sign from ecology \u2014 that systems recover more sluggishly just befor"
+    },
+    {
+      "file": "u13.mp3",
+      "section": 4,
+      "sha1": "8207816a29ea320fbeaacc40661c27c595a07805",
+      "bytes": 298797,
+      "text": "Then to real history: the territory held by three hundred historical states, and whether e"
+    },
+    {
+      "file": "u14.mp3",
+      "section": 4,
+      "sha1": "2ef07d7afc6d76ff40687874507a2b53449d4bfc",
+      "bytes": 362541,
+      "text": "At first it looked like a success. Then I noticed how \"collapse\" had been defined: a fall "
+    },
+    {
+      "file": "u15.mp3",
+      "section": 4,
+      "sha1": "a32d6824b14d048e70f1ee833e9ae3e113fbe67d",
+      "bytes": 109101,
+      "text": "The shaded stretch is what the method sees. When the fall sits inside it, predicting \"coll"
+    },
+    {
+      "file": "u16.mp3",
+      "section": 4,
+      "sha1": "7cc84e28f8aa8f5883839cb6af90418c4d3bf354",
+      "bytes": 148653,
+      "text": "Take those cases out, and everything drops to chance. Nothing predicted which states would"
+    },
+    {
+      "file": "u17.mp3",
+      "section": 5,
+      "sha1": "5e09490cdbde291bf34ce4709c3d726e6db29a88",
+      "bytes": 352173,
+      "text": "Territory is thin evidence: borders get redrawn on a historian's map, and the record chang"
+    },
+    {
+      "file": "u18.mp3",
+      "section": 5,
+      "sha1": "b8efd35cc705c379f2c4b7117afcee088f4de739",
+      "bytes": 135981,
+      "text": "Here a plain model fitted to real history did work, getting the ranking right about seven "
+    },
+    {
+      "file": "u19.mp3",
+      "section": 5,
+      "sha1": "63a594dde65d7552e52d307014fc981f76e534bf",
+      "bytes": 101421,
+      "text": "Two real countries, both growing. The jumpy one fell within fifteen years; the steady one "
+    },
+    {
+      "file": "u20.mp3",
+      "section": 5,
+      "sha1": "08dd3cc1c3752b67f1987d18fae468ca7dd5f02d",
+      "bytes": 101805,
+      "text": "Sort the records by how much income lurches from year to year, and the chance of a later f"
+    },
+    {
+      "file": "u21.mp3",
+      "section": 5,
+      "sha1": "bf0ab3a2c13b38e73b659fbbeb62f34db09afb17",
+      "bytes": 217005,
+      "text": "Economies that lurch from year to year, with little average growth, fell often. Steady gro"
+    },
+    {
+      "file": "u22.mp3",
+      "section": 6,
+      "sha1": "a581241746fb80844564e176fea9b9be50345dcd",
+      "bytes": 159021,
+      "text": "The methods trained on my invented societies performed worse than a coin flip on real inco"
+    },
+    {
+      "file": "u23.mp3",
+      "section": 6,
+      "sha1": "59b802dbdbd0945362d7311156e4b7ded8cf9fca",
+      "bytes": 66093,
+      "text": "The same two clues, read in opposite directions by the two worlds."
+    },
+    {
+      "file": "u24.mp3",
+      "section": 6,
+      "sha1": "f0f4622b174c0fbabeed83bf0b902f1fbf3444a4",
+      "bytes": 326061,
+      "text": "Here is why, and it comes straight back to the cheating problem. To stop methods identifyi"
+    },
+    {
+      "file": "u25.mp3",
+      "section": 6,
+      "sha1": "fbbff8c909b7a16a32961cb63f455207c1640cab",
+      "bytes": 296109,
+      "text": "What remained for a method to learn was the sluggish-recovery signal \u2014 which makes a recor"
+    },
+    {
+      "file": "u26.mp3",
+      "section": 6,
+      "sha1": "a3f8b1cb9796479e63027527a77747c0fb85b981",
+      "bytes": 150189,
+      "text": "My anti-cheating measure removed the only clue that mattered \u2014 and I could not have discov"
+    },
+    {
+      "file": "u27.mp3",
+      "section": 7,
+      "sha1": "c43b1a82a102e14a479dd025e3619023f896d6c0",
+      "bytes": 414381,
+      "text": "One weakness deserves naming before anyone repeats this. A \"fall of a quarter from the rec"
+    },
+    {
+      "file": "u28.mp3",
+      "section": 7,
+      "sha1": "04e382bcc3f008fcd700520e1cb1293fffbe553c",
+      "bytes": 313389,
+      "text": "Two things I'd stand behind regardless. A method validated on simulated data should not be"
+    },
+    {
+      "file": "u29.mp3",
+      "section": 7,
+      "sha1": "07aea0bae8b0afcfed6fd9c452dd138013ea35d0",
+      "bytes": 193965,
+      "text": "The rest \u2014 the machinery of sealed answers, fingerprinted forecasts and written prediction"
+    }
+  ]
+}

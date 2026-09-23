@@ -12,3 +12,6 @@ inflection/notebooks/_*.pkl
 
 # Phase 2 raw downloads: large, re-downloadable by phase2/prepare_cliopatria.py
 phase2/raw/
+
+# Generated narration: rebuild with scripts/build_explainer_audio.py
+docs/explainer/audio/*.mp3

@@ -141,7 +141,7 @@
     <div class="meta">
       <span>About 9 minutes</span>
       <span>Press play — it reads itself</span>
-      <span>Pick a voice in the bar below</span>
+      <span>Narrated — no setup needed</span>
     </div>
   </header>
 
@@ -353,23 +353,18 @@
   var playBtn = document.getElementById("play");
   var nowEl = document.getElementById("now");
   var rateEl = document.getElementById("rate");
+  var voiceEl = document.getElementById("voice");
+  var voiceWrap = voiceEl ? voiceEl.closest("label") : null;
 
-  // Every paragraph is a speech unit, so the rail can mark where the voice is.
+  // Every paragraph is a speech unit, so the rail can mark where the voice is and the
+  // narrated clips line up one-to-one with what is on screen.
   sections.forEach(function (sec) {
     sec.querySelectorAll(".body > p, .body figcaption, .takeaway p").forEach(function (el) {
       el.setAttribute("data-say", "");
     });
   });
 
-  if (!synth || typeof SpeechSynthesisUtterance === "undefined") {
-    document.getElementById("player").querySelector(".player-in").hidden = true;
-    var un = document.getElementById("unsupported");
-    un.style.display = "flex";
-    document.querySelectorAll("[data-listen]").forEach(function (b) { b.hidden = true; });
-    return;
-  }
-
-  var units = [];                        // {el, text, section}
+  var units = [];
   sections.forEach(function (sec, si) {
     sec.querySelectorAll("[data-say]").forEach(function (el) {
       var text = el.textContent.replace(/\s+/g, " ").trim();
@@ -377,9 +372,78 @@
     });
   });
 
-  var cursor = 0, playing = false, voice = null, chunks = [], chunkAt = 0;
+  var cursor = 0, playing = false, mode = "none";
+  var voice = null, chunks = [], chunkAt = 0;
+  var audio = null, clips = null, ahead = null;
 
-  var voiceEl = document.getElementById("voice");
+  function rate() { return parseFloat(rateEl.value) || 1; }
+
+  /* ---------- shared UI ---------- */
+
+  function mark(unit) {
+    document.querySelectorAll("[data-say].speaking").forEach(function (el) {
+      el.classList.remove("speaking");
+    });
+    if (!unit) return;
+    unit.el.classList.add("speaking");
+    var sec = sections[unit.section];
+    nowEl.textContent = sec.querySelector(".label").textContent.split("·")[0].trim() +
+      " · " + sec.querySelector("h2").textContent;
+    var box = unit.el.getBoundingClientRect();
+    if (box.top < 90 || box.bottom > window.innerHeight - 130) {
+      unit.el.scrollIntoView({ block: "center",
+        behavior: window.matchMedia("(prefers-reduced-motion: reduce)").matches ? "auto" : "smooth" });
+    }
+  }
+
+  function setPlaying(on) {
+    playing = on;
+    playBtn.textContent = on ? "❚❚ Pause" : "▶ Play";
+    playBtn.setAttribute("aria-label", on ? "Pause narration" : "Play narration");
+    if (!on) {
+      document.querySelectorAll("[data-say].speaking").forEach(function (el) {
+        el.classList.remove("speaking");
+      });
+    }
+  }
+
+  function finish() { setPlaying(false); nowEl.textContent = "Finished"; }
+
+  /* ---------- narrated clips (Kokoro), the good path ---------- */
+
+  function startClip() {
+    mark(units[cursor]);
+    audio.src = "audio/" + clips[cursor].file;
+    audio.playbackRate = rate();
+    audio.play().catch(function () { toSpeech(); });
+    if (clips[cursor + 1]) {                      // keep the next clip warm
+      ahead = ahead || new Audio();
+      ahead.src = "audio/" + clips[cursor + 1].file;
+      ahead.load();
+    }
+  }
+
+  function setupAudio() {
+    audio = new Audio();
+    audio.preload = "auto";
+    audio.addEventListener("ended", function () {
+      cursor += 1;
+      if (cursor >= units.length) return finish();
+      startClip();
+    });
+    audio.addEventListener("error", function () { if (playing) toSpeech(); });
+    if (voiceWrap) voiceWrap.hidden = true;       // the voice is baked into the clips
+    mode = "audio";
+  }
+
+  function toSpeech() {                            // a clip failed: carry on in the browser
+    if (!synth) return finish();
+    mode = "speech";
+    if (voiceWrap) voiceWrap.hidden = false;
+    if (playing) startUnitSpeech();
+  }
+
+  /* ---------- browser voice, the fallback ---------- */
 
   function remembered() {
     try { return localStorage.getItem("explainer-voice"); } catch (e) { return null; }
@@ -406,6 +470,7 @@
   }
 
   function fillVoices() {
+    if (!voiceEl) return;
     var vs = englishVoices();
     if (!vs.length) return;
     var want = remembered();
@@ -419,15 +484,6 @@
     voice = vs.filter(function (v) { return v.name === want; })[0] || vs[0];
     voiceEl.value = voice.name;
   }
-  fillVoices();
-  if (typeof synth.onvoiceschanged !== "undefined") {
-    synth.onvoiceschanged = fillVoices;   // voices arrive late in Chrome
-  }
-  voiceEl.addEventListener("change", function () {
-    voice = englishVoices().filter(function (v) { return v.name === voiceEl.value; })[0] || voice;
-    remember(voiceEl.value);
-    if (playing) play();
-  });
 
   // Long utterances get cut off in some browsers, so speak sentence-sized pieces.
   function splitSentences(text) {
@@ -441,66 +497,52 @@
     return out;
   }
 
-  function mark(unit) {
-    document.querySelectorAll("[data-say].speaking").forEach(function (el) {
-      el.classList.remove("speaking");
-    });
-    if (!unit) return;
-    unit.el.classList.add("speaking");
-    var sec = sections[unit.section];
-    var label = sec.querySelector(".label").textContent.split("·")[0].trim();
-    var title = sec.querySelector("h2").textContent;
-    nowEl.textContent = label + " · " + title;
-    var box = unit.el.getBoundingClientRect();
-    if (box.top < 90 || box.bottom > window.innerHeight - 130) {
-      unit.el.scrollIntoView({ block: "center",
-        behavior: window.matchMedia("(prefers-reduced-motion: reduce)").matches ? "auto" : "smooth" });
-    }
-  }
-
   function speakChunk() {
     if (!playing) return;
-    if (chunkAt >= chunks.length) {           // unit finished
+    if (chunkAt >= chunks.length) {
       cursor += 1;
-      if (cursor >= units.length) { stop(); nowEl.textContent = "Finished"; return; }
-      startUnit();
-      return;
+      if (cursor >= units.length) return finish();
+      return startUnitSpeech();
     }
     var u = new SpeechSynthesisUtterance(chunks[chunkAt]);
     if (voice) { u.voice = voice; u.lang = voice.lang; }
-    u.rate = parseFloat(rateEl.value) || 1;
+    u.rate = rate();
     u.onend = function () { chunkAt += 1; speakChunk(); };
     u.onerror = function () { chunkAt += 1; speakChunk(); };
     synth.speak(u);
   }
 
-  function startUnit() {
-    var unit = units[cursor];
-    mark(unit);
-    chunks = splitSentences(unit.text);
+  function startUnitSpeech() {
+    mark(units[cursor]);
+    chunks = splitSentences(units[cursor].text);
     chunkAt = 0;
+    synth.cancel();
     speakChunk();
   }
 
-  function play() {
-    playing = true;
-    playBtn.textContent = "❚❚ Pause";
-    playBtn.setAttribute("aria-label", "Pause narration");
-    synth.cancel();
-    startUnit();
+  /* ---------- controls ---------- */
+
+  function start() {
+    setPlaying(true);
+    if (mode === "audio") startClip(); else startUnitSpeech();
   }
 
-  function stop() {
-    playing = false;
-    synth.cancel();
-    playBtn.textContent = "▶ Play";
-    playBtn.setAttribute("aria-label", "Play narration");
-    document.querySelectorAll("[data-say].speaking").forEach(function (el) {
-      el.classList.remove("speaking");
-    });
+  function pause() {
+    setPlaying(false);
+    if (mode === "audio" && audio) audio.pause();
+    else if (synth) synth.cancel();
   }
 
-  playBtn.addEventListener("click", function () { playing ? stop() : play(); });
+  playBtn.addEventListener("click", function () {
+    if (playing) return pause();
+    if (mode === "audio" && audio && audio.src && audio.currentTime > 0 && !audio.ended) {
+      setPlaying(true);
+      mark(units[cursor]);
+      audio.play().catch(function () { toSpeech(); });
+      return;
+    }
+    start();
+  });
 
   function jump(delta) {
     var here = units[cursor] ? units[cursor].section : 0;
@@ -510,13 +552,23 @@
     }
     sections[target].scrollIntoView({ block: "start",
       behavior: window.matchMedia("(prefers-reduced-motion: reduce)").matches ? "auto" : "smooth" });
-    if (playing) play();
-    else { mark(units[cursor]); }
+    if (playing) start(); else mark(units[cursor]);
   }
   document.getElementById("prev").addEventListener("click", function () { jump(-1); });
   document.getElementById("next").addEventListener("click", function () { jump(1); });
 
-  rateEl.addEventListener("change", function () { if (playing) play(); });
+  rateEl.addEventListener("change", function () {
+    if (mode === "audio" && audio) audio.playbackRate = rate();
+    else if (playing) startUnitSpeech();
+  });
+
+  if (voiceEl) {
+    voiceEl.addEventListener("change", function () {
+      voice = englishVoices().filter(function (v) { return v.name === voiceEl.value; })[0] || voice;
+      remember(voiceEl.value);
+      if (playing && mode === "speech") startUnitSpeech();
+    });
+  }
 
   document.querySelectorAll("[data-listen]").forEach(function (btn) {
     btn.addEventListener("click", function () {
@@ -524,10 +576,39 @@
       for (var i = 0; i < units.length; i++) {
         if (units[i].section === si) { cursor = i; break; }
       }
-      play();
+      start();
     });
   });
 
-  window.addEventListener("beforeunload", function () { synth.cancel(); });
+  window.addEventListener("beforeunload", function () {
+    if (synth) synth.cancel();
+    if (audio) audio.pause();
+  });
+
+  /* ---------- pick an engine ---------- */
+
+  function noEngine() {
+    document.getElementById("player").querySelector(".player-in").hidden = true;
+    var un = document.getElementById("unsupported");
+    un.style.display = "flex";
+    document.querySelectorAll("[data-listen]").forEach(function (b) { b.hidden = true; });
+  }
+
+  if (synth && typeof SpeechSynthesisUtterance !== "undefined") {
+    mode = "speech";
+    fillVoices();
+    if (typeof synth.onvoiceschanged !== "undefined") synth.onvoiceschanged = fillVoices;
+  }
+
+  fetch("audio/manifest.json").then(function (r) {
+    return r.ok ? r.json() : null;
+  }).then(function (m) {
+    if (m && m.units && m.units.length === units.length) {
+      clips = m.units;
+      setupAudio();
+    } else if (mode === "none") {
+      noEngine();
+    }
+  }).catch(function () { if (mode === "none") noEngine(); });
 })();
 </script>
