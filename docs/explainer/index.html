@@ -141,6 +141,7 @@
     <div class="meta">
       <span>About 9 minutes</span>
       <span>Press play — it reads itself</span>
+      <span>Pick a voice in the bar below</span>
     </div>
   </header>
 
@@ -326,6 +327,10 @@
     <button class="ctl ui" id="prev" aria-label="Previous part">↑</button>
     <button class="ctl ui" id="next" aria-label="Next part">↓</button>
     <span class="now ui" id="now">Eight parts · about 9 minutes</span>
+    <label class="ui" for="voice" style="display:flex;align-items:center;gap:.35rem">
+      <span aria-hidden="true">voice</span>
+      <select class="ctl" id="voice" style="max-width:9.5rem"></select>
+    </label>
     <label class="ui" for="rate" style="display:flex;align-items:center;gap:.35rem">
       <span aria-hidden="true">speed</span>
       <select class="ctl" id="rate">
@@ -374,16 +379,55 @@
 
   var cursor = 0, playing = false, voice = null, chunks = [], chunkAt = 0;
 
-  function pickVoice() {
-    var vs = synth.getVoices().filter(function (v) { return /^en/i.test(v.lang); });
-    if (!vs.length) return null;
-    var local = vs.filter(function (v) { return v.localService; });
-    return (local.length ? local : vs)[0];
+  var voiceEl = document.getElementById("voice");
+
+  function remembered() {
+    try { return localStorage.getItem("explainer-voice"); } catch (e) { return null; }
   }
-  pickVoice();
+  function remember(name) {
+    try { localStorage.setItem("explainer-voice", name); } catch (e) { /* private window */ }
+  }
+
+  // Quality beats locality: ChromeOS ships a robotic local voice and much better
+  // network ones, so rank by name first and fall back to whatever exists.
+  function rank(v) {
+    var n = (v.name + " " + v.voiceURI).toLowerCase();
+    if (/natural|neural|wavenet|enhanced|premium|siri/.test(n)) return 0;
+    if (/google/.test(n)) return 1;
+    if (/microsoft|samantha|daniel|karen|moira/.test(n)) return 2;
+    if (v.localService) return 4;
+    return 3;
+  }
+
+  function englishVoices() {
+    return synth.getVoices()
+      .filter(function (v) { return /^en/i.test(v.lang); })
+      .sort(function (a, b) { return rank(a) - rank(b) || a.name.localeCompare(b.name); });
+  }
+
+  function fillVoices() {
+    var vs = englishVoices();
+    if (!vs.length) return;
+    var want = remembered();
+    voiceEl.innerHTML = "";
+    vs.forEach(function (v) {
+      var o = document.createElement("option");
+      o.value = v.name;
+      o.textContent = v.name.replace(/^(Google|Microsoft)\s+/, "") + " · " + v.lang;
+      voiceEl.appendChild(o);
+    });
+    voice = vs.filter(function (v) { return v.name === want; })[0] || vs[0];
+    voiceEl.value = voice.name;
+  }
+  fillVoices();
   if (typeof synth.onvoiceschanged !== "undefined") {
-    synth.onvoiceschanged = function () { voice = voice || pickVoice(); };
+    synth.onvoiceschanged = fillVoices;   // voices arrive late in Chrome
   }
+  voiceEl.addEventListener("change", function () {
+    voice = englishVoices().filter(function (v) { return v.name === voiceEl.value; })[0] || voice;
+    remember(voiceEl.value);
+    if (playing) play();
+  });
 
   // Long utterances get cut off in some browsers, so speak sentence-sized pieces.
   function splitSentences(text) {
@@ -423,7 +467,6 @@
       return;
     }
     var u = new SpeechSynthesisUtterance(chunks[chunkAt]);
-    voice = voice || pickVoice();
     if (voice) { u.voice = voice; u.lang = voice.lang; }
     u.rate = parseFloat(rateEl.value) || 1;
     u.onend = function () { chunkAt += 1; speakChunk(); };
