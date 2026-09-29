@@ -81,9 +81,29 @@ def check(name: str, events: list[dict]) -> list[str]:
     return fails
 
 
+def translate(rev: str) -> str:
+    """Map a pre-rewrite commit hash to its current one.
+
+    The history was rewritten once, on 2026-09-29, to change the author identity;
+    the ledger is append-only and still records the old hashes. `docs/history-rewrite.md`
+    carries the mapping, and this keeps `--regenerate` working across that rewrite.
+    """
+    doc = ROOT / "docs" / "history-rewrite.md"
+    if not doc.exists():
+        return rev
+    for line in doc.read_text().splitlines():
+        cells = [c.strip().strip("`") for c in line.split("|")]
+        if len(cells) >= 4 and cells[1].startswith(rev[:10]):
+            return cells[2]
+    return rev
+
+
 def regenerate(name: str, events: list[dict]) -> list[str]:
     built = [e for e in events if e.get("test_set") == name and e["event"] == "pool_built"][-1]
     rev = built["generator_revision"].split("+")[0]
+    if subprocess.run(["git", "cat-file", "-e", rev + "^{commit}"], cwd=ROOT,
+                      capture_output=True).returncode != 0:
+        rev = translate(rev)
     n = built["n_requested"] // 7
     seed = json.loads((DATA / "released" / name / "seed.json").read_text())["seed"]
     with tempfile.TemporaryDirectory() as tmp:
