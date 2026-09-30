@@ -5,6 +5,27 @@ parked as out of scope. Newest entries at the top.
 
 ---
 
+## 2026-09-29 — Commit history rewritten (author identity only)
+
+Every commit was rewritten once so that its author and committer are the
+`antispiraldev` GitHub account rather than a personal email that GitHub linked to a
+different account. The commits never named that account; the link was the email.
+
+Nothing else changed. The tree at the tip is the same object as before the rewrite
+(`3b72636549686f559f6b569c7e3db59ecee5e672`), and no file, message or date moved.
+`docs/history-rewrite.md` records the old-to-new hash mapping.
+
+**Why this touches the research record.** The ledger stores the exact generator
+revision behind each blind test set, and `verify_blind_tests.py --regenerate` checks
+that revision out to rebuild a test set from its seed. Those recorded hashes no longer
+exist. The ledger is append-only, so it was **not** edited; instead the verifier now
+falls back to the mapping file when a recorded revision is missing, and the mapping is
+in the repository for anyone checking by hand. A bundle of the pre-rewrite history is
+kept outside the repository, so the claim "identity only" is checkable rather than
+asserted.
+
+---
+
 ## 2026-09-22 — State of play, for whoever picks this up next
 
 Everything is committed and pushed to https://github.com/antispiraldev/KnotDetection
